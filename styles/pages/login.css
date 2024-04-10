@@ -1,0 +1,60 @@
+.form-login{
+    width: 500px; 
+    background-color: #FFFFFF;
+    border: 2px solid #b1770b;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 40px;
+    z-index: 10;
+    position: relative;
+}
+
+.form-login__inputs{
+    margin: 0 auto;
+    width: 330px;
+}
+
+.welcome-message{
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 32px;
+    
+}
+
+.welcome-message .text-h4{
+    margin-top:50px;
+    font-size: 31px;
+    font-weight:bold;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+
+
+.login-btn{
+    background-color: #ffa500;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 48px;
+    font-family: "Jura";
+   
+}
+
+.redirect-signup{
+    display:flex;
+    margin-bottom: 32px;
+    margin-left: 100px;
+}
+
+.redirect-signup .nav-link {
+    color:#FFA500;
+    margin-left:4px;
+}

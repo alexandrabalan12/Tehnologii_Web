@@ -5,31 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="./styles/index.css">
+<link rel="stylesheet" href="./styles/pages/home.css">
 </head>
 <body>
-<p>alexa e cea mai tare</p>
+
 <nav class="navbar">
     <div class="navbar-container">
-        <div class="logo">PlaCo</div>
+        <div class="logo1">PlaCo</div>
         <div class="nav-menu">
             <a href="#" class="nav-link">Available projects</a>
             <a href="#" class="nav-link">About us</a>
         </div>
-        <div class="nav-search">
-            <button class="search-btn"><img src="./assets/icon_search.png" alt="Search"></button>
-            <input type="text" placeholder="Search for projects or companies">
-               
-            <a href="login.html" class="nav-link login">Log in</a>
+        
+         <div class="nav-search input-group__area">
+              <img src="./assets/icon_search.png" />
+              <input id="search" name="seach" type="search" placeholder="Search for projects or companies" />
+         </div>           
+             
+            <a href="login.html" class="nav-link login">Login</a>
             <button class="signup-btn">Sign up</button>
-        </div>
+       
     </div>
 </nav>
 
 <div class="container">
     <header class="home-header">
-        <div class="home-header__banner">
-            <img src="./assets/home_banner.png" /> 
+        <div class="background-banner">
+            <img src="./assets/home_banner.jpg" /> 
         </div>
         <div class="home-header__content">
             <h1 class="text-h1">PlaCo: Bridging 
