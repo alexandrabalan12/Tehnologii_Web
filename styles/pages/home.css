@@ -13,9 +13,16 @@
     margin-top:24px;
     margin-left: 24px;
 }
+
+.why-us-container{
+    display: flex;
+    border-top: 2px solid orange;
+
+}
 .why-us-category {
     
     display: flex;
+    
     flex-direction: column;
     align-items: flex-start;
     margin-top: 20px;
@@ -40,7 +47,6 @@
 }
 
 .why-us{
-    border-top: 2px solid orange;
     padding-top: 20px; 
 }
 
