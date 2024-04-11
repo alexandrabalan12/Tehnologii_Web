@@ -32,7 +32,13 @@
     line-height: 1.2;
     
 }
-
+.text-h4-bold{
+    font-size: 31px;
+    font-weight:bold;
+    line-height: 1.2;
+    
+    
+}
 
 .text-body-copy{
     font-size: 25px;
