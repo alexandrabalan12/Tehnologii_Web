@@ -20,7 +20,7 @@
 
 .form-what-are-you1, .form-what-are-you2 {
     width: 380px; 
-    height: 200px; 
+    height: 220px; 
     background-color: #FFFFFF;
     border: 1px solid #000000;
     border-radius: 20px;
@@ -35,9 +35,12 @@
 }
 .form-what-are-you1 .interior-form-what-are-you{
     display:flex;
+    margin-bottom: 8px;
 }
 .form-what-are-you2 .interior-form-what-are-you{
     display:flex;
+    margin-bottom: 20px;
+
 }
 
 .interior-form-what-are-you  img{
