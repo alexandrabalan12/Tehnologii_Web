@@ -1,0 +1,53 @@
+.aftersignup__banner {
+    position: absolute;
+    text-align: center;
+}
+
+.aftersignup__banner .text-h2{
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 397px;
+    font-weight: 600;
+    
+}
+.form-what-are-you {
+    width: 800px; 
+    margin: auto; 
+    display: flex;
+    justify-content: space-between;
+    margin-left: 350px;
+}
+
+.form-what-are-you1, .form-what-are-you2 {
+    width: 380px; 
+    height: 200px; 
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 100px;
+    text-decoration: none;
+    color: black;
+}
+.form-what-are-you2 {
+    margin-left:100px; 
+}
+.form-what-are-you1 .interior-form-what-are-you{
+    display:flex;
+}
+.form-what-are-you2 .interior-form-what-are-you{
+    display:flex;
+}
+
+.interior-form-what-are-you  img{
+    width: 270px;
+    height: 210px;
+    margin-top: -28px;
+    margin-left: auto; 
+    margin-right: -20px;
+    padding: 20px 20px;
+    align-items: center;
+}
+.why-us-category .text-h4 {
+    margin-bottom: 15px;}
