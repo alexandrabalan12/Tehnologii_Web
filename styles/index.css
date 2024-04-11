@@ -49,6 +49,7 @@
     font-size: 25px;
     font-weight: 400;
     line-height: 1.2;
+    
 }
 
 .text-body-copy1{
@@ -106,7 +107,7 @@ body {
 }
 .container{
     display: block;
-    max-width: 1372px ;
+    max-width: 1400px ;
     width: 100%;
     padding: 0 16px;
     margin: 0 auto;
