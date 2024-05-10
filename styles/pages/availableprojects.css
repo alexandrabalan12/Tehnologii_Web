@@ -1,0 +1,54 @@
+.projects{
+    margin-top: 100px;
+    margin-left: 250px;
+}
+.projects .text-body-copy-selected{
+    text-align: center;
+    margin-left: 250px;
+}
+.projects .details-account1{
+    margin-bottom: 70px;
+    height: 350px;
+}
+.projects .text-body-copy1{
+    margin-bottom: -10px;
+}
+.projects .text-body-copy-bold{
+    margin-bottom: -10px;
+}
+.container1{
+   
+    display: flex;
+    max-width: 1400px ;
+    width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+    margin-top: 48px;
+}
+.container1 .text-h4{
+    margin-left: 100px;
+}
+.select-option .text-body-copy1{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+#select-standard {
+    flex: 1; 
+    appearance: none;
+    padding: 10px;
+    border: 2px solid orange;
+    background-color: white; 
+    color: black;
+    border-radius: 10px; 
+    cursor: pointer; 
+    margin-left: 50px;
+    width: 160px;
+    outline: none; 
+  }
+ 
+ 
+
+
+  
+  
+  
