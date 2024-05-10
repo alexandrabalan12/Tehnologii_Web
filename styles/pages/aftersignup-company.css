@@ -1,0 +1,20 @@
+.form-aftersignup{
+    width: 800px; 
+    background-color: #FFFFFF;
+    border: 2px solid #b1770b;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 120px;
+    z-index: 10;
+    position: relative;
+}
+.details-aftersignup{
+    margin-top: 10px;
+    text-align: left;
+    margin-bottom: 32px;
+    margin-left: 40px;
+    
+}
+.details-aftersignup .text-body-copy{
+     font-weight: bold;
+}
