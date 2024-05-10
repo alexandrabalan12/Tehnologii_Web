@@ -8,8 +8,7 @@
 <link rel="stylesheet" href="./styles/pages/login.css">
 <link rel="stylesheet" href="./styles/index.css">
 <link rel="stylesheet" href="./styles/pages/aftersignup.css">
-<link rel="stylesheet" href="./styles/pages/aftersignup-company.css"
-
+<link rel="stylesheet" href="./styles/pages/aftersignup-company.css">
 </head>
 <body>
     <nav class="navbar">
@@ -28,40 +27,58 @@
         </div>
         <div class="form-aftersignup">
             <div class="details-aftersignup">
-        
-                <h4 class="text-body-copy">Company Name:</h4>
-                <p class="text-body-copy1">Log in to catch up what you’ve missed.</p>
-            </div>
-            <div class="form-login__inputs">
-                <div class="input-group">
-                    <label for="email" class="input-group__label">
-                        Email
-                    </label>
-                    <div class="input-group__area">
-                        <img src="./assets/email.png" />
-                        <input id="email" name="email" type="email" placeholder="numecompanie@gmailcom" />
+                <h4 class="text-body-copy">Company Name: </h4>
+                 <div class="input-group__area">
+                        <input id="company-name" name="company-name" type="text" placeholder="Company Name" />
                     </div>
-                </div>
-                <div class="input-group">
-                    <label for="password" class="input-group__label">
-                        Password
-                    </label>
-                    <div class="input-group__area">
-                        <img src="./assets/password.png" />
-                        <input id="password" name="password"  type="password" placeholder="*******" />
-                    </div>
-                </div>
-                <a href="afterlogin.html" class="login-btn">Login</a>
-                   
-
             </div>
+            <div class="details-aftersignup">
+                <h4 class="text-body-copy">Number of team members: </h4>
+                 <div class="input-group__area">
+                        <input id="number-members" name="number-members" type="number" placeholder="Number" />
+                    </div>
+            </div>
+            <div class="details-aftersignup">
+                <h4 class="text-body-copy">Short Description: </h4>
+                 <div class="input-group__area">
+                        <input id="description" name="description" type="text" placeholder="Description" />
+                    </div>
+            </div>
+            <div class="details-aftersignup">
+                <h4 class="text-body-copy">Geographical Area: </h4>
+                 <div class="input-group__area">
+                        <input id="geographical-area" name="geographical-area" type="text" placeholder="Region" />
+                    </div>
+            </div>
+            <div class="details-aftersignup">
+                <h4 class="text-body-copy">Originally Located in: </h4>
+                 <div class="input-group__area">
+                        <input id="city" name="city" type="text" placeholder="City" />
+                    </div>
+            </div>
+            <div class="details-aftersignup">
+                <h4 class="text-body-copy">Proffesional Area: </h4>
+                 <div class="input-group__area">
+                        <input id="proffesional-area" name="proffesional-area" type="text" placeholder="Area" />
+                    </div>
+            </div>
+            <div class="details-aftersignup">
+                <h4 class="text-body-copy">General Contractor: </h4>
+                 <div class="input-group__area">
+                        <input id="general-contracter" name="general-contracter" type="text" placeholder="Name" />
+                    </div>
+            </div>
+            <div class="details-aftersignup">
+                <h4 class="text-body-copy">Open To Travel For Projects: </h4>
+                    <input id="travel-projects-yes" name="travel-projects" type="radio" value="yes" />
+                    <label for="travel-projects-yes" class="radio-label">Yes</label>
+                    <input id="travel-projects-no" name="travel-projects" type="radio" value="no" />
+                    <label for="travel-projects-no" class="radio-label">No</label>
+            </div>
+          </div>
+          <a href="#" class="button-primary1">Get Started</a>
+           
+          
             
-            <div class="redirect-signup">
-                <p  class="text-body-copy2">Don’t have an account? </p>
-                <a href="signup.html" class="nav-link">Sign up for free.</a>
-                </div>
-         </div>   
-        
 </body>
 </html>
-            
