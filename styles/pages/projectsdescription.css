@@ -1,8 +1,12 @@
-.title .text-h2{
-    margin-left: 450px;
-    margin-top: 50px;
+ 
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px; 
+    }
     
-}
+
 .description{
     border-top: 2px solid orange;
 }
@@ -60,3 +64,5 @@
     margin-left: 550px;
     font-weight: bold;
 }
+
+
