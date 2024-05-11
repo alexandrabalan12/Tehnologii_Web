@@ -46,6 +46,12 @@
     outline: none; 
   }
  
+.link,
+.link li
+.link p{
+   text-decoration: none;
+   color: black;
+}
  
 
 

@@ -1,0 +1,36 @@
+.title .text-h2{
+    margin-left: 450px;
+    margin-top: 50px;
+}
+.description{
+    border-top: 2px solid orange;
+}
+
+.description .text-body-copy{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.description .text-h4{
+    text-decoration: underline;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+}
+.info-field1 .text-body-copy{
+    margin-left: 12px;
+    margin-top: 4px;
+}
+
+
+.info-field1{
+    display: flex;
+    text-align: left;
+    padding: 10px 4px;
+    margin-bottom: -70px;
+}
+
+.fortext{
+    margin-top: -110px;
+    margin-bottom: -60px;
+    margin-left: 10px;
+}
