@@ -1,0 +1,36 @@
+.modify-company-name .input-group__area{
+    width: 300px;
+    margin-left: 20px;
+    border: 1px solid black;
+   
+}
+.number-members .input-group__area{
+    width: 50px;
+    margin-left: 20px;
+    border: 1px solid black;
+   
+}
+.number-members .input-group__area input{
+    text-align: center;
+}
+.short-description .input-group__area{
+   
+    margin-left: 20px;
+    border: 1px solid black;
+    flex: 1;
+    width: 850px;
+    height: 200px;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 10px;
+   
+}
+.short-description input {
+    width: 100%;
+    
+    
+    
+}
+
+
