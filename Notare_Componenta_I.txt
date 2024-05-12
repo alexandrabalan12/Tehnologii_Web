@@ -1,0 +1,11 @@
+Ce mi-a placut:
+Pagina este placuta ca design...
+
+Ce ar mai fi trebuit sa fie (sau ce nu mi-a placut):
+- Dintre toate paginile care implica portofolii, bidding, statitistici, vizualizari de proiecte, costuri, administrare cu acceptare de review, etc., nu am vazut decat o pagina in care se vde un review - adica uitati-va ce ati scris in scholarly la "functiile aplicatiei" paginile ar trebui sa fie cele de pe acolo.... (nu imi dau seama cum as putea face ce e scris acolo cu paginile pe care le aveti voi).
+- Paginile nu sunt responsive (nu am vazut nici un breakpoint)
+- paginile au erori (nu au fost validate cu HTML validator) - sunt erori si in scholarly
+
+
+-----------
+Concluzii: ....7
