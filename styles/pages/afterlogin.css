@@ -9,3 +9,27 @@
     margin-left: 200px;
 }
 
+.projects-applicants{
+    display: flex;
+    margin-top: 80px;
+}
+.projects-applicants-right{
+    display: block;
+    margin-top: 40px;
+    align-items: center;
+    margin-left: 80px;
+}
+.projects-applicants-right .why-us-title {
+ margin-bottom: 100px;  
+ font-size: 39px;
+}
+
+.projects-applicants-right .button-primary{
+    margin-top: 100px;
+    width: 300px;
+    margin-left: 120px;
+}
+
+.projects-applicants-right .text-body-copy{
+    margin-left: 20px;
+}
