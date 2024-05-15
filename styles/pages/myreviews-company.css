@@ -1,0 +1,24 @@
+.myreviews .details-account1 .review-for{
+    margin-left: 25px;
+}
+
+.myreviews .details-account1 .review-for img{
+    width: 288px;
+    height: 48px;
+    margin-top: 0px;
+}
+
+.myreviews .review-text{
+    margin-left: 0px;
+}
+
+.myreviews .review-from .text-body-copy{
+    margin-left: 40px;
+}
+.myreviews .details-account1 {
+    height: 300px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+}
+
+

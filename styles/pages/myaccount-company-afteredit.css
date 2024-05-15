@@ -1,17 +1,26 @@
 .modify-company-name .input-group__area{
-    width: 300px;
+    width: 350px;
     margin-left: 20px;
     border: 1px solid black;
+    margin-top: -7px;
    
+}
+.modify-company-name .input-group__area input {
+    width: 100%; 
+    text-align: left;
+    font-size: 20px;
 }
 .number-members .input-group__area{
     width: 50px;
     margin-left: 20px;
     border: 1px solid black;
+    margin-top: -7px;
+
    
 }
 .number-members .input-group__area input{
     text-align: center;
+    font-size: 20px;
 }
 .short-description .input-group__area{
    
@@ -26,11 +35,28 @@
     padding: 10px;
    
 }
-.short-description input {
-    width: 100%;
-    
-    
-    
+.short-description .input-group__area input {
+    font-size:20px;  
+}
+.modify-answer-travel .input-group__area{
+        width: 70px;
+        margin-left: 20px;
+        border: 1px solid black;
+        margin-top: -7px;
+}
+.modify-answer-travel .input-group__area input{
+    text-align: center;
+    font-size: 20px;
 }
 
+.container-account .details-account{
+    height: 630px;
+}
 
+.save-changes .button-primary{
+    font-size: 20px;
+    width: 200px;
+    height: 40px; 
+    margin-left: 1250px;
+    font-weight: bold;
+}
