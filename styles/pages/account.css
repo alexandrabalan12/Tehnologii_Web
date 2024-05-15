@@ -120,5 +120,42 @@
     height: 400px;
 }
 
+.menu-account1 {
+    border: 2px solid #b1770b;
+    border-radius: 20px;
+    width: 250px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    padding: 4px; 
+}
+
+.menu-account1 .text {
+    width: 100%; 
+    text-align: left; 
+    padding: 4px 4px; 
+    display: block;
+    margin-bottom: 12px;
+}
+
+.menu-account1 .text-body-copy {
+    color: black;
+    text-decoration: none;
+    display: block;
+    width: 100%; 
+    margin-bottom: 4px; 
+}
+
+.menu-account1 .text-body-copy-selected {
+    color: #ffa500;
+    text-decoration: none;
+    display: block;
+    width: 100%; 
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
 
 
