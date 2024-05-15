@@ -26,10 +26,14 @@
 
 .projects-applicants-right .button-primary{
     margin-top: 100px;
-    width: 300px;
+    width: 260px;
     margin-left: 120px;
 }
 
 .projects-applicants-right .text-body-copy{
     margin-left: 20px;
+}
+
+.home-header__content .button-primary{
+    width: 260px;
 }
