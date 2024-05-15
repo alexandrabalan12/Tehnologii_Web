@@ -37,3 +37,17 @@
 .home-header__content .button-primary{
     width: 260px;
 }
+.projects-applicants-right .input-group__area .text-h4{
+    margin-bottom: 30px;
+}
+.projects-applicants-right .input-group__area .text-body-copy{
+    color: orange;
+}
+
+.projects-applicants-right .short-description .input-group__area{
+    border: 2px solid orange;
+    width: 500px;
+    height: 150px;
+   
+    
+}
