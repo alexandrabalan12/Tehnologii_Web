@@ -5,3 +5,69 @@
     width: 80px;
    margin-left: 700px;
 }
+
+.toggle-room-checkbox {
+    display: none;
+  }
+  .toggle-requirement-checkbox {
+    display: none;
+  }
+  
+  .toggle-room-btn {
+    cursor: pointer;
+    display: inline-block; 
+    padding: 5px 10px; 
+  }
+  .toggle-requirement-btn {
+    cursor: pointer;
+    display: inline-block; 
+    padding: 5px 10px; 
+  }
+  
+  .toggle-room-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px; 
+  }
+  .toggle-requirement-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px; 
+  }
+  
+  .additional-info {
+    display: none; 
+  }
+
+  .additional-info .input-group__area-big{
+    
+    border: 1px solid #825400;
+    padding: 10px;
+    border-radius: 20px;
+    height: 220px;
+  }
+  .additional-info .input-group__area-big .text-body-copy{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  .additional-info .input-group__area-big .input-group__area{
+    border: 1px solid #825400;
+  }
+
+  .toggle-room-checkbox:checked ~ .additional-info {
+    display: block; 
+  }
+  .toggle-requirement-checkbox:checked ~ .additional-info {
+    display: block; 
+  }
+ .message1 .text-h3{
+    margin-top:20px;
+ }
+ .message .text-h3{
+    margin-top:20px;
+ }
+  
+  

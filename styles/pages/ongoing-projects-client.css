@@ -13,6 +13,21 @@
 .description .applicants .text-margin{
     margin-right: -485px;
 }
+.title-company {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 300px; 
+    margin-top: -200px;
+    margin-left: 60px;
+    margin-bottom: -100px;
+}
+.message-company .text-body-copy{
+    color: #976200;
+    margin-top :20px;
+    margin-bottom: 20px ;
+
+}
 
 
 
