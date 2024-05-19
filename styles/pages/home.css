@@ -196,3 +196,136 @@
     height: 56px;
     text-align: center; 
 }
+ 
+
+@media (min-width: 1380px) {
+    .home-header {
+        height: 472px;
+    }
+
+    .home-header__content {
+        margin-top: 24px;
+        margin-left: 24px;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .home-header {
+        height: auto;
+        padding: 20px;
+    }
+
+    .home-header__content {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .why-us-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .why-us-category {
+        align-items: center;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .why-us-title img {
+        margin: 0 auto 10px auto;
+    }
+
+    .why-us-body {
+        margin: 0;
+    }
+
+    .review-for,
+    .review-text,
+    .review-from,
+    .review-link {
+        margin-left: 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .home-header {
+        height: auto;
+        padding: 20px;
+    }
+
+    .home-header__content {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .why-us-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .why-us-category {
+        align-items: center;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .why-us-title img {
+        margin: 0 auto 10px auto;
+    }
+
+    .why-us-body {
+        margin: 0;
+    }
+
+    .review-for,
+    .review-text,
+    .review-from,
+    .review-link {
+        margin-left: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .home-header {
+        height: auto;
+        padding: 10px;
+    }
+
+    .home-header__content {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .why-us-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .why-us-category {
+        align-items: center;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .why-us-title img {
+        margin: 0 auto 5px auto;
+    }
+
+    .why-us-body {
+        margin: 0;
+    }
+
+    .review-for,
+    .review-text,
+    .review-from,
+    .review-link {
+        margin-left: 10px;
+    }
+}
+

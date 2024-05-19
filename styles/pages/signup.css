@@ -8,3 +8,23 @@
     z-index: 10;
     position: relative;
 }
+@media (max-width: 1380px) {
+    .form-signup {
+        width: 450px;
+    }
+}
+@media (max-width: 991px) {
+    .form-signup {
+        width: 400px;
+    }
+}
+@media (max-width: 768px) {
+    .form-signup {
+        width: 350px;
+    }
+}
+@media (max-width: 480px) {
+    .form-signup {
+        width: 300px;
+    }
+}

@@ -28,6 +28,22 @@
     margin-bottom: 20px ;
 
 }
+.container-contact{
+    margin-top:80px;
+    display: block;
+    max-width: 87.5rem;
+    width: 100%;
+    padding: 0 16px;
+    margin-left: 50px;
+}
+.container-contact1{
+    margin-top:80px;
+    display: block;
+    max-width: 87.5rem;
+    width: 100%;
+    padding: 0 16px;
+    margin-left: -20px;
+}
 
 
 

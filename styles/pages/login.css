@@ -60,3 +60,60 @@
     color:#FFA500;
     margin-left:4px;
 }
+
+@media (max-width: 1380px) {
+    .form-login {
+        width: 450px;
+    }
+    .login-btn {
+        padding: 13px 120px;
+    }
+}
+
+@media (max-width: 991px) {
+    .form-login {
+        width: 400px;
+    }
+    .login-btn {
+        padding: 13px 100px;
+    }
+    .redirect-signup {
+        margin-left: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-login {
+        width: 350px;
+    }
+    .login-btn {
+        padding: 13px 80px;
+    }
+    .redirect-signup {
+        margin-left: 60px;
+    }
+    .welcome-message .text-h4 {
+        font-size: 28px;
+    }
+    .welcome-message .text-body-copy1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-login {
+        width: 300px;
+    }
+    .login-btn {
+        padding: 13px 60px;
+    }
+    .redirect-signup {
+        margin-left: 40px;
+    }
+    .welcome-message .text-h4 {
+        font-size: 24px;
+    }
+    .welcome-message .text-body-copy1 {
+        font-size: 16px;
+    }
+}

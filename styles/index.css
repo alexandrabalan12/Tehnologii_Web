@@ -1,3 +1,4 @@
+
 *,
 *::before,
 *::after {
@@ -7,59 +8,78 @@
     box-sizing: border-box;
 }
 
-.text-h1{
-    font-size: 61px;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    position: relative;
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+.container {
+    display: block;
+    max-width: 87.5rem;
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+
+.text-h1 {
+    font-size: 61px; 
     font-weight: 600;
     line-height: 1.2;
-
 }
 
-.text-h2{
+.text-h2 {
     font-size: 49px;
-    font-weight:500;
+    font-weight: 500;
     line-height: 1.2;
-    
 }
-.text-h3{
+
+.text-h3 {
     font-size: 39px;
-    font-weight:500;
+    font-weight: 500;
     line-height: 1.2;
 }
 
-.text-h4{
-    font-size: 31px;
-    font-weight:400;
-    line-height: 1.2;
-    
-}
-.text-h4-bold{
-    font-size: 31px;
-    font-weight:bold;
-    line-height: 1.2;
-    
-    
-}
-
-
-.text-body-copy{
-    font-size: 25px;
+.text-h4 {
+    font-size: 31px; 
     font-weight: 400;
     line-height: 1.2;
-    
 }
 
-.text-body-copy1{
-    font-size: 20px;
+.text-h4-bold {
+    font-size: 31px; 
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.text-body-copy {
+    font-size: 25px; 
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.text-body-copy1 {
+    font-size: 20px; 
     font-weight: 400;
     line-height: 1.2;
     padding: 4px 4px;
 }
 
-.text-body-copy2{
+.text-body-copy2 {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.2;
 }
+
+
 .navbar {
     display: flex;
     justify-content: center;
@@ -69,10 +89,11 @@
     position: relative;
     z-index: 1000;
 }
+
 .navbar-container {
     background-color: #FFA500;
     width: 100%;
-    max-width:  1372px;
+    max-width: 1372px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -95,62 +116,43 @@
     text-decoration: none;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    position: relative;
-    height: 100%;
-}
-.container{
-    display: block;
-    max-width: 1400px ;
-    width: 100%;
-    padding: 0 16px;
-    margin: 0 auto;
-    margin-top: 48px;
 
-}
-
-html{
-    height: 100%;
-}
-.input-group{
+.input-group {
     display: block;
     max-width: 330px;
     width: 100%;
     margin-bottom: 28px;
- 
- }
- 
- .input-group__label{
-     font-weight: 500;
-     font-size: 16px;
-     line-height: 24px;
-     margin-bottom: 8px;
- }
- 
- .input-group__area{
-   display: flex;
-   border: 1px solid #c6c6c6;
-   padding: 10px;
-   border-radius: 20px;
-   
- 
- }
- 
- .input-group__area img{
-     width: 24px;
-     height: 24px;
-     min-width: 24px;
-     margin-right: 8px;
- }
- .input-group__area input{
-     width: 100%;
-     border: none;
-     outline: none;
- }
- .background-banner{
+}
+
+.input-group__label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.input-group__area {
+    display: flex;
+    border: 1px solid #c6c6c6;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.input-group__area img {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    margin-right: 8px;
+}
+
+.input-group__area input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+
+.background-banner {
     position: absolute;
     top: 0;
     left: 0;
@@ -159,11 +161,168 @@ html{
     z-index: 0;
     margin: 0;
 }
-.background-banner img{
+
+.background-banner img {
     object-fit: cover;
     width: 100%;
     height: 100%;
     z-index: 0;
-    border: 1px solid #000000  ;
-  
+    border: 1px solid #000000;
 }
+
+
+
+
+@media (max-width: 1380px) {
+    .container {
+        max-width: 87.5rem;
+        padding: 0 1rem;
+        margin: 0 auto;
+    }
+    .navbar-container {
+        max-width: 1372px;
+        padding-left: 8px;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-link,
+    .login {
+        padding: 10px 20px;
+        text-align: left;
+    }
+
+    .signup-btn {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .nav-search.input-group__area {
+        max-width: 100%;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .review-for,
+    .review-text,
+    .review-from,
+    .review-link {
+        margin-left: 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-link,
+    .login {
+        padding: 10px 20px;
+        text-align: left;
+    }
+
+    .signup-btn {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .nav-search.input-group__area {
+        max-width: 100%;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .review-for,
+    .review-text,
+    .review-from,
+    .review-link {
+        margin-left: 20px;
+    }
+
+    .container {
+        padding: 0 1rem;
+        margin-top: 2rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .text-h1 {
+        font-size: 36px;
+    }
+
+    .text-h2 {
+        font-size: 28px;
+    }
+
+    .text-h3 {
+        font-size: 24px;
+    }
+
+    .text-h4 {
+        font-size: 20px;
+    }
+
+    .text-body-copy {
+        font-size: 16px;
+    }
+
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-link,
+    .login {
+        padding: 10px 20px;
+        text-align: left;
+    }
+
+    .signup-btn {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .nav-search.input-group__area {
+        max-width: 100%;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .review-for,
+    .review-text,
+    .review-from,
+    .review-link {
+        margin-left: 10px;
+    }
+
+    .container {
+        padding: 0 1rem;
+        margin-top: 1rem;
+    }
+}
+
+
