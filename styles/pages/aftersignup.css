@@ -1,21 +1,21 @@
 .aftersignup__banner {
-    position: absolute;
+    position: relative;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .aftersignup__banner .text-h2{
     text-align: center;
     margin-top: 50px;
-    margin-left: 300px;
     font-weight: 600;
     
 }
 .form-what-are-you {
-    width: 800px; 
     margin: auto; 
     display: flex;
     justify-content: space-between;
-    margin-left: 350px;
 }
 
 .form-what-are-you1, .form-what-are-you2 {
@@ -53,4 +53,15 @@
     align-items: center;
 }
 .why-us-category .text-h4 {
-    margin-bottom: 15px;}
+    margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 991px) {
+    .form-what-are-you {
+        flex-direction: column;
+    }
+
+    .form-what-are-you2 {
+        margin-left: 0;
+    }
+}

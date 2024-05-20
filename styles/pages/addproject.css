@@ -1,9 +1,7 @@
-.uploadimages .title-itemslong .button-primary{
-    margin-left: 100px;
-}
-.save-button .title-itemslong .button-primary{
+.save-button .title-itemslong .button-primary {
+    display: block;
     width: 80px;
-   margin-left: 700px;
+    margin: 20px auto;
 }
 
 .toggle-room-checkbox {
@@ -69,39 +67,3 @@
  .message .text-h3{
     margin-top:20px;
  }
-  
- @media screen and (max-width: 480px) {
-    .save-button .title-itemslong .button-primary {
-        margin-left: 10px;
-        margin-right: 10px;
-        padding: 10px 20px;
-    }
-    .uploadimages .title-itemslong .button-primary{
-        height: 100px; 
-    }
-}
-
-@media screen and (max-width: 768px)  {
-    .uploadimages .title-itemslong .button-primary,
-    .save-button .title-itemslong .button-primary {
-        margin-left: 100px; 
-        width: auto;
-        margin-right: 100px;
-    }
-}
-@media screen and (max-width: 991px)  {
-    .uploadimages .title-itemslong .button-primary,
-    .save-button .title-itemslong .button-primary {
-        margin-left: 150px; 
-        width: auto;
-        margin-right: 150px; 
-    }
-}
-@media screen and (max-width: 1380px) {
-    .uploadimages .title-itemslong .button-primary,
-    .save-button .title-itemslong .button-primary {
-        margin-left: 200px; 
-        width: auto;
-        margin-right: 200px;
-    }
-}

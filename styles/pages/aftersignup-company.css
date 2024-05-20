@@ -38,7 +38,7 @@
     margin-left: 10px;
 }
 .button-primary1{
-    display:inline-block;
+    display: block;
     background-color: #FFA500;
     color: #000000;
     border-radius: 25px;
@@ -52,5 +52,5 @@
     text-align: center; 
     z-index: 10;
     position: relative;
-    margin-left: 650px;
+    margin: 20px auto;
 }
