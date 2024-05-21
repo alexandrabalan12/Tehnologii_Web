@@ -312,7 +312,7 @@
     }
 
     .why-us-container img{
-        display:block;
+        display: none;
     }
 
     .why-us-category {

@@ -52,3 +52,40 @@
     
 }
 
+@media (max-width: 1380px){
+
+}
+
+@media (max-width: 991px){
+
+}
+
+@media (max-width: 768px){
+
+}
+
+@media (max-width: 480px) {
+    .projects-applicants img{
+        display:none;
+    }
+    .projects-applicants-right .button-primary{
+            margin: 20px 20px;
+            width: auto;
+           font-size: 14px;
+           height: auto;
+        
+    }
+    .projects-applicants {
+        margin: 20px auto;
+    }
+    .projects-applicants-right .why-us-title {
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    .projects-applicants-right .text-body-copy{
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+}
+
