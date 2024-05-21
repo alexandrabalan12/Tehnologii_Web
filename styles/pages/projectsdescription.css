@@ -4,6 +4,8 @@
         justify-content: center;
         align-items: center;
         height: 300px; 
+        margin-bottom: 0px;
+        margin-top: -80px;
     }
     
 
@@ -23,17 +25,16 @@
 }
 
 .info-field1 .text-body-copy{
-    margin-left: 12px;
     margin-top: 4px;
+    margin-bottom: 20px;
 }
 
 
 .info-field1{
-    display: flex;
     text-align: left;
     padding: 10px 4px;
     margin-bottom: -70px;
-    margin-top: 15px;
+    margin-top: 0px;
 }
 
 .fortext{

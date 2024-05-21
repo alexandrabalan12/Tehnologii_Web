@@ -81,6 +81,14 @@
     padding: 4px 4px;
 
 }
+.text-body-copy-underline{
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.2;
+    padding: 4px 4px;
+    text-decoration: underline;
+   
+}
  .info-field .text-body-copy {
     margin-left: 12px;
     margin-top: 4px;
