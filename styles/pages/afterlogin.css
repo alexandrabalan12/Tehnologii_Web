@@ -17,7 +17,7 @@
     display: block;
     margin-top: 40px;
     align-items: center;
-    margin-left: 80px;
+    
 }
 .projects-applicants-right .why-us-title {
  margin-bottom: 100px;  
@@ -52,17 +52,6 @@
     
 }
 
-@media (max-width: 1380px){
-
-}
-
-@media (max-width: 991px){
-
-}
-
-@media (max-width: 768px){
-
-}
 
 @media (max-width: 480px) {
     .projects-applicants img{
@@ -85,6 +74,10 @@
     .projects-applicants-right .text-body-copy{
         margin-left: 0;
         margin-bottom: 20px;
+    }
+    .projects-applicants-right .short-description .input-group__area{
+        margin: 0 0;
+        width: 100%;
     }
 
 }
