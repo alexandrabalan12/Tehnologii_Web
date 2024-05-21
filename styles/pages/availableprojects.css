@@ -8,7 +8,7 @@
 }
 .projects .details-account1{
     margin-bottom: 70px;
-    height: 350px;
+    height: auto;
 }
 .projects .text-body-copy1{
     margin-bottom: -10px;
@@ -26,7 +26,7 @@
     margin-top: 48px;
 }
 .container1 .text-h4{
-    margin-left: 100px;
+    margin-left: 140px;
 }
 .select-option .text-body-copy1{
     margin-top: 50px;
