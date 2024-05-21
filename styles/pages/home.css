@@ -311,6 +311,10 @@
         padding: 0 10px;
     }
 
+    .why-us-container img{
+        display:block;
+    }
+
     .why-us-category {
         align-items: center;
         text-align: center;
