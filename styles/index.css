@@ -340,6 +340,10 @@ html {
     .text-h4 {
         font-size: 20px;
     }
+    .text-h4-bold {
+        font-size: 20px;
+    }
+
 
     .text-body-copy {
         font-size: 16px;
