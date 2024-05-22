@@ -64,7 +64,6 @@
     font-weight: bold;
 }
 
-/* Ecran mare: >= 1380px */
 @media (min-width: 1380px) {
     .container-account {
         margin: 0 auto;
@@ -72,7 +71,6 @@
     }
 }
 
-/* Ecran mediu: 992px - 1379px */
 @media (max-width: 1379px) {
     .container-account {
         flex-direction: row;
@@ -82,7 +80,7 @@
     }
 }
 
-/* Ecran mediu: 768px - 991px */
+
 @media (max-width: 991px) {
     .container-account {
         flex-direction: column;
@@ -102,7 +100,6 @@
     }
 }
 
-/* Ecran mic: 480px - 767px */
 @media (max-width: 767px) {
     .container-account {
         padding: 0 10px;
