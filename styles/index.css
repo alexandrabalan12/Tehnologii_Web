@@ -120,6 +120,7 @@ html {
     background: none;
     width: 40px;
     height: 40px;
+    margin-left: auto;
 }
 
 .navbar-mobile-button img {
@@ -143,7 +144,6 @@ html {
     font-size: 48px;
     color: #000000;
     text-align: center;
-    margin: auto;
     text-decoration: none;
 }
 

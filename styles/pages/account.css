@@ -17,7 +17,7 @@
     border: 2px solid #b1770b;
     border-radius: 20px;
     width: 269px;
-    height: 180px;
+    height: min-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,8 +123,8 @@
 .details-account1 {
     border: 2px solid #b1770b;
     border-radius: 20px;
-    margin-left: 12px ;
-    width: 1100px;
+    margin-left: 12px;
+    width: 100%;
     height: auto;
 }
 
@@ -167,3 +167,8 @@
 }
 
 
+@media only screen and (max-width: 1380px) {
+    .info-field {
+        flex-direction: column;
+    }
+}

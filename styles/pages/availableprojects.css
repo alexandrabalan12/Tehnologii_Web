@@ -1,10 +1,9 @@
 .projects{
     margin-top: 100px;
-    margin-left: 150px;
 }
 .projects .text-body-copy-selected{
     text-align: center;
-    margin-left: 250px;
+    width: 100%;
 }
 .projects .details-account1{
     margin-bottom: 70px;
@@ -18,7 +17,6 @@
     margin-bottom: -10px;
 }
 .container1{
-   
     display: flex;
     max-width: 1400px ;
     width: 100%;
@@ -26,12 +24,28 @@
     margin: 0 auto;
     margin-top: 48px;
 }
-.container1 .text-h4{
-    margin-left: 140px;
+
+.container1 > :first-child {
+    margin-right: 24px;
 }
+
+.projects .details-account1 .text .info-field-dot {
+    position: relative;
+}
+
+.projects .details-account1 .text .info-field-dot::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: -4px;
+    width: 6px;
+    height: 6px;
+    background-color: black;
+    border-radius: 100%;
+}
+
 .select-option .text-body-copy1{
-    margin-top: 50px;
-    margin-left: 50px;
+    margin-bottom: 16px;
 }
 #select-standard {
     flex: 1; 
@@ -42,7 +56,6 @@
     color: black;
     border-radius: 10px; 
     cursor: pointer; 
-    margin-left: 50px;
     width: 160px;
     outline: none; 
   }

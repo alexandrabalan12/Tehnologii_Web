@@ -50,6 +50,12 @@
     padding-top: 20px; 
 }
 
+.why-us-illustration {
+    max-width: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
 .review {
     border-top: 2px solid orange; 
     padding-top: 20px;
@@ -102,7 +108,7 @@
     align-items: center;
     cursor: pointer; 
     margin-top: 80px;
-    margin-left:1080px;  
+    justify-content: end;
 }
 
 .review-link .text-body-copy {

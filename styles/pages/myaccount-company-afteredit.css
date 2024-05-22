@@ -1,8 +1,7 @@
 .modify-company-name .input-group__area{
     width: 350px;
-    margin-left: 20px;
+    margin-top: 16px;
     border: 1px solid black;
-    margin-top: -7px;
    
 }
 .modify-company-name .input-group__area input {
@@ -12,22 +11,20 @@
 }
 .number-members .input-group__area{
     width: 180px;
-    margin-left: 20px;
+    margin-top: 16px;
     border: 1px solid black;
-    margin-top: -7px;
-
-   
 }
+
 .number-members .input-group__area input{
     text-align: center;
     font-size: 20px;
 }
 .short-description .input-group__area{
-   
-    margin-left: 20px;
+    margin-top: 16px;
     border: 1px solid black;
     flex: 1;
-    width: 850px;
+    width: 100%;
+    min-width: 600px;
     height: 200px;
     display: flex;
     flex-direction: column; 
@@ -40,7 +37,7 @@
 }
 .modify-answer-travel .input-group__area{
         width: 70px;
-        margin-left: 20px;
+        margin-top: 16px;
         border: 1px solid black;
         margin-top: -7px;
 }
@@ -50,14 +47,20 @@
 }
 
 .container-account .details-account{
-    height: 630px;
+    height: auto;
+}
+
+.save-changes {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .save-changes .button-primary{
     font-size: 20px;
     width: 200px;
-    height: 40px; 
-    margin-left: 1250px;
+    height: 40px;
+    margin-left: auto;
     font-weight: bold;
 }
 
@@ -120,6 +123,10 @@
     }
     .save-changes .button-primary {
         width: 100%;
+    }
+
+    .short-description .input-group__area {
+        min-width: 0;
     }
 }
 
