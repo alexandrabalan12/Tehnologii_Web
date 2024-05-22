@@ -88,6 +88,7 @@ html {
     padding: 10px 0;
     position: relative;
     z-index: 1000;
+    width: 100%;
 }
 
 .navbar-container {
@@ -295,7 +296,9 @@ html {
         flex-direction: column;
         width: 100%;
     }
-
+    .navbar{
+        width: auto;
+    }
     .nav-link,
     .login {
         padding: 10px 20px;

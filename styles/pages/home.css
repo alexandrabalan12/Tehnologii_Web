@@ -247,6 +247,8 @@
     .review-link {
         margin-left: 20px;
     }
+   
+
 
     .signup-btn {
         margin-left: 0;
@@ -298,6 +300,8 @@
     .home-header {
         height: auto;
         padding: 10px;
+        width: auto;
+
     }
 
     .home-header__content {

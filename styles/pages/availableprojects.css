@@ -1,6 +1,6 @@
 .projects{
     margin-top: 100px;
-    margin-left: 250px;
+    margin-left: 150px;
 }
 .projects .text-body-copy-selected{
     text-align: center;
@@ -9,6 +9,7 @@
 .projects .details-account1{
     margin-bottom: 70px;
     height: auto;
+    justify-content: center;
 }
 .projects .text-body-copy1{
     margin-bottom: -10px;
@@ -52,7 +53,8 @@
    text-decoration: none;
    color: black;
 }
- 
+
+
 
 
   

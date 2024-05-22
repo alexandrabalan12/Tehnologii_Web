@@ -1,7 +1,7 @@
 
 .carousel {
-    width: 520px; /* Set the desired width */
-    height: 360px; /* Set the desired height */
+    width: 520px; 
+    height: 360px; 
     overflow: hidden;
     position: relative;
     border-radius: 10px;
@@ -35,7 +35,7 @@
     height: 100%;
     max-width: 100%;
     max-height: 100%;
-    object-fit: cover; /* Ensures the image covers the entire area without being cropped */
+    object-fit: cover; 
     display: block;
 }
 

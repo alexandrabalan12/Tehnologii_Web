@@ -51,6 +51,41 @@
    
     
 }
+@media (max-width: 991px) {
+    .navbar-container .signup-btn{
+        margin-left:0;
+    }
+    .projects-applicants {
+        flex-direction: column;
+    }
+    .projects-applicants img{
+        height: 400px;
+        width: auto;
+    }
+    .short-description {
+        display: flex;
+        justify-content: center;
+    }
+    .short-description .input-group__area {
+        margin: 0;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    .projects-applicants img{
+        display:none;
+    }
+    .short-description {
+        display: flex;
+        justify-content: center;
+    }
+    .short-description .input-group__area {
+        margin: 0;
+    }
+
+}
 
 
 @media (max-width: 480px) {

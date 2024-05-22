@@ -60,3 +60,67 @@
     margin-left: 1250px;
     font-weight: bold;
 }
+
+/* Ecran mare: >= 1380px */
+@media (min-width: 1380px) {
+    .container-account {
+        margin: 0 auto;
+        max-width: 1280px;
+    }
+}
+
+/* Ecran mediu: 992px - 1379px */
+@media (max-width: 1379px) {
+    .container-account {
+        flex-direction: row;
+    }
+    .save-changes .button-primary {
+        margin-left: 0;
+    }
+}
+
+/* Ecran mediu: 768px - 991px */
+@media (max-width: 991px) {
+    .container-account {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-account {
+        max-width: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .details-account {
+        width: 100%;
+        max-width: none;
+    }
+    .save-changes {
+        justify-content: center;
+    }
+}
+
+/* Ecran mic: 480px - 767px */
+@media (max-width: 767px) {
+    .container-account {
+        padding: 0 10px;
+    }
+    .menu-account .text-body-copy-selected, .menu-account .text-body-copy {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .details-account .input-group__area {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .details-account .input-group__area input, .details-account .input-group__area textarea {
+        width: 100%;
+    }
+    .save-changes .button-primary {
+        width: 100%;
+    }
+}
+
+ 
