@@ -171,3 +171,26 @@
     </div>
   </body>
 </html>
+
+<script>
+  window.addEventListener("load", () => {
+    // continut care va veni din backend
+
+    const titlu = `Two-Story House Renovation`;
+    const descriere = `Complete makeover of a vintage 1990s home, upgrading to modernaesthetics and functionalities, including energy-efficient windows, new HVAC system, and smart home technology integration.`;
+    const team_needed = `Interior Design`;
+
+    // elemente care trebuie populate cu continut
+    const project_title = document.getElementById("project-title");
+    const project_description = document.getElementById("project-description");
+    const project_team = document.getElementById("project-team");
+
+    function createProject() {
+      // continut text descriere
+      project_title.innerText = titlu;
+      project_description.innerText = descriere;
+      project_team.innerText = team_needed;
+    }
+    createProject();
+  });
+</script>
