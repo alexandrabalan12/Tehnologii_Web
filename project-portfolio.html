@@ -39,10 +39,10 @@
     </div>
 </nav>
 <div class="title">
-    <h2 class="text-h2">Two-Story House Renovation</h2>
+    <h2 class="text-h2" id="project-title"></h2>
  </div>
     <div class="title-company">
-         <h4 class="text-h4"> Interior Design in need</h4>
+         <h4 class="text-h4" id="subtitle">  </h4>
    </div>
  
    <div class="container">
@@ -103,6 +103,9 @@
 <script>
 window.addEventListener('load', () => {
     // continut care va veni din backend
+
+    const titlu= `Two-Story House Renovation`;
+    const subtitlu = `Interior Design`;
     const continut = `
         A comprehensive interior renovation of a two-story residential house located in
         Iasi,Romania.The goal is to
@@ -119,6 +122,8 @@ window.addEventListener('load', () => {
     ];
 
     // elemente care trebuie populate cu continut
+    const project_title = document.getElementById('project-title');
+    const subtitle = document.getElementById('subtitle');
     const imagesContainer = document.getElementById('carousel-images-container');
     const indicatorsContainer = document.getElementById('carousel-indicators-container');
     const descriere = document.getElementById('descriere');
@@ -201,6 +206,8 @@ window.addEventListener('load', () => {
             indicatorsContainer.appendChild(indicator);
 
             // continut text descriere
+            project_title.innerText = titlu;
+            subtitle.innerText = subtitlu;
             descriere.innerText = continut;
         });
     };
