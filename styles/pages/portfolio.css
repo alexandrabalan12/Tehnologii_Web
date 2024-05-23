@@ -1,18 +1,17 @@
-.projects-portfolio .details-account1{
-    margin-bottom: 30px;
-    height: auto;
+.projects-portfolio .details-account1 {
+  margin-bottom: 30px;
+  height: auto;
+  margin-left: 0;
 }
-.projects-portfolio {
-    margin-left: 20px;
+
+.add-project .button-primary {
+  font-size: 20px;
+  width: 200px;
+  height: 40px;
+  margin-left: 1250px;
+  font-weight: bold;
 }
-.add-project .button-primary{
-    font-size: 20px;
-    width: 200px;
-    height: 40px; 
-    margin-left: 1250px;
-    font-weight: bold;
-}
-.add-project{
-    margin-top: -110px;
-    margin-bottom: 40px;
+.add-project {
+  margin-top: -110px;
+  margin-bottom: 40px;
 }

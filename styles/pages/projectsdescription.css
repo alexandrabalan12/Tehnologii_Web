@@ -1,69 +1,81 @@
- 
-    .title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 300px; 
-        margin-bottom: 0px;
-        margin-top: -80px;
-    }
-    
-
-.description{
-    border-top: 2px solid orange;
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  margin-bottom: 0px;
+  margin-top: -80px;
 }
 
-.description .text-body-copy{
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-.description .text-h4{
-    text-decoration: underline;
-    margin-bottom: 50px;
-    margin-top: 100px;
-
+.description {
+  border-top: 2px solid orange;
 }
 
-.info-field1 .text-body-copy{
-    margin-top: 4px;
-    margin-bottom: 20px;
+.description .text-body-copy {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.description .text-h4 {
+  text-decoration: underline;
+  margin-bottom: 50px;
+  margin-top: 100px;
 }
 
-
-.info-field1{
-    text-align: left;
-    padding: 10px 4px;
-    margin-bottom: -70px;
-    margin-top: 0px;
+.info-field1 .text-body-copy {
+  margin-top: 4px;
+  margin-bottom: 20px;
 }
 
-.fortext{
-    margin-top: -110px;
-    margin-bottom: -60px;
-    margin-left: 10px;
+.info-field1 {
+  text-align: left;
+  padding: 10px 4px;
+  margin-bottom: -70px;
+  margin-top: 0px;
 }
 
-.title-items .text-h2{
-    margin-top: 80px;
-   
+.fortext {
+  margin-top: -110px;
+  margin-bottom: -60px;
+  margin-left: 10px;
 }
-.title-items .button-primary{
-    display:inline-block;
-    background-color: #FFA500;
-    color: #000000;
-    border-radius: 25px;
-    border: 1px solid #000000  ;
-    padding: 6px 12px;
-    text-decoration: none;
-    font-size: 20px;
-    margin-top: 50px ;
-    width: 300px;
-    height: 40px; 
-    z-index: 10;
-    position: relative;
-    text-align: centers;
-    margin-left: 550px;
-    font-weight: bold;
+.title-items {
+  margin-bottom: 50px;
+}
+.title-items .text-h2 {
+  margin-top: 80px;
+}
+.title-items .button-primary {
+  display: inline-block;
+  background-color: #ffa500;
+  color: #000000;
+  border-radius: 25px;
+  border: 1px solid #000000;
+  padding: 6px 12px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 50px;
+  width: 300px;
+  height: 40px;
+  z-index: 10;
+  position: relative;
+  text-align: centers;
+  margin-left: 550px;
+  font-weight: bold;
+}
+@media (max-width: 991px) {
+  .title .text-h2 {
+    font-size: 40px;
+  }
 }
 
+@media (max-width: 768px) {
+  .title .text-h2 {
+    font-size: 40px;
+  }
+}
 
+@media (max-width: 580px) {
+  .title .text-h2 {
+    font-size: 30px;
+  }
+}

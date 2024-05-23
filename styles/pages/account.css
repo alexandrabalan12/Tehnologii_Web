@@ -1,174 +1,168 @@
-
-.text-h2-title{
-    font-size: 49px;
-    font-weight:500;
-    line-height: 1.2;
-    margin-left: 76px;
-    margin-bottom: 44px;
-    margin-top: 24px;
-    
+.text-h2-title {
+  font-size: 49px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-left: 76px;
+  margin-bottom: 44px;
+  margin-top: 24px;
 }
-.container-account{
-    display: flex;
-    max-width: 1372px ;
-    margin: 0 auto;
+.container-account {
+  display: flex;
+  max-width: 1372px;
+  margin: 0 auto;
 }
 .menu-account {
-    border: 2px solid #b1770b;
-    border-radius: 20px;
-    width: 269px;
-    height: min-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    padding: 4px; 
+  border: 2px solid #b1770b;
+  border-radius: 20px;
+  width: 269px;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
 }
 
 .menu-account .text {
-    width: 100%; 
-    text-align: left; 
-    padding: 4px 4px; 
-    display: block;
-    margin-bottom: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 4px 4px;
+  display: block;
+  margin-bottom: 12px;
 }
 
 .menu-account .text-body-copy {
-    color: black;
-    text-decoration: none;
-    display: block;
-    width: 100%; 
-    margin-bottom: 4px; 
+  color: black;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  margin-bottom: 4px;
 }
 
 .menu-account .text-body-copy-selected {
-    color: #ffa500;
-    text-decoration: none;
-    display: block;
-    width: 100%; 
-    font-size: 25px;
-    font-weight: 400;
-    margin-bottom: 4px;
+  color: #ffa500;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 4px;
 }
 
-.text{
-    margin-top: 12px;
-    margin-left: 28px;
-    text-decoration: none;
-    line-height: 1.2;
-    padding: 4px 4px;
+.text {
+  margin-top: 12px;
+  margin-left: 28px;
+  text-decoration: none;
+  line-height: 1.2;
+  padding: 4px 4px;
 }
 
-.text-body-copy-selected{
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 1.2;
-    color: #ffa500;
+.text-body-copy-selected {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #ffa500;
 }
 
 .details-account {
-    border: 2px solid #b1770b;
-    border-radius: 20px;
-    margin-left: 12px ;
-    width: 1138px;
-    height: 520px;
+  border: 2px solid #b1770b;
+  border-radius: 20px;
+  margin-left: 12px;
+  width: 1138px;
+  height: 520px;
 }
 
-.text-body-copy-bold{
-    font-size: 25px;
-    font-weight: 600;
-    line-height: 1.2;
-    padding: 4px 4px;
-
+.text-body-copy-bold {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 4px 4px;
 }
-.text-body-copy-underline{
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 1.2;
-    padding: 4px 4px;
-    text-decoration: underline;
-   
+.text-body-copy-underline {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 4px 4px;
+  text-decoration: underline;
 }
- .info-field .text-body-copy {
-    margin-left: 12px;
-    margin-top: 4px;
+.info-field .text-body-copy {
+  margin-left: 12px;
+  margin-top: 4px;
 }
-.info-field{
-    display: flex;
-    text-align: left;
-    padding: 8px 4px;
-
+.info-field {
+  display: flex;
+  text-align: left;
+  padding: 8px 4px;
 }
-.edit-link{
-    margin-left: 1404px;
-    margin-top: 12px;
+.edit-link {
+  margin-left: 1404px;
+  margin-top: 12px;
 }
-.edit-link .text-body-copy{
-    font-size: 20px;
-    color: black;
+.edit-link .text-body-copy {
+  font-size: 20px;
+  color: black;
 }
 .info-field .text-body-copy-selected {
-    margin-left: 12px;
-    margin-top: 4px;
-    font-size: 31px;
-    margin-bottom: 10px;
+  margin-left: 12px;
+  margin-top: 4px;
+  font-size: 31px;
+  margin-bottom: 10px;
 }
-.info-field .text-body-copy-bold{
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.2;
-    padding: 4px 4px;
-    text-decoration: underline;
+.info-field .text-body-copy-bold {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 4px 4px;
+  text-decoration: underline;
 }
 .details-account1 {
-    border: 2px solid #b1770b;
-    border-radius: 20px;
-    margin-left: 12px;
-    width: 100%;
-    height: auto;
+  border: 2px solid #b1770b;
+  border-radius: 20px;
+  margin-left: 12px;
+  width: 100%;
+  height: auto;
 }
 
 .menu-account1 {
-    border: 2px solid #b1770b;
-    border-radius: 20px;
-    width: 250px;
-    height: 140px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    padding: 4px; 
+  border: 2px solid #b1770b;
+  border-radius: 20px;
+  width: 250px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
 }
 
 .menu-account1 .text {
-    width: 100%; 
-    text-align: left; 
-    padding: 4px 4px; 
-    display: block;
-    margin-bottom: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 4px 4px;
+  display: block;
+  margin-bottom: 12px;
 }
 
 .menu-account1 .text-body-copy {
-    color: black;
-    text-decoration: none;
-    display: block;
-    width: 100%; 
-    margin-bottom: 4px; 
+  color: black;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  margin-bottom: 4px;
 }
 
 .menu-account1 .text-body-copy-selected {
-    color: #ffa500;
-    text-decoration: none;
-    display: block;
-    width: 100%; 
-    font-size: 25px;
-    font-weight: 400;
-    margin-bottom: 4px;
+  color: #ffa500;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 4px;
 }
 
-
 @media only screen and (max-width: 1380px) {
-    .info-field {
-        flex-direction: column;
-    }
+  .info-field {
+    flex-direction: column;
+  }
 }

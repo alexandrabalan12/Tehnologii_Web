@@ -20,21 +20,32 @@
 
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="aftersignup-client.html" class="logo1">PlaCo</a>
-            <div class="nav-menu">
-                <a href="availableprojects.html" class="nav-link">Your projects</a>
-                <a href="aboutus-afterlogin.html" class="nav-link">About us</a>
-            </div>
-
+          <a href="index.html" class="logo1">PlaCo</a>
+          <input
+            type="checkbox"
+            class="navigation-mobile-toggle"
+            id="navi-toggle"
+          />
+          <label class="navbar-mobile-button" for="navi-toggle">
+            <img src="./assets/nav-menu.png" alt="Menu" />
+          </label>
+          <div class="nav-menu" id="navbar-menu">
+            <!-- continut navigatie -->
+            <a href="login.html" class="nav-link">Your projects</a>
+            <a href="aboutus.html" class="nav-link">About us</a>
             <div class="nav-search input-group__area">
-                <img src="./assets/icon_search.png" />
-                <input id="search" name="seach" type="search" placeholder="Search for projects or companies" />
+              <img src="./assets/icon_search.png" />
+              <input
+                id="search"
+                name="seach"
+                type="search"
+                placeholder="Search for projects or companies"
+              />
             </div>
-           
-            <a href="index.html" class="signup-btn">Log out</a>
-
+            <a href="signup.html" class="signup-btn">Log out</a>
+          </div>
         </div>
-    </nav>
+      </nav>
     <div class="title">
         <h2 class="text-h2">Two-Story House Renovation</h2>
      </div>
@@ -114,7 +125,7 @@
                     Master Bathroom: Redesign the master bathroom to include a double vanity, a walk-in shower, and a freestanding bathtub. Install modern tiles and luxury finishes.
                 </p>
            
-                <p class="text-body-copy">
+            <p class="text-body-copy">
                     Guest Bathrooms: Update guest bathrooms with new tiles, fixtures, and vanities.Install energy-efficient 
                     lighting and ventilation. 
                 </p>

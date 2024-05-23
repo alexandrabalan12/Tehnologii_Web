@@ -1,110 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/pages/home.css" />
+    <link rel="stylesheet" href="./styles/pages/afterlogin.css" />
+    <link rel="stylesheet" href="./styles/pages/account.css" />
+    <link rel="stylesheet" href="./styles/pages/projectsdescription.css" />
+    <link rel="stylesheet" href="./styles/pages/applicationpage.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/index.css">
-    <link rel="stylesheet" href="./styles/pages/home.css">
-    <link rel="stylesheet" href="./styles/pages/afterlogin.css">
-    <link rel="stylesheet" href="./styles/pages/account.css">
-    <link rel="stylesheet" href="./styles/pages/projectsdescription.css">
-    <link rel="stylesheet" href="./styles/pages/applicationpage.css">
-</head>
-
-<body>
-
+  <body>
     <nav class="navbar">
-        <div class="navbar-container">
-            <a href="aftersignup-clientwithproject.html" class="logo1">PlaCo</a>
-            <div class="nav-menu">
-                <a href="availableprojects.html" class="nav-link">Your projects</a>
-                <a href="aboutus-afterlogin.html" class="nav-link">About us</a>
-            </div>
-
-            <div class="nav-search input-group__area">
-                <img src="./assets/icon_search.png" />
-                <input id="search" name="seach" type="search" placeholder="Search for projects or companies" />
-            </div>
-           
-            <a href="index.html" class="signup-btn">Log out</a>
-
+      <div class="navbar-container">
+        <a href="index.html" class="logo1">PlaCo</a>
+        <input
+          type="checkbox"
+          class="navigation-mobile-toggle"
+          id="navi-toggle"
+        />
+        <label class="navbar-mobile-button" for="navi-toggle">
+          <img src="./assets/nav-menu.png" alt="Menu" />
+        </label>
+        <div class="nav-menu" id="navbar-menu">
+          <!-- continut navigatie -->
+          <a href="login.html" class="nav-link">Your projects</a>
+          <a href="aboutus.html" class="nav-link">About us</a>
+          <div class="nav-search input-group__area">
+            <img src="./assets/icon_search.png" />
+            <input
+              id="search"
+              name="seach"
+              type="search"
+              placeholder="Search for projects or companies"
+            />
+          </div>
+          <a href="signup.html" class="signup-btn">Log out</a>
         </div>
+      </div>
     </nav>
-    <div class="title">
-        <h2 class="text-h2">Two-Story House Renovation</h2>
-    </div>
     <div class="container">
+      <div class="title">
+        <h2 class="text-h2">Two-Story House Renovation</h2>
+      </div>
 
-        <h2 class="text-h2">Description</h2>
-        <div class="description">
-            <div class="text-body-copy">A comprehensive interior renovation of a two-story residential house located in
-                Iasi,Romania.The goal is to
-                modernize the interior spaces, enhance functionality, and improve the overall aesthetic of the property,
-                aligning
-                with the homeowner’s vision.The renovation will focus on updating finishes, creating an open-concept
-                layout,
-                and enhancing the home's overall comfort and usability.</div>
+      <h2 class="text-h2">Description</h2>
+      <div class="description">
+        <div class="text-body-copy">
+          A comprehensive interior renovation of a two-story residential house
+          located in Iasi,Romania.The goal is to modernize the interior spaces,
+          enhance functionality, and improve the overall aesthetic of the
+          property, aligning with the homeowner’s vision.The renovation will
+          focus on updating finishes, creating an open-concept layout, and
+          enhancing the home's overall comfort and usability.
         </div>
-    <div class="message">
+      </div>
+      <div class="message">
         <h2 class="text-h2">Your message</h2>
-        <div class="text-body-copy">Short message about your previous experience with projects similar to this one and share your ideas 
-            regarding this one.</div>
-                 <div class="input-group__area">
-                    <textarea id="your-message" name="your-message" placeholder="Your message..."></textarea>
-                    </div>
-     </div>
-     <div class="message1">
+        <div class="text-body-copy">
+          Short message about your previous experience with projects similar to
+          this one and share your ideas regarding this one.
+        </div>
+        <div class="input-group__area">
+          <textarea
+            id="your-message"
+            name="your-message"
+            placeholder="Your message..."
+          ></textarea>
+        </div>
+      </div>
+      <div class="message1">
         <h2 class="text-h2">Delivery date (aprox.)</h2>
-        <div class="text-body-copy">Provide estimated timelines for projects of similar scope.</div>
-            <div class="details-aftersignup">
-                 <div class="input-group__area">
-                    <input id="delivery-date" name="delivery-date" type="date" placeholder="MM/YYYY" />
-                    </div>
-            </div>
-     </div>
-     <div class="message1">
+        <div class="text-body-copy">
+          Provide estimated timelines for projects of similar scope.
+        </div>
+        <div class="details-aftersignup">
+          <div class="input-group__area">
+            <input
+              id="delivery-date"
+              name="delivery-date"
+              type="date"
+              placeholder="MM/YYYY"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="message1">
         <h2 class="text-h2">Your price range</h2>
-        <div class="text-body-copy">Please outline your price range for this project ( in €).</div>
-            <div class="details-aftersignup">
-                 <div class="input-group__area">
-                    <input id="price-range" name="price-range" type="text" placeholder="Your answer..." />
-                    </div>
-            </div>
-     </div>
-     <div class="message1">
+        <div class="text-body-copy">
+          Please outline your price range for this project ( in €).
+        </div>
+        <div class="details-aftersignup">
+          <div class="input-group__area">
+            <input
+              id="price-range"
+              name="price-range"
+              type="text"
+              placeholder="Your answer..."
+            />
+          </div>
+        </div>
+      </div>
+      <div class="message1">
         <h2 class="text-h2">Your contact info</h2>
-        <div class="text-body-copy">Please provide the phone number you want to get notified on.</div>
-            <div class="details-aftersignup">
-                 <div class="input-group__area">
-                    <input id="contact-info-company" name="contact-info-company" type="text" placeholder="Your phone number..." />
-                    </div>
-            </div>
-     </div>
-     <div class="title-itemslong">
-     <a href="two-story-houseconfirmation.html" class="button-primary">CONFIRM YOUR APPLICATION</a> 
+        <div class="text-body-copy">
+          Please provide the phone number you want to get notified on.
+        </div>
+        <div class="details-aftersignup">
+          <div class="input-group__area">
+            <input
+              id="contact-info-company"
+              name="contact-info-company"
+              type="text"
+              placeholder="Your phone number..."
+            />
+          </div>
+        </div>
+      </div>
+      <div class="title-itemslong">
+        <a href="two-story-houseconfirmation.html" class="button-primary"
+          >CONFIRM YOUR APPLICATION</a
+        >
+      </div>
+
+      <h2 class="text-h2">Contact us</h2>
+      <div class="contact-info">
+        <div class="contact-mail">
+          <img src="./assets/email.png" />
+          <p class="text-body-copy">emailemail@gmail.com</p>
+        </div>
+        <div class="contact-phone">
+          <img src="./assets/phone.png" />
+          <p class="text-body-copy">+407.12.123.123</p>
+        </div>
+        <div class="contact-adress">
+          <img src="./assets/location.png" />
+          <p class="text-body-copy">Iasi, Romania</p>
+        </div>
+      </div>
     </div>
-    </div>
-     <div class="container">
-    
-         <h2 class="text-h2">Contact us</h2>
-         <div class="contact-info">
-             <div class="contact-mail">
-                 <img src="./assets/email.png">
-                 <p class="text-body-copy">emailemail@gmail.com</p>
-             </div>
-             <div class="contact-phone">
-                 <img src="./assets/phone.png">
-                 <p class="text-body-copy">+407.12.123.123</p>
-             </div>
-             <div class="contact-adress">
-                 <img src="./assets/location.png">
-                 <p class="text-body-copy">Iasi, Romania</p>
-             </div>
-            
-         </div>
-     </div>
-</body>
+  </body>
 </html>
