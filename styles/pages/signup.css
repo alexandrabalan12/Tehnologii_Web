@@ -20,11 +20,11 @@
 }
 @media (max-width: 768px) {
     .form-signup {
-        width: 350px;
+        width: 400px;
     }
 }
 @media (max-width: 480px) {
     .form-signup {
-        width: 300px;
+        width: 400px;
     }
 }

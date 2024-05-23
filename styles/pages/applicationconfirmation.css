@@ -1,57 +1,73 @@
-.confirmation img{
-    width: 500px;
-    height:500px;
-    margin-top: 500px;
+.confirmation img {
+  width: 500px;
+  height: 500px;
+  margin-top: 500px;
 }
-.confirmation{
-   display: flex;
-   flex-direction: column;
-   align-items: center; 
-   justify-content: center; 
-   height: 300px; 
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
 }
-.confirmation .text-h2{
-    text-align: center;
-    margin-top: 20px; 
+.confirmation .text-h2 {
+  text-align: center;
+  margin-top: 20px;
 }
-.confirmation .text-h4{
-    text-align: center;
-    margin-top: 20px; 
+.confirmation .text-h4 {
+  text-align: center;
+  margin-top: 20px;
 }
-.confirmation .title-itemslong  {
-    text-align: center; 
-    margin-top: 10px; 
-    margin-right: 550px;
-    
+.confirmation .title-itemslong {
+  text-align: center;
+  margin-top: 10px;
 }
-.contact1{
+.contact1 {
+  margin-top: 700px;
+}
+.confirmation1 img {
+  margin-top: 700px;
+}
+.confirmation1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  margin-bottom: 800px;
+}
+.confirmation1 .text-h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+.confirmation1 .text-h4 {
+  text-align: center;
+  margin-top: 20px;
+}
+.confirmation1 .title-itemslong {
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .contact1 {
     margin-top: 700px;
+  }
+  .confirmation1 .title-itemslong {
+    margin-bottom: -300px;
+  }
 }
-.confirmation1 img{
-    width: 500px;
-    height:500px;
-    margin-top: 900px;
+
+@media (max-width: 500px) {
+  .confirmation img {
+    width: 100%;
+    height: auto;
+  }
+  .confirmation1 img {
+    width: 100%;
+    height: auto;
+  }
+  .contact1 {
+    margin-top: 800px;
+  }
 }
-.confirmation1{
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    height: 300px; 
-    margin-bottom: 400px;
- }
- .confirmation1 .text-h2{
-     text-align: center;
-     margin-top: 20px; 
- }
- .confirmation1 .text-h4{
-     text-align: center;
-     margin-top: 20px; 
- }
- .confirmation1 .title-itemslong  {
-     text-align: center; 
-     margin-top: 10px; 
-     margin-right: 550px;
-     margin-bottom: 200px;
-     
- }
