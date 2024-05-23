@@ -78,4 +78,22 @@
   .title .text-h2 {
     font-size: 30px;
   }
+  .title-company .text-h3 {
+    font-size: 28px;
+  }
+  .text-h3 {
+    font-size: 28px;
+  }
+  .message .text-body-copy {
+    font-size: 20px;
+  }
+  .message-company .text-body-copy {
+    font-size: 20px;
+  }
+  .message1 .text-body-copy {
+    font-size: 20px;
+  }
+  .message-company1 .text-body-copy {
+    font-size: 20px;
+  }
 }

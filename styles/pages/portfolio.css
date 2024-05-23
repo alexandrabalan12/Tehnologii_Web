@@ -4,14 +4,62 @@
   margin-left: 0;
 }
 
+.add-project {
+  margin-top: -110px;
+  margin-bottom: 40px;
+  text-align: right;
+}
+
 .add-project .button-primary {
   font-size: 20px;
   width: 200px;
   height: 40px;
-  margin-left: 1250px;
   font-weight: bold;
+  margin-right: 20px;
 }
-.add-project {
-  margin-top: -110px;
-  margin-bottom: 40px;
+
+@media (max-width: 1380px) {
+  .add-project {
+    margin-top: -90px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .add-project {
+    margin-top: -70px;
+    text-align: center;
+  }
+
+  .add-project .button-primary {
+    width: 180px;
+    height: 36px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .add-project {
+    margin-top: -50px;
+    text-align: center;
+  }
+
+  .add-project .button-primary {
+    width: 160px;
+    height: 34px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-project {
+    margin-top: -30px;
+    text-align: center;
+  }
+
+  .add-project .button-primary {
+    width: 140px;
+    height: 32px;
+    font-size: 14px;
+  }
 }

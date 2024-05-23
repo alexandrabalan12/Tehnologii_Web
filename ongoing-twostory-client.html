@@ -18,23 +18,34 @@
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="navbar-container">
-        <a href="aftersignup-clientwithproject.html" class="logo1">PlaCo</a>
-        <div class="nav-menu">
-            <a href="availableprojects.html" class="nav-link">Your projects</a>
-            <a href="aboutus-afterlogin.html" class="nav-link">About us</a>
-        </div>
-        
-         <div class="nav-search input-group__area">
+    <nav class="navbar">
+        <div class="navbar-container">
+          <a href="index.html" class="logo1">PlaCo</a>
+          <input
+            type="checkbox"
+            class="navigation-mobile-toggle"
+            id="navi-toggle"
+          />
+          <label class="navbar-mobile-button" for="navi-toggle">
+            <img src="./assets/nav-menu.png" alt="Menu" />
+          </label>
+          <div class="nav-menu" id="navbar-menu">
+            <!-- continut navigatie -->
+            <a href="login.html" class="nav-link">Your projects</a>
+            <a href="aboutus.html" class="nav-link">About us</a>
+            <div class="nav-search input-group__area">
               <img src="./assets/icon_search.png" />
-              <input id="search" name="seach" type="search" placeholder="Search for projects or companies" />
-         </div>           
-        
-            <a href="index.html" class="signup-btn"  >Log out</a>
-       
-    </div>
-</nav>
+              <input
+                id="search"
+                name="seach"
+                type="search"
+                placeholder="Search for projects or companies"
+              />
+            </div>
+            <a href="signup.html" class="signup-btn">Log out</a>
+          </div>
+        </div>
+      </nav>
 <div>
     <h2 class="text-h2-title"> Two-Story House Rennovation</h2>
     <div class="add-project">
@@ -81,6 +92,7 @@
             </div>
         </div>
     </div>
+    <div class="container">
     <div class="container-contact">
    
         <h2 class="text-h2">Contact us</h2>
@@ -98,7 +110,7 @@
                 <p class="text-body-copy">Iasi, Romania</p>
             </div>
         </div>
-    
+    </div>
     </div>
 
 </body>
