@@ -14,11 +14,69 @@
 
 .myreviews .review-from .text-body-copy{
     margin-left: 40px;
+    display:flex;
+    justify-content: end;
+    
 }
 .myreviews .details-account1 {
-    height: 300px;
+    height: auto;
     margin-bottom: 50px;
     margin-left: 30px;
 }
+
+@media (max-width: 990px){
+    .myreviews .details-account1 {
+        height: auto;
+        margin-bottom: 50px;
+        margin-left: 0;
+    }
+    .myreviews .review-from .text-body-copy{
+      font-size: 16px;
+        
+    }
+    .myreviews .details-account1 .review-for img {
+        width: 200px;
+        height: 50px;
+        
+    }
+}
+@media (max-width: 1140px){
+    .myreviews{
+        width: 700px;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px){
+    .myreviews .details-account1 {
+        height: auto;
+        margin-bottom: 50px;
+        margin-left: 0;
+    }
+   
+    .myreviews .details-account1 .review-for img {
+        width: 200px;
+        height: 50px;
+        
+    }
+}
+
+@media (max-width: 480px){
+    .myreviews .details-account1 {
+        height: auto;
+        margin-bottom: 50px;
+        margin-left: 0;
+    }
+   
+    .myreviews .details-account1 .review-for img {
+        width: 200px;
+        height: 50px;
+        
+    }
+}
+
+
+
+
 
 

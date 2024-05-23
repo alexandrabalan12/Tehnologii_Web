@@ -89,8 +89,9 @@
 .review-from {
     display: flex;
     align-items: center; 
-    
-    margin-left: 776px;
+    display: flex;
+   
+    justify-content: end;
 }
 
 .review-from .text-h4 {
