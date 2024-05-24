@@ -13,14 +13,13 @@
 		/>
 		<link rel="stylesheet" href="./styles/index.css" />
 		<link rel="stylesheet" href="./styles/pages/home.css" />
-		<link rel="stylesheet" href="./styles/pages/afterlogin.css" />
 		<link rel="stylesheet" href="./styles/pages/account.css" />
+		<link rel="stylesheet" href="./styles/pages/applicationpage.css" />
+		<link rel="stylesheet" href="./styles/pages/addproject.css" />
+		<link rel="stylesheet" href="./styles/pages/afterlogin.css" />
 		<link rel="stylesheet" href="./styles/pages/myreviews-company.css" />
-		<link
-			rel="stylesheet"
-			href="./styles/pages/myaccount-company-afteredit.css"
-		/>
 	</head>
+
 	<body>
 		<nav class="navbar">
 			<div class="navbar-container">
@@ -35,10 +34,8 @@
 				</label>
 				<div class="nav-menu" id="navbar-menu">
 					<!-- continut navigatie -->
-					<a href="./your-projects-client.html" class="nav-link"
-						>Your projects</a
-					>
-					<a href="aboutus.html" class="nav-link">About us</a>
+					<a href="your-projects-client.html" class="nav-link">Your projects</a>
+					<a href="aboutus-afterlogin.html" class="nav-link">About us</a>
 					<div class="nav-search input-group__area">
 						<img src="./assets/icon_search.png" />
 						<input
@@ -48,64 +45,45 @@
 							placeholder="Search for projects or companies"
 						/>
 					</div>
+
 					<a href="index.html" class="signup-btn">Log out</a>
 				</div>
 			</div>
 		</nav>
+
 		<div class="container">
-			<div class="leave-review">
-				<div class="title">
-					<h2 class="text-h2" id="company-name"></h2>
+			<h2 class="text-h2-title">Leave a review!</h2>
+			<div class="message">
+				<h2 class="text-h3">Your Feedback Matters</h2>
+
+				<div class="text-body-copy">
+					Leave a rating and share your experience and contribute to the
+					company's growth!
 				</div>
-				<a href="./leave-review-client.html" class="button-primary"
-					>Leave a review</a
-				>
+				<div class="stars" id="review-stars">
+					<template id="full-star">
+						<img src="./assets/full_star.png" alt="Star" />
+					</template>
+					<template id="empty-star">
+						<img src="./assets/empty_star.png" alt="Star" />
+					</template>
+				</div>
+				<div class="input-group__area">
+					<textarea
+						id="your-message"
+						name="your-message"
+						placeholder="Your message..."
+					></textarea>
+				</div>
 			</div>
-			<div class="container">
-				<div class="container-account">
-					<div class="menu-account1">
-						<div class="text">
-							<a
-								href="structuralbuild-innovation-details.html"
-								class="text-body-copy"
-								>Details</a
-							>
-							<a
-								href="structuralbuild-innovation-portfolio.html"
-								class="text-body-copy"
-								>Portfolio</a
-							>
-							<a
-								href="structuralbuild-innovation-reviews.html"
-								class="text-body-copy-selected"
-								>Reviews</a
-							>
-						</div>
-					</div>
-					<div class="myreviews">
-						<div class="details-account1">
-							<div class="review-for">
-								<h4 class="text-h4" id="name"></h4>
 
-								<div class="stars" id="review-stars">
-									<template id="full-star">
-										<img src="./assets/full_star.png" alt="Star" />
-									</template>
-									<template id="empty-star">
-										<img src="./assets/empty_star.png" alt="Star" />
-									</template>
-								</div>
-							</div>
-
-							<div class="review-text">
-								<p class="text-body-copy" id="review-text"></p>
-							</div>
-
-							<div class="review-from">
-								<p class="text-body-copy" id="job"></p>
-							</div>
-						</div>
-					</div>
+			<div class="save-button">
+				<div class="title-itemslong">
+					<a
+						href="./structuralbuild-innovation-reviews.html"
+						class="button-primary"
+						>SAVE</a
+					>
 				</div>
 			</div>
 		</div>
@@ -132,22 +110,10 @@
 <script>
 	window.addEventListener("load", () => {
 		// continut care va veni din backend
-		const nume_companie = `StructuralBuild Innovation`;
-		const nume = `John Smith`;
-		const continut = `"I had a specific vision for my restaurant's renovation, and PlaCo matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!"`;
-		const munca = `restaurant owner`;
-		const rating = 3;
-		// elemente care trebuie populate cu continut
-
-		const company_name = document.getElementById("company-name");
-		const name = document.getElementById("name");
-		const review_text = document.getElementById("review-text");
-		const job = document.getElementById("job");
-
+		const rating = 0;
 		function ratings(index) {
 			const ratingContainer = document.getElementById("review-stars");
 			const fullStar = document.getElementById("full-star");
-
 			const emptyStar = document.getElementById("empty-star");
 			for (let i = 0; i < rating; i += 1) {
 				ratingContainer.appendChild(
@@ -163,10 +129,6 @@
 		function createProject() {
 			// continut text descriere
 
-			company_name.innerText = nume_companie;
-			name.innerText = nume;
-			review_text.innerText = continut;
-			job.innerText = munca;
 			ratings(rating);
 		}
 

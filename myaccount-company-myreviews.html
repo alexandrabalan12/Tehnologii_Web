@@ -80,7 +80,15 @@
 					<div class="details-account1">
 						<div class="review-for">
 							<h4 class="text-h4" id="name"></h4>
-							<img src="./assets/5stars.png" />
+
+							<div class="stars" id="review-stars">
+								<template id="full-star">
+									<img src="./assets/full_star.png" alt="Star" />
+								</template>
+								<template id="empty-star">
+									<img src="./assets/empty_star.png" alt="Star" />
+								</template>
+							</div>
 						</div>
 
 						<div class="review-text">
@@ -89,69 +97,6 @@
 
 						<div class="review-from">
 							<p class="text-body-copy" id="job"></p>
-						</div>
-					</div>
-					<div class="details-account1">
-						<div class="review-for">
-							<h4 class="text-h4">John Smith</h4>
-							<img src="./assets/5stars.png" />
-						</div>
-
-						<div class="review-text">
-							<p class="text-body-copy">
-								"I had a specific vision for my restaurant's renovation, and
-								PlaCo matched me with a construction team that turned it into a
-								reality. The platform made it easy to find qualified experts who
-								provided transparent quotes and timelines. I'm thrilled with the
-								results and the professionalism of the workers. Highly recommend
-								for any project!"
-							</p>
-						</div>
-
-						<div class="review-from">
-							<p class="text-body-copy">-restaurant owner</p>
-						</div>
-					</div>
-					<div class="details-account1">
-						<div class="review-for">
-							<h4 class="text-h4">John Smith</h4>
-							<img src="./assets/5stars.png" />
-						</div>
-
-						<div class="review-text">
-							<p class="text-body-copy">
-								"I had a specific vision for my restaurant's renovation, and
-								PlaCo matched me with a construction team that turned it into a
-								reality. The platform made it easy to find qualified experts who
-								provided transparent quotes and timelines. I'm thrilled with the
-								results and the professionalism of the workers. Highly recommend
-								for any project!"
-							</p>
-						</div>
-
-						<div class="review-from">
-							<p class="text-body-copy">-restaurant owner</p>
-						</div>
-					</div>
-					<div class="details-account1">
-						<div class="review-for">
-							<h4 class="text-h4">John Smith</h4>
-							<img src="./assets/5stars.png" />
-						</div>
-
-						<div class="review-text">
-							<p class="text-body-copy">
-								"I had a specific vision for my restaurant's renovation, and
-								PlaCo matched me with a construction team that turned it into a
-								reality. The platform made it easy to find qualified experts who
-								provided transparent quotes and timelines. I'm thrilled with the
-								results and the professionalism of the workers. Highly recommend
-								for any project!"
-							</p>
-						</div>
-
-						<div class="review-from">
-							<p class="text-body-copy">-restaurant owner</p>
 						</div>
 					</div>
 				</div>
@@ -184,18 +129,35 @@
 		const nume = `John Smith`;
 		const continut = `"I had a specific vision for my restaurant's renovation, and PlaCo matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!"`;
 		const munca = `restaurant owner`;
-
+		const rating = 3;
 		// elemente care trebuie populate cu continut
 		const name = document.getElementById("name");
 		const review_text = document.getElementById("review-text");
 		const job = document.getElementById("job");
 
+		function ratings(index) {
+			const ratingContainer = document.getElementById("review-stars");
+			const fullStar = document.getElementById("full-star");
+			const emptyStar = document.getElementById("empty-star");
+			for (let i = 0; i < rating; i += 1) {
+				ratingContainer.appendChild(
+					fullStar.content.cloneNode(true).firstElementChild
+				);
+			}
+			for (let i = 0; i < 5 - rating; i += 1) {
+				ratingContainer.appendChild(
+					emptyStar.content.cloneNode(true).firstElementChild
+				);
+			}
+		}
 		function createProject() {
 			// continut text descriere
 			name.innerText = nume;
 			review_text.innerText = continut;
 			job.innerText = munca;
+			ratings(rating);
 		}
+
 		createProject();
 	});
 </script>

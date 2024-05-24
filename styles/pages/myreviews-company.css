@@ -1,84 +1,96 @@
 .myreviews .details-account1 .review-for {
-  margin-left: 25px;
+	margin-left: 25px;
 }
 
-.myreviews .details-account1 .review-for img {
+/* .myreviews .details-account1 .review-for img {
   width: 288px;
   height: 48px;
   margin-top: 0px;
+} */
+.stars {
+	height: 24px;
+	width: auto;
+	display: flex;
+	margin-left: 40px;
 }
-
+.stars img {
+	margin-right: 12px;
+}
+.message .stars {
+	margin-top: 20px;
+	margin-left: 0px;
+}
 .myreviews .review-text {
-  margin-left: 0px;
+	margin-left: 0px;
 }
 
 .myreviews .review-from .text-body-copy {
-  margin-left: 40px;
-  display: flex;
-  justify-content: end;
+	margin-left: 40px;
+	display: flex;
+	justify-content: end;
 }
 .myreviews .details-account1 {
-  height: auto;
-  margin-bottom: 50px;
-  margin-left: 30px;
+	height: auto;
+	margin-bottom: 50px;
+	margin-left: 30px;
 }
 
 .container-account > :first-child {
-  margin-right: 24px;
+	margin-right: 24px;
 }
 
 @media (max-width: 990px) {
-  .myreviews .details-account1 {
-    height: auto;
-    margin-bottom: 50px;
-    margin-left: 0;
-  }
-  .myreviews .review-from .text-body-copy {
-    font-size: 16px;
-  }
-  .myreviews .details-account1 .review-for img {
-    width: 40%;
-    height: auto;
-    margin-left: 0;
-  }
+	.myreviews .details-account1 {
+		height: auto;
+		margin-bottom: 50px;
+		margin-left: 0;
+	}
+	.myreviews .review-from .text-body-copy {
+		font-size: 16px;
+	}
+	.myreviews .details-account1 .review-for img {
+		width: 40%;
+		height: auto;
+		margin-left: 0;
+	}
 }
 @media (max-width: 1140px) {
-  .myreviews {
-    width: 100%;
-    height: auto;
-  }
+	.myreviews {
+		width: 100%;
+		height: auto;
+	}
 }
 @media (max-width: 1380px) {
-  .myreviews .details-account1 {
-    height: auto;
-    margin-bottom: 50px;
-    margin-left: 0;
-  }
+	.myreviews .details-account1 {
+		height: auto;
+		margin-bottom: 50px;
+		margin-left: 0;
+	}
 }
 
 @media (max-width: 768px) {
-  .myreviews .details-account1 {
-    height: auto;
-    margin-bottom: 50px;
-    margin-left: 0;
-  }
-  .myreviews .details-account1 .review-for img {
-    width: 40%;
-    height: auto;
-    margin-left: 0;
-  }
+	.myreviews .details-account1 {
+		height: auto;
+		margin-bottom: 50px;
+		margin-left: 0;
+	}
+	.myreviews .details-account1 .review-for img {
+		width: 40%;
+		height: auto;
+		margin-left: 0;
+	}
 }
 
 @media (max-width: 480px) {
-  .myreviews .details-account1 {
-    height: auto;
-    margin-bottom: 50px;
-    margin-left: 0;
-  }
+	.myreviews .details-account1 {
+		height: auto;
+		margin-bottom: 50px;
+		margin-left: 0;
+	}
 
-  .myreviews .details-account1 .review-for img {
-    width: 40%;
-    height: auto;
-    margin-left: 0;
-  }
+	.myreviews .details-account1 .review-for img {
+		width: 40%;
+		height: auto;
+		margin-left: 0;
+	}
 }

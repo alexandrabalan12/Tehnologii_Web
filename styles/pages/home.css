@@ -64,12 +64,6 @@
 	margin-top: 20px;
 }
 
-.review-for img {
-	height: 24px;
-	width: auto;
-	margin-left: 48px;
-}
-
 .review-text {
 	padding: 20px;
 	margin-bottom: 10px;
@@ -203,7 +197,7 @@
 	text-decoration: none;
 	font-size: 31px;
 	margin-top: 24px;
-	width: 195px;
+	width: auto;
 	height: 56px;
 	text-align: center;
 }

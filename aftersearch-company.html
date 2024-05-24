@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/index.css" />
+		<link rel="stylesheet" href="./styles/pages/home.css" />
+		<link rel="stylesheet" href="./styles/pages/afterlogin.css" />
+		<link rel="stylesheet" href="./styles/pages/account.css" />
+		<link rel="stylesheet" href="./styles/pages/availableprojects.css" />
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="navbar-container">
+				<a href="index.html" class="logo1">PlaCo</a>
+				<input
+					type="checkbox"
+					class="navigation-mobile-toggle"
+					id="navi-toggle"
+				/>
+				<label class="navbar-mobile-button" for="navi-toggle">
+					<img src="./assets/nav-menu.png" alt="Menu" />
+				</label>
+				<div class="nav-menu" id="navbar-menu">
+					<!-- continut navigatie -->
+					<a href="./your-projects-client.html" class="nav-link"
+						>Your projects</a
+					>
+					<a href="aboutus-afterlogin.html" class="nav-link">About us</a>
+					<div class="nav-search input-group__area">
+						<img src="./assets/icon_search.png" />
+						<input
+							id="search"
+							name="seach"
+							type="search"
+							placeholder="Search for projects"
+						/>
+					</div>
+
+					<a href="index.html" class="signup-btn">Log out</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="text-h4">Results:</div>
+			<div class="projects">
+				<div class="details-account1">
+					<a href="structuralbuild-innovation-details.html" class="link">
+						<div class="text">
+							<div class="info-field">
+								<p class="text-body-copy-selected" id="company-name"></p>
+							</div>
+							<div class="info-field info-field-dot">
+								<span class="text-body-copy-bold">Location:</span>
+								<p class="text-body-copy1" id="company-city"></p>
+							</div>
+							<div class="info-field info-field-dot">
+								<span class="text-body-copy-bold">Proffesional field:</span>
+								<p class="text-body-copy1" id="company-proffesionalarea"></p>
+							</div>
+
+							<div class="info-field info-field-dot">
+								<span class="text-body-copy-bold">Description: </span>
+								<p class="text-body-copy1" id="company-description"></p>
+							</div></div
+					></a>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			window.addEventListener("load", () => {
+				// continut care va veni din backend
+
+				const nume = `StructuralBuild Innovation`;
+
+				const descriere = `StructuraBuild Innovations excels in architectural design, merging aesthetic beauty with functional spaces to create enduring structures that inspire. Trust in our expertise to elevate your project to a work of art.`;
+
+				const oras = `Iasi, Romania`;
+				const domeniu = `Architectural Design`;
+
+				// elemente care trebuie populate cu continut
+				const company_name = document.getElementById("company-name");
+
+				const company_description = document.getElementById(
+					"company-description"
+				);
+
+				const company_city = document.getElementById("company-city");
+				const company_proffesionalarea = document.getElementById(
+					"company-proffesionalarea"
+				);
+
+				function createProject() {
+					// continut text descriere
+					company_name.innerText = nume;
+
+					company_description.innerText = descriere;
+
+					company_city.innerText = oras;
+					company_proffesionalarea.innerText = domeniu;
+				}
+				createProject();
+			});
+		</script>
+	</body>
+</html>

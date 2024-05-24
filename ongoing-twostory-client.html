@@ -33,7 +33,7 @@
 				</label>
 				<div class="nav-menu" id="navbar-menu">
 					<!-- continut navigatie -->
-					<a href="login.html" class="nav-link">Your projects</a>
+					<a href="your-projects-client.html" class="nav-link">Your projects</a>
 					<a href="aboutus.html" class="nav-link">About us</a>
 					<div class="nav-search input-group__area">
 						<img src="./assets/icon_search.png" />
@@ -44,12 +44,12 @@
 							placeholder="Search for projects or companies"
 						/>
 					</div>
-					<a href="signup.html" class="signup-btn">Log out</a>
+					<a href="index.html" class="signup-btn">Log out</a>
 				</div>
 			</div>
 		</nav>
 		<div>
-			<h2 class="text-h2-title">Two-Story House Rennovation</h2>
+			<h2 class="text-h2-title" id="project-name"></h2>
 			<div class="add-project">
 				<a href="./your-projects-client.html" class="button-primary"
 					>CLOSE PROJECT</a
@@ -59,21 +59,14 @@
 		<div class="container">
 			<h2 class="text-h2">Description</h2>
 			<div class="description">
-				<div class="text-body-copy">
-					A comprehensive interior renovation of a two-story residential house
-					located in Iasi,Romania.The goal is to modernize the interior spaces,
-					enhance functionality, and improve the overall aesthetic of the
-					property, aligning with the homeowner’s vision.The renovation will
-					focus on updating finishes, creating an open-concept layout, and
-					enhancing the home's overall comfort and usability.
-				</div>
+				<div class="text-body-copy" id="description"></div>
 			</div>
 
 			<h2 class="text-h2">Applicants</h2>
 			<div class="description">
 				<div class="applicants">
 					<div class="text-margin">
-						<p class="text-body-copy">BuildRight Company</p>
+						<p class="text-body-copy" id="company-name1"></p>
 					</div>
 					<div class="review-link">
 						<a href="buildright-company-overview.html" class="text-body-copy"
@@ -91,7 +84,7 @@
 
 				<div class="applicants">
 					<div class="text-margin">
-						<p class="text-body-copy">StructuralBuild Innovation</p>
+						<p class="text-body-copy" id="company-name2"></p>
 					</div>
 					<div class="review-link">
 						<a
@@ -133,3 +126,28 @@
 		</div>
 	</body>
 </html>
+
+<script>
+	window.addEventListener("load", () => {
+		// continut care va veni din backend
+		const nume_proiect = `Two-Story House Rennovation`;
+		const descriere = `A comprehensive interior renovation of a two-story residential house located in Iasi, Romania. The goal is to modernize the interior spaces, enhance functionality, and improve the overall aesthetic of the property, aligning with the homeowner’s vision. The renovation will focus on updating finishes, creating an open-concept layout, and enhancing the home's overall comfort and usability.`;
+		const nume_companie1 = `BuildRight Company`;
+		const nume_companie2 = `StructuralBuild Innovation`;
+
+		// elemente care trebuie populate cu continut
+		const project_name = document.getElementById("project-name");
+		const description = document.getElementById("description");
+		const company_name1 = document.getElementById("company-name1");
+		const company_name2 = document.getElementById("company-name2");
+
+		function createProject() {
+			// continut text descriere
+			project_name.innerText = nume_proiect;
+			description.innerText = descriere;
+			company_name1.innerText = nume_companie1;
+			company_name2.innerText = nume_companie2;
+		}
+		createProject();
+	});
+</script>
