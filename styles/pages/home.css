@@ -114,6 +114,26 @@
 	width: auto;
 	height: 20px;
 }
+.review-link1 {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	margin-top: 80px;
+	justify-content: end;
+}
+
+.review-link1 .text-body-copy {
+	margin-right: 10px;
+	color: #000;
+	font-size: 25px;
+	font-weight: 400;
+	text-decoration: underline;
+}
+
+.review-link1 img {
+	width: auto;
+	height: 20px;
+}
 
 .contact-info {
 	border-top: 2px solid orange;
