@@ -50,43 +50,12 @@
   margin-left: -20px;
 }
 
-@media (max-width: 580px) {
-  .title-company .text-h4 {
-    font-size: 25px;
-  }
-  .description .applicants p {
-    width: 100%;
-    margin-right: 0;
-  }
-
-  .description .applicants a {
-    margin-top: 10px;
-    width: 100%;
-  }
-
-  .description .applicants .review-link,
-  .description .applicants .review-link1 {
-    width: 100%;
-  }
-}
-@media (max-width: 768px) {
-  .description .applicants {
-    flex-direction: column;
-  }
-
-  .description .applicants p {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  .description .applicants a {
-    margin-top: 10px;
-  }
-}
-
 @media (max-width: 1280px) {
   .description .applicants p {
     margin-right: -200px;
+  }
+  .description .applicants .text-body-copy {
+    font-size: 20px;
   }
 }
 
@@ -98,13 +67,61 @@
     margin-top: -10px;
     width: 40%;
   }
+  .description .applicants .review-link1 {
+    margin-top: -10px;
+    width: 40%;
+  }
 }
-@media (max-width: 838px) {
+@media (max-width: 890px) {
   .description .applicants .text-body-copy {
     font-size: 20px;
   }
   .description .applicants .review-link {
-    margin-top: -10px;
+    margin-top: -100px;
     width: 40%;
+  }
+  .description .applicants .review-link1 {
+    margin-top: -100px;
+    width: 40%;
+  }
+  .description .applicants {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1380px) {
+  .close-project .add-project .button-primary {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 733px) {
+  .description .applicants .review-link .text-body-copy {
+    font-size: 16px;
+  }
+  .description .applicants .review-link1 .text-body-copy {
+    font-size: 16px;
+  }
+  .description .applicants .review-link img {
+    width: 15px;
+    height: 15px;
+  }
+  .description .applicants .review-link1 img {
+    width: 15px;
+    height: 15px;
+  }
+}
+@media (max-width: 575px) {
+  .description .applicants .review-link .text-body-copy {
+    font-size: 14px;
+  }
+  .description .applicants .review-link1 .text-body-copy {
+    font-size: 14px;
+  }
+  .description .applicants .review-link img {
+    width: 12px;
+    height: 12px;
+  }
+  .description .applicants .review-link1 img {
+    width: 12px;
+    height: 12px;
   }
 }
