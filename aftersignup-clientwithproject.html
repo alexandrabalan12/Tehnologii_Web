@@ -54,12 +54,12 @@
            
             <h2 class="why-us-title">Keep up with the applicants of your 
                 projects!</h2>
-                <div class="short-description">
+                <div class="short-description" id="clientproject-container">
                     <template id="project-card">
                     <div class="input-group__area">
                          <a href="ongoing-twostory-client.html" class="link"  >
-                        <h4 class="text-h4" id="project-name"></h4>
-                        <p class="text-body-copy" >You got new applicants!</p>
+                        <h4 class="text-h4" data-selector="project-name"></h4>
+                        <p class="text-body-copy" >You got <span data-selector="applicants-count"> </span> new applicants!</p>
                         <p class="text-body-copy">Click to see more.</p>
                     </a>
                     </div>
@@ -97,17 +97,75 @@
 	window.addEventListener("load", () => {
 		// continut care va veni din backend
 
-		const titlu = `Two-Story House Renovation`;
-		
+    
+		const proiecte_cu_nr_aplicanti = [
+        {
+            "id": 1,
+            "user_id": 41,
+            "name": "Green Energy Initiative",
+            "description": "A project focused on developing sustainable green energy solutions for urban areas.",
+            "status": "open",
+            "location": "iasi",
+            "professional_area": "interior_design",
+            "price": "150000",
+            "requirements": [
+                {
+                    "name": "Solar Panel Installation",
+                    "description": "Install solar panels on rooftops of urban buildings."
+                },
+                {
+                    "name": "Wind Turbine Setup",
+                    "description": "Set up small wind turbines in open urban areas."
+                }
+            ],
+            "applicant_count": 2
+        },
+        {
+            "id": 2,
+            "user_id": 41,
+            "name": "Green Energy Initiative2",
+            "description": "A project focused on developing sustainable green energy solutions for urban areas.",
+            "status": "open",
+            "location": "iasi",
+            "professional_area": "interior_design",
+            "price": "150000",
+            "requirements": [
+                {
+                    "name": "Solar Panel Installation",
+                    "description": "Install solar panels on rooftops of urban buildings."
+                },
+                {
+                    "name": "Wind Turbine Setup",
+                    "description": "Set up small wind turbines in open urban areas."
+                }
+            ],
+            "applicant_count": 2
+        }
+    ]
+    const clientprojectsContainer = document.getElementById(
+          "clientproject-container"
+        );
+        function createProject() {
+          proiecte_cu_nr_aplicanti.forEach((clientproject, index) => {
+            const clientprojectTemplate = document
+              .getElementById("project-card")
+              .content.cloneNode(true).firstElementChild;
 
-		// elemente care trebuie populate cu continut
-		const project_name = document.getElementById("project-name");
-		
-		function createProject() {
-			// continut text descriere
-			project_name.innerText = titlu;
-			
-		}
-		createProject();
-	});
+            // doar in interior la template-uri
+            const project_name = clientprojectTemplate.querySelector(
+              '[data-selector="project-name"]'
+            );
+            const applicants_count = clientprojectTemplate.querySelector(
+              '[data-selector="applicants-count"]'
+            );
+
+
+           project_name.innerText = clientproject.name;
+           applicants_count.innerText=clientproject.applicant_count;
+           
+            clientprojectsContainer.appendChild(clientprojectTemplate);
+          });
+        }
+        createProject();
+      });
 </script>

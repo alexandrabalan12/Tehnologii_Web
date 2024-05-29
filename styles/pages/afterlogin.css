@@ -1,112 +1,115 @@
-.navbar-container .signup-btn{
-    margin-left:50px;
+.navbar-container .signup-btn {
+  margin-left: 50px;
 }
 
-.projects-applicants{
-    display: flex;
-    margin-top: 80px;
+.projects-applicants {
+  display: flex;
+  margin-top: 80px;
 }
-.projects-applicants-right{
-    display: block;
-    margin-top: 40px;
-    align-items: center;
-    
+.projects-applicants-right {
+  display: block;
+  margin-top: 40px;
+  align-items: center;
 }
 .projects-applicants-right .why-us-title {
- margin-bottom: 100px;  
- font-size: 39px;
+  margin-bottom: 100px;
+  font-size: 39px;
 }
 
-.projects-applicants-right .button-primary{
-    margin-top: 100px;
-    width: 260px;
-    margin-left: 120px;
+.projects-applicants-right .button-primary {
+  margin-top: 100px;
+  width: 260px;
+  margin-left: 120px;
 }
 
-.projects-applicants-right .text-body-copy{
-    margin-left: 20px;
+.projects-applicants-right .text-body-copy {
+  margin-left: 20px;
 }
 
-.home-header__content .button-primary{
-    width: 260px;
+.home-header__content .button-primary {
+  width: 260px;
 }
-.projects-applicants-right .input-group__area .text-h4{
-    margin-bottom: 30px;
+.projects-applicants-right .input-group__area .text-h4 {
+  margin-bottom: 30px;
 }
-.projects-applicants-right .input-group__area .text-body-copy{
-    color: orange;
+.projects-applicants-right .input-group__area .text-body-copy {
+  color: orange;
 }
 
-.projects-applicants-right .short-description .input-group__area{
-    border: 2px solid orange;
-    width: 500px;
-    height: 150px;
-   
-    
+.projects-applicants-right .short-description .input-group__area {
+  border: 2px solid orange;
+  width: 500px;
+  height: 150px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 @media (max-width: 991px) {
-    .navbar-container .signup-btn{
-        margin-left:0;
-    }
-    .projects-applicants {
-        flex-direction: column;
-    }
-    .projects-applicants img{
-        height: 400px;
-        width: auto;
-    }
-    .short-description {
-        display: flex;
-        justify-content: center;
-    }
-    .short-description .input-group__area {
-        margin: 0;
-    }
-
+  .navbar-container .signup-btn {
+    margin-left: 0;
+  }
+  .projects-applicants {
+    flex-direction: column;
+  }
+  .projects-applicants img {
+    height: 400px;
+    width: auto;
+  }
+  .short-description {
+    display: flex;
+    justify-content: center;
+  }
+  .short-description .input-group__area {
+    margin: 0;
+  }
 }
-
 
 @media (max-width: 768px) {
-    .projects-applicants img{
-        display:none;
-    }
-    .short-description {
-        display: flex;
-        justify-content: center;
-    }
-    .short-description .input-group__area {
-        margin: 0;
-    }
-
+  .projects-applicants img {
+    display: none;
+  }
+  .short-description {
+    display: flex;
+    justify-content: center;
+  }
+  .short-description .input-group__area {
+    margin: 0;
+  }
+}
+@media (max-width: 791px) {
+  .projects-applicants-right .short-description .input-group__area {
+    height: auto;
+  }
+}
+@media (max-width: 553px) {
+  .projects-applicants-right .short-description .input-group__area {
+    height: auto;
+  }
 }
 
-
-@media (max-width: 480px) {
-    .projects-applicants img{
-        display:none;
-    }
-    .projects-applicants-right .button-primary{
-            margin: 20px 20px;
-            width: auto;
-           font-size: 14px;
-           height: auto;
-        
-    }
-    .projects-applicants {
-        margin: 20px auto;
-    }
-    .projects-applicants-right .why-us-title {
-        margin-bottom: 20px;
-        font-size: 28px;
-    }
-    .projects-applicants-right .text-body-copy{
-        margin-left: 0;
-        margin-bottom: 20px;
-    }
-    .projects-applicants-right .short-description .input-group__area{
-        margin: 0 0;
-        width: 100%;
-    }
-
+@media (max-width: 496px) {
+  .projects-applicants img {
+    display: none;
+  }
+  .projects-applicants-right .button-primary {
+    margin: 20px 20px;
+    width: auto;
+    font-size: 14px;
+    height: auto;
+  }
+  .projects-applicants {
+    margin: 20px auto;
+  }
+  .projects-applicants-right .why-us-title {
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  .projects-applicants-right .text-body-copy {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+  .projects-applicants-right .short-description .input-group__area {
+    margin: 0 0;
+    width: 100%;
+    height: auto;
+  }
 }
-
