@@ -107,11 +107,18 @@
 <script>
 	window.addEventListener("load", () => {
 		// continut care va veni din backend
-		const nume_proiect = `Two-Story House Renovation`;
-		const nume_comp = `StructuralBuild Innovation`;
-		const mesaj = `In leading my team on numerous high-profile residential renovation projects, we have consistently delivered modern, functional, and aesthetically pleasing interiors. Our collective expertise is well-suited to the comprehensive renovation of your two-story house in Iasi, Romania. We excel at transforming spaces to meet contemporary standards of design and functionality, creating open-concept layouts that enhance comfort and usability. Our approach is collaborative, ensuring that every aspect of the renovation aligns with the homeowner’s vision. We are excited about the opportunity to apply our skills to this project, confident that we can exceed your expectations with our innovative and meticulous execution.`;
-		const data = `29/12/2024`;
-		const pret = `2.500-3.000`;
+
+		const detalii_aplicare = {
+			id: 1,
+			project_id: 1,
+			company_id: 1,
+			message:
+				"We are very interested in this project and believe we have the right skills and experience to deliver outstanding results.",
+			delivery_date: "2024-12-30T22:00:00.000Z",
+			estimated_price: "5000",
+			project_name: "Green Energy Initiative",
+			company_name: "Sobolanii Curajosi",
+		};
 
 		// elemente care trebuie populate cu continut
 		const company_name = document.getElementById("company-name");
@@ -122,11 +129,11 @@
 
 		function createProject() {
 			// continut text descriere
-			company_name.innerText = nume_comp;
-			project_name.innerText = nume_proiect;
-			company_message.innerText = mesaj;
-			delivery_date.innerText = data;
-			price_range = pret;
+			company_name.innerText = detalii_aplicare.company_name;
+			project_name.innerText = detalii_aplicare.project_name;
+			company_message.innerText = detalii_aplicare.message;
+			delivery_date.innerText = detalii_aplicare.delivery_date;
+			price_range = detalii_aplicare.estimated_price;
 		}
 		createProject();
 	});
