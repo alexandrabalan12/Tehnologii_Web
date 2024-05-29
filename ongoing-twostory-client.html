@@ -64,44 +64,24 @@
 
       <h2 class="text-h2">Applicants</h2>
       <div class="description">
-        <div class="applicants">
-          <div class="text-margin">
-            <p class="text-body-copy" id="company-name1"></p>
-          </div>
-          <div class="review-link">
-            <a href="buildright-company-overview.html" class="text-body-copy"
-              >See application overview
-              <img src="./assets/sageata.png" alt="Arrow" />
-            </a>
-          </div>
-          <div class="review-link1">
-            <a href="buildright-company-details.html" class="text-body-copy"
-              >See company profile
-              <img src="./assets/sageata.png" alt="Arrow" />
-            </a>
-          </div>
-        </div>
-
-        <div class="applicants">
-          <div class="text-margin">
-            <p class="text-body-copy" id="company-name2"></p>
-          </div>
-          <div class="review-link">
-            <a
-              href="structuralbuild-innovation-overview.html"
-              class="text-body-copy"
-              >See application overview
-              <img src="./assets/sageata.png" alt="Arrow" />
-            </a>
-          </div>
-          <div class="review-link1">
-            <a
-              href="structuralbuild-innovation-details.html"
-              class="text-body-copy"
-              >See company profile
-              <img src="./assets/sageata.png" alt="Arrow" />
-            </a>
-          </div>
+        <div class="applicants" id="applicants-container">
+          <template id="applicants-template">
+            <div class="text-margin">
+              <p class="text-body-copy" data-selector="company-name1"></p>
+            </div>
+            <div class="review-link">
+              <a href="buildright-company-overview.html" class="text-body-copy">
+                See application overview
+                <img src="./assets/sageata.png" alt="Arrow" />
+              </a>
+            </div>
+            <div class="review-link1">
+              <a href="buildright-company-details.html" class="text-body-copy">
+                See company profile
+                <img src="./assets/sageata.png" alt="Arrow" />
+              </a>
+            </div>
+          </template>
         </div>
       </div>
     </div>
@@ -129,25 +109,76 @@
 
 <script>
   window.addEventListener("load", () => {
-    // continut care va veni din backend
-    const nume_proiect = `Two-Story House Rennovation`;
-    const descriere = `A comprehensive interior renovation of a two-story residential house located in Iasi, Romania. The goal is to modernize the interior spaces, enhance functionality, and improve the overall aesthetic of the property, aligning with the homeowner’s vision. The renovation will focus on updating finishes, creating an open-concept layout, and enhancing the home's overall comfort and usability.`;
-    const nume_companie1 = `BuildRight Company`;
-    const nume_companie2 = `StructuralBuild Innovation`;
+    // pentru client
+    const proiect_cu_aplicari = {
+      project: {
+        id: 1,
+        user_id: 41,
+        name: "Green Energy Initiative",
+        description:
+          "A project focused on developing sustainable green energy solutions for urban areas.",
+        status: "open",
+        location: "iasi",
+        professional_area: "interior_design",
+        price: "150000",
+        requirements: [
+          {
+            name: "Solar Panel Installation",
+            description: "Install solar panels on rooftops of urban buildings.",
+          },
+          {
+            name: "Wind Turbine Setup",
+            description: "Set up small wind turbines in open urban areas.",
+          },
+        ],
+      },
+      jobApplications: [
+        {
+          id: 1,
+          project_id: 1,
+          company_id: 1,
+          message:
+            "We are very interested in this project and believe we have the right skills and experience to deliver outstanding results.",
+          delivery_date: "2024-12-30T22:00:00.000Z",
+          estimated_price: "5000",
+          company_name: "VERIFICAM INC",
+        },
+        {
+          id: 2,
+          project_id: 1,
+          company_id: 2,
+          message: "Suntem o echipa de sobolani",
+          delivery_date: "2025-02-11T22:00:00.000Z",
+          estimated_price: "5000",
+          company_name: "Sobolanii2 SRL",
+        },
+      ],
+    };
 
-    // elemente care trebuie populate cu continut
-    const project_name = document.getElementById("project-name");
-    const description = document.getElementById("description");
-    const company_name1 = document.getElementById("company-name1");
-    const company_name2 = document.getElementById("company-name2");
+    const applicantsContainer = document.getElementById("applicants-container");
 
     function createProject() {
       // continut text descriere
-      project_name.innerText = nume_proiect;
-      description.innerText = descriere;
-      company_name1.innerText = nume_companie1;
-      company_name2.innerText = nume_companie2;
+      const project_name = document.getElementById("project-name");
+      const description = document.getElementById("description");
+
+      proiect_cu_aplicari.jobApplications.forEach((applicant, index) => {
+        const applicantsTemplate = document
+          .getElementById("applicants-template")
+          .content.cloneNode(true).firstElementChild;
+        const applicants_name = applicantsTemplate.querySelector(
+          '[data-selector="company-name1"]'
+        );
+
+        applicants_name.innerText = applicant.company_name;
+
+        applicantsContainer.appendChild(applicantsTemplate);
+      });
+
+      project_name.innerText = proiect_cu_aplicari.project.name;
+      description.innerText = proiect_cu_aplicari.project.description;
     }
+
     createProject();
   });
 </script>
