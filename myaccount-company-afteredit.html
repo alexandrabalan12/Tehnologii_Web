@@ -111,11 +111,11 @@
 							</div>
 						</div>
 						<div class="info-field">
-							<p class="text-body-copy-bold">Geographical Area:</p>
+							<p class="text-body-copy-bold">Location:</p>
 							<div class="modify-company-name">
 								<div class="input-group__area">
 									<input
-										id="modify-geographical-area"
+										id="modify-company-location"
 										name="modify-geographical-area"
 										type="text"
 									/>
@@ -123,11 +123,11 @@
 							</div>
 						</div>
 						<div class="info-field">
-							<p class="text-body-copy-bold">Originally Located in:</p>
+							<p class="text-body-copy-bold">Company Address:</p>
 							<div class="modify-company-name">
 								<div class="input-group__area">
 									<input
-										id="modify-location"
+										id="modify-company-address"
 										name="modify-location"
 										type="text"
 									/>
@@ -210,38 +210,46 @@
 	window.addEventListener("load", () => {
 		// continut care va veni din backend
 
-		const nume = `StructuralBuild Innovation`;
-		const numar = `+40712.123.123`;
-		const descriere = `StructuraBuild Innovations excels in architectural design, mergingaesthetic beauty with functional spaces to create enduring structures that inspire. Trust in our expertise to elevate your project to a work of art.`;
-		const zona = `North-East Region of Romania`;
-		const oras = `Iasi, Romania`;
-		const domeniu = `Architectural Design`;
-		const contractor = `Blueprint Builders & Co.`;
-
-		// elemente care trebuie populate cu continut
-		const company_name = document.getElementById("modify-company-name");
-		const company_number = document.getElementById("modify-number");
-		const company_description = document.getElementById("modify-description");
-		const company_area = document.getElementById("modify-geographical-area");
-		const company_city = document.getElementById("modify-location");
-		const company_proffesionalarea = document.getElementById(
-			"modify-proffesional-area"
-		);
-		const company_contractor = document.getElementById(
-			"modify-general-contractor"
-		);
-
-		document.getElementById("travel-projects-yes").checked = true;
+		const company_details = {
+			id: 2,
+			user_id: 47,
+			company_name: "Sobolanii2 SRL",
+			phone_number: "+50044949333",
+			description:
+				"Tech Innovators Inc. is a leading company specializing in innovative technology solutions for businesses worldwide. Our mission is to leverage cutting-edge technologies to drive business success and create value for our clients.",
+			location: "cluj",
+			address: "123 Innovation Drive, San Francisco, CA 94107",
+			professional_area: "roofing",
+			owner_name: "Alexa",
+			open_to_travel: "yes",
+		};
 
 		function createProject() {
-			// continut text descriere
-			company_name.value = nume;
-			company_number.value = numar;
-			company_description.value = descriere;
-			company_area.value = zona;
-			company_city.value = oras;
-			company_proffesionalarea.value = domeniu;
-			company_contractor.value = contractor;
+			const company_name = document.getElementById("modify-company-name");
+			const company_number = document.getElementById("modify-number");
+			const company_description = document.getElementById("modify-description");
+			const company_location = document.getElementById(
+				"modify-company-location"
+			);
+			const company_adress = document.getElementById("modify-company-address");
+			const company_proffesionalarea = document.getElementById(
+				"modify-proffesional-area"
+			);
+			const company_contractor = document.getElementById(
+				"modify-general-contractor"
+			);
+			document.getElementById("travel-projects-yes").checked =
+				company_details.open_to_travel;
+			document.getElementById("travel-projects-no").checked =
+				!company_details.open_to_travel;
+
+			company_name.value = company_details.company_name;
+			company_number.value = company_details.phone_number;
+			company_description.value = company_details.description;
+			company_location.value = company_details.location;
+			company_adress.value = company_details.address;
+			company_proffesionalarea.value = company_details.professional_area;
+			company_contractor.value = company_details.owner_name;
 		}
 		createProject();
 	});

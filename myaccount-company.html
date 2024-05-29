@@ -91,12 +91,12 @@
 							<p class="text-body-copy1" id="company-description"></p>
 						</div>
 						<div class="info-field">
-							<p class="text-body-copy-bold">Geographical Area:</p>
-							<p class="text-body-copy1" id="company-area"></p>
+							<p class="text-body-copy-bold">Location:</p>
+							<p class="text-body-copy1" id="company-location"></p>
 						</div>
 						<div class="info-field">
-							<p class="text-body-copy-bold">Originally Located in:</p>
-							<p class="text-body-copy1" id="company-city"></p>
+							<p class="text-body-copy-bold">Company Adress:</p>
+							<p class="text-body-copy1" id="company-adress"></p>
 						</div>
 						<div class="info-field">
 							<p class="text-body-copy-bold">Proffesional Area:</p>
@@ -144,37 +144,42 @@
 	window.addEventListener("load", () => {
 		// continut care va veni din backend
 
-		const nume = `StructuralBuild Innovation`;
-		const numar = `+40712.123.123`;
-		const descriere = `StructuraBuild Innovations excels in architectural design, merging aesthetic beauty with functional spaces to create enduring structures that inspire. Trust in our expertise to elevate your project to a work of art.`;
-		const zona = `North-East Region of Romania`;
-		const oras = `Iasi, Romania`;
-		const domeniu = `Architectural Design`;
-		const contractor = `Blueprint Builders & Co.`;
-		const travel = `Yes`;
-
-		// elemente care trebuie populate cu continut
-		const company_name = document.getElementById("company-name");
-		const company_number = document.getElementById("company-phone");
-		const company_description = document.getElementById("company-description");
-		const company_area = document.getElementById("company-area");
-		const company_city = document.getElementById("company-city");
-		const company_proffesionalarea = document.getElementById(
-			"company-proffesionalarea"
-		);
-		const company_contractor = document.getElementById("company-contractor");
-		const company_travel = document.getElementById("company-travel");
+		const company_details = {
+			id: 2,
+			user_id: 47,
+			company_name: "Sobolanii2 SRL",
+			phone_number: "+50044949333",
+			description:
+				"Tech Innovators Inc. is a leading company specializing in innovative technology solutions for businesses worldwide. Our mission is to leverage cutting-edge technologies to drive business success and create value for our clients.",
+			location: "cluj",
+			address: "123 Innovation Drive, San Francisco, CA 94107",
+			professional_area: "roofing",
+			owner_name: "Alexa",
+			open_to_travel: "yes",
+		};
 
 		function createProject() {
-			// continut text descriere
-			company_name.innerText = nume;
-			company_number.innerText = numar;
-			company_description.innerText = descriere;
-			company_area.innerText = zona;
-			company_city.innerText = oras;
-			company_proffesionalarea.innerText = domeniu;
-			company_contractor.innerText = contractor;
-			company_travel.innerText = travel;
+			const company_name = document.getElementById("company-name");
+			const company_number = document.getElementById("company-phone");
+			const company_description = document.getElementById(
+				"company-description"
+			);
+			const company_location = document.getElementById("company-location");
+			const company_adress = document.getElementById("company-adress");
+			const company_proffesionalarea = document.getElementById(
+				"company-proffesionalarea"
+			);
+			const company_contractor = document.getElementById("company-contractor");
+			const company_travel = document.getElementById("company-travel");
+
+			company_name.innerText = company_details.company_name;
+			company_number.innerText = company_details.phone_number;
+			company_description.innerText = company_details.description;
+			company_location.innerText = company_details.location;
+			company_adress.innerText = company_details.address;
+			company_proffesionalarea.innerText = company_details.professional_area;
+			company_contractor.innerText = company_details.owner_name;
+			company_travel.innerText = company_details.open_to_travel;
 		}
 		createProject();
 	});
