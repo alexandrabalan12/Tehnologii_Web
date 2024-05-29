@@ -1,127 +1,125 @@
 .modify-company-name .input-group__area {
-	width: 350px;
-	margin-top: 16px;
-	border: 1px solid black;
+  width: 350px;
+  border: 1px solid black;
 }
 .modify-company-name .input-group__area input {
-	width: 100%;
-	text-align: left;
-	font-size: 20px;
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
 }
 .number-members .input-group__area {
-	width: 180px;
-	margin-top: 16px;
-	border: 1px solid black;
+  width: 180px;
+  border: 1px solid black;
 }
 
 .number-members .input-group__area input {
-	text-align: center;
-	font-size: 20px;
+  text-align: center;
+  font-size: 20px;
 }
 .short-description .input-group__area {
-	margin-top: 16px;
-	border: 1px solid black;
-	flex: 1;
-	width: 100%;
-	min-width: 600px;
-	height: 200px;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	padding: 10px;
+  margin-top: 16px;
+  border: 1px solid black;
+  flex: 1;
+  width: 100%;
+  min-width: 600px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
 }
 .short-description .input-group__area textarea {
-	font-size: 20px;
+  font-size: 20px;
 }
 .modify-answer-travel .input-group__area {
-	width: 70px;
-	margin-top: 16px;
-	border: 1px solid black;
-	margin-top: -7px;
+  width: 70px;
+  margin-top: 16px;
+  border: 1px solid black;
+  margin-top: -7px;
 }
 .modify-answer-travel .input-group__area input {
-	text-align: center;
-	font-size: 20px;
+  text-align: center;
+  font-size: 20px;
 }
 
 .container-account .details-account {
-	height: auto;
+  height: auto;
 }
 
 .save-changes {
-	display: flex;
-	justify-content: flex-end;
-	width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .save-changes .button-primary {
-	font-size: 20px;
-	width: 200px;
-	height: 40px;
-	margin-left: auto;
-	font-weight: bold;
+  font-size: 20px;
+  width: 200px;
+  height: 40px;
+  margin-left: auto;
+  font-weight: bold;
 }
 
 @media (min-width: 1380px) {
-	.container-account {
-		margin: 0 auto;
-		max-width: 1280px;
-	}
+  .container-account {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
 }
 
 @media (max-width: 1379px) {
-	.container-account {
-		flex-direction: row;
-	}
-	.save-changes .button-primary {
-		margin-left: 0;
-	}
+  .container-account {
+    flex-direction: row;
+  }
+  .save-changes .button-primary {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 991px) {
-	.container-account {
-		flex-direction: column;
-		align-items: center;
-	}
-	.menu-account {
-		max-width: none;
-		width: 100%;
-		margin-bottom: 20px;
-	}
-	.details-account {
-		width: 100%;
-		max-width: none;
-	}
-	.save-changes {
-		justify-content: center;
-	}
+  .container-account {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-account {
+    max-width: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .details-account {
+    width: 100%;
+    max-width: none;
+  }
+  .save-changes {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 767px) {
-	.container-account {
-		padding: 0 10px;
-	}
-	.menu-account .text-body-copy-selected,
-	.menu-account .text-body-copy {
-		display: block;
-		width: 100%;
-		text-align: center;
-		padding: 10px 0;
-	}
-	.details-account .input-group__area {
-		width: 100%;
-		margin-left: 0;
-		margin-top: 10px;
-	}
-	.details-account .input-group__area input,
-	.details-account .input-group__area textarea {
-		width: 100%;
-	}
-	.save-changes .button-primary {
-		width: 100%;
-	}
+  .container-account {
+    padding: 0 10px;
+  }
+  .menu-account .text-body-copy-selected,
+  .menu-account .text-body-copy {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .details-account .input-group__area {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .details-account .input-group__area input,
+  .details-account .input-group__area textarea {
+    width: 100%;
+  }
+  .save-changes .button-primary {
+    width: 100%;
+  }
 
-	.short-description .input-group__area {
-		min-width: 0;
-	}
+  .short-description .input-group__area {
+    min-width: 0;
+  }
 }
