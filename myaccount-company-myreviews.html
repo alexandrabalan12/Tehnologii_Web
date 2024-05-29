@@ -76,29 +76,29 @@
 						>
 					</div>
 				</div>
-				<div class="myreviews">
-					<div class="details-account1">
-						<div class="review-for">
-							<h4 class="text-h4" id="name"></h4>
+				<div class="myreviews" id="reviews-container">
+					<template id="review-template">
+						<div class="details-account1">
+							<div class="review-for">
+								<h4 class="text-h4" data-selector="review-name"></h4>
 
-							<div class="stars" id="review-stars">
-								<template id="full-star">
-									<img src="./assets/full_star.png" alt="Star" />
-								</template>
-								<template id="empty-star">
-									<img src="./assets/empty_star.png" alt="Star" />
-								</template>
+								<div class="stars" data-selector="review-stars"></div>
+							</div>
+							<div class="review-text">
+								<p class="text-body-copy" data-selector="review-text"></p>
+							</div>
+
+							<div class="review-from">
+								<p class="text-body-copy" data-selector="review-job"></p>
 							</div>
 						</div>
-
-						<div class="review-text">
-							<p class="text-body-copy" id="review-text"></p>
-						</div>
-
-						<div class="review-from">
-							<p class="text-body-copy" id="job"></p>
-						</div>
-					</div>
+					</template>
+					<template id="full-star">
+						<img src="./assets/full_star.png" alt="Star" />
+					</template>
+					<template id="empty-star">
+						<img src="./assets/empty_star.png" alt="Star" />
+					</template>
 				</div>
 			</div>
 		</div>
@@ -124,40 +124,126 @@
 
 <script>
 	window.addEventListener("load", () => {
-		// continut care va veni din backend
+		// continut care e dinamic ca vine din backend
+		// momentan e static pana legam cu api-urile
+		// dar asa o sa arate ce trebuie afisat
+		const reviews = [
+			{
+				id: 6,
+				company_id: 1,
+				user_reviewer_id: 41,
+				user_reviewer_name: "John Doe",
+				user_reviewer_occupation: "Software Engineer",
+				rating: 5,
+				review_content:
+					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
+				created_at: "2024-05-28T19:13:37.000Z",
+			},
+			{
+				id: 5,
+				company_id: 1,
+				user_reviewer_id: 41,
+				user_reviewer_name: "John Doe",
+				user_reviewer_occupation: "Software Engineer",
+				rating: 1,
+				review_content:
+					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
+				created_at: "2024-05-28T07:12:11.000Z",
+			},
+			{
+				id: 4,
+				company_id: 1,
+				user_reviewer_id: 41,
+				user_reviewer_name: "John Doe",
+				user_reviewer_occupation: "Software Engineer",
+				rating: 3,
+				review_content:
+					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
+				created_at: "2024-05-28T07:11:09.000Z",
+			},
+			{
+				id: 3,
+				company_id: 1,
+				user_reviewer_id: 41,
+				user_reviewer_name: "John Doe",
+				user_reviewer_occupation: "Software Engineer",
+				rating: 1,
+				review_content:
+					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
+				created_at: "2024-05-27T16:19:38.000Z",
+			},
+			{
+				id: 2,
+				company_id: 1,
+				user_reviewer_id: 41,
+				user_reviewer_name: "John Doe",
+				user_reviewer_occupation: "Software Engineer",
+				rating: 5,
+				review_content:
+					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
+				created_at: "2024-05-27T14:56:02.000Z",
+			},
+			{
+				id: 1,
+				company_id: 1,
+				user_reviewer_id: 41,
+				user_reviewer_name: "John Doe",
+				user_reviewer_occupation: "Software Engineer",
+				rating: 3,
+				review_content:
+					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
+				created_at: "2024-05-27T12:49:14.000Z",
+			},
+		];
 
-		const nume = `John Smith`;
-		const continut = `"I had a specific vision for my restaurant's renovation, and PlaCo matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!"`;
-		const munca = `restaurant owner`;
-		const rating = 3;
-		// elemente care trebuie populate cu continut
-		const name = document.getElementById("name");
-		const review_text = document.getElementById("review-text");
-		const job = document.getElementById("job");
+		const reviewsContainer = document.getElementById("reviews-container");
 
-		function ratings(index) {
-			const ratingContainer = document.getElementById("review-stars");
-			const fullStar = document.getElementById("full-star");
-			const emptyStar = document.getElementById("empty-star");
+		function ratings(rating, container) {
 			for (let i = 0; i < rating; i += 1) {
-				ratingContainer.appendChild(
-					fullStar.content.cloneNode(true).firstElementChild
-				);
+				const fullStar = document
+					.getElementById("full-star")
+					.content.cloneNode(true).firstElementChild;
+				container.appendChild(fullStar);
 			}
 			for (let i = 0; i < 5 - rating; i += 1) {
-				ratingContainer.appendChild(
-					emptyStar.content.cloneNode(true).firstElementChild
-				);
+				const emptyStar = document
+					.getElementById("empty-star")
+					.content.cloneNode(true).firstElementChild;
+				container.appendChild(emptyStar);
 			}
 		}
-		function createProject() {
-			// continut text descriere
-			name.innerText = nume;
-			review_text.innerText = continut;
-			job.innerText = munca;
-			ratings(rating);
+
+		// de aici in jos
+		function createReviews() {
+			reviews.forEach((review, index) => {
+				const reviewTemplate = document
+					.getElementById("review-template")
+					.content.cloneNode(true).firstElementChild;
+
+				// doar in interior la template-uri
+				const review_name = reviewTemplate.querySelector(
+					'[data-selector="review-name"]'
+				);
+				const review_text = reviewTemplate.querySelector(
+					'[data-selector="review-text"]'
+				);
+				const review_job = reviewTemplate.querySelector(
+					'[data-selector="review-job"]'
+				);
+				const review_stars = reviewTemplate.querySelector(
+					'[data-selector="review-stars"]'
+				);
+
+				review_name.innerText = review.user_reviewer_name;
+				review_text.innerText = review.review_content;
+				review_job.innerText = review.user_reviewer_occupation;
+
+				ratings(review.rating, review_stars);
+
+				reviewsContainer.appendChild(reviewTemplate);
+			});
 		}
 
-		createProject();
+		createReviews();
 	});
 </script>

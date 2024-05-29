@@ -76,87 +76,38 @@
 					</select>
 				</div>
 			</div>
-			<div class="projects">
-				<div class="details-account1">
-					<a href="two-story-houserenovation.html" class="link">
-						<div class="text">
-							<div class="info-field">
-								<p class="text-body-copy-selected" id="project-title"></p>
-							</div>
-							<div class="info-field info-field-dot">
-								<span class="text-body-copy-bold">Description: </span>
-								<p class="text-body-copy1" id="project-description"></p>
-							</div>
-							<div class="info-field info-field-dot">
-								<span class="text-body-copy-bold">Team needed:</span>
-								<p class="text-body-copy1" id="project-team"></p>
-							</div>
-							<div class="info-field info-field-dot">
-								<span class="text-body-copy-bold">Location:</span>
-								<p class="text-body-copy1" id="project-location"></p>
-							</div></div
-					></a>
-				</div>
-				<div class="details-account1">
-					<a href="two-story-houserenovation.html" class="link">
-						<div class="text">
-							<div class="info-field">
-								<p class="text-body-copy-selected">
-									Two-Story House Renovation
-								</p>
-							</div>
-							<div class="info-field info-field-dot">
-								<p class="text-body-copy1">
-									<span class="text-body-copy-bold">Description</span>
-									Complete makeover of a vintage 1990s home, upgrading to modern
-									aesthetics and
-								</p>
-							</div>
-							<div class="info-field info-field-dot">
-								<p class="text-body-copy1">
+			<div class="projects" id="projects-container">
+				<template id="project-template">
+					<div class="details-account1">
+						<a href="two-story-houserenovation.html" class="link">
+							<div class="text">
+								<div class="info-field">
+									<p
+										class="text-body-copy-selected"
+										data-selector="project-title"
+									></p>
+								</div>
+								<div class="info-field info-field-dot">
+									<span class="text-body-copy-bold">Description: </span>
+									<p
+										class="text-body-copy1"
+										data-selector="project-description"
+									></p>
+								</div>
+								<div class="info-field info-field-dot">
 									<span class="text-body-copy-bold">Team needed:</span>
-									Interior Design
-								</p>
-							</div>
-							<div class="info-field info-field-dot">
-								<p class="text-body-copy1">
+									<p class="text-body-copy1" data-selector="project-team"></p>
+								</div>
+								<div class="info-field info-field-dot">
 									<span class="text-body-copy-bold">Location:</span>
-									Iasi, Romania
-								</p>
-							</div>
-						</div></a
-					>
-				</div>
-				<div class="details-account1">
-					<a href="two-story-houserenovation.html" class="link">
-						<div class="text">
-							<div class="info-field">
-								<p class="text-body-copy-selected">
-									Two-Story House Renovation
-								</p>
-							</div>
-							<div class="info-field info-field-dot">
-								<p class="text-body-copy1">
-									<span class="text-body-copy-bold">Description</span>
-									Complete makeover of a vintage 1990s home, upgrading to modern
-									aesthetics and
-								</p>
-							</div>
-							<div class="info-field info-field-dot">
-								<p class="text-body-copy1">
-									<span class="text-body-copy-bold">Team needed:</span>
-									Interior Design
-								</p>
-							</div>
-							<div class="info-field info-field-dot">
-								<p class="text-body-copy1">
-									<span class="text-body-copy-bold">Location:</span>
-									Iasi, Romania
-								</p>
-							</div>
-						</div></a
-					>
-				</div>
+									<p
+										class="text-body-copy1"
+										data-selector="project-location"
+									></p>
+								</div></div
+						></a>
+					</div>
+				</template>
 			</div>
 			<div>
 				<h2 class="text-h2">Contact us</h2>
@@ -183,23 +134,118 @@
 	window.addEventListener("load", () => {
 		// continut care va veni din backend
 
-		const titlu = `Two-Story House Renovation`;
-		const descriere = `Complete makeover of a vintage 1990s home, upgrading to modernaesthetics and functionalities, including energy-efficient windows, new HVAC system, and smart home technology integration.`;
-		const team_needed = `Interior Design`;
-		const locatie = `Iasi, Romania`;
+		const projects = [
+			{
+				id: 1,
+				user_id: 41,
+				name: "Green Energy Initiative",
+				description:
+					"A project focused on developing sustainable green energy solutions for urban areas.",
+				status: "open",
+				location: "iasi",
+				professional_area: "interior_design",
+				price: "150000",
+				requirements: [
+					{
+						name: "Solar Panel Installation",
+						description: "Install solar panels on rooftops of urban buildings.",
+					},
+					{
+						name: "Wind Turbine Setup",
+						description: "Set up small wind turbines in open urban areas.",
+					},
+				],
+			},
+			{
+				id: 2,
+				user_id: 41,
+				name: "Green Energy Initiative",
+				description:
+					"A project focused on developing sustainable green energy solutions for urban areas.",
+				status: "open",
+				location: "iasi",
+				professional_area: "interior_design",
+				price: "150000",
+				requirements: [
+					{
+						name: "Solar Panel Installation",
+						description: "Install solar panels on rooftops of urban buildings.",
+					},
+					{
+						name: "Wind Turbine Setup",
+						description: "Set up small wind turbines in open urban areas.",
+					},
+				],
+			},
+			{
+				id: 3,
+				user_id: 41,
+				name: "Green Energy Initiative",
+				description:
+					"A project focused on developing sustainable green energy solutions for urban areas.",
+				status: "open",
+				location: "iasi",
+				professional_area: "interior_design",
+				price: "150000",
+				requirements: [
+					{
+						name: "Solar Panel Installation",
+						description: "Install solar panels on rooftops of urban buildings.",
+					},
+					{
+						name: "Wind Turbine Setup",
+						description: "Set up small wind turbines in open urban areas.",
+					},
+				],
+			},
+		];
 
-		// elemente care trebuie populate cu continut
-		const project_title = document.getElementById("project-title");
-		const project_description = document.getElementById("project-description");
-		const project_team = document.getElementById("project-team");
-		const project_location = document.getElementById("project-location");
+		const projectsContainer = document.getElementById("projects-container");
+
+		// const titlu = `Two-Story House Renovation`;
+		// const descriere = `Complete makeover of a vintage 1990s home, upgrading to modernaesthetics and functionalities, including energy-efficient windows, new HVAC system, and smart home technology integration.`;
+		// const team_needed = `Interior Design`;
+		// const locatie = `Iasi, Romania`;
+
+		// // elemente care trebuie populate cu continut
+		// const project_title = document.getElementById("project-title");
+		// const project_description = document.getElementById("project-description");
+		// const project_team = document.getElementById("project-team");
+		// const project_location = document.getElementById("project-location");
 
 		function createProject() {
+			projects.forEach((project, index) => {
+				const projectTemplate = document
+					.getElementById("project-template")
+					.content.cloneNode(true).firstElementChild;
+
+				// doar in interior la template-uri
+				const project_title = projectTemplate.querySelector(
+					'[data-selector="project-title"]'
+				);
+				const project_description = projectTemplate.querySelector(
+					'[data-selector="project-description"]'
+				);
+				const project_team = projectTemplate.querySelector(
+					'[data-selector="project-team"]'
+				);
+				const project_location = projectTemplate.querySelector(
+					'[data-selector="project-location"]'
+				);
+
+				project_title.innerText = project.name;
+				project_description.innerText = project.description;
+				project_team.innerText = project.professional_area;
+				project_location.innerText = project.location;
+
+				projectsContainer.appendChild(projectTemplate);
+			});
+
 			// continut text descriere
-			project_title.innerText = titlu;
-			project_description.innerText = descriere;
-			project_team.innerText = team_needed;
-			project_location.innerText = locatie;
+			// project_title.innerText = titlu;
+			// project_description.innerText = descriere;
+			// project_team.innerText = team_needed;
+			// project_location.innerText = locatie;
 		}
 		createProject();
 	});
