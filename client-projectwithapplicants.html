@@ -65,9 +65,9 @@
 			</div>
 
 			<h2 class="text-h2">Applicants</h2>
-			<div class="description">
-				<div class="applicants" id="applicants-container">
-					<template id="applicants-template">
+			<div class="description" id="applicants-container">
+				<template id="applicants-template">
+					<div class="applicants">
 						<div class="text-margin">
 							<p class="text-body-copy" data-selector="company-name1"></p>
 						</div>
@@ -83,8 +83,8 @@
 								<img src="./assets/sageata.png" alt="Arrow" />
 							</a>
 						</div>
-					</template>
-				</div>
+					</div>
+				</template>
 			</div>
 		</div>
 		<div class="container">
@@ -168,6 +168,7 @@
 				const applicantsTemplate = document
 					.getElementById("applicants-template")
 					.content.cloneNode(true).firstElementChild;
+				console.log(applicantsTemplate);
 				const applicants_name = applicantsTemplate.querySelector(
 					'[data-selector="company-name1"]'
 				);

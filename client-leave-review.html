@@ -77,6 +77,22 @@
 						/>
 					</div>
 				</div>
+				<div class="message1">
+					<h2 class="text-h3">Name of the project</h2>
+					<div class="text-body-copy">
+						Please enter the name of the project.
+					</div>
+					<div class="details-aftersignup">
+						<div class="input-group__area">
+							<input
+								id="name-project"
+								name="name-project"
+								type="text"
+								placeholder="Your answer..."
+							/>
+						</div>
+					</div>
+				</div>
 				<div class="input-group__area">
 					<textarea
 						id="your-message"
@@ -88,11 +104,12 @@
 
 			<div class="save-button">
 				<div class="title-itemslong">
-					<a
+					<!-- <a
 						href="./client-profileforcompany-reviews.html"
 						class="button-primary"
 						>SAVE</a
-					>
+					> -->
+					<button class="button-primary"></button>
 				</div>
 			</div>
 		</div>
@@ -119,28 +136,23 @@
 <script>
 	window.addEventListener("load", () => {
 		// continut care va veni din backend
-		const rating = 0;
-		function ratings(index) {
-			const ratingContainer = document.getElementById("review-stars");
-			const fullStar = document.getElementById("full-star");
-			const emptyStar = document.getElementById("empty-star");
-			for (let i = 0; i < rating; i += 1) {
-				ratingContainer.appendChild(
-					fullStar.content.cloneNode(true).firstElementChild
-				);
-			}
-			for (let i = 0; i < 5 - rating; i += 1) {
-				ratingContainer.appendChild(
-					emptyStar.content.cloneNode(true).firstElementChild
-				);
-			}
-		}
-		function createProject() {
-			// continut text descriere
 
-			ratings(rating);
+		const email_input = document.getElementById("email");
+		const password_input = document.getElementById("password");
+		const confirm_password_input = document.getElementById("password-confirm");
+		const button = document.getElementById("register-button");
+
+		function register() {
+			const payload = {
+				email: email_input.value,
+				password: password_input.value,
+				password_confirm: confirm_password_input.value,
+				role: "client",
+			};
+
+			console.log(payload);
 		}
 
-		createProject();
+		button.addEventListener("click", () => register());
 	});
 </script>
