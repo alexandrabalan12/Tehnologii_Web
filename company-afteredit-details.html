@@ -15,13 +15,12 @@
 		<link rel="stylesheet" href="./styles/pages/home.css" />
 		<link rel="stylesheet" href="./styles/pages/afterlogin.css" />
 		<link rel="stylesheet" href="./styles/pages/account.css" />
-		<link rel="stylesheet" href="./styles/pages/availableprojects.css" />
-		<link rel="stylesheet" href="./styles/pages/portfolio.css" />
-		<link rel="stylesheet" href="./styles/pages/myreviews-company.css" />
 		<link
 			rel="stylesheet"
 			href="./styles/pages/myaccount-company-afteredit.css"
 		/>
+
+		<link rel="stylesheet" href="./styles/pages/aftersignup-company.css" />
 	</head>
 	<body>
 		<nav class="navbar">
@@ -37,7 +36,7 @@
 				</label>
 				<div class="nav-menu" id="navbar-menu">
 					<!-- continut navigatie -->
-					<a href="availableprojects.html" class="nav-link"
+					<a href="company-availableprojects.html" class="nav-link"
 						>Available projects</a
 					>
 					<a href="aboutus-afterlogin.html" class="nav-link">About us</a>
@@ -50,13 +49,14 @@
 							placeholder="Search for projects or companies"
 						/>
 					</div>
-					<a href="myaccount-company.html">
+					<a href="company-account-details.html">
 						<img src="./assets/profile.png" />
 					</a>
 					<a href="index.html" class="signup-btn">Log out</a>
 				</div>
 			</div>
 		</nav>
+
 		<div>
 			<h2 class="text-h2-title">My account</h2>
 		</div>
@@ -64,62 +64,130 @@
 			<div class="container-account">
 				<div class="menu-account">
 					<div class="text">
-						<a href="myaccount-company.html" class="text-body-copy-selected"
+						<a
+							href="company-account-details.html"
+							class="text-body-copy-selected"
 							>My Details</a
 						>
-						<a href="myaccount-company-portfolio.html" class="text-body-copy"
+						<a href="company-account-portfolio.html" class="text-body-copy"
 							>Portfolio</a
 						>
-						<a href="myaccount-company-myreviews.html" class="text-body-copy"
+						<a href="./company-account-reviews.html" class="text-body-copy"
 							>My Reviews</a
 						>
 					</div>
 				</div>
-
 				<div class="details-account">
 					<div class="text">
 						<div class="info-field">
 							<p class="text-body-copy-bold">Company name:</p>
-							<p class="text-body-copy1" id="company-name"></p>
+							<div class="modify-company-name">
+								<div class="input-group__area">
+									<input
+										id="modify-company-name"
+										name="modify-company-name"
+										type="text"
+									/>
+								</div>
+							</div>
 						</div>
 						<div class="info-field">
 							<p class="text-body-copy-bold">Phone number:</p>
-							<p class="text-body-copy1" id="company-phone"></p>
+							<div class="number-members">
+								<div class="input-group__area">
+									<input id="modify-number" name="number-members" type="text" />
+								</div>
+							</div>
 						</div>
 						<div class="info-field">
 							<p class="text-body-copy-bold">Short Description:</p>
-							<p class="text-body-copy1" id="company-description"></p>
+							<div class="short-description">
+								<div class="input-group__area">
+									<textarea
+										id="modify-description"
+										name="number-members"
+										type="text"
+									>
+									</textarea>
+								</div>
+							</div>
 						</div>
 						<div class="info-field">
 							<p class="text-body-copy-bold">Location:</p>
-							<p class="text-body-copy1" id="company-location"></p>
+							<div class="modify-company-name">
+								<div class="input-group__area">
+									<input
+										id="modify-company-location"
+										name="modify-geographical-area"
+										type="text"
+									/>
+								</div>
+							</div>
 						</div>
 						<div class="info-field">
-							<p class="text-body-copy-bold">Company Adress:</p>
-							<p class="text-body-copy1" id="company-adress"></p>
+							<p class="text-body-copy-bold">Company Address:</p>
+							<div class="modify-company-name">
+								<div class="input-group__area">
+									<input
+										id="modify-company-address"
+										name="modify-location"
+										type="text"
+									/>
+								</div>
+							</div>
 						</div>
 						<div class="info-field">
 							<p class="text-body-copy-bold">Proffesional Area:</p>
-							<p class="text-body-copy1" id="company-proffesionalarea"></p>
+							<div class="modify-company-name">
+								<div class="input-group__area">
+									<input
+										id="modify-proffesional-area"
+										name="modify-proffesional-area"
+										type="text"
+									/>
+								</div>
+							</div>
 						</div>
 						<div class="info-field">
 							<p class="text-body-copy-bold">General Contractor:</p>
-							<p class="text-body-copy1" id="company-contractor"></p>
+							<div class="modify-company-name">
+								<div class="input-group__area">
+									<input
+										id="modify-general-contractor"
+										name="modify-general-contractor"
+										type="text"
+									/>
+								</div>
+							</div>
 						</div>
+
 						<div class="info-field">
-							<p class="text-body-copy-bold">Open to travel for projects:</p>
-							<p class="text-body-copy1" id="company-travel"></p>
+							<h4 class="text-body-copy-bold">Open To Travel For Projects:</h4>
+							<input
+								id="travel-projects-yes"
+								name="travel-projects"
+								type="radio"
+								value="yes"
+							/>
+							<label for="travel-projects-yes" class="radio-label">Yes</label>
+							<input
+								id="travel-projects-no"
+								name="travel-projects"
+								type="radio"
+								value="no"
+							/>
+							<label for="travel-projects-no" class="radio-label">No</label>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="edit-link">
-				<a href="myaccount-company-afteredit.html" class="text-body-copy"
-					>Edit</a
+
+			<div class="save-changes">
+				<a href="./company-account-details.html" class="button-primary"
+					>SAVE CHANGES</a
 				>
 			</div>
 		</div>
-
 		<div class="container">
 			<h2 class="text-h2">Contact us</h2>
 			<div class="contact-info">
@@ -159,27 +227,31 @@
 		};
 
 		function createProject() {
-			const company_name = document.getElementById("company-name");
-			const company_number = document.getElementById("company-phone");
-			const company_description = document.getElementById(
-				"company-description"
+			const company_name = document.getElementById("modify-company-name");
+			const company_number = document.getElementById("modify-number");
+			const company_description = document.getElementById("modify-description");
+			const company_location = document.getElementById(
+				"modify-company-location"
 			);
-			const company_location = document.getElementById("company-location");
-			const company_adress = document.getElementById("company-adress");
+			const company_adress = document.getElementById("modify-company-address");
 			const company_proffesionalarea = document.getElementById(
-				"company-proffesionalarea"
+				"modify-proffesional-area"
 			);
-			const company_contractor = document.getElementById("company-contractor");
-			const company_travel = document.getElementById("company-travel");
+			const company_contractor = document.getElementById(
+				"modify-general-contractor"
+			);
+			document.getElementById("travel-projects-yes").checked =
+				company_details.open_to_travel;
+			document.getElementById("travel-projects-no").checked =
+				!company_details.open_to_travel;
 
-			company_name.innerText = company_details.company_name;
-			company_number.innerText = company_details.phone_number;
-			company_description.innerText = company_details.description;
-			company_location.innerText = company_details.location;
-			company_adress.innerText = company_details.address;
-			company_proffesionalarea.innerText = company_details.professional_area;
-			company_contractor.innerText = company_details.owner_name;
-			company_travel.innerText = company_details.open_to_travel;
+			company_name.value = company_details.company_name;
+			company_number.value = company_details.phone_number;
+			company_description.value = company_details.description;
+			company_location.value = company_details.location;
+			company_adress.value = company_details.address;
+			company_proffesionalarea.value = company_details.professional_area;
+			company_contractor.value = company_details.owner_name;
 		}
 		createProject();
 	});

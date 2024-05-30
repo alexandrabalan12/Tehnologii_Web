@@ -17,16 +17,16 @@
 		<link rel="stylesheet" href="./styles/pages/account.css" />
 		<link rel="stylesheet" href="./styles/pages/availableprojects.css" />
 		<link rel="stylesheet" href="./styles/pages/portfolio.css" />
-		<link rel="stylesheet" href="./styles/pages/myreviews-company.css" />
 		<link
 			rel="stylesheet"
 			href="./styles/pages/myaccount-company-afteredit.css"
 		/>
+		<link rel="stylesheet" href="./styles/pages/myreviews-company.css" />
 	</head>
 	<body>
 		<nav class="navbar">
 			<div class="navbar-container">
-				<a href="index.html" class="logo1">PlaCo</a>
+				<a href="client-homepage.html" class="logo1">PlaCo</a>
 				<input
 					type="checkbox"
 					class="navigation-mobile-toggle"
@@ -37,10 +37,10 @@
 				</label>
 				<div class="nav-menu" id="navbar-menu">
 					<!-- continut navigatie -->
-					<a href="availableprojects.html" class="nav-link"
-						>Available projects</a
+					<a href="./client-closedprojects.html" class="nav-link"
+						>Your projects</a
 					>
-					<a href="aboutus-afterlogin.html" class="nav-link">About us</a>
+					<a href="aboutus.html" class="nav-link">About us</a>
 					<div class="nav-search input-group__area">
 						<img src="./assets/icon_search.png" />
 						<input
@@ -50,65 +50,65 @@
 							placeholder="Search for projects or companies"
 						/>
 					</div>
-					<a href="myaccount-company.html">
-						<img src="./assets/profile.png" />
-					</a>
 					<a href="index.html" class="signup-btn">Log out</a>
 				</div>
 			</div>
 		</nav>
-		<div class="portofolio">
-			<h2 class="text-h2-title">My account</h2>
-			<div class="add-project">
-				<a href="add-project-portfolio.html" class="button-primary"
-					>ADD A PROJECT</a
-				>
-			</div>
-		</div>
 		<div class="container">
-			<div class="container-account">
-				<div class="menu-account">
-					<div class="text">
-						<a href="myaccount-company.html" class="text-body-copy"
-							>My Details</a
-						>
-						<a
-							href="myaccount-company-portfolio.html"
-							class="text-body-copy-selected"
-							>Portfolio</a
-						>
-						<a href="myaccount-company-myreviews.html" class="text-body-copy"
-							>My Reviews</a
-						>
-					</div>
+			<div class="leave-review">
+				<div class="title">
+					<h2 class="text-h2" id="company-name"></h2>
 				</div>
-				<div class="projects-portfolio">
-					<div class="details-account1">
-						<a href="project-portfolio.html" class="link">
-							<div class="text">
-								<div class="info-field">
-									<p class="text-body-copy-selected" id="project-title"></p>
-								</div>
-								<div class="info-field">
-									<ul class="text-body-copy-bold">
-										<li>Team needed:</li>
-									</ul>
-									<p class="text-body-copy1" id="project-team"></p>
-								</div>
-								<div class="info-field">
-									<ul class="text-body-copy-bold">
-										<li>Description:</li>
-									</ul>
-									<p class="text-body-copy1" id="project-description"></p>
-								</div>
+			</div>
+			<div class="container">
+				<div class="container-account">
+					<div class="menu-account1">
+						<div class="text">
+							<a
+								href="client-profileforcompany-details.html"
+								class="text-body-copy"
+								>Details</a
+							>
+							<a
+								href="./client-profileforcompany-portfolio.html"
+								class="text-body-copy-selected"
+								>Portfolio</a
+							>
+							<a
+								href="./client-profileforcompany-reviews.html"
+								class="text-body-copy"
+								>Reviews</a
+							>
+						</div>
+					</div>
+					<div class="projects-portfolio">
+						<div class="details-account1">
+							<a href="./project-portfolio.html" class="link">
+								<div class="text">
+									<div class="info-field">
+										<p class="text-body-copy-selected" id="project-title"></p>
+									</div>
+									<div class="info-field">
+										<ul class="text-body-copy-bold">
+											<li>Team needed:</li>
+										</ul>
+										<p class="text-body-copy1" id="project-team"></p>
+									</div>
+									<div class="info-field">
+										<ul class="text-body-copy-bold">
+											<li>Description:</li>
+										</ul>
+										<p class="text-body-copy1" id="project-description"></p>
+									</div>
 
-								<div class="info-field">
-									<ul class="text-body-copy-bold">
-										<li>See more</li>
-									</ul>
+									<div class="info-field">
+										<ul class="text-body-copy-bold">
+											<li>See more</li>
+										</ul>
+									</div>
 								</div>
-							</div>
-						</a>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -136,18 +136,23 @@
 <script>
 	window.addEventListener("load", () => {
 		// continut care va veni din backend
+		const nume_companie = `StructuralBuild Innovation`;
 
 		const titlu = `Two-Story House Renovation`;
 		const descriere = `Complete makeover of a vintage 1990s home, upgrading to modernaesthetics and functionalities, including energy-efficient windows, new HVAC system, and smart home technology integration.`;
 		const team_needed = `Interior Design`;
 
 		// elemente care trebuie populate cu continut
+		const company_name = document.getElementById("company-name");
+
 		const project_title = document.getElementById("project-title");
 		const project_description = document.getElementById("project-description");
 		const project_team = document.getElementById("project-team");
 
 		function createProject() {
 			// continut text descriere
+			company_name.innerText = nume_companie;
+
 			project_title.innerText = titlu;
 			project_description.innerText = descriere;
 			project_team.innerText = team_needed;
