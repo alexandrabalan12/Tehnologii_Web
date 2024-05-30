@@ -1,239 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/index.css" />
-    <link rel="stylesheet" href="./styles/pages/home.css" />
-    <link rel="stylesheet" href="./styles/pages/afterlogin.css" />
-    <link rel="stylesheet" href="./styles/pages/account.css" />
-    <link rel="stylesheet" href="./styles/pages/projectsdescription.css" />
-    <link rel="stylesheet" href="./styles/pages/ongoing-projects-client.css" />
-    <link rel="stylesheet" href="./styles/pages/applicationconfirmation.css" />
-    <link rel="stylesheet" href="./styles/pages/portfolio.css" />
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/index.css" />
+		<link rel="stylesheet" href="./styles/pages/home.css" />
+		<link rel="stylesheet" href="./styles/pages/afterlogin.css" />
+		<link rel="stylesheet" href="./styles/pages/account.css" />
+		<link rel="stylesheet" href="./styles/pages/projectsdescription.css" />
+		<link rel="stylesheet" href="./styles/pages/ongoing-projects-client.css" />
+		<link rel="stylesheet" href="./styles/pages/applicationconfirmation.css" />
+		<link rel="stylesheet" href="./styles/pages/portfolio.css" />
+	</head>
 
-  <body>
-    <nav class="navbar">
-      <div class="navbar-container">
-        <a href="index.html" class="logo1">PlaCo</a>
-        <input
-          type="checkbox"
-          class="navigation-mobile-toggle"
-          id="navi-toggle"
-        />
-        <label class="navbar-mobile-button" for="navi-toggle">
-          <img src="./assets/nav-menu.png" alt="Menu" />
-        </label>
-        <div class="nav-menu" id="navbar-menu">
-          <!-- continut navigatie -->
-          <a href="your-projects-client.html" class="nav-link">Your projects</a>
-          <a href="aboutus.html" class="nav-link">About us</a>
-          <div class="nav-search input-group__area">
-            <img src="./assets/icon_search.png" />
-            <input
-              id="search"
-              name="seach"
-              type="search"
-              placeholder="Search for projects or companies"
-            />
-          </div>
-          <a href="index.html" class="signup-btn">Log out</a>
-        </div>
-      </div>
-    </nav>
-    <div class="container">
-      <div class="title-project">
-        <div class="title-subtitle">
-          <div class="title">
-            <h2 class="text-h2" id="project-name"></h2>
-          </div>
-          <div class="title-company">
-            <h4 class="text-h4" id="team-needed"></h4>
-          </div>
-        </div>
-        <div class="add-project">
-          <a href="./two-story-applicationpage.html" class="button-primary"
-            >APPLY</a
-          >
-        </div>
-      </div>
+	<body>
+		<nav class="navbar">
+			<div class="navbar-container">
+				<a href="index.html" class="logo1">PlaCo</a>
+				<input
+					type="checkbox"
+					class="navigation-mobile-toggle"
+					id="navi-toggle"
+				/>
+				<label class="navbar-mobile-button" for="navi-toggle">
+					<img src="./assets/nav-menu.png" alt="Menu" />
+				</label>
+				<div class="nav-menu" id="navbar-menu">
+					<!-- continut navigatie -->
+					<a href="your-projects-client.html" class="nav-link">Your projects</a>
+					<a href="aboutus.html" class="nav-link">About us</a>
+					<div class="nav-search input-group__area">
+						<img src="./assets/icon_search.png" />
+						<input
+							id="search"
+							name="seach"
+							type="search"
+							placeholder="Search for projects or companies"
+						/>
+					</div>
+					<a href="index.html" class="signup-btn">Log out</a>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="title-project">
+				<div class="title-subtitle">
+					<div class="title">
+						<h2 class="text-h2" id="project-name"></h2>
+					</div>
+					<div class="title-company">
+						<h4 class="text-h4" id="team-needed"></h4>
+					</div>
+				</div>
+				<div class="add-project">
+					<a href="./two-story-applicationpage.html" class="button-primary"
+						>APPLY</a
+					>
+				</div>
+			</div>
 
-      <div class="container">
-        <h2 class="text-h2">Location</h2>
-        <div class="description">
-          <div class="text-body-copy" id="location"></div>
-        </div>
+			<div class="container">
+				<h2 class="text-h2">Location</h2>
+				<div class="description">
+					<div class="text-body-copy" id="location"></div>
+				</div>
 
-        <h2 class="text-h2">Description</h2>
-        <div class="description">
-          <div class="text-body-copy" id="general-description"></div>
-          <div class="text-h4">The Living Area</div>
-          <div class="info-field1">
-            <p class="text-body-copy">
-              Open-concept layout: Remove non-load-bearing walls to create an
-              open-concept living and dining area.
-            </p>
+				<h2 class="text-h2">Description</h2>
+				<div class="description">
+					<div class="text-body-copy" id="general-description"></div>
+					<div id="requirements-container">
+						<template id="requirement-template">
+							<p class="text-h4" data-selector="requirement-name"></p>
+							<div class="info-field1">
+								<p class="text-body-copy" data-selector="requirement-text"></p>
+							</div>
+						</template>
+					</div>
+				</div>
+				<div class="title-items">
+					<h2 class="text-h2">Budget</h2>
+					<div class="description">
+						<div class="text-body-copy" id="budget"></div>
+					</div>
+				</div>
 
-            <p class="text-body-copy">
-              Flooring: Install new hardwood flooring on the first floor and
-              replace carpeting on the second floor.
-            </p>
-
-            <p class="text-body-copy">
-              Paint: Repaint all interior walls and ceilings with modern,
-              neutral colors.
-            </p>
-
-            <p class="text-body-copy">
-              Lighting: Update lighting fixtures to energy-efficient LED
-              fixtures and install dimmer switches.
-            </p>
-          </div>
-          <div class="text-h4">The Kitchen Area</div>
-          <div class="info-field1">
-            <p class="text-body-copy">
-              Layout: Reconfigure the kitchen layout for better workflow and add
-              a kitchen island.
-            </p>
-
-            <p class="text-body-copy">
-              Cabinetry: Install custom cabinetry with soft-close drawers and
-              doors.
-            </p>
-
-            <p class="text-body-copy">
-              Paint: Repaint all interior walls and ceilings with modern,
-              neutral colors.
-            </p>
-
-            <p class="text-body-copy">
-              Countertops: Replace existing countertops with durable, stylish
-              materials like quartz or granite.
-            </p>
-
-            <p class="text-body-copy">
-              Appliances: Upgrade to modern, energy-efficient appliances.
-            </p>
-
-            <p class="text-body-copy">
-              Backsplash: Update plumbing fixtures for a contemporary look.
-            </p>
-
-            <p class="text-body-copy">
-              Fixtures: Update plumbing fixtures for a contemporary look.
-            </p>
-          </div>
-          <div class="text-h4">Bathrooms</div>
-          <div class="info-field1">
-            <p class="text-body-copy">
-              Master Bathroom: Redesign the master bathroom to include a double
-              vanity, a walk-in shower, and a freestanding bathtub. Install
-              modern tiles and luxury finishes.
-            </p>
-
-            <p class="text-body-copy">
-              Guest Bathrooms: Update guest bathrooms with new tiles, fixtures,
-              and vanities.Install energy-efficient lighting and ventilation.
-            </p>
-          </div>
-
-          <div class="text-h4">Bedrooms</div>
-          <div class="info-field1">
-            <p class="text-body-copy">
-              Master Bedroom: Install a custom-built closet system. Repaint and
-              install new flooring.
-            </p>
-
-            <p class="text-body-copy">
-              Guest Bedrooms: Repaint and replace flooring as needed. Install
-              built-in storage solutions.
-            </p>
-          </div>
-
-          <div class="text-h4">Staircase</div>
-          <div class="info-field1">
-            <p class="text-body-copy">
-              Update the staircase with new railing, balusters, and treads.
-            </p>
-
-            <p class="text-body-copy">
-              Install new flooring and paint the staircase walls.
-            </p>
-          </div>
-        </div>
-        <div class="title-items">
-          <h2 class="text-h2">Budget</h2>
-          <div class="description">
-            <div class="text-body-copy" id="budget"></div>
-          </div>
-        </div>
-        <div class="title-items">
-          <h2 class="text-h2">Objectives</h2>
-          <div class="description">
-            <div class="info-field1">
-              <p class="text-body-copy" id="objectives"></p>
-            </div>
-          </div>
-        </div>
-        <h2 class="text-h2">Contact us</h2>
-        <div class="contact-info">
-          <div class="contact-mail">
-            <img src="./assets/email.png" />
-            <p class="text-body-copy">emailemail@gmail.com</p>
-          </div>
-          <div class="contact-phone">
-            <img src="./assets/phone.png" />
-            <p class="text-body-copy">+407.12.123.123</p>
-          </div>
-          <div class="contact-adress">
-            <img src="./assets/location.png" />
-            <p class="text-body-copy">Iasi, Romania</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+				<h2 class="text-h2">Contact us</h2>
+				<div class="contact-info">
+					<div class="contact-mail">
+						<img src="./assets/email.png" />
+						<p class="text-body-copy">emailemail@gmail.com</p>
+					</div>
+					<div class="contact-phone">
+						<img src="./assets/phone.png" />
+						<p class="text-body-copy">+407.12.123.123</p>
+					</div>
+					<div class="contact-adress">
+						<img src="./assets/location.png" />
+						<p class="text-body-copy">Iasi, Romania</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
-
 <script>
-  window.addEventListener("load", () => {
-    // continut care va veni din backend
-    const nume_proiect = `Two-Story House Renovation`;
-    const echipa = ` Interior Design`;
-    const locatie = `Iasi, Romania`;
-    const descriere = `A comprehensive interior renovation of a two-story residential house located in Iasi, Romania. The goal is to modernize the interior spaces, enhance functionality, and improve the overall aesthetic of the property, aligning with the homeowner’s vision. The renovation will focus on updating finishes, creating an open-concept layout, and enhancing the home's overall comfort and usability.`;
-    const buget = `The estimated budget for the project is $100,000, including contingencies for unexpected expenses.`;
-    const obiective = `Modernization: Update the interior with contemporary finishesand features.
-							    Functionality: Enhance the usability and flow of the living spaces.
-								Aesthetic Improvement: Improve the visual appeal of the interior through cohesive design elements.
-						        Comfort: Create a comfortable and inviting environment for the homeowners.`;
+	window.addEventListener("load", () => {
+		const company_project = {
+			id: 1,
+			user_id: 41,
+			project_name: "Green Energy Initiative",
+			description:
+				"A project focused on developing sustainable green energy solutions for urban areas.",
+			status: "open",
+			location: "iasi",
+			professional_area: "interior_design",
+			price:
+				"The estimated budget for the project is $100,000, including contingencies for unexpected expenses",
+			requirements: [
+				{
+					name: "Solar Panel Installation",
+					description: "Install solar panels on rooftops of urban buildings.",
+				},
+				{
+					name: "Wind Turbine Setup",
+					description: "Set up small wind turbines in open urban areas.",
+				},
+			],
+		};
 
-    // elemente care trebuie populate cu continut
-    const project_name = document.getElementById("project-name");
-    const team_needed = document.getElementById("team-needed");
-    const location = document.getElementById("location");
-    const general_description = document.getElementById("general-description");
-    const budget = document.getElementById("budget");
-    const objectives = document.getElementById("objectives");
+		const requirementsContainer = document.getElementById(
+			"requirements-container"
+		);
 
-    function createProject() {
-      // continut text descriere
-      project_name.innerText = nume_proiect;
-      team_needed.innerText = echipa;
-      location.innerText = locatie;
-      general_description.innerText = descriere;
-      budget.innerText = buget;
-      objectives.innerText = obiective;
-    }
-    createProject();
-  });
+		function createRequirement() {
+			const project_name = document.getElementById("project-name");
+			const team_needed = document.getElementById("team-needed");
+			const location = document.getElementById("location");
+			const general_description = document.getElementById(
+				"general-description"
+			);
+			const budget = document.getElementById("budget");
+
+			project_name.innerText = company_project.project_name;
+			team_needed.innerText = company_project.professional_area;
+			location.innerText = company_project.location;
+			general_description.innerText = company_project.description;
+			budget.innerText = company_project.price;
+
+			company_project.requirements.forEach((requirement) => {
+				const requirementTemplate = document
+					.getElementById("requirement-template")
+					.content.cloneNode(true);
+
+				const requirement_name = requirementTemplate.querySelector(
+					'[data-selector="requirement-name"]'
+				);
+				const requirement_text = requirementTemplate.querySelector(
+					'[data-selector="requirement-text"]'
+				);
+
+				requirement_name.innerText = requirement.name;
+				requirement_text.innerText = requirement.description;
+
+				requirementsContainer.appendChild(requirementTemplate);
+			});
+		}
+		createRequirement();
+	});
 </script>
