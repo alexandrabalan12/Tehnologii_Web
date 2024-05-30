@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/index.css" />
+		<link rel="stylesheet" href="./styles/pages/home.css" />
+		<link rel="stylesheet" href="./styles/pages/account.css" />
+		<link rel="stylesheet" href="./styles/pages/applicationpage.css" />
+		<link rel="stylesheet" href="./styles/pages/addproject.css" />
+		<link rel="stylesheet" href="./styles/pages/afterlogin.css" />
+		<link rel="stylesheet" href="./styles/pages/myreviews-company.css" />
+		<link rel="stylesheet" href="./styles/pages/aftersignup-company.css" />
+	</head>
+
+	<body>
+		<nav class="navbar">
+			<div class="navbar-container">
+				<a href="client-homepage.html" class="logo1">PlaCo</a>
+				<input
+					type="checkbox"
+					class="navigation-mobile-toggle"
+					id="navi-toggle"
+				/>
+				<label class="navbar-mobile-button" for="navi-toggle">
+					<img src="./assets/nav-menu.png" alt="Menu" />
+				</label>
+				<div class="nav-menu" id="navbar-menu">
+					<!-- continut navigatie -->
+					<a href="client-closedprojects.html" class="nav-link"
+						>Your projects</a
+					>
+					<a href="aboutus-afterlogin.html" class="nav-link">About us</a>
+					<div class="nav-search input-group__area">
+						<img src="./assets/icon_search.png" />
+						<input
+							id="search"
+							name="seach"
+							type="search"
+							placeholder="Search for projects or companies"
+						/>
+					</div>
+
+					<a href="index.html" class="signup-btn">Log out</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<h2 class="text-h2-title">Leave a review!</h2>
+			<div class="message">
+				<h2 class="text-h3">Your Feedback Matters</h2>
+
+				<div class="text-body-copy">
+					Leave a rating and share your experience and contribute to the
+					company's growth!
+				</div>
+				<div class="rating-box">
+					<h4 class="text-body-copy-bold">Give a rating from 1 to 5:</h4>
+					<div class="input-group__area">
+						<input
+							id="number-members"
+							name="number-members"
+							type="number"
+							min="1"
+							max="5"
+							step="1"
+							placeholder="Nr"
+						/>
+					</div>
+				</div>
+				<div class="input-group__area">
+					<textarea
+						id="your-message"
+						name="your-message"
+						placeholder="Your message..."
+					></textarea>
+				</div>
+			</div>
+
+			<div class="save-button">
+				<div class="title-itemslong">
+					<a
+						href="./client-profileforcompany-reviews.html"
+						class="button-primary"
+						>SAVE</a
+					>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h2 class="text-h2">Contact us</h2>
+			<div class="contact-info">
+				<div class="contact-mail">
+					<img src="./assets/email.png" />
+					<p class="text-body-copy">emailemail@gmail.com</p>
+				</div>
+				<div class="contact-phone">
+					<img src="./assets/phone.png" />
+					<p class="text-body-copy">+407.12.123.123</p>
+				</div>
+				<div class="contact-adress">
+					<img src="./assets/location.png" />
+					<p class="text-body-copy">Iasi, Romania</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script>
+	window.addEventListener("load", () => {
+		// continut care va veni din backend
+		const rating = 0;
+		function ratings(index) {
+			const ratingContainer = document.getElementById("review-stars");
+			const fullStar = document.getElementById("full-star");
+			const emptyStar = document.getElementById("empty-star");
+			for (let i = 0; i < rating; i += 1) {
+				ratingContainer.appendChild(
+					fullStar.content.cloneNode(true).firstElementChild
+				);
+			}
+			for (let i = 0; i < 5 - rating; i += 1) {
+				ratingContainer.appendChild(
+					emptyStar.content.cloneNode(true).firstElementChild
+				);
+			}
+		}
+		function createProject() {
+			// continut text descriere
+
+			ratings(rating);
+		}
+
+		createProject();
+	});
+</script>

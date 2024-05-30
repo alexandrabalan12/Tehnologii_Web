@@ -24,7 +24,7 @@
 	<body>
 		<nav class="navbar">
 			<div class="navbar-container">
-				<a href="index.html" class="logo1">PlaCo</a>
+				<a href="client-homepage.html" class="logo1">PlaCo</a>
 				<input
 					type="checkbox"
 					class="navigation-mobile-toggle"
@@ -35,10 +35,10 @@
 				</label>
 				<div class="nav-menu" id="navbar-menu">
 					<!-- continut navigatie -->
-					<a href="availableprojects.html" class="nav-link"
-						>Available projects</a
+					<a href="./client-closedprojects.html" class="nav-link"
+						>Your projects</a
 					>
-					<a href="aboutus-afterlogin.html" class="nav-link">About us</a>
+					<a href="aboutus.html" class="nav-link">About us</a>
 					<div class="nav-search input-group__area">
 						<img src="./assets/icon_search.png" />
 						<input
@@ -48,57 +48,64 @@
 							placeholder="Search for projects or companies"
 						/>
 					</div>
-					<a href="myaccount-company.html">
-						<img src="./assets/profile.png" />
-					</a>
 					<a href="index.html" class="signup-btn">Log out</a>
 				</div>
 			</div>
 		</nav>
-
-		<div>
-			<h2 class="text-h2-title">My account</h2>
-		</div>
 		<div class="container">
-			<div class="container-account">
-				<div class="menu-account">
-					<div class="text">
-						<a href="myaccount-company.html" class="text-body-copy"
-							>My Details</a
-						>
-						<a href="myaccount-company-portfolio.html" class="text-body-copy"
-							>Portfolio</a
-						>
-						<a
-							href="./myaccount-company-myreviews.html"
-							class="text-body-copy-selected"
-							>My Reviews</a
-						>
-					</div>
+			<div class="leave-review">
+				<div class="title">
+					<h2 class="text-h2" id="company-name"></h2>
 				</div>
-				<div class="myreviews" id="reviews-container">
-					<template id="review-template">
-						<div class="details-account1">
-							<div class="review-for">
-								<h4 class="text-h4" data-selector="review-name"></h4>
-
-								<div class="stars" data-selector="review-stars"></div>
-							</div>
-							<div class="review-text">
-								<p class="text-body-copy" data-selector="review-text"></p>
-							</div>
-
-							<div class="review-from">
-								<p class="text-body-copy" data-selector="review-job"></p>
-							</div>
+				<a href="./client-leave-review.html" class="button-primary"
+					>Leave a review</a
+				>
+			</div>
+			<div class="container">
+				<div class="container-account">
+					<div class="menu-account1">
+						<div class="text">
+							<a
+								href="client-profileforcompany-details.html"
+								class="text-body-copy"
+								>Details</a
+							>
+							<a
+								href="./client-profileforcompany-portfolio.html"
+								class="text-body-copy"
+								>Portfolio</a
+							>
+							<a
+								href="./client-profileforcompany-reviews.html"
+								class="text-body-copy-selected"
+								>Reviews</a
+							>
 						</div>
-					</template>
-					<template id="full-star">
-						<img src="./assets/full_star.png" alt="Star" />
-					</template>
-					<template id="empty-star">
-						<img src="./assets/empty_star.png" alt="Star" />
-					</template>
+					</div>
+					<div class="myreviews" id="reviews-container">
+						<template id="review-template">
+							<div class="details-account1">
+								<div class="review-for">
+									<h4 class="text-h4" data-selector="review-name"></h4>
+
+									<div class="stars" data-selector="review-stars"></div>
+								</div>
+								<div class="review-text">
+									<p class="text-body-copy" data-selector="review-text"></p>
+								</div>
+
+								<div class="review-from">
+									<p class="text-body-copy" data-selector="review-job"></p>
+								</div>
+							</div>
+						</template>
+						<template id="full-star">
+							<img src="./assets/full_star.png" alt="Star" />
+						</template>
+						<template id="empty-star">
+							<img src="./assets/empty_star.png" alt="Star" />
+						</template>
+					</div>
 				</div>
 			</div>
 		</div>
