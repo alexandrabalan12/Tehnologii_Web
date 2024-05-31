@@ -1,263 +1,267 @@
 .text-h2-title {
-  font-size: 49px;
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 44px;
-  margin-top: 24px;
+	font-size: 49px;
+	font-weight: 500;
+	line-height: 1.2;
+	margin-bottom: 44px;
+	margin-top: 24px;
 }
 .container-account {
-  display: flex;
-  max-width: 1372px;
-  margin: 0 auto;
+	display: flex;
+	max-width: 1372px;
+	margin: 0 auto;
 }
 .menu-account {
-  border: 2px solid #b1770b;
-  border-radius: 20px;
-  width: 30%;
-  height: min-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 4px;
+	border: 2px solid #b1770b;
+	border-radius: 20px;
+	width: 30%;
+	height: min-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 4px;
 }
 
 .menu-account .text {
-  width: 100%;
-  text-align: left;
-  padding: 4px 4px;
-  display: block;
-  margin-bottom: 12px;
+	width: 100%;
+	text-align: left;
+	padding: 4px 4px;
+	display: block;
+	margin-bottom: 12px;
 }
 
 .menu-account .text-body-copy {
-  color: black;
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  margin-bottom: 4px;
+	color: black;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	margin-bottom: 4px;
 }
 
 .menu-account .text-body-copy-selected {
-  color: #ffa500;
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  font-size: 25px;
-  font-weight: 400;
-  margin-bottom: 4px;
+	color: #ffa500;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	font-size: 25px;
+	font-weight: 400;
+	margin-bottom: 4px;
 }
 
 .text {
-  margin-top: 12px;
-  margin-left: 28px;
-  text-decoration: none;
-  line-height: 1.2;
-  padding: 4px 4px;
+	margin-top: 12px;
+	margin-left: 28px;
+	text-decoration: none;
+	line-height: 1.2;
+	padding: 4px 4px;
 }
 
 .text-body-copy-selected {
-  font-size: 25px;
-  font-weight: 400;
-  line-height: 1.2;
-  color: #ffa500;
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 1.2;
+	color: #ffa500;
 }
 
 .details-account {
-  border: 2px solid #b1770b;
-  border-radius: 20px;
-  margin-left: 12px;
-  width: 1138px;
-  height: 520px;
+	border: 2px solid #b1770b;
+	border-radius: 20px;
+	margin-left: 12px;
+	width: 1138px;
+	height: 520px;
 }
 
 .text-body-copy-bold {
-  font-size: 25px;
-  font-weight: 600;
-  line-height: 1.2;
-  padding: 4px 4px;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 1.2;
+	padding: 4px 4px;
 }
 .text-body-copy-underline {
-  font-size: 25px;
-  font-weight: 400;
-  line-height: 1.2;
-  padding: 4px 4px;
-  text-decoration: underline;
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 1.2;
+	padding: 4px 4px;
+	text-decoration: underline;
 }
 .info-field .text-body-copy {
-  margin-left: 12px;
-  margin-top: 4px;
+	margin-left: 12px;
+	margin-top: 4px;
 }
 .info-field {
-  display: flex;
-  text-align: left;
-  padding: 8px 4px;
+	display: flex;
+	text-align: left;
+	padding: 8px 4px;
 }
 .edit-link {
-  margin-right: 20px;
-  margin-top: 12px;
-  text-align: right;
+	margin-right: 20px;
+	margin-top: 12px;
+	text-align: right;
 }
 .edit-link .text-body-copy {
-  font-size: 20px;
-  color: black;
+	font-size: 20px;
+	color: black;
 }
 .info-field .text-body-copy-selected {
-  margin-left: 12px;
-  margin-top: 4px;
-  font-size: 31px;
-  margin-bottom: 10px;
+	margin-left: 12px;
+	margin-top: 4px;
+	font-size: 31px;
+	margin-bottom: 10px;
 }
 .info-field .text-body-copy-bold {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
-  padding: 4px 4px;
-  text-decoration: underline;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.2;
+	padding: 4px 4px;
+	text-decoration: underline;
 }
 .details-account1 {
-  border: 2px solid #b1770b;
-  border-radius: 20px;
-  margin-left: 12px;
-  width: 100%;
-  height: auto;
+	border: 2px solid #b1770b;
+	border-radius: 20px;
+	margin-left: 12px;
+	width: auto;
+	height: auto;
 }
 
 .menu-account1 {
-  border: 2px solid #b1770b;
-  border-radius: 20px;
-  width: 250px;
-  height: 140px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 4px;
+	border: 2px solid #b1770b;
+	border-radius: 20px;
+	width: 250px;
+	height: 140px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 4px;
 }
 
 .menu-account1 .text {
-  width: 100%;
-  text-align: left;
-  padding: 4px 4px;
-  display: block;
-  margin-bottom: 12px;
+	width: 100%;
+	text-align: left;
+	padding: 4px 4px;
+	display: block;
+	margin-bottom: 12px;
 }
 
 .menu-account1 .text-body-copy {
-  color: black;
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  margin-bottom: 4px;
+	color: black;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	margin-bottom: 4px;
 }
 
 .menu-account1 .text-body-copy-selected {
-  color: #ffa500;
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  font-size: 25px;
-  font-weight: 400;
-  margin-bottom: 4px;
+	color: #ffa500;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	font-size: 25px;
+	font-weight: 400;
+	margin-bottom: 4px;
 }
 
 .leave-review {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 40px;
-  text-align: left;
-  margin-top: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 40px;
+	text-align: left;
+	margin-top: 20px;
 }
 
 .leave-review .title {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
+}
+.title {
+	margin-bottom: 40px;
+	margin-top: 20px;
 }
 
 .leave-review .button-primary {
-  font-size: 20px;
-  width: 200px;
-  height: 40px;
-  font-weight: bold;
+	font-size: 20px;
+	width: 200px;
+	height: 40px;
+	font-weight: bold;
 }
 
 @media only screen and (max-width: 1380px) {
-  .info-field {
-    flex-direction: column;
-  }
+	.info-field {
+		flex-direction: column;
+	}
 }
 
 @media only screen and (max-width: 1146px) {
-  .menu-account {
-    width: 220px;
-  }
-  .edit-link {
-    margin-right: 0;
-    text-align: right;
-    margin-top: 20px;
-  }
-  .leave-review .button-primary {
-    width: 180px;
-    height: 36px;
-    font-size: 18px;
-  }
+	.menu-account {
+		width: 220px;
+	}
+	.edit-link {
+		margin-right: 0;
+		text-align: right;
+		margin-top: 20px;
+	}
+	.leave-review .button-primary {
+		width: 180px;
+		height: 36px;
+		font-size: 18px;
+	}
 }
 
 @media (max-width: 991px) {
-  .container-account {
-    flex-direction: column;
-    align-items: center;
-  }
-  .menu-account1 {
-    max-width: none;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  .edit-link {
-    text-align: right;
-    margin-top: 20px;
-  }
-  .edit-link .text-body-copy {
-    font-size: 18px;
-  }
-  .leave-review .button-primary {
-    width: 160px;
-    height: 34px;
-    font-size: 16px;
-  }
+	.container-account {
+		flex-direction: column;
+		align-items: center;
+	}
+	.menu-account1 {
+		max-width: none;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.edit-link {
+		text-align: right;
+		margin-top: 20px;
+	}
+	.edit-link .text-body-copy {
+		font-size: 18px;
+	}
+	.leave-review .button-primary {
+		width: 160px;
+		height: 34px;
+		font-size: 16px;
+	}
 }
 @media (max-width: 767px) {
-  .container-account {
-    padding: 0 10px;
-  }
-  .menu-account .text-body-copy-selected,
-  .menu-account .text-body-copy {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-  }
-  .edit-link {
-    text-align: right;
-    margin-top: 20px;
-  }
+	.container-account {
+		padding: 0 10px;
+	}
+	.menu-account .text-body-copy-selected,
+	.menu-account .text-body-copy {
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+	}
+	.edit-link {
+		text-align: right;
+		margin-top: 20px;
+	}
 
-  .edit-link .text-body-copy {
-    font-size: 16px;
-  }
-  .leave-review {
-    flex-direction: column;
-  }
-  .leave-review .button-primary {
-    width: 140px;
-    height: 32px;
-    font-size: 14px;
-  }
+	.edit-link .text-body-copy {
+		font-size: 16px;
+	}
+	.leave-review {
+		flex-direction: column;
+	}
+	.leave-review .button-primary {
+		width: 140px;
+		height: 32px;
+		font-size: 14px;
+	}
 }
 @media (max-width: 480px) {
-  .leave-review .button-primary {
-    width: 120px;
-    height: 30px;
-    font-size: 12px;
-  }
+	.leave-review .button-primary {
+		width: 120px;
+		height: 30px;
+		font-size: 12px;
+	}
 }

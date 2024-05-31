@@ -34,7 +34,7 @@
 				<div class="nav-menu" id="navbar-menu">
 					<!-- continut navigatie -->
 					<a href="client-closedprojects.html" class="nav-link"
-						>Your projects</a
+						>Closed projects</a
 					>
 					<a href="aboutus.html" class="nav-link">About us</a>
 					<div class="nav-search input-group__area">
@@ -89,6 +89,13 @@
 					</div>
 				</template>
 			</div>
+			<div class="description" id="no-applicants-container">
+				<template id="no-applicants-template">
+					<div class="text-margin">
+						<p class="text-body-copy" data-selector="no-appliants-text"></p>
+					</div>
+				</template>
+			</div>
 		</div>
 		<div class="container">
 			<div class="container-contact">
@@ -111,7 +118,6 @@
 		</div>
 	</body>
 </html>
-
 <script>
 	window.addEventListener("load", () => {
 		// pentru client
@@ -160,29 +166,45 @@
 			],
 		};
 
+		const noapplicants_text = `You don't have any applicants...`;
+
 		const applicantsContainer = document.getElementById("applicants-container");
+		const noapplicantsContainer = document.getElementById(
+			"no-applicants-container"
+		);
 
 		function createProject() {
 			// continut text descriere
 			const project_name = document.getElementById("project-name");
 			const description = document.getElementById("description");
 
-			proiect_cu_aplicari.jobApplications.forEach((applicant, index) => {
-				const applicantsTemplate = document
-					.getElementById("applicants-template")
-					.content.cloneNode(true).firstElementChild;
-				console.log(applicantsTemplate);
-				const applicants_name = applicantsTemplate.querySelector(
-					'[data-selector="company-name1"]'
-				);
-
-				applicants_name.innerText = applicant.company_name;
-
-				applicantsContainer.appendChild(applicantsTemplate);
-			});
-
 			project_name.innerText = proiect_cu_aplicari.project.name;
 			description.innerText = proiect_cu_aplicari.project.description;
+
+			if (proiect_cu_aplicari.jobApplications.length === 0) {
+				const noapplicantsTemplate = document
+					.getElementById("no-applicants-template")
+					.content.cloneNode(true).firstElementChild;
+				const noapplicantsTextElement = noapplicantsTemplate.querySelector(
+					'[data-selector="no-appliants-text"]'
+				);
+				noapplicantsTextElement.innerText = noapplicants_text;
+				noapplicantsContainer.appendChild(noapplicantsTemplate);
+			} else {
+				proiect_cu_aplicari.jobApplications.forEach((applicant, index) => {
+					const applicantsTemplate = document
+						.getElementById("applicants-template")
+						.content.cloneNode(true).firstElementChild;
+
+					const applicants_name = applicantsTemplate.querySelector(
+						'[data-selector="company-name1"]'
+					);
+
+					applicants_name.innerText = applicant.company_name;
+
+					applicantsContainer.appendChild(applicantsTemplate);
+				});
+			}
 		}
 
 		createProject();

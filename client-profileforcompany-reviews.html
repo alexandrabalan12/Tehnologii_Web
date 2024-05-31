@@ -36,7 +36,7 @@
 				<div class="nav-menu" id="navbar-menu">
 					<!-- continut navigatie -->
 					<a href="./client-closedprojects.html" class="nav-link"
-						>Your projects</a
+						>Closed projects</a
 					>
 					<a href="aboutus.html" class="nav-link">About us</a>
 					<div class="nav-search input-group__area">
@@ -138,6 +138,7 @@
 			{
 				id: 6,
 				company_id: 1,
+				company_name: "Sobolanii2 SRL",
 				user_reviewer_id: 41,
 				user_reviewer_name: "John Doe",
 				user_reviewer_occupation: "Software Engineer",
@@ -149,6 +150,7 @@
 			{
 				id: 5,
 				company_id: 1,
+				company_name: "Sobolanii2 SRL",
 				user_reviewer_id: 41,
 				user_reviewer_name: "John Doe",
 				user_reviewer_occupation: "Software Engineer",
@@ -160,6 +162,7 @@
 			{
 				id: 4,
 				company_id: 1,
+				company_name: "Sobolanii2 SRL",
 				user_reviewer_id: 41,
 				user_reviewer_name: "John Doe",
 				user_reviewer_occupation: "Software Engineer",
@@ -171,6 +174,7 @@
 			{
 				id: 3,
 				company_id: 1,
+				company_name: "Sobolanii2 SRL",
 				user_reviewer_id: 41,
 				user_reviewer_name: "John Doe",
 				user_reviewer_occupation: "Software Engineer",
@@ -182,6 +186,7 @@
 			{
 				id: 2,
 				company_id: 1,
+				company_name: "Sobolanii2 SRL",
 				user_reviewer_id: 41,
 				user_reviewer_name: "John Doe",
 				user_reviewer_occupation: "Software Engineer",
@@ -193,6 +198,7 @@
 			{
 				id: 1,
 				company_id: 1,
+				company_name: "Sobolanii2 SRL",
 				user_reviewer_id: 41,
 				user_reviewer_name: "John Doe",
 				user_reviewer_occupation: "Software Engineer",
@@ -222,6 +228,9 @@
 
 		// de aici in jos
 		function createReviews() {
+			const companyTitle = document.getElementById("company-name");
+			companyTitle.innerText = reviews[0].company_name;
+
 			reviews.forEach((review, index) => {
 				const reviewTemplate = document
 					.getElementById("review-template")
@@ -240,7 +249,6 @@
 				const review_stars = reviewTemplate.querySelector(
 					'[data-selector="review-stars"]'
 				);
-
 				review_name.innerText = review.user_reviewer_name;
 				review_text.innerText = review.review_content;
 				review_job.innerText = review.user_reviewer_occupation;
