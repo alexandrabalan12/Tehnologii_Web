@@ -1,131 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="./styles/index.css" />
-		<link rel="stylesheet" href="./styles/pages/aftersignup.css" />
-		<link rel="stylesheet" href="./styles/pages/aftersignup-company.css" />
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/pages/aftersignup.css" />
+    <link rel="stylesheet" href="./styles/pages/aftersignup-company.css" />
+  </head>
 
-	<body>
-		<nav class="navbar">
-			<div class="navbar-container">
-				<a href="index.html" class="logo1">PlaCo</a>
-			</div>
-		</nav>
-		<div class="container">
-			<div class="background-banner">
-				<img src="./assets/background-login.png" />
-			</div>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="logo1">PlaCo</a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="background-banner">
+        <img src="./assets/background-login.png" />
+      </div>
 
-			<div class="aftersignup__banner">
-				<div class="text-h2">
-					<p>Please provide your information first!</p>
-				</div>
-			</div>
+      <div class="aftersignup__banner">
+        <div class="text-h2">
+          <p>Please provide your information first!</p>
+        </div>
+      </div>
 
-			<div class="form-aftersignup">
-				<div class="details-aftersignup">
-					<h4 class="text-body-copy">Company Name:</h4>
-					<div class="input-group__area">
-						<input
-							id="company-name"
-							name="company-name"
-							type="text"
-							placeholder="Company Name"
-						/>
-					</div>
-				</div>
-				<div class="details-aftersignup">
-					<h4 class="text-body-copy">Phone number:</h4>
-					<div class="input-group__area">
-						<input
-							id="number-members"
-							name="number-members"
-							type="text"
-							placeholder="Number"
-						/>
-					</div>
-				</div>
-				<div class="details-aftersignup">
-					<h4 class="text-body-copy">Short Description:</h4>
-					<div class="input-group__area">
-						<input
-							id="description"
-							name="description"
-							type="text"
-							placeholder="Description"
-						/>
-					</div>
-				</div>
-				<div class="details-aftersignup">
-					<h4 class="text-body-copy">Geographical Area:</h4>
-					<div class="input-group__area">
-						<input
-							id="geographical-area"
-							name="geographical-area"
-							type="text"
-							placeholder="Region"
-						/>
-					</div>
-				</div>
-				<div class="details-aftersignup">
-					<h4 class="text-body-copy">Originally Located in:</h4>
-					<div class="input-group__area">
-						<input id="city" name="city" type="text" placeholder="City" />
-					</div>
-				</div>
-				<div class="details-aftersignup">
-					<h4 class="text-body-copy">Proffesional Area:</h4>
-					<div class="input-group__area">
-						<input
-							id="proffesional-area"
-							name="proffesional-area"
-							type="text"
-							placeholder="Area"
-						/>
-					</div>
-				</div>
-				<div class="details-aftersignup">
-					<h4 class="text-body-copy">General Contractor:</h4>
-					<div class="input-group__area">
-						<input
-							id="general-contracter"
-							name="general-contracter"
-							type="text"
-							placeholder="Name"
-						/>
-					</div>
-				</div>
-				<div class="details-aftersignup">
-					<h4 class="text-body-copy">Open To Travel For Projects:</h4>
-					<input
-						id="travel-projects-yes"
-						name="travel-projects"
-						type="radio"
-						value="yes"
-					/>
-					<label for="travel-projects-yes" class="radio-label">Yes</label>
-					<input
-						id="travel-projects-no"
-						name="travel-projects"
-						type="radio"
-						value="no"
-					/>
-					<label for="travel-projects-no" class="radio-label">No</label>
-				</div>
-			</div>
-
-			<a href="./company-homepage.html" class="button-primary1">Get Started</a>
-		</div>
-	</body>
+      <div class="form-aftersignup">
+        <div class="details-aftersignup">
+          <label for="register-company-name" class="text-body-copy"
+            >Company Name:</label
+          >
+          <div class="input-group__area">
+            <input
+              id="register-company-name"
+              name="register-company-name"
+              type="text"
+              placeholder="Company Name"
+            />
+          </div>
+        </div>
+        <div class="details-aftersignup">
+          <label for="register-number" class="text-body-copy"
+            >Phone number:</label
+          >
+          <div class="input-group__area">
+            <input
+              id="register-number"
+              name="register-number"
+              type="text"
+              placeholder="Phone number"
+            />
+          </div>
+        </div>
+        <div class="details-aftersignup">
+          <label for="register-description" class="text-body-copy"
+            >Short Description:</label
+          >
+          <div class="input-group__area">
+            <input
+              id="register-description"
+              name="register-description"
+              type="text"
+              placeholder="Description"
+            />
+          </div>
+        </div>
+        <div class="details-aftersignup">
+          <label for="register-location" class="text-body-copy"
+            >Location:</label
+          >
+          <div class="input-group__area">
+            <input
+              id="register-location"
+              name="register-location"
+              type="text"
+              placeholder="Location"
+            />
+          </div>
+        </div>
+        <div class="details-aftersignup">
+          <label for="register-address" class="text-body-copy"
+            >Company Address:</label
+          >
+          <div class="input-group__area">
+            <input
+              id="register-address"
+              name="register-address"
+              type="text"
+              placeholder="Address"
+            />
+          </div>
+        </div>
+        <div class="details-aftersignup">
+          <label for="register-professional-area" class="text-body-copy"
+            >Professional Area:</label
+          >
+          <div class="input-group__area">
+            <input
+              id="register-professional-area"
+              name="register-professional-area"
+              type="text"
+              placeholder="Area"
+            />
+          </div>
+        </div>
+        <div class="details-aftersignup">
+          <label for="register-general-contractor" class="text-body-copy"
+            >General Contractor:</label
+          >
+          <div class="input-group__area">
+            <input
+              id="register-general-contractor"
+              name="register-general-contractor"
+              type="text"
+              placeholder="Name"
+            />
+          </div>
+        </div>
+        <div class="details-aftersignup">
+          <h4 class="text-body-copy">Open To Travel For Projects:</h4>
+          <input
+            id="travel-projects-yes"
+            name="travel-projects"
+            type="radio"
+            value="yes"
+          />
+          <label for="travel-projects-yes" class="radio-label">Yes</label>
+          <input
+            id="travel-projects-no"
+            name="travel-projects"
+            type="radio"
+            value="no"
+          />
+          <label for="travel-projects-no" class="radio-label">No</label>
+        </div>
+      </div>
+      <button id="get-started" class="button-primary1">Get Started</button>
+    </div>
+  </body>
 </html>
+<script>
+  window.addEventListener("load", () => {
+    const company_name_input = document.getElementById("register-company-name");
+    const company_number_input = document.getElementById("register-number");
+    const company_description_input = document.getElementById(
+      "register-description"
+    );
+    const company_location_input = document.getElementById("register-location");
+    const company_address_input = document.getElementById("register-address");
+    const company_professional_area_input = document.getElementById(
+      "register-professional-area"
+    );
+    const company_contractor_input = document.getElementById(
+      "register-general-contractor"
+    );
+    const travel_yes_radio = document.getElementById("travel-projects-yes");
+    const travel_no_radio = document.getElementById("travel-projects-no");
+    const button = document.getElementById("get-started");
+
+    function registercompany() {
+      const open_to_travel = travel_yes_radio.checked ? "yes" : "no";
+      const payload = {
+        id: "2",
+        user_id: "47",
+        company_name: company_name_input.value,
+        phone_number: company_number_input.value,
+        description: company_description_input.value,
+        location: company_location_input.value,
+        address: company_address_input.value,
+        professional_area: company_professional_area_input.value,
+        owner_name: company_contractor_input.value,
+        open_to_travel: open_to_travel,
+      };
+      console.log(payload);
+    }
+
+    button.addEventListener("click", () => registercompany());
+  });
+</script>

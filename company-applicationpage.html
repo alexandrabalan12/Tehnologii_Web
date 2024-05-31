@@ -61,10 +61,10 @@
       </div>
       <div class="message">
         <h2 class="text-h2">Your message</h2>
-        <div class="text-body-copy">
+        <label for="your-message" class="text-body-copy">
           Short message about your previous experience with projects similar to
           this one and share your ideas regarding this one.
-        </div>
+        </label>
         <div class="input-group__area">
           <textarea
             id="your-message"
@@ -75,9 +75,9 @@
       </div>
       <div class="message1">
         <h2 class="text-h2">Delivery date (aprox.)</h2>
-        <div class="text-body-copy">
+        <label for="delivery-date" class="text-body-copy">
           Provide estimated timelines for projects of similar scope.
-        </div>
+        </label>
         <div class="details-aftersignup">
           <div class="input-group__area">
             <input
@@ -91,9 +91,9 @@
       </div>
       <div class="message1">
         <h2 class="text-h2">Your price range</h2>
-        <div class="text-body-copy">
+        <label for="price-range" class="text-body-copy">
           Please outline your price range for this project ( in €).
-        </div>
+        </label>
         <div class="details-aftersignup">
           <div class="input-group__area">
             <input
@@ -107,9 +107,9 @@
       </div>
       <div class="message1">
         <h2 class="text-h2">Your contact info</h2>
-        <div class="text-body-copy">
+        <label for="contact-info-company" class="text-body-copy">
           Please provide the phone number you want to get notified on.
-        </div>
+        </label>
         <div class="details-aftersignup">
           <div class="input-group__area">
             <input
@@ -122,9 +122,9 @@
         </div>
       </div>
       <div class="title-itemslong">
-        <a href="company-application-confirmation.html" class="button-primary"
-          >CONFIRM YOUR APPLICATION</a
-        >
+        <button id="confirm-application" class="button-primary">
+          CONFIRM YOUR APPLICATION
+        </button>
       </div>
 
       <h2 class="text-h2">Contact us</h2>
@@ -169,15 +169,33 @@
       ],
     };
 
+    const delivery_date_input = document.getElementById("delivery-date");
+    const your_message_input = document.getElementById("your-message");
+    const price_range_input = document.getElementById("price-range");
+    const contact_info_company_input = document.getElementById(
+      "contact-info-company"
+    );
+    const button = document.getElementById("confirm-application");
+
     function createProject() {
       const company_title = document.getElementById("project-name");
       const general_description = document.getElementById(
         "general-description"
       );
-
       company_title.innerText = company_project.name;
       general_description.innerText = company_project.description;
     }
     createProject();
+    function applicationpage() {
+      const payload = {
+        project_id: "1",
+        company_id: "2",
+        message: your_message_input.value,
+        delivery_date: delivery_date_input.value,
+        estimated_price: price_range_input.value,
+      };
+      console.log(payload);
+    }
+    button.addEventListener("click", () => applicationpage());
   });
 </script>
