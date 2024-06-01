@@ -75,7 +75,11 @@
 					<div class="short-description" id="clientproject-container">
 						<template id="project-card">
 							<div class="input-group__area">
-								<a href="client-projectwithapplicants.html" class="link">
+								<a
+									href="client-projectwithapplicants.html"
+									class="link"
+									data-selector="project-link"
+								>
 									<h4 class="text-h4" data-selector="project-name"></h4>
 									<p class="text-body-copy">
 										You got <span data-selector="applicants-count"> </span> new
@@ -195,9 +199,14 @@
 					const project_name = clientprojectTemplate.querySelector(
 						'[data-selector="project-name"]'
 					);
+					const project_link = clientprojectTemplate.querySelector(
+						'[data-selector="project-link"]'
+					);
 					const applicants_count = clientprojectTemplate.querySelector(
 						'[data-selector="applicants-count"]'
 					);
+
+					project_link.href += `?id=${clientproject.id}`;
 
 					project_name.innerText = clientproject.name;
 					applicants_count.innerText = clientproject.applicant_count;
