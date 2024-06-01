@@ -1,68 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./styles/pages/login.css">
-<link rel="stylesheet" href="./styles/index.css">
-<link rel="stylesheet" href="./styles/pages/signup.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/pages/login.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/pages/signup.css" />
+    <script src="./scripts/utilites.js"></script>
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="logo1">PlaCo</a>
-        </div>    
-    </nav>        
-            <div class="background-banner">
-                <img src="./assets/background-login.png" /> 
-            </div>
-            <div class="form-signup">
-                <div class="welcome-message">
-            
-                    <h4 class="text-h4">Welcome to PlaCo!</h4>
-                    <p class="text-body-copy1">Sign up to be a part of the most 
-                        professional constructions community.</p>
-                </div>
-                <div class="form-login__inputs">
-                    <div class="input-group">
-                        <label for="email" class="input-group__label">
-                            Email
-                        </label>
-                        <div class="input-group__area">
-                            <img src="./assets/email.png" />
-                            <input id="email" name="email" type="email" placeholder="numecompanie@gmailcom" />
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <label for="password" class="input-group__label">
-                            Password
-                        </label>
-                        <div class="input-group__area">
-                            <img src="./assets/password.png" />
-                            <input id="password" name="password"  type="password" placeholder="*******" />
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <label for="password" class="input-group__label">
-                            Re-enter Password
-                        </label>
-                        <div class="input-group__area">
-                            <img src="./assets/password.png" />
-                            <input id="password" name="password"  type="password" placeholder="*******" />
-                        </div>
-                    </div>
-                        <a href="aftersignup.html" class="login-btn">Register</a>
-                        
+      <div class="navbar-container">
+        <a href="index.html" class="logo1">PlaCo</a>
+      </div>
+    </nav>
+    <div class="background-banner">
+      <img src="./assets/background-login.png" />
+    </div>
+    <div class="form-signup">
+      <div class="welcome-message">
+        <h4 class="text-h4">Welcome to PlaCo!</h4>
+        <p class="text-body-copy1">
+          Sign up to be a part of the most professional constructions community.
+        </p>
+      </div>
+      <div class="form-login__inputs">
+        <div class="input-group">
+          <label for="email" class="input-group__label"> Email </label>
+          <div class="input-group__area">
+            <img src="./assets/email.png" />
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="numecompanie@gmailcom"
+            />
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="password" class="input-group__label"> Password </label>
+          <div class="input-group__area">
+            <img src="./assets/password.png" />
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="*******"
+            />
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="password-confirm" class="input-group__label">
+            Re-enter Password
+          </label>
+          <div class="input-group__area">
+            <img src="./assets/password.png" />
+            <input
+              id="password-confirm"
+              name="password-confirm"
+              type="password"
+              placeholder="*******"
+            />
+          </div>
+        </div>
+        <button id="register-button" class="login-btn">Register</button>
+      </div>
 
-                </div>
-                
-                <div class="redirect-signup">
-                    <p  class="text-body-copy2">Already have an account? </p>
-                    <a href="login.html" class="nav-link">Log in now</a>
-                    </div>
-             </div>   
-            
-</body>
+      <div class="redirect-signup">
+        <p class="text-body-copy2">Already have an account?</p>
+        <a href="login.html" class="nav-link">Log in now</a>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // continut care va veni din backend
+
+        const email_input = document.getElementById("email");
+        const password_input = document.getElementById("password");
+        const password_input_confirm =
+          document.getElementById("password-confirm");
+        const button = document.getElementById("register-button");
+
+        const role = window.location.href.split("=")[1] || "client";
+
+        function isValidEmail(email) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(email);
+        }
+
+        function isValidPassword(password) {
+          const minLength = 8;
+          const numberRegex = /\d/;
+          console.log(password);
+          return password.length >= minLength && numberRegex.test(password);
+        }
+
+        function passwordsMatch() {
+          return password_input.value === password_input_confirm.value;
+        }
+
+        function create_payload() {
+          const payload = {
+            name: "test",
+            email: email_input.value,
+            password: password_input.value,
+            role: role,
+          };
+
+          return payload;
+        }
+
+        async function register() {
+          const payload = create_payload();
+
+          if (!isValidEmail(payload.email)) {
+            alert("Email not valid");
+            return;
+          }
+
+          if (!isValidPassword(payload.password)) {
+            alert("Password is weak");
+            return;
+          }
+
+          if (!passwordsMatch()) {
+            alert("Passwords do not match");
+            return;
+          }
+
+          try {
+            const data = await apiRequest(
+              "http://localhost:8000/api/users/register",
+              "POST",
+              payload
+            );
+
+            window.location.href = "http://127.0.0.1:5500/login.html";
+          } catch (err) {
+            if (err.code === 409) alert("Email already exists");
+            else alert("Error occured, please try later");
+          }
+        }
+
+        button.addEventListener("click", () => register());
+      });
+    </script>
+  </body>
 </html>
