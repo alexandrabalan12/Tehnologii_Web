@@ -26,8 +26,8 @@
     <div class="close-project">
       <h2 class="text-h2-title" id="project-name"></h2>
       <div class="add-project">
-        <a href="./client-closedprojects.html" class="button-primary"
-          >CLOSE PROJECT</a
+        <button href="./client-closedprojects.html" class="button-primary" id="close-button"
+          >CLOSE PROJECT</button
         >
       </div>
     </div>
@@ -107,13 +107,11 @@
     const noapplicantsContainer = document.getElementById(
       "no-applicants-container"
     );
+    const closeButton = document.getElementById('close-button');
+    const projectId = window.location.href.split("=")[1];
+    const token = localStorage.getItem("authToken");
 
     async function fetchProject() {
-      projects = [];
-
-      const projectId = window.location.href.split("=")[1];
-      const token = localStorage.getItem("authToken");
-
       try {
         const data = await apiRequest(
           `http://localhost:8000/api/client/project-details/${projectId}`,
@@ -125,8 +123,6 @@
           }
         );
 
-        console.log(data);
-
         proiect_cu_aplicari = data;
       } catch (err) {
         console.log(err);
@@ -134,7 +130,32 @@
       }
     }
 
-    async function createProject() {
+    async function closeProject() {
+      const text = "Are you sure you want to close this project?";
+
+      if(confirm(text) === true) {
+        try {
+          const data = await apiRequest(
+            `http://localhost:8000/api/client/project-close/${projectId}`,
+            "PUT",
+            null,
+            {
+              authorization: token,
+              "user-type": "client",
+            }
+          );
+
+          window.location.href = "http://127.0.0.1:5500/client-homepage.html";
+        } catch (err) {
+          console.log(err);
+          alert("Error occured, please try later");
+        }
+      } else {
+        return
+      }
+    };
+
+    async function populateDetails() {
       await fetchProject();
 
       const project_name = document.getElementById("project-name");
@@ -177,6 +198,8 @@
       }
     }
 
-    createProject();
+    populateDetails();
+
+    closeButton.addEventListener('click', () => closeProject());
   });
 </script>

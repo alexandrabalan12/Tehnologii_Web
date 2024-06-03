@@ -41,16 +41,19 @@
 							<a
 								href="client-profileforcompany-details.html"
 								class="text-body-copy"
+								id="details-link"
 								>Details</a
 							>
 							<a
-								href="./client-profileforcompany-portfolio.html"
+								href="client-profileforcompany-portfolio.html"
 								class="text-body-copy"
+								id="portfolio-link"
 								>Portfolio</a
 							>
 							<a
-								href="./client-profileforcompany-reviews.html"
+								href="client-profileforcompany-reviews.html"
 								class="text-body-copy-selected"
+								id="reviews-link"
 								>Reviews</a
 							>
 						</div>
@@ -107,81 +110,10 @@
 		// continut care e dinamic ca vine din backend
 		// momentan e static pana legam cu api-urile
 		// dar asa o sa arate ce trebuie afisat
-		const reviews = [
-			{
-				id: 6,
-				company_id: 1,
-				company_name: "Sobolanii2 SRL",
-				user_reviewer_id: 41,
-				user_reviewer_name: "John Doe",
-				user_reviewer_occupation: "Software Engineer",
-				rating: 5,
-				review_content:
-					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-				created_at: "2024-05-28T19:13:37.000Z",
-			},
-			{
-				id: 5,
-				company_id: 1,
-				company_name: "Sobolanii2 SRL",
-				user_reviewer_id: 41,
-				user_reviewer_name: "John Doe",
-				user_reviewer_occupation: "Software Engineer",
-				rating: 1,
-				review_content:
-					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-				created_at: "2024-05-28T07:12:11.000Z",
-			},
-			{
-				id: 4,
-				company_id: 1,
-				company_name: "Sobolanii2 SRL",
-				user_reviewer_id: 41,
-				user_reviewer_name: "John Doe",
-				user_reviewer_occupation: "Software Engineer",
-				rating: 3,
-				review_content:
-					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-				created_at: "2024-05-28T07:11:09.000Z",
-			},
-			{
-				id: 3,
-				company_id: 1,
-				company_name: "Sobolanii2 SRL",
-				user_reviewer_id: 41,
-				user_reviewer_name: "John Doe",
-				user_reviewer_occupation: "Software Engineer",
-				rating: 1,
-				review_content:
-					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-				created_at: "2024-05-27T16:19:38.000Z",
-			},
-			{
-				id: 2,
-				company_id: 1,
-				company_name: "Sobolanii2 SRL",
-				user_reviewer_id: 41,
-				user_reviewer_name: "John Doe",
-				user_reviewer_occupation: "Software Engineer",
-				rating: 5,
-				review_content:
-					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-				created_at: "2024-05-27T14:56:02.000Z",
-			},
-			{
-				id: 1,
-				company_id: 1,
-				company_name: "Sobolanii2 SRL",
-				user_reviewer_id: 41,
-				user_reviewer_name: "John Doe",
-				user_reviewer_occupation: "Software Engineer",
-				rating: 3,
-				review_content:
-					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-				created_at: "2024-05-27T12:49:14.000Z",
-			},
-		];
+		let reviews = [];
+		let company_name = null;
 
+		const companyId = window.location.href.split("=")[1];
 		const reviewsContainer = document.getElementById("reviews-container");
 
 		function ratings(rating, container) {
@@ -199,10 +131,47 @@
 			}
 		}
 
+		async function fetchCompanyReviews() {
+			reviews = [];
+
+			const companyId = window.location.href.split("=")[1];
+			const token = localStorage.getItem("authToken");
+
+			try {
+				const data = await apiRequest(
+					`http://localhost:8000/api/client/company-reviews/${companyId}`,
+					"GET",
+					null,
+					{
+						authorization: token,
+						"user-type": "client",
+					}
+				);
+
+				reviews = data.data;
+				company_name = data.company_name;
+			} catch (err) {
+				console.log(err);
+				alert("Error occured, please try later");
+			}
+		}
+
+		function attachLinkId() {
+			const details_link = document.getElementById('details-link')
+			const reviews_link = document.getElementById('reviews-link')
+			const portfolio_link = document.getElementById('portfolio-link')
+			
+			details_link.href += `?id=${companyId}`;
+			reviews_link.href += `?id=${companyId}`;
+			portfolio_link.href += `?id=${companyId}`;
+		}
+
 		// de aici in jos
-		function createReviews() {
+		async function createReviews() {
+			await fetchCompanyReviews();
+
 			const companyTitle = document.getElementById("company-name");
-			companyTitle.innerText = reviews[0].company_name;
+			companyTitle.innerText = company_name;
 
 			reviews.forEach((review, index) => {
 				const reviewTemplate = document

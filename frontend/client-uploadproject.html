@@ -43,27 +43,27 @@
         <div class="message1">
           <h2 class="text-h3">City of Romania</h2>
           <div class="details-aftersignup">
-            <div class="input-group__area">
-              <input
-                id="name-project"
-                name="name-project"
-                type="text"
-                placeholder="Your answer..."
-              />
-            </div>
+            <select class="select-standard" name="1A" id="register-location">
+							<option value="brasov">Brasov</option>
+							<option value="bucuresti">Bucuresti</option>
+							<option value="cluj">Cluj</option>
+							<option value="iasi">Iasi</option>
+							<option value="timisoara">Timisoara</option>
+						</select>
           </div>
         </div>
         <div class="message1">
           <h2 class="text-h3">Professional Area in need</h2>
           <div class="details-aftersignup">
-            <div class="input-group__area">
-              <input
-                id="name-project"
-                name="name-project"
-                type="text"
-                placeholder="Your answer..."
-              />
-            </div>
+            <select class="select-standard" name="1A" id="select-category">
+              <option value="interior_design">Interior design</option>
+              <option value="masonry">Masonry</option>
+              <option value="plumbing">Plumbing</option>
+              <option value="roofing">Roofing</option>
+              <option value="structural_engineering">
+                Structural engineering
+              </option>
+            </select>
           </div>
         </div>
         <div class="message">
@@ -73,32 +73,16 @@
           </div>
           <div class="input-group__area">
             <textarea
-              id="your-message"
+              id="description"
               name="your-message"
               placeholder="Your message..."
             ></textarea>
           </div>
         </div>
-
-        <div>
-          <input
-            type="checkbox"
-            id="toggle-requirement1"
-            class="toggle-requirement-checkbox"
-          />
-          <label for="toggle-requirement1" class="toggle-requirement-btn">
-            <img
-              src="./assets/add.png"
-              alt="Add a requirement"
-              class="toggle-requirement-icon"
-            />
-            <span class="toggle-requirement-text"
-              >Add technical requirement</span
-            >
-          </label>
-          <div class="additional-info">
-            <div class="input-group__area-big">
-              <label for="toggle-requirement1" class="toggle-requirement-btn">
+        <div class="additional-info" id="requirements-container">
+          <template id="template-requirement">
+            <div class="input-group__area-big" data-selector="requirement-child">
+              <button data-selector="remove-requirement" class="toggle-requirement-btn">
                 <img
                   src="./assets/minus.png"
                   alt="Add a requirement"
@@ -107,11 +91,11 @@
                 <span class="toggle-requirement-text"
                   >Remove the technical requirement</span
                 >
-              </label>
+              </button>
               <h2 class="text-body-copy">Requirement name</h2>
               <div class="input-group__area">
                 <input
-                  id="requirement1-description"
+                  data-selector="requirement-name"
                   name="requirement1-description"
                   type="text"
                   placeholder="Requirement name..."
@@ -120,214 +104,24 @@
               <h2 class="text-body-copy">Description</h2>
               <div class="input-group__area">
                 <input
-                  id="requirement1-description"
+                  data-selector="requirement-description"
                   name="requirement1-description"
                   type="text"
                   placeholder="Requirement description..."
                 />
               </div>
             </div>
-            <input
-              type="checkbox"
-              id="toggle-requirement2"
-              class="toggle-requirement-checkbox"
+          </template>
+          <button class="toggle-requirement-btn" id="add-requirement">
+            <img
+              src="./assets/add.png"
+              alt="Add a requirement"
+              class="toggle-requirement-icon"
             />
-            <label for="toggle-requirement2" class="toggle-requirement-btn">
-              <img
-                src="./assets/add.png"
-                alt="Add a requirement"
-                class="toggle-requirement-icon"
-              />
-              <span class="toggle-requirement-text"
-                >Add another technical requirement</span
-              >
-            </label>
-            <div class="additional-info">
-              <div class="input-group__area-big">
-                <label for="toggle-requirement2" class="toggle-requirement-btn">
-                  <img
-                    src="./assets/minus.png"
-                    alt="Add a requirement"
-                    class="toggle-requirement-icon"
-                  />
-                  <span class="toggle-requirement-text"
-                    >Remove the technical requirement</span
-                  >
-                </label>
-                <h2 class="text-body-copy">Requirement name</h2>
-                <div class="input-group__area">
-                  <input
-                    id="requirement2-description"
-                    name="requirement2-description"
-                    type="text"
-                    placeholder="Requirement name..."
-                  />
-                </div>
-                <h2 class="text-body-copy">Description</h2>
-                <div class="input-group__area">
-                  <input
-                    id="requirement2-description"
-                    name="requirement2-description"
-                    type="text"
-                    placeholder="Requirement description..."
-                  />
-                </div>
-              </div>
-              <input
-                type="checkbox"
-                id="toggle-requirement3"
-                class="toggle-requirement-checkbox"
-              />
-              <label for="toggle-requirement3" class="toggle-requirement-btn">
-                <img
-                  src="./assets/add.png"
-                  alt="Add a requirement"
-                  class="toggle-requirement-icon"
-                />
-                <span class="toggle-requirement-text"
-                  >Add another technical requirement</span
-                >
-              </label>
-              <div class="additional-info">
-                <div class="input-group__area-big">
-                  <label
-                    for="toggle-requirement3"
-                    class="toggle-requirement-btn"
-                  >
-                    <img
-                      src="./assets/minus.png"
-                      alt="Add a requirement"
-                      class="toggle-requirement-icon"
-                    />
-                    <span class="toggle-requirement-text"
-                      >Remove the technical requirement</span
-                    >
-                  </label>
-                  <h2 class="text-body-copy">Requirement name</h2>
-                  <div class="input-group__area">
-                    <input
-                      id="requirement3-description"
-                      name="requirement3-description"
-                      type="text"
-                      placeholder="Requirement name..."
-                    />
-                  </div>
-                  <h2 class="text-body-copy">Description</h2>
-                  <div class="input-group__area">
-                    <input
-                      id="requirement3-description"
-                      name="requirement3-description"
-                      type="text"
-                      placeholder="Requirement description..."
-                    />
-                  </div>
-                </div>
-                <input
-                  type="checkbox"
-                  id="toggle-requirement4"
-                  class="toggle-requirement-checkbox"
-                />
-                <label for="toggle-requirement4" class="toggle-requirement-btn">
-                  <img
-                    src="./assets/add.png"
-                    alt="Add a requirement"
-                    class="toggle-requirement-icon"
-                  />
-                  <span class="toggle-requirement-text"
-                    >Add another technical requirement</span
-                  >
-                </label>
-                <div class="additional-info">
-                  <div class="input-group__area-big">
-                    <label
-                      for="toggle-requirement4"
-                      class="toggle-requirement-btn"
-                    >
-                      <img
-                        src="./assets/minus.png"
-                        alt="Add a requirement"
-                        class="toggle-requirement-icon"
-                      />
-                      <span class="toggle-requirement-text"
-                        >Remove the technical requirement</span
-                      >
-                    </label>
-                    <h2 class="text-body-copy">Requirement name</h2>
-                    <div class="input-group__area">
-                      <input
-                        id="requirement4-description"
-                        name="requirement4-description"
-                        type="text"
-                        placeholder="Requirement name..."
-                      />
-                    </div>
-                    <h2 class="text-body-copy">Description</h2>
-                    <div class="input-group__area">
-                      <input
-                        id="requirement4-description"
-                        name="requirement4-description"
-                        type="text"
-                        placeholder="Requirement description..."
-                      />
-                    </div>
-                  </div>
-                  <input
-                    type="checkbox"
-                    id="toggle-requirement5"
-                    class="toggle-requirement-checkbox"
-                  />
-                  <label
-                    for="toggle-requirement5"
-                    class="toggle-requirement-btn"
-                  >
-                    <img
-                      src="./assets/add.png"
-                      alt="Add a requirement"
-                      class="toggle-requirement-icon"
-                    />
-                    <span class="toggle-requirement-text"
-                      >Add another technical requirement</span
-                    >
-                  </label>
-                  <div class="additional-info">
-                    <div class="input-group__area-big">
-                      <label
-                        for="toggle-requirement5"
-                        class="toggle-requirement-btn"
-                      >
-                        <img
-                          src="./assets/minus.png"
-                          alt="Add a requirement"
-                          class="toggle-requirement-icon"
-                        />
-                        <span class="toggle-requirement-text"
-                          >Remove the technical requirement</span
-                        >
-                      </label>
-                      <h2 class="text-body-copy">Requirement name</h2>
-                      <div class="input-group__area">
-                        <input
-                          id="requirement5-description"
-                          name="requirement5-description"
-                          type="text"
-                          placeholder="Requirement name..."
-                        />
-                      </div>
-                      <h2 class="text-body-copy">Description</h2>
-                      <div class="input-group__area">
-                        <input
-                          id="requirement5-description"
-                          name="requirement5-description"
-                          type="text"
-                          placeholder="Requirement description..."
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            <span class="toggle-requirement-text"
+              >Add technical requirement</span
+            >
+          </button>
         </div>
 
         <div class="message1">
@@ -335,8 +129,7 @@
           <div class="details-aftersignup">
             <div class="input-group__area">
               <input
-                id="name-project"
-                name="name-project"
+                id="project-budget"
                 type="text"
                 placeholder="Your answer..."
               />
@@ -346,8 +139,8 @@
       </div>
       <div class="save-button">
         <div class="title-itemslong">
-          <a href="client-project-confirmation.html" class="button-primary"
-            >POST</a
+          <button class="button-primary" id="create-post"
+            >POST</button
           >
         </div>
       </div>
@@ -367,5 +160,110 @@
         </div>
       </div>
     </div>
+    <script>
+			document.addEventListener("DOMContentLoaded", () => {
+        const project_name = document.getElementById('name-project');
+        const project_location = document.getElementById('register-location');
+        const project_professional_area = document.getElementById('select-category');
+        const project_price = document.getElementById('project-budget');
+        const project_description = document.getElementById('description');
+
+        const requirementTemplate = document.getElementById('template-requirement');
+        const requirementContainer = document.getElementById('requirements-container');
+        const addRequirement = document.getElementById('add-requirement');
+
+        const savePost = document.getElementById('create-post');
+
+        let requirementIndex = 0;
+
+        function createRequirement() {
+          const reqTemplate = document
+					.getElementById("template-requirement")
+					.content.cloneNode(true).firstElementChild;
+
+          const reqName = reqTemplate.querySelector(
+            '[data-selector="requirement-name"]'
+          );
+          const reqDescription = reqTemplate.querySelector(
+            '[data-selector="requirement-description"]'
+          );
+          const reqRemove = reqTemplate.querySelector(
+            '[data-selector="remove-requirement"]'
+          );
+    
+          reqTemplate.id = `req-${requirementIndex}`;
+          reqName.id = `req-name-${requirementIndex}`;
+          reqDescription.id = `req-description-${requirementIndex}`;
+          reqRemove.id = `req-remove-${requirementIndex}`;
+
+          reqRemove.addEventListener('click', () => {
+            reqTemplate.remove();
+          });
+
+          requirementContainer.appendChild(reqTemplate);
+          requirementIndex += 1;
+        };
+
+        addRequirement.addEventListener('click', () => createRequirement());
+
+        function createPayload() {
+          const userId = localStorage.getItem('userId');
+
+          const payload = {
+            user_id: userId,
+            name: project_name.value,
+            description: project_description.value,
+            location: project_location.value,
+            price: project_price.value,
+            professional_area: project_professional_area.value,
+            status: 'open',
+            requirements: []
+          }
+
+          const requirements = document.querySelectorAll('[data-selector="requirement-child"]');
+          requirements.forEach(requirement => {
+            const req = {};
+
+            const reqName= requirement.querySelector(
+              '[data-selector="requirement-name"]'
+            );
+            const reqDescription= requirement.querySelector(
+              '[data-selector="requirement-description"]'
+            );
+
+            req.name = reqName.value;
+            req.description = reqDescription.value;
+
+            payload.requirements.push(req);
+          });
+
+          return payload;
+        };
+
+        async function createPost() {
+          const payload = createPayload();
+          const token = localStorage.getItem("authToken");
+
+          try {
+            const data = await apiRequest(
+              `http://localhost:8000/api/client/project-new`,
+              "POST",
+              payload,
+              {
+                authorization: token,
+                "user-type": "client",
+              }
+            );
+
+            window.location.href = `http://127.0.0.1:5500/client-projectwithapplicants.html?id=${data.project_id}`;
+          } catch (err) {
+            console.log(err);
+            alert("Error occured, please try later");
+          }
+        };
+
+        savePost.addEventListener('click', () => createPost());
+			});
+		</script>
   </body>
 </html>

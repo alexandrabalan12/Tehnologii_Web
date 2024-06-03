@@ -132,20 +132,48 @@
 		const rating_input = document.getElementById("rating-number");
 		const reviewer_name_input = document.getElementById("reviewer-name");
 		const reviewer_job_input = document.getElementById("reviewer-job");
+		const reviewer_message = document.getElementById("reviewer-message");
 		const button = document.getElementById("save-review");
 
-		function review() {
+		function createPayload() {
+			const userData = JSON.parse(localStorage.getItem('userData'));
+
 			const payload = {
-				user_id: "41",
+				user_id: userData.id,
 				user_reviewer_name: reviewer_name_input.value,
 				user_reviewer_occupation: reviewer_job_input.value,
-				rating: rating_input.value,
-				review_content: "Review 121",
+				rating: parseInt(rating_input.value),
+				review_content: reviewer_message.value
 			};
 
-			console.log(payload);
+			return payload;
 		}
 
-		button.addEventListener("click", () => review());
+		async function createCompanyReview() {
+			const companyId = window.location.href.split("=")[1];
+			const token = localStorage.getItem("authToken");
+
+			const payload = createPayload();
+
+			try {
+				const data = await apiRequest(
+					`http://localhost:8000/api/client/company-reviews/${companyId}`,
+					"POST",
+					payload,
+					{
+						authorization: token,
+						"user-type": "client",
+					}
+				);
+
+				window.location.href = `http://127.0.0.1:5500/client-profileforcompany-reviews.html?id=${companyId}`;
+				console.log(data);
+			} catch (err) {
+				console.log(err);
+				alert("Error occured, please try later");
+			}
+		}
+
+		button.addEventListener("click", () => createCompanyReview());
 	});
 </script>

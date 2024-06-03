@@ -106,50 +106,7 @@
 
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
-		const projects = [
-			// {
-			// 	id: 1,
-			// 	user_id: 41,
-			// 	name: "Green Energy Initiative",
-			// 	description:
-			// 		"A project focused on developing sustainable green energy solutions for urban areas.",
-			// 	status: "closed",
-			// 	location: "iasi",
-			// 	professional_area: "interior_design",
-			// 	price: "150000",
-			// 	requirements: [
-			// 		{
-			// 			name: "Solar Panel Installation",
-			// 			description: "Install solar panels on rooftops of urban buildings.",
-			// 		},
-			// 		{
-			// 			name: "Wind Turbine Setup",
-			// 			description: "Set up small wind turbines in open urban areas.",
-			// 		},
-			// 	],
-			// },
-			// {
-			// 	id: 2,
-			// 	user_id: 41,
-			// 	name: "Green Energy Initiative 2",
-			// 	description:
-			// 		"A project focused on developing sustainable green energy solutions for urban areas.",
-			// 	status: "closed",
-			// 	location: "iasi",
-			// 	professional_area: "interior_design",
-			// 	price: "150000",
-			// 	requirements: [
-			// 		{
-			// 			name: "Solar Panel Installation",
-			// 			description: "Install solar panels on rooftops of urban buildings.",
-			// 		},
-			// 		{
-			// 			name: "Wind Turbine Setup",
-			// 			description: "Set up small wind turbines in open urban areas.",
-			// 		},
-			// 	],
-			// },
-		];
+		let projects = [];
 
 		const noproject_text = `You have no closed projects...`;
 		const closedprojectsContainer = document.getElementById(
@@ -159,7 +116,38 @@
 			"no-projects-container"
 		);
 
-		function createProject() {
+		async function fetchProjects() {
+			projects = [];
+
+			const userId = localStorage.getItem("userId");
+			const token = localStorage.getItem("authToken");
+			try {
+				const payload = {
+					user_id: userId,
+					statuses: ["closed"],
+				};
+
+				const data = await apiRequest(
+					`http://localhost:8000/api/client/projects`,
+					"POST",
+					payload,
+					{
+						authorization: token,
+						"user-type": "client",
+					}
+				);
+
+				projects = data.projects;
+			} catch (err) {
+				console.log(err);
+				alert("Error occured, please try later");
+			}
+		}
+
+
+		async function createProject() {
+			await fetchProjects();
+
 			if (projects.length === 0) {
 				const noprojectTemplate = document
 					.getElementById("no-projects-template")

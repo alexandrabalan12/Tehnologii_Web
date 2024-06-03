@@ -30,8 +30,7 @@
 				<div class="title">
 					<h2 class="text-h2" id="company-name"></h2>
 				</div>
-				<a href="./client-leave-review.html" class="button-primary"
-					>Leave a review</a
+				<a href="./client-leave-review.html" class="button-primary" id="review-button">Leave a review</a
 				>
 			</div>
 
@@ -42,16 +41,19 @@
 							<a
 								href="client-profileforcompany-details.html"
 								class="text-body-copy-selected"
+								id="details-link"
 								>Details</a
 							>
 							<a
 								href="client-profileforcompany-portfolio.html"
 								class="text-body-copy"
+								id="portfolio-link"
 								>Portfolio</a
 							>
 							<a
 								href="client-profileforcompany-reviews.html"
 								class="text-body-copy"
+								id="reviews-link"
 								>Reviews</a
 							>
 						</div>
@@ -120,21 +122,35 @@
 	document.addEventListener("DOMContentLoaded", () => {
 		// continut care va veni din backend
 
-		const company_details = {
-			id: 2,
-			user_id: 47,
-			company_name: "Sobolanii2 SRL",
-			phone_number: "+50044949333",
-			description:
-				"Tech Innovators Inc. is a leading company specializing in innovative technology solutions for businesses worldwide. Our mission is to leverage cutting-edge technologies to drive business success and create value for our clients.",
-			location: "cluj",
-			address: "123 Innovation Drive, San Francisco, CA 94107",
-			professional_area: "roofing",
-			owner_name: "Alexa",
-			open_to_travel: "yes",
-		};
+		let company_details = {};
+		const companyId = window.location.href.split("=")[1];
 
-		function createProject() {
+		async function fetchCompanyDetails() {
+			projects = [];
+
+			const token = localStorage.getItem("authToken");
+
+			try {
+				const data = await apiRequest(
+				`http://localhost:8000/api/client/company-details/${companyId}`,
+				"GET",
+				null,
+				{
+					authorization: token,
+					"user-type": "client",
+				}
+				);
+				
+				company_details = data;
+			} catch (err) {
+				console.log(err);
+				alert("Error occured, please try later");
+			}
+		}
+
+		async function createProject() {
+			await fetchCompanyDetails();
+
 			const company_title = document.getElementById("company-name");
 			const company_name = document.getElementById("details-company-name");
 			const company_number = document.getElementById("company-phone");
@@ -149,6 +165,16 @@
 			const company_contractor = document.getElementById("company-contractor");
 			const company_travel = document.getElementById("company-travel");
 
+			const details_link = document.getElementById('details-link')
+			const reviews_link = document.getElementById('reviews-link')
+			const portfolio_link = document.getElementById('portfolio-link')
+			const review_button = document.getElementById('review-button');
+
+			details_link.href += `?id=${companyId}`;
+			reviews_link.href += `?id=${companyId}`;
+			portfolio_link.href += `?id=${companyId}`;
+			review_button.href += `?id=${companyId}`;
+
 			company_title.innerText = company_details.company_name;
 			company_name.innerText = company_details.company_name;
 			company_number.innerText = company_details.phone_number;
@@ -157,7 +183,7 @@
 			company_adress.innerText = company_details.address;
 			company_proffesionalarea.innerText = company_details.professional_area;
 			company_contractor.innerText = company_details.owner_name;
-			company_travel.innerText = company_details.open_to_travel;
+			company_travel.innerText = company_details.open_to_travel ? "Yes" : "No";
 		}
 		createProject();
 	});
