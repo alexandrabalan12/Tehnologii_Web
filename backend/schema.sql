@@ -15,7 +15,7 @@ CREATE TABLE companies (
     company_name VARCHAR(255) NOT NULL,
     phone_number VARCHAR(20),
     description TEXT NOT NULL,
-    location VARCHAR(255) NOT NULL,
+    location ENUM('brasov', 'bucuresti', 'cluj', 'iasi', 'timisoara') NOT NULL,
     address VARCHAR(255) NOT NULL,
     professional_area ENUM('structural_engineering', 'interior_design', 'roofing', 'masonry', 'plumbing') NOT NULL,
     owner_name VARCHAR(255) NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE projects (
     name VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     status ENUM('open', 'closed') NOT NULL,
-    location ENUM('iasi', 'cluj', 'bucuresti') NOT NULL,
+    location ENUM('brasov', 'bucuresti', 'cluj', 'iasi', 'timisoara') NOT NULL,
     professional_area ENUM('structural_engineering', 'interior_design', 'roofing', 'masonry', 'plumbing') NOT NULL,
     price VARCHAR(255) NOT NULL,
     requirements JSON NOT NULL,
@@ -60,5 +60,3 @@ CREATE TABLE job_applications (
     FOREIGN KEY (company_id) REFERENCES companies(id),
     UNIQUE (project_id, company_id)
 );
-
--- INSERT INTO users (email, password, role) VALUES ('admin@placo.ro', SHA2('admin123', 256), 'admin');

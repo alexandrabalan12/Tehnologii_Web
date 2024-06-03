@@ -91,7 +91,7 @@ const getAllProjects = async (req, res) => {
 const companyProjectRoutes = (req, res) => {
     if(req.url.startsWith('/api/company/project-details') && req.method === 'GET') {
         protectedRoute(getProjectDetails)(req, res);
-    } else if(req.url.startsWith('/api/company/projects') && req.method === 'GET') {
+    } else if(req.url.startsWith('/api/company/projects') && req.method === 'POST') {
         let body = '';
         req.on('data', chunk => {
             body += chunk;

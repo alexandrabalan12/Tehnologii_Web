@@ -5,7 +5,7 @@ const PORT = process.env.PORT;
 const server = http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*'); // Allow all domains (for development purposes)
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, authorization');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, authorization, user-type');
 
     if (req.method === 'OPTIONS') {
         res.writeHead(204);
