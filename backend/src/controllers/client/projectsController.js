@@ -217,7 +217,7 @@ const clientProjectRoutes = (req, res) => {
         });
     } else if(req.url.startsWith('/api/client/project-details') && req.method === 'GET') {
         protectedRoute(getProjectWithApplications)(req, res);
-    } else if(req.url.startsWith('/api/client/projects') && req.method === 'GET') {
+    } else if(req.url.startsWith('/api/client/projects') && req.method === 'POST') {
         let body = '';
         req.on('data', chunk => {
             body += chunk;
