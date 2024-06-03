@@ -79,9 +79,9 @@
         const password_input = document.getElementById("password");
         const is_company = document.getElementById("company");
         const button = document.getElementById("login-button");
+        let role = "client";
 
         function create_payload() {
-          let role = "client";
           if (is_company.checked) role = "company";
 
           const payload = {
@@ -105,7 +105,22 @@
 
             localStorage.setItem("authToken", data.token);
 
-            window.location.href = "http://localhost:5500/index.html";
+            if (role === "client") {
+              setTimeout(() => {
+                window.location.href =
+                  "http://127.0.0.1:5500/client-homepage.html";
+              }, 400);
+            } else if (role === "company") {
+              setTimeout(() => {
+                if (data.company_details_set) {
+                  window.location.href =
+                    "http://127.0.0.1:5500/company-homepage.html";
+                } else {
+                  window.location.href =
+                    "http://127.0.0.1:5500/company-signup-details.html";
+                }
+              }, 400);
+            }
           } catch (err) {
             if (err.code === 409) alert("Email already exists");
             else alert("Error occured, please try later");

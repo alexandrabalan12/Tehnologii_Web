@@ -89,8 +89,6 @@
           document.getElementById("password-confirm");
         const button = document.getElementById("register-button");
 
-        const role = window.location.href.split("=")[1] || "client";
-
         function isValidEmail(email) {
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
           return emailRegex.test(email);
@@ -109,10 +107,8 @@
 
         function create_payload() {
           const payload = {
-            name: "test",
             email: email_input.value,
             password: password_input.value,
-            role: role,
           };
 
           return payload;
@@ -143,7 +139,7 @@
               payload
             );
 
-            window.location.href = "http://127.0.0.1:5500/login.html";
+            window.location.href = `http://127.0.0.1:5500/aftersignup.html?id=${data.userId}`;
           } catch (err) {
             if (err.code === 409) alert("Email already exists");
             else alert("Error occured, please try later");

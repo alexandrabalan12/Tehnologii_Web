@@ -1,75 +1,67 @@
-.projects{
-    margin-top: 100px;
+.projects {
+  margin-top: 100px;
 }
-.projects .text-body-copy-selected{
-    text-align: center;
-    width: 100%;
+.projects .text-body-copy-selected {
+  text-align: center;
+  width: 100%;
 }
-.projects .details-account1{
-    margin-bottom: 70px;
-    height: auto;
-    justify-content: center;
+.projects .details-account1 {
+  margin-bottom: 70px;
+  height: auto;
+  justify-content: center;
 }
-.projects .text-body-copy1{
-    margin-bottom: -10px;
+.projects .text-body-copy1 {
+  margin-bottom: -10px;
 }
-.projects .text-body-copy-bold{
-    margin-bottom: -10px;
+.projects .text-body-copy-bold {
+  margin-bottom: -10px;
 }
-.container1{
-    display: flex;
-    max-width: 1400px ;
-    width: 100%;
-    padding: 0 16px;
-    margin: 0 auto;
-    margin-top: 48px;
+.container1 {
+  display: flex;
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+  margin-top: 48px;
 }
 
 .container1 > :first-child {
-    margin-right: 24px;
+  margin-right: 24px;
 }
 
 .projects .details-account1 .text .info-field-dot {
-    position: relative;
+  position: relative;
 }
 
 .projects .details-account1 .text .info-field-dot::before {
-    content: "";
-    position: absolute;
-    top: 24px;
-    left: -4px;
-    width: 6px;
-    height: 6px;
-    background-color: black;
-    border-radius: 100%;
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: -4px;
+  width: 6px;
+  height: 6px;
+  background-color: black;
+  border-radius: 100%;
 }
 
-.select-option .text-body-copy1{
-    margin-bottom: 16px;
+.select-option .text-body-copy1 {
+  margin-bottom: 16px;
 }
-#select-standard {
-    flex: 1; 
-    appearance: none;
-    padding: 10px;
-    border: 2px solid orange;
-    background-color: white; 
-    color: black;
-    border-radius: 10px; 
-    cursor: pointer; 
-    width: 160px;
-    outline: none; 
-  }
- 
+.select-standard {
+  flex: 1;
+  appearance: none;
+  padding: 10px;
+  border: 2px solid orange;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 160px;
+  outline: none;
+}
+
 .link,
-.link li
-.link p{
-   text-decoration: none;
-   color: black;
+.link li .link p {
+  text-decoration: none;
+  color: black;
 }
-
-
-
-
-  
-  
-  

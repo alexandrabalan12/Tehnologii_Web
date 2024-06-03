@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="./styles/index.css" />
     <link rel="stylesheet" href="./styles/pages/aftersignup.css" />
+    <script src="./scripts/utilites.js"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -32,18 +33,26 @@
         </div>
 
         <div class="form-what-are-you">
-          <a href="company-signup-details.html" class="form-what-are-you1">
+          <button
+            href="company-signup-details.html"
+            class="form-what-are-you1"
+            id="company-button"
+          >
             <div class="interior-form-what-are-you">
               <img src="./assets/aftersignup1.png" />
               <div class="why-us-category">
-                <div class="text-h4">Are you a worker?</div>
+                <div class="text-h4">Are you a company?</div>
                 <div class="text-body-copy1">
                   Are you looking for projects to work on?
                 </div>
               </div>
             </div>
-          </a>
-          <a href="client-homepage.html" class="form-what-are-you2">
+          </button>
+          <button
+            href="client-homepage.html"
+            class="form-what-are-you2"
+            id="client-button"
+          >
             <div class="interior-form-what-are-you">
               <div class="why-us-category">
                 <div class="text-h4">Are you a boss?</div>
@@ -53,9 +62,39 @@
               </div>
               <img src="./assets/aftersignup2.png" />
             </div>
-          </a>
+          </button>
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const companyButton = document.getElementById("company-button");
+        const clientButton = document.getElementById("client-button");
+
+        const userId = window.location.href.split("=")[1];
+
+        async function setRole(role) {
+          try {
+            const payload = {
+              userId: userId,
+              role: role,
+            };
+
+            const data = await apiRequest(
+              "http://localhost:8000/api/user-role",
+              "POST",
+              payload
+            );
+
+            window.location.href = "http://127.0.0.1:5500/login.html";
+          } catch (err) {
+            alert("There is a server error, or role is already set");
+          }
+        }
+
+        companyButton.addEventListener("click", () => setRole("company"));
+        clientButton.addEventListener("click", () => setRole("client"));
+      });
+    </script>
   </body>
 </html>
