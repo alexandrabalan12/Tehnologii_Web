@@ -29,7 +29,11 @@
         <div class="projects-portfolio" id="closedprojects-container">
           <template id="closedproject-template">
             <div class="details-account1">
-              <a href="client-viewproject.html" class="link">
+              <a
+                href="client-viewproject.html"
+                data-selector="closedproject-link"
+                class="link"
+              >
                 <div class="text">
                   <div class="info-field">
                     <p
@@ -184,11 +188,15 @@
           const closedproject_location = closedprojectTemplate.querySelector(
             '[data-selector="project-location"]'
           );
+          const closedproject_link = closedprojectTemplate.querySelector(
+            '[data-selector="closedproject-link"]'
+          );
 
           closedproject_title.innerText = closedproject.name;
           closedproject_team.innerText = closedproject.professional_area;
           closedproject_description.innerText = closedproject.description;
           closedproject_location.innerText = closedproject.location;
+          closedproject_link.href += `?id=${closedproject.id}`;
 
           closedprojectsContainer.appendChild(closedprojectTemplate);
         });
