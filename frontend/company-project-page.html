@@ -87,35 +87,49 @@
   </body>
 </html>
 <script>
-  window.addEventListener("load", () => {
-    const company_project = {
-      id: 1,
-      user_id: 41,
-      project_name: "Green Energy Initiative",
-      description:
-        "A project focused on developing sustainable green energy solutions for urban areas.",
-      status: "open",
-      location: "iasi",
-      professional_area: "interior_design",
-      price:
-        "The estimated budget for the project is $100,000, including contingencies for unexpected expenses",
-      requirements: [
-        {
-          name: "Solar Panel Installation",
-          description: "Install solar panels on rooftops of urban buildings.",
-        },
-        {
-          name: "Wind Turbine Setup",
-          description: "Set up small wind turbines in open urban areas.",
-        },
-      ],
-    };
+  document.addEventListener("DOMContentLoaded", () => {
+    let company_project = {};
 
     const requirementsContainer = document.getElementById(
       "requirements-container"
     );
 
-    function createRequirement() {
+    async function fetchProject() {
+      projects = [];
+
+      const projectId = window.location.href.split("=")[1];
+      const token = localStorage.getItem("authToken");
+
+      try {
+        const data = await apiRequest(
+          `http://localhost:8000/api/company/project-details/${projectId}`,
+          "GET",
+          null,
+          {
+            authorization: token,
+            "user-type": "company",
+          }
+        );
+
+        console.log(data);
+
+        company_project = data.project;
+      } catch (err) {
+        console.log(err);
+        alert("Error occured, please try later");
+      }
+    }
+
+    function formatCategory(str) {
+      let formattedStr = str.replace(/_/g, " ");
+
+      formattedStr =
+        formattedStr.charAt(0).toUpperCase() + formattedStr.slice(1);
+
+      return formattedStr;
+    }
+
+    async function createRequirement() {
       const project_name = document.getElementById("project-name");
       const team_needed = document.getElementById("team-needed");
       const location = document.getElementById("location");
@@ -124,8 +138,10 @@
       );
       const budget = document.getElementById("budget");
 
-      project_name.innerText = company_project.project_name;
-      team_needed.innerText = company_project.professional_area;
+      await fetchProject();
+
+      project_name.innerText = company_project.name;
+      team_needed.innerText = formatCategory(company_project.professional_area);
       location.innerText = company_project.location;
       general_description.innerText = company_project.description;
       budget.innerText = company_project.price;
@@ -148,6 +164,7 @@
         requirementsContainer.appendChild(requirementTemplate);
       });
     }
+
     createRequirement();
   });
 </script>

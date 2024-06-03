@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="./styles/index.css" />
     <link rel="stylesheet" href="./styles/pages/aftersignup.css" />
     <link rel="stylesheet" href="./styles/pages/aftersignup-company.css" />
+    <link rel="stylesheet" href="./styles/pages/availableprojects.css" />
+    <script src="./scripts/utilites.js"></script>
   </head>
 
   <body>
@@ -77,13 +79,14 @@
           <label for="register-location" class="text-body-copy"
             >Location:</label
           >
-          <div class="input-group__area">
-            <input
-              id="register-location"
-              name="register-location"
-              type="text"
-              placeholder="Location"
-            />
+          <div>
+            <select class="select-standard" name="1A" id="select-city">
+              <option value="brasov">Brasov</option>
+              <option value="bucuresti">Bucuresti</option>
+              <option value="cluj">Cluj</option>
+              <option value="iasi">Iasi</option>
+              <option value="timisoara">Timisoara</option>
+            </select>
           </div>
         </div>
         <div class="details-aftersignup">
@@ -103,13 +106,16 @@
           <label for="register-professional-area" class="text-body-copy"
             >Professional Area:</label
           >
-          <div class="input-group__area">
-            <input
-              id="register-professional-area"
-              name="register-professional-area"
-              type="text"
-              placeholder="Area"
-            />
+          <div>
+            <select class="select-standard" name="1A" id="select-category">
+              <option value="interior_design">Interior design</option>
+              <option value="masonry">Masonry</option>
+              <option value="plumbing">Plumbing</option>
+              <option value="roofing">Roofing</option>
+              <option value="structural_engineering">
+                Structural engineering
+              </option>
+            </select>
           </div>
         </div>
         <div class="details-aftersignup">
@@ -166,11 +172,11 @@
     const travel_no_radio = document.getElementById("travel-projects-no");
     const button = document.getElementById("get-started");
 
-    function registercompany() {
-      const open_to_travel = travel_yes_radio.checked ? "yes" : "no";
+    function createPayload() {
+      const userId = JSON.parse(localStorage.getItem("userData")).id;
+
       const payload = {
-        id: "2",
-        user_id: "47",
+        user_id: userId,
         company_name: company_name_input.value,
         phone_number: company_number_input.value,
         description: company_description_input.value,
@@ -178,11 +184,35 @@
         address: company_address_input.value,
         professional_area: company_professional_area_input.value,
         owner_name: company_contractor_input.value,
-        open_to_travel: open_to_travel,
+        open_to_travel: travel_yes_radio.checked,
       };
-      console.log(payload);
+
+      return payload;
     }
 
-    button.addEventListener("click", () => registercompany());
+    async function setCompanyDetails() {
+      const payload = createPayload();
+
+      const token = localStorage.getItem("authToken");
+
+      try {
+        const data = await apiRequest(
+          "http://localhost:8000/api/company/company-details",
+          "POST",
+          payload,
+          {
+            authorization: token,
+            "user-type": "company",
+          }
+        );
+
+        window.location.href = "http://127.0.0.1:5500/company-homepage.html";
+      } catch (err) {
+        console.log(err);
+        alert("An error has occured");
+      }
+    }
+
+    button.addEventListener("click", () => setCompanyDetails());
   });
 </script>
