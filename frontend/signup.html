@@ -139,7 +139,9 @@
               payload
             );
 
-            window.location.href = `http://127.0.0.1:5500/aftersignup.html?id=${data.userId}`;
+            window.location.href = 'http://127.0.0.1:5500/aftersignup.html';
+
+            localStorage.setItem('userId', data.userId);
           } catch (err) {
             if (err.code === 409) alert("Email already exists");
             else alert("Error occured, please try later");

@@ -31,7 +31,7 @@ const navbarClient = `
             </label>
             <div class="nav-menu" id="navbar-menu">
                 <!-- continut navigatie -->
-                <a href="./your-projects-client.html" class="nav-link">Your projects</a>
+                <a href="client-closedprojects.html" class="nav-link">Your projects</a>
                 <a href="aboutus.html" class="nav-link">About us</a>
                 <div class="nav-search input-group__area">
                     <img src="./assets/icon_search.png" />
@@ -62,8 +62,8 @@ const navbarCompany = `
             </label>
             <div class="nav-menu" id="navbar-menu">
                 <!-- continut navigatie -->
-                <a href="availableprojects.html" class="nav-link">Available projects</a>
-                <a href="aboutus-afterlogin.html" class="nav-link">About us</a>
+                <a href="company-availableprojects.html" class="nav-link">Available projects</a>
+                <a href="aboutus.html" class="nav-link">About us</a>
                 <div class="nav-search input-group__area">
                     <img src="./assets/icon_search.png" />
                     <input
@@ -142,12 +142,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       handleLogout();
     } else if (user_data && user_data.role === "company") {
       navbar_container.innerHTML = navbarCompany;
-      console.log(navbarCompany);
       handleSearch();
       handleLogout();
     } else navbar_container.innerHTML = navbarNotLogged;
-
-    console.log(navbar_container);
   }
 
   async function getUserData() {
@@ -164,6 +161,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     );
 
+    console.log('user_Data', response);
+
     user_data = response.user;
 
     if (!user_data) {
@@ -171,9 +170,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       // stergem datele
       localStorage.removeItem("authToken");
       localStorage.removeItem("userData");
+      localStorage.removeItem("userId");
     } else {
       // pastram datele sa fie si pt celelalte pagini
       localStorage.setItem("userData", JSON.stringify(user_data));
+      localStorage.setItem("userId", user_data.id);
     }
   }
 

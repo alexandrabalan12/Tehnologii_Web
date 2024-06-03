@@ -71,7 +71,7 @@
         const companyButton = document.getElementById("company-button");
         const clientButton = document.getElementById("client-button");
 
-        const userId = window.location.href.split("=")[1];
+        const userId = localStorage.getItem('userId');
 
         async function setRole(role) {
           try {

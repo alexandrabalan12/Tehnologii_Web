@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="add-project">
-          <a href="./company-applicationpage.html" class="button-primary"
+          <a href="./company-applicationpage.html" class="button-primary" id="application-link"
             >APPLY</a
           >
         </div>
@@ -94,10 +94,12 @@
       "requirements-container"
     );
 
+    
+    const projectId = window.location.href.split("=")[1];
+
     async function fetchProject() {
       projects = [];
 
-      const projectId = window.location.href.split("=")[1];
       const token = localStorage.getItem("authToken");
 
       try {
@@ -137,14 +139,17 @@
         "general-description"
       );
       const budget = document.getElementById("budget");
+      const application_link = document.getElementById("application-link");
 
       await fetchProject();
-
+      
       project_name.innerText = company_project.name;
       team_needed.innerText = formatCategory(company_project.professional_area);
       location.innerText = company_project.location;
       general_description.innerText = company_project.description;
       budget.innerText = company_project.price;
+      application_link.href += `?id=${projectId}`;
+
 
       company_project.requirements.forEach((requirement) => {
         const requirementTemplate = document

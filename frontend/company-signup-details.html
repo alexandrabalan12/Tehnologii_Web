@@ -80,7 +80,7 @@
 						>Location:</label
 					>
 					<div>
-						<select class="select-standard" name="1A" id="select-city">
+						<select class="select-standard" name="1A" id="register-location">
 							<option value="brasov">Brasov</option>
 							<option value="bucuresti">Bucuresti</option>
 							<option value="cluj">Cluj</option>
@@ -107,7 +107,7 @@
 						>Professional Area:</label
 					>
 					<div>
-						<select class="select-standard" name="1A" id="select-category">
+						<select class="select-standard" name="1A" id="register-professional-area">
 							<option value="interior_design">Interior design</option>
 							<option value="masonry">Masonry</option>
 							<option value="plumbing">Plumbing</option>
@@ -173,7 +173,7 @@
 		const button = document.getElementById("get-started");
 
 		function createPayload() {
-			const userId = JSON.parse(localStorage.getItem("userData")).id;
+			const userId = localStorage.getItem('userId');
 
 			const payload = {
 				user_id: userId,
