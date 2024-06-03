@@ -27,7 +27,11 @@
 			<div class="projects" id="projects-container">
 				<template id="project-template">
 					<div class="details-account1">
-						<a href="company-project-page.html" class="link">
+						<a
+							href="company-project-page.html"
+							data-selector="aftersearch-link"
+							class="link"
+						>
 							<div class="text">
 								<div class="info-field">
 									<p
@@ -170,11 +174,15 @@
 						const project_location = projectTemplate.querySelector(
 							'[data-selector="project-location"]'
 						);
+						const aftersearch_link = projectTemplate.querySelector(
+							'[data-selector="aftersearch-link"]'
+						);
 
 						project_title.innerText = project.name;
 						project_description.innerText = project.description;
 						project_team.innerText = project.professional_area;
 						project_location.innerText = project.location;
+						aftersearch_link.href += `?id=${project.id}`;
 
 						projectsContainer.appendChild(projectTemplate);
 					});
