@@ -46,10 +46,10 @@ const createProject = async (req, res) => {
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         `;
         const insertValues = [user_id, name, description, status, location, professional_area, price, JSON.stringify(requirements)];
-        await database.query(insertQuery, insertValues);
+        const [result] = await database.query(insertQuery, insertValues);
     
         res.statusCode = 201;
-        res.write(JSON.stringify({ message: 'Project created successfully' }));
+        res.write(JSON.stringify({ message: 'Project created successfully', project_id: result.insertId }));
         res.end();
     } catch (err) {
         console.log('err', err);

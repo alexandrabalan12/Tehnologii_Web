@@ -3,7 +3,7 @@ import companyCompaniesRoutes from '../controllers/company/companiesController.j
 import companyProjectRoutes from '../controllers/company/projectsController.js';
 import companyApplicationRoutes from '../controllers/company/applicationsController.js';
 import companySearchRoutes from '../controllers/company/searchController.js';
-import clientReviewRoutes from '../controllers/client/reviewsController.js';
+import clientCompaniesRoutes from '../controllers/client/companiesController.js';
 import clientProjectRoutes from '../controllers/client/projectsController.js';
 import clientJobApplicationRoutes from '../controllers/client/applicationsController.js';
 import clientSearchRoutes from '../controllers/client/searchController.js';
@@ -67,8 +67,8 @@ const handleAPI = (req, res) => {
                     companyApplicationRoutes(req, res);
                 } else if(req.url.startsWith('/api/company/search')) {
                     companySearchRoutes(req, res);
-                } else if(req.url.startsWith('/api/client/company-reviews')) {
-                    clientReviewRoutes(req, res);
+                } else if(req.url.startsWith('/api/client/company')) {
+                    clientCompaniesRoutes(req, res);
                 } else if(req.url.startsWith('/api/client/project')) {
                     clientProjectRoutes(req, res);
                 } else if(req.url.startsWith('/api/client/application')) {
