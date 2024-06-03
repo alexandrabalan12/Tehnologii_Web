@@ -53,7 +53,11 @@
           <div class="projects-portfolio" id="portfolio-container">
             <template id="portfolio-template">
               <div class="details-account1">
-                <a href="project-portfolio.html" class="link">
+                <a
+                  href="project-portfolio.html"
+                  data-selector="portfolio-link"
+                  class="link"
+                >
                   <div class="text">
                     <div class="info-field">
                       <p
@@ -180,10 +184,14 @@
           const project_description = portfolioTemplate.querySelector(
             '[data-selector="project-description"]'
           );
+          const portfolio_link = portfolioTemplate.querySelector(
+            '[data-selector="portfolio-link"]'
+          );
 
           project_title.innerText = project.project_name;
           project_team.innerText = project.professional_area;
           project_description.innerText = project.description;
+          portfolio_link.href += `?id=${project.id}`;
 
           portfolio_container.appendChild(portfolioTemplate);
         });

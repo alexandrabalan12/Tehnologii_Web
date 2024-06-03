@@ -45,7 +45,11 @@
               <p class="text-body-copy" data-selector="company-name1"></p>
             </div>
             <div class="review-link">
-              <a href="client-application-details.html" class="text-body-copy">
+              <a
+                href="client-application-details.html"
+                data-selector="applicationoverview-link"
+                class="text-body-copy"
+              >
                 See application overview
                 <img src="./assets/sageata.png" alt="Arrow" />
               </a>
@@ -53,6 +57,7 @@
             <div class="review-link1">
               <a
                 href="client-profileforcompany-details.html"
+                data-selector="companyprofile-link"
                 class="text-body-copy"
               >
                 See company profile
@@ -172,8 +177,16 @@
           const applicants_name = applicantsTemplate.querySelector(
             '[data-selector="company-name1"]'
           );
+          const applicationoverview_link = applicantsTemplate.querySelector(
+            '[data-selector="applicationoverview-link"]'
+          );
+          const companyprofile_link = applicantsTemplate.querySelector(
+            '[data-selector="companyprofile-link"]'
+          );
 
           applicants_name.innerText = applicant.company_name;
+          applicationoverview_link.href += `?id=${applicant.id}`;
+          companyprofile_link.href += `?id=${applicant.id}`;
 
           applicantsContainer.appendChild(applicantsTemplate);
         });
