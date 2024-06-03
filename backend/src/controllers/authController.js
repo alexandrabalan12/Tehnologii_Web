@@ -143,11 +143,29 @@ const loginUser = async (req, res) => {
     }
 };
 
-const getUser = async(req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    res.write(JSON.stringify({user: req.user }));
-    res.end();
+const getUser = async (req, res) => {
+    try {
+        const user = req.user;
+        let response = { user: user };
+
+        if (user.role === 'company') {
+            const [companies] = await database.query('SELECT id FROM companies WHERE user_id = ?', [user.id]);
+            console.log(companies);
+            if (companies.length) {
+                response.user.company_id = companies[0].id;
+            }
+        }
+
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.write(JSON.stringify(response));
+        res.end();
+    } catch (error) {
+        res.statusCode = 500;
+        res.setHeader('Content-Type', 'application/json');
+        res.write(JSON.stringify({ error: 'An error occurred while fetching user data' }));
+        res.end();
+    }
 };
 
 const authRoutes = (req, res) => {
