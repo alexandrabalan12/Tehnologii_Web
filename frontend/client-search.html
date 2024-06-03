@@ -24,11 +24,11 @@
 
     <div class="container">
       <div class="text-h4">Results:</div>
-      <div class="projects" id="projects-container">
-        <template id="project-template">
+      <div class="projects" id="companies-container">
+        <template id="company-template">
           <div class="details-account1">
             <a
-              href="company-project-page.html"
+              href="client-profileforcompany-details.html"
               data-selector="aftersearch-link"
               class="link"
             >
@@ -36,25 +36,26 @@
                 <div class="info-field">
                   <p
                     class="text-body-copy-selected"
-                    data-selector="project-title"
+                    data-selector="company-name"
                   ></p>
                 </div>
+                <div class="info-field info-field-dot">
+                  <span class="text-body-copy-bold">Location:</span>
+                  <p class="text-body-copy1" data-selector="company-city"></p>
+                </div>
+                <div class="info-field info-field-dot">
+                  <span class="text-body-copy-bold">Proffesional field:</span>
+                  <p
+                    class="text-body-copy1"
+                    data-selector="company-proffesionalarea"
+                  ></p>
+                </div>
+
                 <div class="info-field info-field-dot">
                   <span class="text-body-copy-bold">Description: </span>
                   <p
                     class="text-body-copy1"
-                    data-selector="project-description"
-                  ></p>
-                </div>
-                <div class="info-field info-field-dot">
-                  <span class="text-body-copy-bold">Team needed:</span>
-                  <p class="text-body-copy1" data-selector="project-team"></p>
-                </div>
-                <div class="info-field info-field-dot">
-                  <span class="text-body-copy-bold">Location:</span>
-                  <p
-                    class="text-body-copy1"
-                    data-selector="project-location"
+                    data-selector="company-description"
                   ></p>
                 </div></div
             ></a>
@@ -83,29 +84,31 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         // continut care va veni din backend
+        let companies = [];
 
-        let projects = [];
+        // elemente care trebuie populate cu continut
+        const companiesContainer = document.getElementById(
+          "companies-container"
+        );
 
-        const projectsContainer = document.getElementById("projects-container");
-
-        async function fetchProjects() {
-          projects = [];
+        async function fetchCompanies() {
+          companies = [];
 
           const token = localStorage.getItem("authToken");
           const searchQuery = window.location.href.split("?query=")[1];
 
           try {
             const data = await apiRequest(
-              `http://localhost:8000/api/company/search?query=${searchQuery}`,
+              `http://localhost:8000/api/client/search?query=${searchQuery}`,
               "GET",
               null,
               {
                 authorization: token,
-                "user-type": "company",
+                "user-type": "client",
               }
             );
 
-            projects = data.projects;
+            companies = data.companies;
           } catch (err) {
             console.log(err);
             alert("Error occured, please try later");
@@ -113,40 +116,39 @@
         }
 
         async function createProject() {
-          await fetchProjects();
+          await fetchCompanies();
 
-          projects.forEach((project, index) => {
-            const projectTemplate = document
-              .getElementById("project-template")
+          companies.forEach((company, index) => {
+            const companyTemplate = document
+              .getElementById("company-template")
               .content.cloneNode(true).firstElementChild;
 
             // doar in interior la template-uri
-            const project_title = projectTemplate.querySelector(
-              '[data-selector="project-title"]'
+            const company_name = companyTemplate.querySelector(
+              '[data-selector="company-name"]'
             );
-            const project_description = projectTemplate.querySelector(
-              '[data-selector="project-description"]'
+            const company_city = companyTemplate.querySelector(
+              '[data-selector="company-city"]'
             );
-            const project_team = projectTemplate.querySelector(
-              '[data-selector="project-team"]'
+            const company_proffesionalarea = companyTemplate.querySelector(
+              '[data-selector="company-proffesionalarea"]'
             );
-            const project_location = projectTemplate.querySelector(
-              '[data-selector="project-location"]'
+            const company_description = companyTemplate.querySelector(
+              '[data-selector="company-description"]'
             );
-            const aftersearch_link = projectTemplate.querySelector(
+            const aftersearch_link = companyTemplate.querySelector(
               '[data-selector="aftersearch-link"]'
             );
 
-            project_title.innerText = project.name;
-            project_description.innerText = project.description;
-            project_team.innerText = project.professional_area;
-            project_location.innerText = project.location;
-            aftersearch_link.href += `?id=${project.id}`;
+            company_name.innerText = company.company_name;
+            company_city.innerText = company.location;
+            company_proffesionalarea.innerText = company.professional_area;
+            company_description.innerText = company.description;
+            aftersearch_link.href += `?id=${company.id}`;
 
-            projectsContainer.appendChild(projectTemplate);
+            companiesContainer.appendChild(companyTemplate);
           });
         }
-
         createProject();
       });
     </script>

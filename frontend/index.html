@@ -28,7 +28,7 @@
         </div>
     </header> 
 </div>
-
+     
 <div class="container">
     <h2 class="text-h2">Why Us?</h2>
     <div class="why-us-container">
@@ -96,10 +96,10 @@
 
         if(user && user.role === 'company') {
             window.location.href = 'http://127.0.0.1:5500/company-homepage.html';
-        } else {
+        } else if(user && user.role === 'client') {
             window.location.href = 'http://127.0.0.1:5500/client-homepage.html';
         }
     });
 </script>
-</body>  
+</body>
 </html>
