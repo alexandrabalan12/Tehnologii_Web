@@ -1,218 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/index.css" />
-    <link rel="stylesheet" href="./styles/pages/aftersignup.css" />
-    <link rel="stylesheet" href="./styles/pages/aftersignup-company.css" />
-    <link rel="stylesheet" href="./styles/pages/availableprojects.css" />
-    <script src="./scripts/utilites.js"></script>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/index.css" />
+		<link rel="stylesheet" href="./styles/pages/aftersignup.css" />
+		<link rel="stylesheet" href="./styles/pages/aftersignup-company.css" />
+		<link rel="stylesheet" href="./styles/pages/availableprojects.css" />
+		<script src="./scripts/utilites.js"></script>
+	</head>
 
-  <body>
-    <nav class="navbar">
-      <div class="navbar-container">
-        <a href="index.html" class="logo1">PlaCo</a>
-      </div>
-    </nav>
-    <div class="container">
-      <div class="background-banner">
-        <img src="./assets/background-login.png" />
-      </div>
+	<body>
+		<nav class="navbar">
+			<div class="navbar-container">
+				<a href="index.html" class="logo1">PlaCo</a>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="background-banner">
+				<img src="./assets/background-login.png" />
+			</div>
 
-      <div class="aftersignup__banner">
-        <div class="text-h2">
-          <p>Please provide your information first!</p>
-        </div>
-      </div>
+			<div class="aftersignup__banner">
+				<div class="text-h2">
+					<p>Please provide your information first!</p>
+				</div>
+			</div>
 
-      <div class="form-aftersignup">
-        <div class="details-aftersignup">
-          <label for="register-company-name" class="text-body-copy"
-            >Company Name:</label
-          >
-          <div class="input-group__area">
-            <input
-              id="register-company-name"
-              name="register-company-name"
-              type="text"
-              placeholder="Company Name"
-            />
-          </div>
-        </div>
-        <div class="details-aftersignup">
-          <label for="register-number" class="text-body-copy"
-            >Phone number:</label
-          >
-          <div class="input-group__area">
-            <input
-              id="register-number"
-              name="register-number"
-              type="text"
-              placeholder="Phone number"
-            />
-          </div>
-        </div>
-        <div class="details-aftersignup">
-          <label for="register-description" class="text-body-copy"
-            >Short Description:</label
-          >
-          <div class="input-group__area">
-            <input
-              id="register-description"
-              name="register-description"
-              type="text"
-              placeholder="Description"
-            />
-          </div>
-        </div>
-        <div class="details-aftersignup">
-          <label for="register-location" class="text-body-copy"
-            >Location:</label
-          >
-          <div>
-            <select class="select-standard" name="1A" id="select-city">
-              <option value="brasov">Brasov</option>
-              <option value="bucuresti">Bucuresti</option>
-              <option value="cluj">Cluj</option>
-              <option value="iasi">Iasi</option>
-              <option value="timisoara">Timisoara</option>
-            </select>
-          </div>
-        </div>
-        <div class="details-aftersignup">
-          <label for="register-address" class="text-body-copy"
-            >Company Address:</label
-          >
-          <div class="input-group__area">
-            <input
-              id="register-address"
-              name="register-address"
-              type="text"
-              placeholder="Address"
-            />
-          </div>
-        </div>
-        <div class="details-aftersignup">
-          <label for="register-professional-area" class="text-body-copy"
-            >Professional Area:</label
-          >
-          <div>
-            <select class="select-standard" name="1A" id="select-category">
-              <option value="interior_design">Interior design</option>
-              <option value="masonry">Masonry</option>
-              <option value="plumbing">Plumbing</option>
-              <option value="roofing">Roofing</option>
-              <option value="structural_engineering">
-                Structural engineering
-              </option>
-            </select>
-          </div>
-        </div>
-        <div class="details-aftersignup">
-          <label for="register-general-contractor" class="text-body-copy"
-            >General Contractor:</label
-          >
-          <div class="input-group__area">
-            <input
-              id="register-general-contractor"
-              name="register-general-contractor"
-              type="text"
-              placeholder="Name"
-            />
-          </div>
-        </div>
-        <div class="details-aftersignup">
-          <h4 class="text-body-copy">Open To Travel For Projects:</h4>
-          <input
-            id="travel-projects-yes"
-            name="travel-projects"
-            type="radio"
-            value="yes"
-          />
-          <label for="travel-projects-yes" class="radio-label">Yes</label>
-          <input
-            id="travel-projects-no"
-            name="travel-projects"
-            type="radio"
-            value="no"
-          />
-          <label for="travel-projects-no" class="radio-label">No</label>
-        </div>
-      </div>
-      <button id="get-started" class="button-primary1">Get Started</button>
-    </div>
-  </body>
+			<div class="form-aftersignup">
+				<div class="details-aftersignup">
+					<label for="register-company-name" class="text-body-copy"
+						>Company Name:</label
+					>
+					<div class="input-group__area">
+						<input
+							id="register-company-name"
+							name="register-company-name"
+							type="text"
+							placeholder="Company Name"
+						/>
+					</div>
+				</div>
+				<div class="details-aftersignup">
+					<label for="register-number" class="text-body-copy"
+						>Phone number:</label
+					>
+					<div class="input-group__area">
+						<input
+							id="register-number"
+							name="register-number"
+							type="text"
+							placeholder="Phone number"
+						/>
+					</div>
+				</div>
+				<div class="details-aftersignup">
+					<label for="register-description" class="text-body-copy"
+						>Short Description:</label
+					>
+					<div class="input-group__area">
+						<input
+							id="register-description"
+							name="register-description"
+							type="text"
+							placeholder="Description"
+						/>
+					</div>
+				</div>
+				<div class="details-aftersignup">
+					<label for="register-location" class="text-body-copy"
+						>Location:</label
+					>
+					<div>
+						<select class="select-standard" name="1A" id="select-city">
+							<option value="brasov">Brasov</option>
+							<option value="bucuresti">Bucuresti</option>
+							<option value="cluj">Cluj</option>
+							<option value="iasi">Iasi</option>
+							<option value="timisoara">Timisoara</option>
+						</select>
+					</div>
+				</div>
+				<div class="details-aftersignup">
+					<label for="register-address" class="text-body-copy"
+						>Company Address:</label
+					>
+					<div class="input-group__area">
+						<input
+							id="register-address"
+							name="register-address"
+							type="text"
+							placeholder="Address"
+						/>
+					</div>
+				</div>
+				<div class="details-aftersignup">
+					<label for="register-professional-area" class="text-body-copy"
+						>Professional Area:</label
+					>
+					<div>
+						<select class="select-standard" name="1A" id="select-category">
+							<option value="interior_design">Interior design</option>
+							<option value="masonry">Masonry</option>
+							<option value="plumbing">Plumbing</option>
+							<option value="roofing">Roofing</option>
+							<option value="structural_engineering">
+								Structural engineering
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="details-aftersignup">
+					<label for="register-general-contractor" class="text-body-copy"
+						>General Contractor:</label
+					>
+					<div class="input-group__area">
+						<input
+							id="register-general-contractor"
+							name="register-general-contractor"
+							type="text"
+							placeholder="Name"
+						/>
+					</div>
+				</div>
+				<div class="details-aftersignup">
+					<h4 class="text-body-copy">Open To Travel For Projects:</h4>
+					<input
+						id="travel-projects-yes"
+						name="travel-projects"
+						type="radio"
+						value="yes"
+					/>
+					<label for="travel-projects-yes" class="radio-label">Yes</label>
+					<input
+						id="travel-projects-no"
+						name="travel-projects"
+						type="radio"
+						value="no"
+					/>
+					<label for="travel-projects-no" class="radio-label">No</label>
+				</div>
+			</div>
+			<button id="get-started" class="button-primary1">Get Started</button>
+		</div>
+	</body>
 </html>
 <script>
-  window.addEventListener("load", () => {
-    const company_name_input = document.getElementById("register-company-name");
-    const company_number_input = document.getElementById("register-number");
-    const company_description_input = document.getElementById(
-      "register-description"
-    );
-    const company_location_input = document.getElementById("register-location");
-    const company_address_input = document.getElementById("register-address");
-    const company_professional_area_input = document.getElementById(
-      "register-professional-area"
-    );
-    const company_contractor_input = document.getElementById(
-      "register-general-contractor"
-    );
-    const travel_yes_radio = document.getElementById("travel-projects-yes");
-    const travel_no_radio = document.getElementById("travel-projects-no");
-    const button = document.getElementById("get-started");
+	document.addEventListener("DOMContentLoaded", () => {
+		const company_name_input = document.getElementById("register-company-name");
+		const company_number_input = document.getElementById("register-number");
+		const company_description_input = document.getElementById(
+			"register-description"
+		);
+		const company_location_input = document.getElementById("register-location");
+		const company_address_input = document.getElementById("register-address");
+		const company_professional_area_input = document.getElementById(
+			"register-professional-area"
+		);
+		const company_contractor_input = document.getElementById(
+			"register-general-contractor"
+		);
+		const travel_yes_radio = document.getElementById("travel-projects-yes");
+		const travel_no_radio = document.getElementById("travel-projects-no");
+		const button = document.getElementById("get-started");
 
-    function createPayload() {
-      const userId = JSON.parse(localStorage.getItem("userData")).id;
+		function createPayload() {
+			const userId = JSON.parse(localStorage.getItem("userData")).id;
 
-      const payload = {
-        user_id: userId,
-        company_name: company_name_input.value,
-        phone_number: company_number_input.value,
-        description: company_description_input.value,
-        location: company_location_input.value,
-        address: company_address_input.value,
-        professional_area: company_professional_area_input.value,
-        owner_name: company_contractor_input.value,
-        open_to_travel: travel_yes_radio.checked,
-      };
+			const payload = {
+				user_id: userId,
+				company_name: company_name_input.value,
+				phone_number: company_number_input.value,
+				description: company_description_input.value,
+				location: company_location_input.value,
+				address: company_address_input.value,
+				professional_area: company_professional_area_input.value,
+				owner_name: company_contractor_input.value,
+				open_to_travel: travel_yes_radio.checked,
+			};
 
-      return payload;
-    }
+			return payload;
+		}
 
-    async function setCompanyDetails() {
-      const payload = createPayload();
+		async function setCompanyDetails() {
+			const payload = createPayload();
 
-      const token = localStorage.getItem("authToken");
+			const token = localStorage.getItem("authToken");
 
-      try {
-        const data = await apiRequest(
-          "http://localhost:8000/api/company/company-details",
-          "POST",
-          payload,
-          {
-            authorization: token,
-            "user-type": "company",
-          }
-        );
+			try {
+				const data = await apiRequest(
+					"http://localhost:8000/api/company/company-details",
+					"POST",
+					payload,
+					{
+						authorization: token,
+						"user-type": "company",
+					}
+				);
 
-        window.location.href = "http://127.0.0.1:5500/company-homepage.html";
-      } catch (err) {
-        console.log(err);
-        alert("An error has occured");
-      }
-    }
+				window.location.href = "http://127.0.0.1:5500/company-homepage.html";
+			} catch (err) {
+				console.log(err);
+				alert("An error has occured");
+			}
+		}
 
-    button.addEventListener("click", () => setCompanyDetails());
-  });
+		button.addEventListener("click", () => setCompanyDetails());
+	});
 </script>

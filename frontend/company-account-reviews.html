@@ -1,219 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/index.css" />
-    <link rel="stylesheet" href="./styles/pages/home.css" />
-    <link rel="stylesheet" href="./styles/pages/afterlogin.css" />
-    <link rel="stylesheet" href="./styles/pages/account.css" />
-    <link rel="stylesheet" href="./styles/pages/myreviews-company.css" />
-    <link
-      rel="stylesheet"
-      href="./styles/pages/myaccount-company-afteredit.css"
-    />
-    <script src="./scripts/utilites.js"></script>
-    <script src="./scripts/navbar.js"></script>
-  </head>
-  <body>
-    <div id="navbar-container"></div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/index.css" />
+		<link rel="stylesheet" href="./styles/pages/home.css" />
+		<link rel="stylesheet" href="./styles/pages/afterlogin.css" />
+		<link rel="stylesheet" href="./styles/pages/account.css" />
+		<link rel="stylesheet" href="./styles/pages/myreviews-company.css" />
+		<link
+			rel="stylesheet"
+			href="./styles/pages/myaccount-company-afteredit.css"
+		/>
+		<script src="./scripts/utilites.js"></script>
+		<script src="./scripts/navbar.js"></script>
+	</head>
+	<body>
+		<div id="navbar-container"></div>
 
-    <div>
-      <h2 class="text-h2-title">My account</h2>
-    </div>
-    <div class="container">
-      <div class="container-account">
-        <div class="menu-account">
-          <div class="text">
-            <a href="company-account-details.html" class="text-body-copy"
-              >My Details</a
-            >
-            <a href="company-account-portfolio.html" class="text-body-copy"
-              >Portfolio</a
-            >
-            <a
-              href="./company-account-reviews.html"
-              class="text-body-copy-selected"
-              >My Reviews</a
-            >
-          </div>
-        </div>
-        <div class="myreviews" id="reviews-container">
-          <template id="review-template">
-            <div class="details-account1">
-              <div class="review-for">
-                <h4 class="text-h4" data-selector="review-name"></h4>
+		<div>
+			<h2 class="text-h2-title">My account</h2>
+		</div>
+		<div class="container">
+			<div class="container-account">
+				<div class="menu-account">
+					<div class="text">
+						<a href="company-account-details.html" class="text-body-copy"
+							>My Details</a
+						>
+						<a href="company-account-portfolio.html" class="text-body-copy"
+							>Portfolio</a
+						>
+						<a
+							href="./company-account-reviews.html"
+							class="text-body-copy-selected"
+							>My Reviews</a
+						>
+					</div>
+				</div>
+				<div class="myreviews" id="reviews-container">
+					<template id="review-template">
+						<div class="details-account1">
+							<div class="review-for">
+								<h4 class="text-h4" data-selector="review-name"></h4>
 
-                <div class="stars" data-selector="review-stars"></div>
-              </div>
-              <div class="review-text">
-                <p class="text-body-copy" data-selector="review-text"></p>
-              </div>
+								<div class="stars" data-selector="review-stars"></div>
+							</div>
+							<div class="review-text">
+								<p class="text-body-copy" data-selector="review-text"></p>
+							</div>
 
-              <div class="review-from">
-                <p class="text-body-copy" data-selector="review-job"></p>
-              </div>
-            </div>
-          </template>
-          <template id="full-star">
-            <img src="./assets/full_star.png" alt="Star" />
-          </template>
-          <template id="empty-star">
-            <img src="./assets/empty_star.png" alt="Star" />
-          </template>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <h2 class="text-h2">Contact us</h2>
-      <div class="contact-info">
-        <div class="contact-mail">
-          <img src="./assets/email.png" />
-          <p class="text-body-copy">emailemail@gmail.com</p>
-        </div>
-        <div class="contact-phone">
-          <img src="./assets/phone.png" />
-          <p class="text-body-copy">+407.12.123.123</p>
-        </div>
-        <div class="contact-adress">
-          <img src="./assets/location.png" />
-          <p class="text-body-copy">Iasi, Romania</p>
-        </div>
-      </div>
-    </div>
-  </body>
+							<div class="review-from">
+								<p class="text-body-copy" data-selector="review-job"></p>
+							</div>
+						</div>
+					</template>
+					<template id="full-star">
+						<img src="./assets/full_star.png" alt="Star" />
+					</template>
+					<template id="empty-star">
+						<img src="./assets/empty_star.png" alt="Star" />
+					</template>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h2 class="text-h2">Contact us</h2>
+			<div class="contact-info">
+				<div class="contact-mail">
+					<img src="./assets/email.png" />
+					<p class="text-body-copy">emailemail@gmail.com</p>
+				</div>
+				<div class="contact-phone">
+					<img src="./assets/phone.png" />
+					<p class="text-body-copy">+407.12.123.123</p>
+				</div>
+				<div class="contact-adress">
+					<img src="./assets/location.png" />
+					<p class="text-body-copy">Iasi, Romania</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
 
 <script>
-  window.addEventListener("load", () => {
-    // continut care e dinamic ca vine din backend
-    // momentan e static pana legam cu api-urile
-    // dar asa o sa arate ce trebuie afisat
-    const reviews = [
-      {
-        id: 6,
-        company_id: 1,
-        user_reviewer_id: 41,
-        user_reviewer_name: "John Doe",
-        user_reviewer_occupation: "Software Engineer",
-        rating: 5,
-        review_content:
-          "I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-        created_at: "2024-05-28T19:13:37.000Z",
-      },
-      {
-        id: 5,
-        company_id: 1,
-        user_reviewer_id: 41,
-        user_reviewer_name: "John Doe",
-        user_reviewer_occupation: "Software Engineer",
-        rating: 1,
-        review_content:
-          "I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-        created_at: "2024-05-28T07:12:11.000Z",
-      },
-      {
-        id: 4,
-        company_id: 1,
-        user_reviewer_id: 41,
-        user_reviewer_name: "John Doe",
-        user_reviewer_occupation: "Software Engineer",
-        rating: 3,
-        review_content:
-          "I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-        created_at: "2024-05-28T07:11:09.000Z",
-      },
-      {
-        id: 3,
-        company_id: 1,
-        user_reviewer_id: 41,
-        user_reviewer_name: "John Doe",
-        user_reviewer_occupation: "Software Engineer",
-        rating: 1,
-        review_content:
-          "I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-        created_at: "2024-05-27T16:19:38.000Z",
-      },
-      {
-        id: 2,
-        company_id: 1,
-        user_reviewer_id: 41,
-        user_reviewer_name: "John Doe",
-        user_reviewer_occupation: "Software Engineer",
-        rating: 5,
-        review_content:
-          "I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-        created_at: "2024-05-27T14:56:02.000Z",
-      },
-      {
-        id: 1,
-        company_id: 1,
-        user_reviewer_id: 41,
-        user_reviewer_name: "John Doe",
-        user_reviewer_occupation: "Software Engineer",
-        rating: 3,
-        review_content:
-          "I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-        created_at: "2024-05-27T12:49:14.000Z",
-      },
-    ];
+	document.addEventListener("DOMContentLoaded", () => {
+		// continut care e dinamic ca vine din backend
+		// momentan e static pana legam cu api-urile
+		// dar asa o sa arate ce trebuie afisat
+		const reviews = [
+			{
+				id: 6,
+				company_id: 1,
+				user_reviewer_id: 41,
+				user_reviewer_name: "John Doe",
+				user_reviewer_occupation: "Software Engineer",
+				rating: 5,
+				review_content:
+					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
+				created_at: "2024-05-28T19:13:37.000Z",
+			},
+			{
+				id: 5,
+				company_id: 1,
+				user_reviewer_id: 41,
+				user_reviewer_name: "John Doe",
+				user_reviewer_occupation: "Software Engineer",
+				rating: 1,
+				review_content:
+					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
+				created_at: "2024-05-28T07:12:11.000Z",
+			},
+			{
+				id: 4,
+				company_id: 1,
+				user_reviewer_id: 41,
+				user_reviewer_name: "John Doe",
+				user_reviewer_occupation: "Software Engineer",
+				rating: 3,
+				review_content:
+					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
+				created_at: "2024-05-28T07:11:09.000Z",
+			},
+			{
+				id: 3,
+				company_id: 1,
+				user_reviewer_id: 41,
+				user_reviewer_name: "John Doe",
+				user_reviewer_occupation: "Software Engineer",
+				rating: 1,
+				review_content:
+					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
+				created_at: "2024-05-27T16:19:38.000Z",
+			},
+			{
+				id: 2,
+				company_id: 1,
+				user_reviewer_id: 41,
+				user_reviewer_name: "John Doe",
+				user_reviewer_occupation: "Software Engineer",
+				rating: 5,
+				review_content:
+					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
+				created_at: "2024-05-27T14:56:02.000Z",
+			},
+			{
+				id: 1,
+				company_id: 1,
+				user_reviewer_id: 41,
+				user_reviewer_name: "John Doe",
+				user_reviewer_occupation: "Software Engineer",
+				rating: 3,
+				review_content:
+					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
+				created_at: "2024-05-27T12:49:14.000Z",
+			},
+		];
 
-    const reviewsContainer = document.getElementById("reviews-container");
+		const reviewsContainer = document.getElementById("reviews-container");
 
-    function ratings(rating, container) {
-      for (let i = 0; i < rating; i += 1) {
-        const fullStar = document
-          .getElementById("full-star")
-          .content.cloneNode(true).firstElementChild;
-        container.appendChild(fullStar);
-      }
-      for (let i = 0; i < 5 - rating; i += 1) {
-        const emptyStar = document
-          .getElementById("empty-star")
-          .content.cloneNode(true).firstElementChild;
-        container.appendChild(emptyStar);
-      }
-    }
+		function ratings(rating, container) {
+			for (let i = 0; i < rating; i += 1) {
+				const fullStar = document
+					.getElementById("full-star")
+					.content.cloneNode(true).firstElementChild;
+				container.appendChild(fullStar);
+			}
+			for (let i = 0; i < 5 - rating; i += 1) {
+				const emptyStar = document
+					.getElementById("empty-star")
+					.content.cloneNode(true).firstElementChild;
+				container.appendChild(emptyStar);
+			}
+		}
 
-    // de aici in jos
-    function createReviews() {
-      reviews.forEach((review, index) => {
-        const reviewTemplate = document
-          .getElementById("review-template")
-          .content.cloneNode(true).firstElementChild;
+		// de aici in jos
+		function createReviews() {
+			reviews.forEach((review, index) => {
+				const reviewTemplate = document
+					.getElementById("review-template")
+					.content.cloneNode(true).firstElementChild;
 
-        // doar in interior la template-uri
-        const review_name = reviewTemplate.querySelector(
-          '[data-selector="review-name"]'
-        );
-        const review_text = reviewTemplate.querySelector(
-          '[data-selector="review-text"]'
-        );
-        const review_job = reviewTemplate.querySelector(
-          '[data-selector="review-job"]'
-        );
-        const review_stars = reviewTemplate.querySelector(
-          '[data-selector="review-stars"]'
-        );
+				// doar in interior la template-uri
+				const review_name = reviewTemplate.querySelector(
+					'[data-selector="review-name"]'
+				);
+				const review_text = reviewTemplate.querySelector(
+					'[data-selector="review-text"]'
+				);
+				const review_job = reviewTemplate.querySelector(
+					'[data-selector="review-job"]'
+				);
+				const review_stars = reviewTemplate.querySelector(
+					'[data-selector="review-stars"]'
+				);
 
-        review_name.innerText = review.user_reviewer_name;
-        review_text.innerText = review.review_content;
-        review_job.innerText = review.user_reviewer_occupation;
+				review_name.innerText = review.user_reviewer_name;
+				review_text.innerText = review.review_content;
+				review_job.innerText = review.user_reviewer_occupation;
 
-        ratings(review.rating, review_stars);
+				ratings(review.rating, review_stars);
 
-        reviewsContainer.appendChild(reviewTemplate);
-      });
-    }
+				reviewsContainer.appendChild(reviewTemplate);
+			});
+		}
 
-    createReviews();
-  });
+		createReviews();
+	});
 </script>
