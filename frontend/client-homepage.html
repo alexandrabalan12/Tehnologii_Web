@@ -98,52 +98,7 @@
 </html>
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
-		const proiecte_cu_nr_aplicanti = [
-			{
-				id: 1,
-				user_id: 41,
-				name: "Green Energy Initiative",
-				description:
-					"A project focused on developing sustainable green energy solutions for urban areas.",
-				status: "open",
-				location: "iasi",
-				professional_area: "interior_design",
-				price: "150000",
-				requirements: [
-					{
-						name: "Solar Panel Installation",
-						description: "Install solar panels on rooftops of urban buildings.",
-					},
-					{
-						name: "Wind Turbine Setup",
-						description: "Set up small wind turbines in open urban areas.",
-					},
-				],
-				applicant_count: 2,
-			},
-			{
-				id: 2,
-				user_id: 41,
-				name: "Green Energy Initiative2",
-				description:
-					"A project focused on developing sustainable green energy solutions for urban areas.",
-				status: "open",
-				location: "iasi",
-				professional_area: "interior_design",
-				price: "150000",
-				requirements: [
-					{
-						name: "Solar Panel Installation",
-						description: "Install solar panels on rooftops of urban buildings.",
-					},
-					{
-						name: "Wind Turbine Setup",
-						description: "Set up small wind turbines in open urban areas.",
-					},
-				],
-				applicant_count: 2,
-			},
-		];
+		let proiecte_cu_nr_aplicanti = [];
 
 		const noproject_text = `Oh! Looks like you don’t have an on-going project...`;
 		const clientprojectsContainer = document.getElementById(
@@ -151,7 +106,36 @@
 		);
 		const noprojectContainer = document.getElementById("noproject-container");
 
-		function createProject() {
+		async function fetchProjects() {
+			proiecte_cu_nr_aplicanti = [];
+
+			const userId = localStorage.getItem("userId");
+			const token = localStorage.getItem("authToken");
+			try {
+				const payload = {
+					user_id: userId,
+					statuses: ["open"],
+				};
+
+				const data = await apiRequest(
+					`http://localhost:8000/api/client/projects`,
+					"POST",
+					payload,
+					{
+						authorization: token,
+						"user-type": "client",
+					}
+				);
+
+				proiecte_cu_nr_aplicanti = data.projects;
+			} catch (err) {
+				console.log(err);
+				alert("Error occured, please try later");
+			}
+		}
+
+		async function createProject() {
+			await fetchProjects();
 			if (proiecte_cu_nr_aplicanti.length === 0) {
 				const noprojectTemplate = document
 					.getElementById("noproject-card")
