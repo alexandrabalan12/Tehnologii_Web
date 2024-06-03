@@ -132,17 +132,12 @@
 		const price_range_input = document.getElementById("price-range");
 
 		const button = document.getElementById("confirm-application");
+		const company_title = document.getElementById("project-name");
+		const general_description = document.getElementById("general-description");
+		company_title.innerText = company_project.name;
+		general_description.innerText = company_project.description;
 
-		function createProject() {
-			const company_title = document.getElementById("project-name");
-			const general_description = document.getElementById(
-				"general-description"
-			);
-			company_title.innerText = company_project.name;
-			general_description.innerText = company_project.description;
-		}
-		createProject();
-		function applicationpage() {
+		function createPayload() {
 			const payload = {
 				project_id: "1",
 				company_id: "2",
@@ -151,7 +146,31 @@
 				estimated_price: price_range_input.value,
 			};
 			console.log(payload);
+			return payload;
 		}
-		button.addEventListener("click", () => applicationpage());
+
+		async function createApplication() {
+			const payload = createPayload();
+			const token = localStorage.getItem("authToken");
+			try {
+				const data = await apiRequest(
+					"http://localhost:8000/api/company/application-new",
+					"POST",
+					payload,
+					{
+						authorization: token,
+						"user-type": "company",
+					}
+				);
+
+				window.location.href =
+					"http://127.0.0.1:5500/company-application-confirmation.html";
+			} catch (err) {
+				console.log(err);
+				alert("An error has occured");
+			}
+		}
+
+		button.addEventListener("click", () => createApplication());
 	});
 </script>
