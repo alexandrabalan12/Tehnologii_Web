@@ -84,78 +84,37 @@
 			document.addEventListener("DOMContentLoaded", () => {
 				// continut care va veni din backend
 
-				const projects = [
-					{
-						id: 1,
-						user_id: 41,
-						name: "Green Energy Initiative",
-						description:
-							"A project focused on developing sustainable green energy solutions for urban areas.",
-						status: "open",
-						location: "iasi",
-						professional_area: "interior_design",
-						price: "150000",
-						requirements: [
-							{
-								name: "Solar Panel Installation",
-								description:
-									"Install solar panels on rooftops of urban buildings.",
-							},
-							{
-								name: "Wind Turbine Setup",
-								description: "Set up small wind turbines in open urban areas.",
-							},
-						],
-					},
-					{
-						id: 2,
-						user_id: 41,
-						name: "Green Energy Initiative",
-						description:
-							"A project focused on developing sustainable green energy solutions for urban areas.",
-						status: "open",
-						location: "iasi",
-						professional_area: "interior_design",
-						price: "150000",
-						requirements: [
-							{
-								name: "Solar Panel Installation",
-								description:
-									"Install solar panels on rooftops of urban buildings.",
-							},
-							{
-								name: "Wind Turbine Setup",
-								description: "Set up small wind turbines in open urban areas.",
-							},
-						],
-					},
-					{
-						id: 3,
-						user_id: 41,
-						name: "Green Energy Initiative",
-						description:
-							"A project focused on developing sustainable green energy solutions for urban areas.",
-						status: "open",
-						location: "iasi",
-						professional_area: "interior_design",
-						price: "150000",
-						requirements: [
-							{
-								name: "Solar Panel Installation",
-								description:
-									"Install solar panels on rooftops of urban buildings.",
-							},
-							{
-								name: "Wind Turbine Setup",
-								description: "Set up small wind turbines in open urban areas.",
-							},
-						],
-					},
-				];
+				let projects = [];
 
 				const projectsContainer = document.getElementById("projects-container");
 
-				function createProject() {
+				async function fetchProjects() {
+					projects = [];
+
+					const token = localStorage.getItem("authToken");
+					const searchQuery = window.location.href.split("?query=")[1];
+
+					try {
+						const data = await apiRequest(
+							`http://localhost:8000/api/company/search?query=${searchQuery}`,
+							"GET",
+							null,
+							{
+								authorization: token,
+								"user-type": "company",
+							}
+						);
+
+						projects = data.projects;
+					} catch (err) {
+						console.log(err);
+						alert("Error occured, please try later");
+					}
+				}
+
+				async function createProject() {
+					await fetchProjects();
+
 					projects.forEach((project, index) => {
 						const projectTemplate = document
 							.getElementById("project-template")
@@ -187,6 +146,7 @@
 						projectsContainer.appendChild(projectTemplate);
 					});
 				}
+
 				createProject();
 			});
 		</script>

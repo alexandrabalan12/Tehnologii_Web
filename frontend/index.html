@@ -90,6 +90,16 @@
     </div>
 
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const user = JSON.parse(localStorage.getItem('userData'));
 
-</body>
+        if(user && user.role === 'company') {
+            window.location.href = 'http://127.0.0.1:5500/company-homepage.html';
+        } else {
+            window.location.href = 'http://127.0.0.1:5500/client-homepage.html';
+        }
+    });
+</script>
+</body>  
 </html>

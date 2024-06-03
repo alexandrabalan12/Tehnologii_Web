@@ -73,7 +73,7 @@ const navbarCompany = `
                         placeholder="Search for projects"
                     />
                 </div>
-                <a href="myaccount-company.html">
+                <a href="/company-account-details.html">
                     <img src="./assets/profile.png" />
                 </a>
                 <button id="logout-button" class="signup-btn">Log out</button>
@@ -83,107 +83,107 @@ const navbarCompany = `
 `;
 
 document.addEventListener("DOMContentLoaded", async () => {
-  // variabile
-  let user_data = null;
+	// variabile
+	let user_data = null;
 
-  const cached_data = JSON.parse(localStorage.getItem("userData") || "{}");
+	const cached_data = JSON.parse(localStorage.getItem("userData") || "{}");
 
-  if (cached_data && cached_data.role) {
-    user_data = cached_data;
-    user_role = cached_data.role;
-  }
+	if (cached_data && cached_data.role) {
+		user_data = cached_data;
+		user_role = cached_data.role;
+	}
 
-  // definim functii
-  function handleSearch() {
-    const input = document.getElementById("navbar-search");
-    const userType = user_data.role;
+	// definim functii
+	function handleSearch() {
+		const input = document.getElementById("navbar-search");
+		const userType = user_data.role;
 
-    input.addEventListener("keypress", (event) => {
-      if (event.key === "Enter") {
-        const encodedQuery = encodeURIComponent(input.value);
-        window.location.href = `http://127.0.0.1:5500/${userType}-search.html?query=${encodedQuery}`;
-      }
-    });
-  }
+		input.addEventListener("keypress", (event) => {
+			if (event.key === "Enter") {
+				const encodedQuery = encodeURIComponent(input.value);
+				window.location.href = `http://127.0.0.1:5500/${userType}-search.html?query=${encodedQuery}`;
+			}
+		});
+	}
 
-  function routeGuard() {
-    // return;
-    // protejam rutele de 'client' si 'company';
-    const route = window.location.pathname.slice(1);
-    const type = route.split("-")[0];
+	function routeGuard() {
+		// return;
+		// protejam rutele de 'client' si 'company';
+		const route = window.location.pathname.slice(1);
+		const type = route.split("-")[0];
 
-    if (type === "client" || type === "company") {
-      if (user_data.role !== type) {
-        window.location.href = "http://127.0.0.1:5500/login.html";
-      }
-    }
-  }
+		if (type === "client" || type === "company") {
+			if (user_data.role !== type) {
+				window.location.href = "http://127.0.0.1:5500/login.html";
+			}
+		}
+	}
 
-  function handleLogout() {
-    const logout_button = document.getElementById("logout-button");
+	function handleLogout() {
+		const logout_button = document.getElementById("logout-button");
 
-    logout_button.addEventListener("click", () => {
-      localStorage.removeItem("authToken");
-      localStorage.removeItem("userData");
+		logout_button.addEventListener("click", () => {
+			localStorage.removeItem("authToken");
+			localStorage.removeItem("userData");
 
-      setTimeout(() => {
-        window.location.href = "http://127.0.0.1:5500/index.html";
-      }, 400);
-    });
-  }
+			setTimeout(() => {
+				window.location.href = "http://127.0.0.1:5500/index.html";
+			}, 400);
+		});
+	}
 
-  function setNavbar() {
-    // setam navbar in functie de user
-    const navbar_container = document.getElementById("navbar-container");
+	function setNavbar() {
+		// setam navbar in functie de user
+		const navbar_container = document.getElementById("navbar-container");
 
-    if (user_data && user_data.role === "client") {
-      navbar_container.innerHTML = navbarClient;
-      handleSearch();
-      handleLogout();
-    } else if (user_data && user_data.role === "company") {
-      navbar_container.innerHTML = navbarCompany;
-      handleSearch();
-      handleLogout();
-    } else navbar_container.innerHTML = navbarNotLogged;
-  }
+		if (user_data && user_data.role === "client") {
+			navbar_container.innerHTML = navbarClient;
+			handleSearch();
+			handleLogout();
+		} else if (user_data && user_data.role === "company") {
+			navbar_container.innerHTML = navbarCompany;
+			handleSearch();
+			handleLogout();
+		} else navbar_container.innerHTML = navbarNotLogged;
+	}
 
-  async function getUserData() {
-    const token = await localStorage.getItem("authToken");
+	async function getUserData() {
+		const token = await localStorage.getItem("authToken");
 
-    if (!token) return;
+		if (!token) return;
 
-    const response = await apiRequest(
-      "http://localhost:8000/api/user-data",
-      "GET",
-      null,
-      {
-        authorization: token,
-      }
-    );
+		const response = await apiRequest(
+			"http://localhost:8000/api/user-data",
+			"GET",
+			null,
+			{
+				authorization: token,
+			}
+		);
 
-    console.log('user_Data', response);
+		console.log("user_Data", response);
 
-    user_data = response.user;
+		user_data = response.user;
 
-    if (!user_data) {
-      // userul nu e valid
-      // stergem datele
-      localStorage.removeItem("authToken");
-      localStorage.removeItem("userData");
-      localStorage.removeItem("userId");
-    } else {
-      // pastram datele sa fie si pt celelalte pagini
-      localStorage.setItem("userData", JSON.stringify(user_data));
-      localStorage.setItem("userId", user_data.id);
-    }
-  }
+		if (!user_data) {
+			// userul nu e valid
+			// stergem datele
+			localStorage.removeItem("authToken");
+			localStorage.removeItem("userData");
+			localStorage.removeItem("userId");
+		} else {
+			// pastram datele sa fie si pt celelalte pagini
+			localStorage.setItem("userData", JSON.stringify(user_data));
+			localStorage.setItem("userId", user_data.id);
+		}
+	}
 
-  // apelam functii
+	// apelam functii
 
-  // setam navbar initial
-  setNavbar();
+	// setam navbar initial
+	setNavbar();
 
-  await getUserData();
-  setNavbar();
-  routeGuard();
+	await getUserData();
+	setNavbar();
+	routeGuard();
 });

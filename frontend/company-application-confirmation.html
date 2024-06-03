@@ -25,7 +25,7 @@
 		<div id="navbar-container"></div>
 		<div class="container">
 			<div class="title">
-				<h2 class="text-h2" id="project-name"></h2>
+				<h2 class="text-h2">Congratulations</h2>
 			</div>
 			<div class="confirmation">
 				<img src="./assets/application_confirmation.png" />
@@ -38,7 +38,7 @@
 					after the hiring process.
 				</div>
 				<div class="title-itemslong">
-					<a href="two-story-houseconfirmation.html" class="button-primary"
+					<a href="/company-homepage.html" class="button-primary"
 						>GO BACK TO MAIN PAGE</a
 					>
 				</div>
@@ -63,37 +63,3 @@
 		</div>
 	</body>
 </html>
-<script>
-	document.addEventListener("DOMContentLoaded", () => {
-		// continut care va veni din backend
-
-		const company_project = {
-			id: 1,
-			user_id: 41,
-			name: "Green Energy Initiative",
-			description:
-				"A project focused on developing sustainable green energy solutions for urban areas.",
-			status: "open",
-			location: "iasi",
-			professional_area: "interior_design",
-			price: "150000",
-			requirements: [
-				{
-					name: "Solar Panel Installation",
-					description: "Install solar panels on rooftops of urban buildings.",
-				},
-				{
-					name: "Wind Turbine Setup",
-					description: "Set up small wind turbines in open urban areas.",
-				},
-			],
-		};
-
-		function createProject() {
-			const company_title = document.getElementById("project-name");
-
-			company_title.innerText = company_project.name;
-		}
-		createProject();
-	});
-</script>

@@ -97,74 +97,7 @@
 		// continut care e dinamic ca vine din backend
 		// momentan e static pana legam cu api-urile
 		// dar asa o sa arate ce trebuie afisat
-		const reviews = [
-			{
-				id: 6,
-				company_id: 1,
-				user_reviewer_id: 41,
-				user_reviewer_name: "John Doe",
-				user_reviewer_occupation: "Software Engineer",
-				rating: 5,
-				review_content:
-					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-				created_at: "2024-05-28T19:13:37.000Z",
-			},
-			{
-				id: 5,
-				company_id: 1,
-				user_reviewer_id: 41,
-				user_reviewer_name: "John Doe",
-				user_reviewer_occupation: "Software Engineer",
-				rating: 1,
-				review_content:
-					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-				created_at: "2024-05-28T07:12:11.000Z",
-			},
-			{
-				id: 4,
-				company_id: 1,
-				user_reviewer_id: 41,
-				user_reviewer_name: "John Doe",
-				user_reviewer_occupation: "Software Engineer",
-				rating: 3,
-				review_content:
-					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-				created_at: "2024-05-28T07:11:09.000Z",
-			},
-			{
-				id: 3,
-				company_id: 1,
-				user_reviewer_id: 41,
-				user_reviewer_name: "John Doe",
-				user_reviewer_occupation: "Software Engineer",
-				rating: 1,
-				review_content:
-					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-				created_at: "2024-05-27T16:19:38.000Z",
-			},
-			{
-				id: 2,
-				company_id: 1,
-				user_reviewer_id: 41,
-				user_reviewer_name: "John Doe",
-				user_reviewer_occupation: "Software Engineer",
-				rating: 5,
-				review_content:
-					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-				created_at: "2024-05-27T14:56:02.000Z",
-			},
-			{
-				id: 1,
-				company_id: 1,
-				user_reviewer_id: 41,
-				user_reviewer_name: "John Doe",
-				user_reviewer_occupation: "Software Engineer",
-				rating: 3,
-				review_content:
-					"I had a specific vision for my restaurant's renovation, and PlaCo  matched me with a construction team that turned it into a reality. The platform made it easy to find qualified experts who provided transparent quotes and timelines. I'm thrilled with the results and the professionalism of the workers. Highly recommend for any project!",
-				created_at: "2024-05-27T12:49:14.000Z",
-			},
-		];
+		let reviews = [];
 
 		const reviewsContainer = document.getElementById("reviews-container");
 
@@ -184,7 +117,9 @@
 		}
 
 		// de aici in jos
-		function createReviews() {
+		async function createReviews() {
+			await fetchReviews();
+
 			reviews.forEach((review, index) => {
 				const reviewTemplate = document
 					.getElementById("review-template")
@@ -212,6 +147,32 @@
 
 				reviewsContainer.appendChild(reviewTemplate);
 			});
+		}
+
+		async function fetchReviews() {
+			try {
+				const companyId = JSON.parse(
+					localStorage.getItem("userData")
+				).company_id;
+				const token = localStorage.getItem("authToken");
+
+				const response = await apiRequest(
+					`http://localhost:8000/api/company/company-reviews/${companyId}`,
+					"GET",
+					null,
+					{
+						authorization: token,
+						"user-type": "company",
+					}
+				);
+
+				reviews = response.data;
+
+				company_details = response.data;
+			} catch (err) {
+				console.log(err);
+				alert("Error, please try again later");
+			}
 		}
 
 		createReviews();

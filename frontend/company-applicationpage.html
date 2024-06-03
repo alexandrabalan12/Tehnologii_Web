@@ -137,10 +137,13 @@
 		company_title.innerText = company_project.name;
 		general_description.innerText = company_project.description;
 
+		const projectId = window.location.href.split("=")[1];
+		const companyId = JSON.parse(localStorage.getItem("userData")).company_id;
+
 		function createPayload() {
 			const payload = {
-				project_id: "1",
-				company_id: "2",
+				project_id: projectId,
+				company_id: companyId,
 				message: your_message_input.value,
 				delivery_date: delivery_date_input.value,
 				estimated_price: price_range_input.value,
@@ -151,6 +154,7 @@
 		async function createApplication() {
 			const payload = createPayload();
 			const token = localStorage.getItem("authToken");
+
 			try {
 				const data = await apiRequest(
 					"http://localhost:8000/api/company/application-new",

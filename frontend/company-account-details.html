@@ -114,21 +114,11 @@
 	document.addEventListener("DOMContentLoaded", () => {
 		// continut care va veni din backend
 
-		const company_details = {
-			id: 2,
-			user_id: 47,
-			company_name: "Sobolanii2 SRL",
-			phone_number: "+50044949333",
-			description:
-				"Tech Innovators Inc. is a leading company specializing in innovative technology solutions for businesses worldwide. Our mission is to leverage cutting-edge technologies to drive business success and create value for our clients.",
-			location: "cluj",
-			address: "123 Innovation Drive, San Francisco, CA 94107",
-			professional_area: "roofing",
-			owner_name: "Alexa",
-			open_to_travel: "yes",
-		};
+		let company_details = {};
 
-		function createProject() {
+		async function createDetails() {
+			await fetchCompanyData();
+
 			const company_name = document.getElementById("company-name");
 			const company_number = document.getElementById("company-phone");
 			const company_description = document.getElementById(
@@ -151,6 +141,33 @@
 			company_contractor.innerText = company_details.owner_name;
 			company_travel.innerText = company_details.open_to_travel;
 		}
-		createProject();
+
+		async function fetchCompanyData() {
+			try {
+				const companyId = JSON.parse(
+					localStorage.getItem("userData")
+				).company_id;
+				const token = localStorage.getItem("authToken");
+
+				const response = await apiRequest(
+					`http://localhost:8000/api/company/company-details/${companyId}`,
+					"GET",
+					null,
+					{
+						authorization: token,
+						"user-type": "company",
+					}
+				);
+
+				company_details = response.data;
+
+				console.log(response);
+			} catch (err) {
+				console.log(err);
+				alert("Error, please try again later");
+			}
+		}
+
+		createDetails();
 	});
 </script>
