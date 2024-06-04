@@ -1,180 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Application Page</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/index.css" />
-    <link rel="stylesheet" href="./styles/pages/home.css" />
-    <link rel="stylesheet" href="./styles/pages/afterlogin.css" />
-    <link rel="stylesheet" href="./styles/pages/account.css" />
-    <link rel="stylesheet" href="./styles/pages/projectsdescription.css" />
-    <link rel="stylesheet" href="./styles/pages/applicationpage.css" />
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Application Page</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/index.css" />
+		<link rel="stylesheet" href="./styles/pages/home.css" />
+		<link rel="stylesheet" href="./styles/pages/afterlogin.css" />
+		<link rel="stylesheet" href="./styles/pages/account.css" />
+		<link rel="stylesheet" href="./styles/pages/projectsdescription.css" />
+		<link rel="stylesheet" href="./styles/pages/applicationpage.css" />
+	</head>
 
-  <body>
-    <div id="navbar-container"></div>
-    <div class="container">
-      <div class="title">
-        <h2 class="text-h2" id="project-name"></h2>
-      </div>
+	<body>
+		<div id="navbar-container"></div>
+		<div class="container">
+			<div class="title">
+				<h2 class="text-h2" id="project-name"></h2>
+			</div>
 
-      <h2 class="text-h2">Description</h2>
-      <div class="description">
-        <div class="text-body-copy" id="general-description"></div>
-      </div>
-      <div class="message">
-        <h2 class="text-h2">Your message</h2>
-        <label for="your-message" class="text-body-copy">
-          Short message about your previous experience with projects similar to
-          this one and share your ideas regarding this one.
-        </label>
-        <div class="input-group__area">
-          <textarea
-            id="your-message"
-            name="your-message"
-            placeholder="Your message..."
-          ></textarea>
-        </div>
-      </div>
-      <div class="message1">
-        <h2 class="text-h2">Delivery date (aprox.)</h2>
-        <label for="delivery-date" class="text-body-copy">
-          Provide estimated timelines for projects of similar scope.
-        </label>
-        <div class="details-aftersignup">
-          <div class="input-group__area">
-            <input id="delivery-date" name="delivery-date" type="date" />
-          </div>
-        </div>
-      </div>
-      <div class="message1">
-        <h2 class="text-h2">Your price range</h2>
-        <label for="price-range" class="text-body-copy">
-          Please outline your price range for this project ( in €).
-        </label>
-        <div class="details-aftersignup">
-          <div class="input-group__area">
-            <input
-              id="price-range"
-              name="price-range"
-              type="text"
-              placeholder="Your answer..."
-            />
-          </div>
-        </div>
-      </div>
+			<h2 class="text-h2">Description</h2>
+			<div class="description">
+				<div class="text-body-copy" id="general-description"></div>
+			</div>
+			<div class="message">
+				<h2 class="text-h2">Your message</h2>
+				<label for="your-message" class="text-body-copy">
+					Short message about your previous experience with projects similar to
+					this one and share your ideas regarding this one.
+				</label>
+				<div class="input-group__area">
+					<textarea
+						id="your-message"
+						name="your-message"
+						placeholder="Your message..."
+					></textarea>
+				</div>
+			</div>
+			<div class="message1">
+				<h2 class="text-h2">Delivery date (aprox.)</h2>
+				<label for="delivery-date" class="text-body-copy">
+					Provide estimated timelines for projects of similar scope.
+				</label>
+				<div class="details-aftersignup">
+					<div class="input-group__area">
+						<input id="delivery-date" name="delivery-date" type="date" />
+					</div>
+				</div>
+			</div>
+			<div class="message1">
+				<h2 class="text-h2">Your price range</h2>
+				<label for="price-range" class="text-body-copy">
+					Please outline your price range for this project ( in €).
+				</label>
+				<div class="details-aftersignup">
+					<div class="input-group__area">
+						<input
+							id="price-range"
+							name="price-range"
+							type="text"
+							placeholder="Your answer..."
+						/>
+					</div>
+				</div>
+			</div>
 
-      <div class="title-itemslong">
-        <button id="confirm-application" class="button-primary">
-          CONFIRM YOUR APPLICATION
-        </button>
-      </div>
+			<div class="title-itemslong">
+				<button id="confirm-application" class="button-primary">
+					CONFIRM YOUR APPLICATION
+				</button>
+			</div>
 
-      <h2 class="text-h2">Contact us</h2>
-      <div class="contact-info">
-        <div class="contact-mail">
-          <img src="./assets/email.png" alt="Email Icon" />
-          <p class="text-body-copy">emailemail@gmail.com</p>
-        </div>
-        <div class="contact-phone">
-          <img src="./assets/phone.png" alt="Phone Icon" />
-          <p class="text-body-copy">+407.12.123.123</p>
-        </div>
-        <div class="contact-adress">
-          <img src="./assets/location.png" alt="Location Icon" />
-          <p class="text-body-copy">Iasi, Romania</p>
-        </div>
-      </div>
-    </div>
-    <script src="./scripts/utilites.js"></script>
-    <script src="./scripts/navbar.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const company_project = {
-          id: 1,
-          user_id: 41,
-          name: "Green Energy Initiative",
-          description:
-            "A project focused on developing sustainable green energy solutions for urban areas.",
-          status: "open",
-          location: "iasi",
-          professional_area: "interior_design",
-          price: "150000",
-          requirements: [
-            {
-              name: "Solar Panel Installation",
-              description:
-                "Install solar panels on rooftops of urban buildings.",
-            },
-            {
-              name: "Wind Turbine Setup",
-              description: "Set up small wind turbines in open urban areas.",
-            },
-          ],
-        };
+			<h2 class="text-h2">Contact us</h2>
+			<div class="contact-info">
+				<div class="contact-mail">
+					<img src="./assets/email.png" alt="Email Icon" />
+					<p class="text-body-copy">emailemail@gmail.com</p>
+				</div>
+				<div class="contact-phone">
+					<img src="./assets/phone.png" alt="Phone Icon" />
+					<p class="text-body-copy">+407.12.123.123</p>
+				</div>
+				<div class="contact-adress">
+					<img src="./assets/location.png" alt="Location Icon" />
+					<p class="text-body-copy">Iasi, Romania</p>
+				</div>
+			</div>
+		</div>
+		<script src="./scripts/utilites.js"></script>
+		<script src="./scripts/navbar.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				let company_project = {};
 
-        const delivery_date_input = document.getElementById("delivery-date");
-        const your_message_input = document.getElementById("your-message");
-        const price_range_input = document.getElementById("price-range");
+				const delivery_date_input = document.getElementById("delivery-date");
+				const your_message_input = document.getElementById("your-message");
+				const price_range_input = document.getElementById("price-range");
 
-        const button = document.getElementById("confirm-application");
-        const company_title = document.getElementById("project-name");
-        const general_description = document.getElementById(
-          "general-description"
-        );
-        company_title.innerText = company_project.name;
-        general_description.innerText = company_project.description;
+				const button = document.getElementById("confirm-application");
+				const company_title = document.getElementById("project-name");
+				const general_description = document.getElementById(
+					"general-description"
+				);
 
-        const projectId = window.location.href.split("=")[1];
-        const companyId = JSON.parse(
-          localStorage.getItem("userData")
-        ).company_id;
+				const projectId = window.location.href.split("=")[1];
+				const companyId = JSON.parse(
+					localStorage.getItem("userData")
+				).company_id;
 
-        function createPayload() {
-          const payload = {
-            project_id: projectId,
-            company_id: companyId,
-            message: your_message_input.value,
-            delivery_date: delivery_date_input.value,
-            estimated_price: price_range_input.value,
-          };
-          return payload;
-        }
+				async function fetchProject() {
+					const token = localStorage.getItem("authToken");
+					try {
+						const data = await apiRequest(
+							`http://localhost:8000/api/company/project-details/${projectId}`,
+							"GET",
+							null,
+							{
+								authorization: token,
+								"user-type": "company",
+							}
+						);
 
-        async function createApplication() {
-          const payload = createPayload();
-          const token = localStorage.getItem("authToken");
+						console.log(data);
+						company_project = data.project;
+						company_title.innerText = company_project.name;
+						general_description.innerText = company_project.description;
+					} catch (err) {
+						console.log(err);
+						alert("Error occurred, please try later");
+					}
+				}
 
-          try {
-            const data = await apiRequest(
-              "http://localhost:8000/api/company/application-new",
-              "POST",
-              payload,
-              {
-                authorization: token,
-                "user-type": "company",
-              }
-            );
+				function createPayload() {
+					const payload = {
+						project_id: projectId,
+						company_id: companyId,
+						message: your_message_input.value,
+						delivery_date: delivery_date_input.value,
+						estimated_price: price_range_input.value,
+					};
+					return payload;
+				}
 
-            window.location.href =
-              "http://127.0.0.1:5500/company-application-confirmation.html";
-          } catch (err) {
-            console.log(err);
-            alert("An error has occurred");
-          }
-        }
+				async function createApplication() {
+					const payload = createPayload();
+					const token = localStorage.getItem("authToken");
 
-        button.addEventListener("click", () => createApplication());
-      });
-    </script>
-  </body>
+					try {
+						const data = await apiRequest(
+							"http://localhost:8000/api/company/application-new",
+							"POST",
+							payload,
+							{
+								authorization: token,
+								"user-type": "company",
+							}
+						);
+
+						window.location.href =
+							"http://127.0.0.1:5500/company-application-confirmation.html";
+					} catch (err) {
+						console.log(err);
+						alert("An error has occurred");
+					}
+				}
+				fetchProject();
+				button.addEventListener("click", () => createApplication());
+			});
+		</script>
+	</body>
 </html>
