@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Company Information</title>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
 			rel="stylesheet"
@@ -26,7 +27,7 @@
 		</nav>
 		<div class="container">
 			<div class="background-banner">
-				<img src="./assets/background-login.png" />
+				<img src="./assets/background-login.png" alt="Background" />
 			</div>
 
 			<div class="aftersignup__banner">
@@ -107,7 +108,11 @@
 						>Professional Area:</label
 					>
 					<div>
-						<select class="select-standard" name="1A" id="register-professional-area">
+						<select
+							class="select-standard"
+							name="1A"
+							id="register-professional-area"
+						>
 							<option value="interior_design">Interior design</option>
 							<option value="masonry">Masonry</option>
 							<option value="plumbing">Plumbing</option>
@@ -151,68 +156,74 @@
 			</div>
 			<button id="get-started" class="button-primary1">Get Started</button>
 		</div>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const company_name_input = document.getElementById(
+					"register-company-name"
+				);
+				const company_number_input = document.getElementById("register-number");
+				const company_description_input = document.getElementById(
+					"register-description"
+				);
+				const company_location_input =
+					document.getElementById("register-location");
+				const company_address_input =
+					document.getElementById("register-address");
+				const company_professional_area_input = document.getElementById(
+					"register-professional-area"
+				);
+				const company_contractor_input = document.getElementById(
+					"register-general-contractor"
+				);
+				const travel_yes_radio = document.getElementById("travel-projects-yes");
+				const travel_no_radio = document.getElementById("travel-projects-no");
+				const button = document.getElementById("get-started");
+
+				function createPayload() {
+					const userId = localStorage.getItem("userId");
+
+					const payload = {
+						user_id: userId,
+						company_name: company_name_input.value,
+						phone_number: company_number_input.value,
+						description: company_description_input.value,
+						location: company_location_input.value,
+						address: company_address_input.value,
+						professional_area: company_professional_area_input.value,
+						owner_name: company_contractor_input.value,
+						open_to_travel: travel_yes_radio.checked,
+					};
+
+					return payload;
+				}
+
+				async function setCompanyDetails() {
+					const payload = createPayload();
+
+					const token = localStorage.getItem("authToken");
+
+					try {
+						const data = await apiRequest(
+							"http://localhost:8000/api/company/company-details",
+							"POST",
+							payload,
+							{
+								authorization: token,
+								"user-type": "company",
+							}
+						);
+
+						window.location.href =
+							"http://127.0.0.1:5500/company-homepage.html";
+					} catch (err) {
+						console.log(err);
+						alert("An error has occured");
+					}
+				}
+
+				button.addEventListener("click", () => setCompanyDetails());
+			});
+		</script>
 	</body>
 </html>
-<script>
-	document.addEventListener("DOMContentLoaded", () => {
-		const company_name_input = document.getElementById("register-company-name");
-		const company_number_input = document.getElementById("register-number");
-		const company_description_input = document.getElementById(
-			"register-description"
-		);
-		const company_location_input = document.getElementById("register-location");
-		const company_address_input = document.getElementById("register-address");
-		const company_professional_area_input = document.getElementById(
-			"register-professional-area"
-		);
-		const company_contractor_input = document.getElementById(
-			"register-general-contractor"
-		);
-		const travel_yes_radio = document.getElementById("travel-projects-yes");
-		const travel_no_radio = document.getElementById("travel-projects-no");
-		const button = document.getElementById("get-started");
-
-		function createPayload() {
-			const userId = localStorage.getItem('userId');
-
-			const payload = {
-				user_id: userId,
-				company_name: company_name_input.value,
-				phone_number: company_number_input.value,
-				description: company_description_input.value,
-				location: company_location_input.value,
-				address: company_address_input.value,
-				professional_area: company_professional_area_input.value,
-				owner_name: company_contractor_input.value,
-				open_to_travel: travel_yes_radio.checked,
-			};
-
-			return payload;
-		}
-
-		async function setCompanyDetails() {
-			const payload = createPayload();
-
-			const token = localStorage.getItem("authToken");
-
-			try {
-				const data = await apiRequest(
-					"http://localhost:8000/api/company/company-details",
-					"POST",
-					payload,
-					{
-						authorization: token,
-						"user-type": "company",
-					}
-				);
-
-				window.location.href = "http://127.0.0.1:5500/company-homepage.html";
-			} catch (err) {
-				console.log(err);
-				alert("An error has occured");
-			}
-		}
-
-		button.addEventListener("click", () => setCompanyDetails());
-	});
-</script>

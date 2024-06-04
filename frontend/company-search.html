@@ -1,154 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/index.css" />
-    <link rel="stylesheet" href="./styles/pages/home.css" />
-    <link rel="stylesheet" href="./styles/pages/afterlogin.css" />
-    <link rel="stylesheet" href="./styles/pages/account.css" />
-    <link rel="stylesheet" href="./styles/pages/availableprojects.css" />
-    <script src="./scripts/utilites.js"></script>
-    <script src="./scripts/navbar.js"></script>
-  </head>
-  <body>
-    <div id="navbar-container"></div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Project Search Results</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/index.css" />
+		<link rel="stylesheet" href="./styles/pages/home.css" />
+		<link rel="stylesheet" href="./styles/pages/afterlogin.css" />
+		<link rel="stylesheet" href="./styles/pages/account.css" />
+		<link rel="stylesheet" href="./styles/pages/availableprojects.css" />
+		<script src="./scripts/utilites.js"></script>
+		<script src="./scripts/navbar.js"></script>
+	</head>
+	<body>
+		<div id="navbar-container"></div>
 
-    <div class="container">
-      <div class="text-h4">Results:</div>
-      <div class="projects" id="projects-container">
-        <template id="project-template">
-          <div class="details-account1">
-            <a
-              href="company-project-page.html"
-              data-selector="aftersearch-link"
-              class="link"
-            >
-              <div class="text">
-                <div class="info-field">
-                  <p
-                    class="text-body-copy-selected"
-                    data-selector="project-title"
-                  ></p>
-                </div>
-                <div class="info-field info-field-dot">
-                  <span class="text-body-copy-bold">Description: </span>
-                  <p
-                    class="text-body-copy1"
-                    data-selector="project-description"
-                  ></p>
-                </div>
-                <div class="info-field info-field-dot">
-                  <span class="text-body-copy-bold">Team needed:</span>
-                  <p class="text-body-copy1" data-selector="project-team"></p>
-                </div>
-                <div class="info-field info-field-dot">
-                  <span class="text-body-copy-bold">Location:</span>
-                  <p
-                    class="text-body-copy1"
-                    data-selector="project-location"
-                  ></p>
-                </div></div
-            ></a>
-          </div>
-        </template>
-      </div>
-      <div>
-        <h2 class="text-h2">Contact us</h2>
-        <div class="contact-info">
-          <div class="contact-mail">
-            <img src="./assets/email.png" />
-            <p class="text-body-copy">emailemail@gmail.com</p>
-          </div>
-          <div class="contact-phone">
-            <img src="./assets/phone.png" />
-            <p class="text-body-copy">+407.12.123.123</p>
-          </div>
-          <div class="contact-adress">
-            <img src="./assets/location.png" />
-            <p class="text-body-copy">Iasi, Romania</p>
-          </div>
-        </div>
-      </div>
-    </div>
+		<div class="container">
+			<div class="text-h4">Results:</div>
+			<div class="projects" id="projects-container">
+				<template id="project-template">
+					<div class="details-account1">
+						<a
+							href="company-project-page.html"
+							data-selector="aftersearch-link"
+							class="link"
+						>
+							<div class="text">
+								<div class="info-field">
+									<p
+										class="text-body-copy-selected"
+										data-selector="project-title"
+									></p>
+								</div>
+								<div class="info-field info-field-dot">
+									<span class="text-body-copy-bold">Description: </span>
+									<p
+										class="text-body-copy1"
+										data-selector="project-description"
+									></p>
+								</div>
+								<div class="info-field info-field-dot">
+									<span class="text-body-copy-bold">Team needed:</span>
+									<p class="text-body-copy1" data-selector="project-team"></p>
+								</div>
+								<div class="info-field info-field-dot">
+									<span class="text-body-copy-bold">Location:</span>
+									<p
+										class="text-body-copy1"
+										data-selector="project-location"
+									></p>
+								</div></div
+						></a>
+					</div>
+				</template>
+			</div>
+			<div>
+				<h2 class="text-h2">Contact us</h2>
+				<div class="contact-info">
+					<div class="contact-mail">
+						<img src="./assets/email.png" alt="Email Icon" />
+						<p class="text-body-copy">emailemail@gmail.com</p>
+					</div>
+					<div class="contact-phone">
+						<img src="./assets/phone.png" alt="Phone Icon" />
+						<p class="text-body-copy">+407.12.123.123</p>
+					</div>
+					<div class="contact-adress">
+						<img src="./assets/location.png" alt="Location Icon" />
+						<p class="text-body-copy">Iasi, Romania</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // continut care va veni din backend
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				// continut care va veni din backend
 
-        let projects = [];
+				let projects = [];
 
-        const projectsContainer = document.getElementById("projects-container");
+				const projectsContainer = document.getElementById("projects-container");
 
-        async function fetchProjects() {
-          projects = [];
+				async function fetchProjects() {
+					projects = [];
 
-          const token = localStorage.getItem("authToken");
-          const searchQuery = window.location.href.split("?query=")[1];
+					const token = localStorage.getItem("authToken");
+					const searchQuery = window.location.href.split("?query=")[1];
 
-          try {
-            const data = await apiRequest(
-              `http://localhost:8000/api/company/search?query=${searchQuery}`,
-              "GET",
-              null,
-              {
-                authorization: token,
-                "user-type": "company",
-              }
-            );
+					try {
+						const data = await apiRequest(
+							`http://localhost:8000/api/company/search?query=${searchQuery}`,
+							"GET",
+							null,
+							{
+								authorization: token,
+								"user-type": "company",
+							}
+						);
 
-            projects = data.projects;
-          } catch (err) {
-            console.log(err);
-            alert("Error occured, please try later");
-          }
-        }
+						projects = data.projects;
+					} catch (err) {
+						console.log(err);
+						alert("Error occured, please try later");
+					}
+				}
 
-        async function createProject() {
-          await fetchProjects();
+				async function createProject() {
+					await fetchProjects();
 
-          projects.forEach((project, index) => {
-            const projectTemplate = document
-              .getElementById("project-template")
-              .content.cloneNode(true).firstElementChild;
+					projects.forEach((project, index) => {
+						const projectTemplate = document
+							.getElementById("project-template")
+							.content.cloneNode(true).firstElementChild;
 
-            // doar in interior la template-uri
-            const project_title = projectTemplate.querySelector(
-              '[data-selector="project-title"]'
-            );
-            const project_description = projectTemplate.querySelector(
-              '[data-selector="project-description"]'
-            );
-            const project_team = projectTemplate.querySelector(
-              '[data-selector="project-team"]'
-            );
-            const project_location = projectTemplate.querySelector(
-              '[data-selector="project-location"]'
-            );
-            const aftersearch_link = projectTemplate.querySelector(
-              '[data-selector="aftersearch-link"]'
-            );
+						// doar in interior la template-uri
+						const project_title = projectTemplate.querySelector(
+							'[data-selector="project-title"]'
+						);
+						const project_description = projectTemplate.querySelector(
+							'[data-selector="project-description"]'
+						);
+						const project_team = projectTemplate.querySelector(
+							'[data-selector="project-team"]'
+						);
+						const project_location = projectTemplate.querySelector(
+							'[data-selector="project-location"]'
+						);
+						const aftersearch_link = projectTemplate.querySelector(
+							'[data-selector="aftersearch-link"]'
+						);
 
-            project_title.innerText = project.name;
-            project_description.innerText = project.description;
-            project_team.innerText = project.professional_area;
-            project_location.innerText = project.location;
-            aftersearch_link.href += `?id=${project.id}`;
+						project_title.innerText = project.name;
+						project_description.innerText = project.description;
+						project_team.innerText = project.professional_area;
+						project_location.innerText = project.location;
+						aftersearch_link.href += `?id=${project.id}`;
 
-            projectsContainer.appendChild(projectTemplate);
-          });
-        }
+						projectsContainer.appendChild(projectTemplate);
+					});
+				}
 
-        createProject();
-      });
-    </script>
-  </body>
+				createProject();
+			});
+		</script>
+	</body>
 </html>

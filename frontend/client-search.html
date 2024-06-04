@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Company Search Results</title>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
 			rel="stylesheet"
@@ -44,10 +45,10 @@
 									<p class="text-body-copy1" data-selector="company-city"></p>
 								</div>
 								<div class="info-field info-field-dot">
-									<span class="text-body-copy-bold">Proffesional field:</span>
+									<span class="text-body-copy-bold">Professional field:</span>
 									<p
 										class="text-body-copy1"
-										data-selector="company-proffesionalarea"
+										data-selector="company-professionalarea"
 									></p>
 								</div>
 
@@ -57,8 +58,9 @@
 										class="text-body-copy1"
 										data-selector="company-description"
 									></p>
-								</div></div
-						></a>
+								</div>
+							</div>
+						</a>
 					</div>
 				</template>
 			</div>
@@ -66,15 +68,15 @@
 				<h2 class="text-h2">Contact us</h2>
 				<div class="contact-info">
 					<div class="contact-mail">
-						<img src="./assets/email.png" />
+						<img src="./assets/email.png" alt="Email Icon" />
 						<p class="text-body-copy">emailemail@gmail.com</p>
 					</div>
 					<div class="contact-phone">
-						<img src="./assets/phone.png" />
+						<img src="./assets/phone.png" alt="Phone Icon" />
 						<p class="text-body-copy">+407.12.123.123</p>
 					</div>
 					<div class="contact-adress">
-						<img src="./assets/location.png" />
+						<img src="./assets/location.png" alt="Location Icon" />
 						<p class="text-body-copy">Iasi, Romania</p>
 					</div>
 				</div>
@@ -111,7 +113,7 @@
 						companies = data.companies;
 					} catch (err) {
 						console.log(err);
-						alert("Error occured, please try later");
+						alert("Error occurred, please try later");
 					}
 				}
 
@@ -130,8 +132,8 @@
 						const company_city = companyTemplate.querySelector(
 							'[data-selector="company-city"]'
 						);
-						const company_proffesionalarea = companyTemplate.querySelector(
-							'[data-selector="company-proffesionalarea"]'
+						const company_professionalarea = companyTemplate.querySelector(
+							'[data-selector="company-professionalarea"]'
 						);
 						const company_description = companyTemplate.querySelector(
 							'[data-selector="company-description"]'
@@ -142,7 +144,7 @@
 
 						company_name.innerText = company.company_name;
 						company_city.innerText = company.location;
-						company_proffesionalarea.innerText = company.professional_area;
+						company_professionalarea.innerText = company.professional_area;
 						company_description.innerText = company.description;
 						aftersearch_link.href += `?id=${company.id}`;
 

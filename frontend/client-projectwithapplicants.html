@@ -1,205 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/index.css" />
-    <link rel="stylesheet" href="./styles/pages/home.css" />
-    <link rel="stylesheet" href="./styles/pages/afterlogin.css" />
-    <link rel="stylesheet" href="./styles/pages/account.css" />
-    <link rel="stylesheet" href="./styles/pages/portfolio.css" />
-    <link rel="stylesheet" href="./styles/pages/projectsdescription.css" />
-    <link rel="stylesheet" href="./styles/pages/ongoing-projects-client.css" />
-    <script src="./scripts/utilites.js"></script>
-    <script src="./scripts/navbar.js"></script>
-  </head>
-  <body>
-    <div id="navbar-container"></div>
-    <div class="close-project">
-      <h2 class="text-h2-title" id="project-name"></h2>
-      <div class="add-project">
-        <button href="./client-closedprojects.html" class="button-primary" id="close-button"
-          >CLOSE PROJECT</button
-        >
-      </div>
-    </div>
-    <div class="container">
-      <h2 class="text-h2">Description</h2>
-      <div class="description">
-        <div class="text-body-copy" id="description"></div>
-      </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PlaCo - Project Details</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/index.css" />
+		<link rel="stylesheet" href="./styles/pages/home.css" />
+		<link rel="stylesheet" href="./styles/pages/afterlogin.css" />
+		<link rel="stylesheet" href="./styles/pages/account.css" />
+		<link rel="stylesheet" href="./styles/pages/portfolio.css" />
+		<link rel="stylesheet" href="./styles/pages/projectsdescription.css" />
+		<link rel="stylesheet" href="./styles/pages/ongoing-projects-client.css" />
+		<script src="./scripts/utilites.js"></script>
+		<script src="./scripts/navbar.js"></script>
+	</head>
+	<body>
+		<div id="navbar-container"></div>
+		<div class="close-project">
+			<h2 class="text-h2-title" id="project-name"></h2>
+			<div class="add-project">
+				<button class="button-primary" id="close-button">CLOSE PROJECT</button>
+			</div>
+		</div>
+		<div class="container">
+			<h2 class="text-h2">Description</h2>
+			<div class="description">
+				<div class="text-body-copy" id="description"></div>
+			</div>
 
-      <h2 class="text-h2">Applicants</h2>
-      <div class="description" id="applicants-container">
-        <template id="applicants-template">
-          <div class="applicants">
-            <div class="text-margin">
-              <p class="text-body-copy" data-selector="company-name1"></p>
-            </div>
-            <div class="review-link">
-              <a
-                href="client-application-details.html"
-                data-selector="applicationoverview-link"
-                class="text-body-copy"
-              >
-                See application overview
-                <img src="./assets/sageata.png" alt="Arrow" />
-              </a>
-            </div>
-            <div class="review-link1">
-              <a
-                href="client-profileforcompany-details.html"
-                data-selector="companyprofile-link"
-                class="text-body-copy"
-              >
-                See company profile
-                <img src="./assets/sageata.png" alt="Arrow" />
-              </a>
-            </div>
-          </div>
-        </template>
-      </div>
-      <div class="description" id="no-applicants-container">
-        <template id="no-applicants-template">
-          <div class="text-margin">
-            <p class="text-body-copy" data-selector="no-appliants-text"></p>
-          </div>
-        </template>
-      </div>
-    </div>
-    <div class="container">
-      <div class="container-contact">
-        <h2 class="text-h2">Contact us</h2>
-        <div class="contact-info">
-          <div class="contact-mail">
-            <img src="./assets/email.png" />
-            <p class="text-body-copy">emailemail@gmail.com</p>
-          </div>
-          <div class="contact-phone">
-            <img src="./assets/phone.png" />
-            <p class="text-body-copy">+407.12.123.123</p>
-          </div>
-          <div class="contact-adress">
-            <img src="./assets/location.png" />
-            <p class="text-body-copy">Iasi, Romania</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+			<h2 class="text-h2">Applicants</h2>
+			<div class="description" id="applicants-container">
+				<template id="applicants-template">
+					<div class="applicants">
+						<div class="text-margin">
+							<p class="text-body-copy" data-selector="company-name1"></p>
+						</div>
+						<div class="review-link">
+							<a
+								href="client-application-details.html"
+								data-selector="applicationoverview-link"
+								class="text-body-copy"
+							>
+								See application overview
+								<img src="./assets/sageata.png" alt="Arrow" />
+							</a>
+						</div>
+						<div class="review-link1">
+							<a
+								href="client-profileforcompany-details.html"
+								data-selector="companyprofile-link"
+								class="text-body-copy"
+							>
+								See company profile
+								<img src="./assets/sageata.png" alt="Arrow" />
+							</a>
+						</div>
+					</div>
+				</template>
+			</div>
+			<div class="description" id="no-applicants-container">
+				<template id="no-applicants-template">
+					<div class="text-margin">
+						<p class="text-body-copy" data-selector="no-appliants-text"></p>
+					</div>
+				</template>
+			</div>
+		</div>
+		<div class="container">
+			<div class="container-contact">
+				<h2 class="text-h2">Contact us</h2>
+				<div class="contact-info">
+					<div class="contact-mail">
+						<img src="./assets/email.png" alt="Email Icon" />
+						<p class="text-body-copy">emailemail@gmail.com</p>
+					</div>
+					<div class="contact-phone">
+						<img src="./assets/phone.png" alt="Phone Icon" />
+						<p class="text-body-copy">+407.12.123.123</p>
+					</div>
+					<div class="contact-adress">
+						<img src="./assets/location.png" alt="Location Icon" />
+						<p class="text-body-copy">Iasi, Romania</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				// pentru client
+				let proiect_cu_aplicari = {};
+
+				const noapplicants_text = `You don't have any applicants...`;
+
+				const applicantsContainer = document.getElementById(
+					"applicants-container"
+				);
+				const noapplicantsContainer = document.getElementById(
+					"no-applicants-container"
+				);
+				const closeButton = document.getElementById("close-button");
+				const projectId = window.location.href.split("=")[1];
+				const token = localStorage.getItem("authToken");
+
+				async function fetchProject() {
+					try {
+						const data = await apiRequest(
+							`http://localhost:8000/api/client/project-details/${projectId}`,
+							"GET",
+							null,
+							{
+								authorization: token,
+								"user-type": "client",
+							}
+						);
+
+						proiect_cu_aplicari = data;
+					} catch (err) {
+						console.log(err);
+						alert("Error occured, please try later");
+					}
+				}
+
+				async function closeProject() {
+					const text = "Are you sure you want to close this project?";
+
+					if (confirm(text) === true) {
+						try {
+							const data = await apiRequest(
+								`http://localhost:8000/api/client/project-close/${projectId}`,
+								"PUT",
+								null,
+								{
+									authorization: token,
+									"user-type": "client",
+								}
+							);
+
+							window.location.href =
+								"http://127.0.0.1:5500/client-homepage.html";
+						} catch (err) {
+							console.log(err);
+							alert("Error occured, please try later");
+						}
+					} else {
+						return;
+					}
+				}
+
+				async function populateDetails() {
+					await fetchProject();
+
+					const project_name = document.getElementById("project-name");
+					const description = document.getElementById("description");
+
+					project_name.innerText = proiect_cu_aplicari.project.name;
+					description.innerText = proiect_cu_aplicari.project.description;
+
+					if (proiect_cu_aplicari.jobApplications.length === 0) {
+						const noapplicantsTemplate = document
+							.getElementById("no-applicants-template")
+							.content.cloneNode(true).firstElementChild;
+						const noapplicantsTextElement = noapplicantsTemplate.querySelector(
+							'[data-selector="no-appliants-text"]'
+						);
+						noapplicantsTextElement.innerText = noapplicants_text;
+						noapplicantsContainer.appendChild(noapplicantsTemplate);
+					} else {
+						proiect_cu_aplicari.jobApplications.forEach((applicant, index) => {
+							const applicantsTemplate = document
+								.getElementById("applicants-template")
+								.content.cloneNode(true).firstElementChild;
+
+							const applicants_name = applicantsTemplate.querySelector(
+								'[data-selector="company-name1"]'
+							);
+							const applicationoverview_link = applicantsTemplate.querySelector(
+								'[data-selector="applicationoverview-link"]'
+							);
+							const companyprofile_link = applicantsTemplate.querySelector(
+								'[data-selector="companyprofile-link"]'
+							);
+
+							applicants_name.innerText = applicant.company_name;
+							applicationoverview_link.href += `?id=${applicant.id}`;
+							companyprofile_link.href += `?id=${applicant.id}`;
+
+							applicantsContainer.appendChild(applicantsTemplate);
+						});
+					}
+				}
+
+				populateDetails();
+
+				closeButton.addEventListener("click", () => closeProject());
+			});
+		</script>
+	</body>
 </html>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // pentru client
-    let proiect_cu_aplicari = {};
-
-    const noapplicants_text = `You don't have any applicants...`;
-
-    const applicantsContainer = document.getElementById("applicants-container");
-    const noapplicantsContainer = document.getElementById(
-      "no-applicants-container"
-    );
-    const closeButton = document.getElementById('close-button');
-    const projectId = window.location.href.split("=")[1];
-    const token = localStorage.getItem("authToken");
-
-    async function fetchProject() {
-      try {
-        const data = await apiRequest(
-          `http://localhost:8000/api/client/project-details/${projectId}`,
-          "GET",
-          null,
-          {
-            authorization: token,
-            "user-type": "client",
-          }
-        );
-
-        proiect_cu_aplicari = data;
-      } catch (err) {
-        console.log(err);
-        alert("Error occured, please try later");
-      }
-    }
-
-    async function closeProject() {
-      const text = "Are you sure you want to close this project?";
-
-      if(confirm(text) === true) {
-        try {
-          const data = await apiRequest(
-            `http://localhost:8000/api/client/project-close/${projectId}`,
-            "PUT",
-            null,
-            {
-              authorization: token,
-              "user-type": "client",
-            }
-          );
-
-          window.location.href = "http://127.0.0.1:5500/client-homepage.html";
-        } catch (err) {
-          console.log(err);
-          alert("Error occured, please try later");
-        }
-      } else {
-        return
-      }
-    };
-
-    async function populateDetails() {
-      await fetchProject();
-
-      const project_name = document.getElementById("project-name");
-      const description = document.getElementById("description");
-
-      project_name.innerText = proiect_cu_aplicari.project.name;
-      description.innerText = proiect_cu_aplicari.project.description;
-
-      if (proiect_cu_aplicari.jobApplications.length === 0) {
-        const noapplicantsTemplate = document
-          .getElementById("no-applicants-template")
-          .content.cloneNode(true).firstElementChild;
-        const noapplicantsTextElement = noapplicantsTemplate.querySelector(
-          '[data-selector="no-appliants-text"]'
-        );
-        noapplicantsTextElement.innerText = noapplicants_text;
-        noapplicantsContainer.appendChild(noapplicantsTemplate);
-      } else {
-        proiect_cu_aplicari.jobApplications.forEach((applicant, index) => {
-          const applicantsTemplate = document
-            .getElementById("applicants-template")
-            .content.cloneNode(true).firstElementChild;
-
-          const applicants_name = applicantsTemplate.querySelector(
-            '[data-selector="company-name1"]'
-          );
-          const applicationoverview_link = applicantsTemplate.querySelector(
-            '[data-selector="applicationoverview-link"]'
-          );
-          const companyprofile_link = applicantsTemplate.querySelector(
-            '[data-selector="companyprofile-link"]'
-          );
-
-          applicants_name.innerText = applicant.company_name;
-          applicationoverview_link.href += `?id=${applicant.id}`;
-          companyprofile_link.href += `?id=${applicant.id}`;
-
-          applicantsContainer.appendChild(applicantsTemplate);
-        });
-      }
-    }
-
-    populateDetails();
-
-    closeButton.addEventListener('click', () => closeProject());
-  });
-</script>

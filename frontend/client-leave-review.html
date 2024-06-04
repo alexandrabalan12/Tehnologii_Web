@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PlaCo - Leave a Review</title>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
 			rel="stylesheet"
@@ -109,71 +110,70 @@
 			<h2 class="text-h2">Contact us</h2>
 			<div class="contact-info">
 				<div class="contact-mail">
-					<img src="./assets/email.png" />
+					<img src="./assets/email.png" alt="Email Icon" />
 					<p class="text-body-copy">emailemail@gmail.com</p>
 				</div>
 				<div class="contact-phone">
-					<img src="./assets/phone.png" />
+					<img src="./assets/phone.png" alt="Phone Icon" />
 					<p class="text-body-copy">+407.12.123.123</p>
 				</div>
 				<div class="contact-adress">
-					<img src="./assets/location.png" />
+					<img src="./assets/location.png" alt="Location Icon" />
 					<p class="text-body-copy">Iasi, Romania</p>
 				</div>
 			</div>
 		</div>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				// continut care va veni din backend
+
+				const rating_input = document.getElementById("rating-number");
+				const reviewer_name_input = document.getElementById("reviewer-name");
+				const reviewer_job_input = document.getElementById("reviewer-job");
+				const reviewer_message = document.getElementById("reviewer-message");
+				const button = document.getElementById("save-review");
+
+				function createPayload() {
+					const userData = JSON.parse(localStorage.getItem("userData"));
+
+					const payload = {
+						user_id: userData.id,
+						user_reviewer_name: reviewer_name_input.value,
+						user_reviewer_occupation: reviewer_job_input.value,
+						rating: parseInt(rating_input.value),
+						review_content: reviewer_message.value,
+					};
+
+					return payload;
+				}
+
+				async function createCompanyReview() {
+					const companyId = window.location.href.split("=")[1];
+					const token = localStorage.getItem("authToken");
+
+					const payload = createPayload();
+
+					try {
+						const data = await apiRequest(
+							`http://localhost:8000/api/client/company-reviews/${companyId}`,
+							"POST",
+							payload,
+							{
+								authorization: token,
+								"user-type": "client",
+							}
+						);
+
+						window.location.href = `http://127.0.0.1:5500/client-profileforcompany-reviews.html?id=${companyId}`;
+						console.log(data);
+					} catch (err) {
+						console.log(err);
+						alert("Error occured, please try later");
+					}
+				}
+
+				button.addEventListener("click", () => createCompanyReview());
+			});
+		</script>
 	</body>
 </html>
-
-<script>
-	document.addEventListener("DOMContentLoaded", () => {
-		// continut care va veni din backend
-
-		const rating_input = document.getElementById("rating-number");
-		const reviewer_name_input = document.getElementById("reviewer-name");
-		const reviewer_job_input = document.getElementById("reviewer-job");
-		const reviewer_message = document.getElementById("reviewer-message");
-		const button = document.getElementById("save-review");
-
-		function createPayload() {
-			const userData = JSON.parse(localStorage.getItem('userData'));
-
-			const payload = {
-				user_id: userData.id,
-				user_reviewer_name: reviewer_name_input.value,
-				user_reviewer_occupation: reviewer_job_input.value,
-				rating: parseInt(rating_input.value),
-				review_content: reviewer_message.value
-			};
-
-			return payload;
-		}
-
-		async function createCompanyReview() {
-			const companyId = window.location.href.split("=")[1];
-			const token = localStorage.getItem("authToken");
-
-			const payload = createPayload();
-
-			try {
-				const data = await apiRequest(
-					`http://localhost:8000/api/client/company-reviews/${companyId}`,
-					"POST",
-					payload,
-					{
-						authorization: token,
-						"user-type": "client",
-					}
-				);
-
-				window.location.href = `http://127.0.0.1:5500/client-profileforcompany-reviews.html?id=${companyId}`;
-				console.log(data);
-			} catch (err) {
-				console.log(err);
-				alert("Error occured, please try later");
-			}
-		}
-
-		button.addEventListener("click", () => createCompanyReview());
-	});
-</script>

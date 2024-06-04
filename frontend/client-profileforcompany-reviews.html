@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PlaCo - Company Reviews</title>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
 			rel="stylesheet"
@@ -89,118 +90,117 @@
 			<h2 class="text-h2">Contact us</h2>
 			<div class="contact-info">
 				<div class="contact-mail">
-					<img src="./assets/email.png" />
+					<img src="./assets/email.png" alt="Email Icon" />
 					<p class="text-body-copy">emailemail@gmail.com</p>
 				</div>
 				<div class="contact-phone">
-					<img src="./assets/phone.png" />
+					<img src="./assets/phone.png" alt="Phone Icon" />
 					<p class="text-body-copy">+407.12.123.123</p>
 				</div>
 				<div class="contact-adress">
-					<img src="./assets/location.png" />
+					<img src="./assets/location.png" alt="Location Icon" />
 					<p class="text-body-copy">Iasi, Romania</p>
 				</div>
 			</div>
 		</div>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				// continut care e dinamic ca vine din backend
+				// momentan e static pana legam cu api-urile
+				// dar asa o sa arate ce trebuie afisat
+				let reviews = [];
+				let company_name = null;
+
+				const companyId = window.location.href.split("=")[1];
+				const reviewsContainer = document.getElementById("reviews-container");
+
+				function ratings(rating, container) {
+					for (let i = 0; i < rating; i += 1) {
+						const fullStar = document
+							.getElementById("full-star")
+							.content.cloneNode(true).firstElementChild;
+						container.appendChild(fullStar);
+					}
+					for (let i = 0; i < 5 - rating; i += 1) {
+						const emptyStar = document
+							.getElementById("empty-star")
+							.content.cloneNode(true).firstElementChild;
+						container.appendChild(emptyStar);
+					}
+				}
+
+				async function fetchCompanyReviews() {
+					reviews = [];
+
+					const companyId = window.location.href.split("=")[1];
+					const token = localStorage.getItem("authToken");
+
+					try {
+						const data = await apiRequest(
+							`http://localhost:8000/api/client/company-reviews/${companyId}`,
+							"GET",
+							null,
+							{
+								authorization: token,
+								"user-type": "client",
+							}
+						);
+
+						reviews = data.data;
+						company_name = data.company_name;
+					} catch (err) {
+						console.log(err);
+						alert("Error occured, please try later");
+					}
+				}
+
+				function attachLinkId() {
+					const details_link = document.getElementById("details-link");
+					const reviews_link = document.getElementById("reviews-link");
+					const portfolio_link = document.getElementById("portfolio-link");
+
+					details_link.href += `?id=${companyId}`;
+					reviews_link.href += `?id=${companyId}`;
+					portfolio_link.href += `?id=${companyId}`;
+				}
+
+				// de aici in jos
+				async function createReviews() {
+					await fetchCompanyReviews();
+
+					const companyTitle = document.getElementById("company-name");
+					companyTitle.innerText = company_name;
+
+					reviews.forEach((review, index) => {
+						const reviewTemplate = document
+							.getElementById("review-template")
+							.content.cloneNode(true).firstElementChild;
+
+						// doar in interior la template-uri
+						const review_name = reviewTemplate.querySelector(
+							'[data-selector="review-name"]'
+						);
+						const review_text = reviewTemplate.querySelector(
+							'[data-selector="review-text"]'
+						);
+						const review_job = reviewTemplate.querySelector(
+							'[data-selector="review-job"]'
+						);
+						const review_stars = reviewTemplate.querySelector(
+							'[data-selector="review-stars"]'
+						);
+						review_name.innerText = review.user_reviewer_name;
+						review_text.innerText = review.review_content;
+						review_job.innerText = review.user_reviewer_occupation;
+
+						ratings(review.rating, review_stars);
+
+						reviewsContainer.appendChild(reviewTemplate);
+					});
+				}
+
+				createReviews();
+			});
+		</script>
 	</body>
 </html>
-
-<script>
-	document.addEventListener("DOMContentLoaded", () => {
-		// continut care e dinamic ca vine din backend
-		// momentan e static pana legam cu api-urile
-		// dar asa o sa arate ce trebuie afisat
-		let reviews = [];
-		let company_name = null;
-
-		const companyId = window.location.href.split("=")[1];
-		const reviewsContainer = document.getElementById("reviews-container");
-
-		function ratings(rating, container) {
-			for (let i = 0; i < rating; i += 1) {
-				const fullStar = document
-					.getElementById("full-star")
-					.content.cloneNode(true).firstElementChild;
-				container.appendChild(fullStar);
-			}
-			for (let i = 0; i < 5 - rating; i += 1) {
-				const emptyStar = document
-					.getElementById("empty-star")
-					.content.cloneNode(true).firstElementChild;
-				container.appendChild(emptyStar);
-			}
-		}
-
-		async function fetchCompanyReviews() {
-			reviews = [];
-
-			const companyId = window.location.href.split("=")[1];
-			const token = localStorage.getItem("authToken");
-
-			try {
-				const data = await apiRequest(
-					`http://localhost:8000/api/client/company-reviews/${companyId}`,
-					"GET",
-					null,
-					{
-						authorization: token,
-						"user-type": "client",
-					}
-				);
-
-				reviews = data.data;
-				company_name = data.company_name;
-			} catch (err) {
-				console.log(err);
-				alert("Error occured, please try later");
-			}
-		}
-
-		function attachLinkId() {
-			const details_link = document.getElementById('details-link')
-			const reviews_link = document.getElementById('reviews-link')
-			const portfolio_link = document.getElementById('portfolio-link')
-			
-			details_link.href += `?id=${companyId}`;
-			reviews_link.href += `?id=${companyId}`;
-			portfolio_link.href += `?id=${companyId}`;
-		}
-
-		// de aici in jos
-		async function createReviews() {
-			await fetchCompanyReviews();
-
-			const companyTitle = document.getElementById("company-name");
-			companyTitle.innerText = company_name;
-
-			reviews.forEach((review, index) => {
-				const reviewTemplate = document
-					.getElementById("review-template")
-					.content.cloneNode(true).firstElementChild;
-
-				// doar in interior la template-uri
-				const review_name = reviewTemplate.querySelector(
-					'[data-selector="review-name"]'
-				);
-				const review_text = reviewTemplate.querySelector(
-					'[data-selector="review-text"]'
-				);
-				const review_job = reviewTemplate.querySelector(
-					'[data-selector="review-job"]'
-				);
-				const review_stars = reviewTemplate.querySelector(
-					'[data-selector="review-stars"]'
-				);
-				review_name.innerText = review.user_reviewer_name;
-				review_text.innerText = review.review_content;
-				review_job.innerText = review.user_reviewer_occupation;
-
-				ratings(review.rating, review_stars);
-
-				reviewsContainer.appendChild(reviewTemplate);
-			});
-		}
-
-		createReviews();
-	});
-</script>

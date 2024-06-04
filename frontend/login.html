@@ -1,134 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/pages/login.css" />
-    <link rel="stylesheet" href="./styles/index.css" />
-    <script src="./scripts/utilites.js"></script>
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="navbar-container">
-        <a href="index.html" class="logo1">PlaCo</a>
-      </div>
-    </nav>
-    <div class="container">
-      <div class="background-banner">
-        <img src="./assets/background-login.png" />
-      </div>
-      <div class="form-login">
-        <div class="welcome-message">
-          <h4 class="text-h4">Welcome back!</h4>
-          <p class="text-body-copy1">Log in to catch up what you’ve missed.</p>
-        </div>
-        <div class="form-login__inputs">
-          <div class="input-group">
-            <label for="email" class="input-group__label"> Email </label>
-            <div class="input-group__area">
-              <img src="./assets/email.png" />
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="numecompanie@gmailcom"
-              />
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="password" class="input-group__label"> Password </label>
-            <div class="input-group__area">
-              <img src="./assets/password.png" />
-              <input
-                id="password"
-                name="password"
-                type="password"
-                placeholder="*******"
-              />
-            </div>
-          </div>
-          <div class="input-group">
-            <input id="company" name="company" type="checkbox" />
-            <label for="company" class="input-group__label">
-              I'm a company
-            </label>
-          </div>
-          <button class="login-btn" id="login-button">Login</button>
-        </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login - PlaCo</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/pages/login.css" />
+		<link rel="stylesheet" href="./styles/index.css" />
+		<script src="./scripts/utilites.js"></script>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="navbar-container">
+				<a href="index.html" class="logo1">PlaCo</a>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="background-banner">
+				<img src="./assets/background-login.png" alt="Background Image" />
+			</div>
+			<div class="form-login">
+				<div class="welcome-message">
+					<h4 class="text-h4">Welcome back!</h4>
+					<p class="text-body-copy1">Log in to catch up what you’ve missed.</p>
+				</div>
+				<div class="form-login__inputs">
+					<div class="input-group">
+						<label for="email" class="input-group__label">Email</label>
+						<div class="input-group__area">
+							<img src="./assets/email.png" alt="Email Icon" />
+							<input
+								id="email"
+								name="email"
+								type="email"
+								placeholder="numecompanie@gmail.com"
+							/>
+						</div>
+					</div>
+					<div class="input-group">
+						<label for="password" class="input-group__label">Password</label>
+						<div class="input-group__area">
+							<img src="./assets/password.png" alt="Password Icon" />
+							<input
+								id="password"
+								name="password"
+								type="password"
+								placeholder="*******"
+							/>
+						</div>
+					</div>
+					<div class="input-group">
+						<input id="company" name="company" type="checkbox" />
+						<label for="company" class="input-group__label"
+							>I'm a company</label
+						>
+					</div>
+					<button class="login-btn" id="login-button">Login</button>
+				</div>
+				<div class="redirect-signup">
+					<p class="text-body-copy2">Don’t have an account?</p>
+					<a href="signup.html" class="nav-link">Sign up for free.</a>
+				</div>
+			</div>
+		</div>
+		<script src="./scripts/utilites.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const email_input = document.getElementById("email");
+				const password_input = document.getElementById("password");
+				const is_company = document.getElementById("company");
+				const button = document.getElementById("login-button");
+				let role = "client";
 
-        <div class="redirect-signup">
-          <p class="text-body-copy2">Don’t have an account?</p>
-          <a href="signup.html" class="nav-link">Sign up for free.</a>
-        </div>
-      </div>
-    </div>
-    <script src="./scripts/utilites.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // continut care va veni din backend
+				function create_payload() {
+					if (is_company.checked) role = "company";
 
-        const email_input = document.getElementById("email");
-        const password_input = document.getElementById("password");
-        const is_company = document.getElementById("company");
-        const button = document.getElementById("login-button");
-        let role = "client";
+					const payload = {
+						email: email_input.value,
+						password: password_input.value,
+						role: role,
+					};
 
-        function create_payload() {
-          if (is_company.checked) role = "company";
+					return payload;
+				}
 
-          const payload = {
-            email: email_input.value,
-            password: password_input.value,
-            role: role,
-          };
+				async function register() {
+					const payload = create_payload();
 
-          return payload;
-        }
+					try {
+						const data = await apiRequest(
+							"http://localhost:8000/api/users/login",
+							"POST",
+							payload
+						);
 
-        async function register() {
-          const payload = create_payload();
+						localStorage.setItem("authToken", data.token);
 
-          try {
-            const data = await apiRequest(
-              "http://localhost:8000/api/users/login",
-              "POST",
-              payload
-            );
+						if (role === "client") {
+							setTimeout(() => {
+								window.location.href =
+									"http://127.0.0.1:5500/client-homepage.html";
+							}, 400);
+						} else if (role === "company") {
+							setTimeout(() => {
+								if (data.company_details_set) {
+									window.location.href =
+										"http://127.0.0.1:5500/company-homepage.html";
+								} else {
+									window.location.href =
+										"http://127.0.0.1:5500/company-signup-details.html";
+								}
+							}, 400);
+						}
+					} catch (err) {
+						if (err.code === 409) alert("Email already exists");
+						else alert("Error occurred, please try later");
+					}
+				}
 
-            localStorage.setItem("authToken", data.token);
-
-            if (role === "client") {
-              setTimeout(() => {
-                window.location.href =
-                  "http://127.0.0.1:5500/client-homepage.html";
-              }, 400);
-            } else if (role === "company") {
-              setTimeout(() => {
-                if (data.company_details_set) {
-                  window.location.href =
-                    "http://127.0.0.1:5500/company-homepage.html";
-                } else {
-                  window.location.href =
-                    "http://127.0.0.1:5500/company-signup-details.html";
-                }
-              }, 400);
-            }
-          } catch (err) {
-            if (err.code === 409) alert("Email already exists");
-            else alert("Error occured, please try later");
-          }
-        }
-
-        button.addEventListener("click", () => register());
-      });
-    </script>
-  </body>
+				button.addEventListener("click", () => register());
+			});
+		</script>
+	</body>
 </html>

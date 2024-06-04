@@ -1,201 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./styles/index.css">
-<link rel="stylesheet" href="./styles/pages/home.css">
-<link rel="stylesheet" href="./styles/pages/afterlogin.css">
-<link rel="stylesheet" href="./styles/pages/account.css">
-<link rel="stylesheet" href="./styles/pages/availableprojects.css">
-<link rel="stylesheet" href="./styles/pages/projectsdescription.css">
-<link rel="stylesheet" href="./styles/pages/ongoing-projects-client.css">
-<link rel="stylesheet" href="./styles/pages/gallery.css">
-<script src="./scripts/utilites.js"></script>
-<script src="./scripts/navbar.js"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PlaCo - Project Details</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/index.css" />
+		<link rel="stylesheet" href="./styles/pages/home.css" />
+		<link rel="stylesheet" href="./styles/pages/afterlogin.css" />
+		<link rel="stylesheet" href="./styles/pages/account.css" />
+		<link rel="stylesheet" href="./styles/pages/availableprojects.css" />
+		<link rel="stylesheet" href="./styles/pages/projectsdescription.css" />
+		<link rel="stylesheet" href="./styles/pages/ongoing-projects-client.css" />
+		<link rel="stylesheet" href="./styles/pages/gallery.css" />
+		<script src="./scripts/utilites.js"></script>
+		<script src="./scripts/navbar.js"></script>
+	</head>
+	<body>
+		<div id="navbar-container"></div>
+		<div class="title">
+			<h2 class="text-h2" id="project-title"></h2>
+		</div>
+		<div class="title-company">
+			<h4 class="text-h4" id="subtitle"></h4>
+		</div>
+		<div class="container">
+			<h2 class="text-h2">Description</h2>
+			<div class="description">
+				<div class="text-body-copy" id="descriere"></div>
+			</div>
+		</div>
+		<div class="container">
+			<h2 class="text-h2">Gallery</h2>
+			<div class="description">
+				<div class="carousel">
+					<div class="carousel-inner" id="carousel-images-container">
+						<template id="carousel-image-template">
+							<div class="carousel-item">
+								<img src="" alt="Image" />
+							</div>
+						</template>
+					</div>
+					<div class="carousel-controls">
+						<button class="control prev" id="carousel-prev">&#10094;</button>
+						<button class="control next" id="carousel-next">&#10095;</button>
+					</div>
+					<div class="carousel-indicators" id="carousel-indicators-container">
+						<template id="carousel-indicator-template">
+							<div class="indicator"></div>
+						</template>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h2 class="text-h2">Contact us</h2>
+			<div class="contact-info">
+				<div class="contact-mail">
+					<img src="./assets/email.png" alt="Email Icon" />
+					<p class="text-body-copy">emailemail@gmail.com</p>
+				</div>
+				<div class="contact-phone">
+					<img src="./assets/phone.png" alt="Phone Icon" />
+					<p class="text-body-copy">+407.12.123.123</p>
+				</div>
+				<div class="contact-adress">
+					<img src="./assets/location.png" alt="Location Icon" />
+					<p class="text-body-copy">Iasi, Romania</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				// continut care va veni din backend
 
-</head>
-<body>
-    <div id="navbar-container"></div>
-<div class="title">
-    <h2 class="text-h2" id="project-title"></h2>
- </div>
-    <div class="title-company">
-         <h4 class="text-h4" id="subtitle">  </h4>
-   </div>
- 
-   <div class="container">
-    <h2 class="text-h2">Description</h2>    
-    <div class="description">
-        <div class="text-body-copy" id="descriere">
-            
-        </div>
+				const titlu = `Two-Story House Renovation`;
+				const subtitlu = `Interior Design`;
+				const continut = `
+            A comprehensive interior renovation of a two-story residential house located in
+            Iasi,Romania.The goal is to
+            modernize the interior spaces, enhance functionality, and improve the overall aesthetic of the property,
+            aligning
+            with the homeowner’s vision.The renovation will focus on updating finishes, creating an open-concept
+            layout,
+            and enhancing the home's overall comfort and usability.
+        `;
+				const images = [
+					{ src: "./assets/bedroom1.png", alt: "Image 1 description" },
+					{ src: "./assets/kitchen1.svg", alt: "Image 2 description" },
+					{ src: "./assets/livingroom1.png", alt: "Image 3 description" },
+				];
 
-        </div>
-        <div class="container">
-            <h2 class="text-h2">Gallery</h2>    
-            <div class="description">
-                <div class="carousel">
+				// elemente care trebuie populate cu continut
+				const project_title = document.getElementById("project-title");
+				const subtitle = document.getElementById("subtitle");
+				const imagesContainer = document.getElementById(
+					"carousel-images-container"
+				);
+				const indicatorsContainer = document.getElementById(
+					"carousel-indicators-container"
+				);
+				const descriere = document.getElementById("descriere");
 
-                    <div class="carousel-inner" id="carousel-images-container">
-                        <template id="carousel-image-template">
-                            <div class="carousel-item">
-                                <img src="" alt="Image">
-                            </div>
-                        </template>
-                    </div>
-            
-                    <div class="carousel-controls">
-                        <label for="slide1" class="control prev" id="carousel-prev">&#10094;</label>
-                        <label for="slide2" class="control next" id="carousel-next">&#10095;</label>
-                    </div>
-            
-                    <div class="carousel-indicators" id="carousel-indicators-container">
-                        <template id="carousel-indicator-template">
-                            <div class="indicator"></div>
-                        </template>
-                    </div>
-                </div>
-            </div>
-               
-   </div>
+				// sageti
+				const arrowPrev = document.getElementById("carousel-prev");
+				const arrowNext = document.getElementById("carousel-next");
 
-   
-<div class="container">
-   
-    <h2 class="text-h2">Contact us</h2>
-    <div class="contact-info">
-        <div class="contact-mail">
-            <img src="./assets/email.png">
-            <p class="text-body-copy">emailemail@gmail.com</p>
-        </div>
-        <div class="contact-phone">
-            <img src="./assets/phone.png">
-            <p class="text-body-copy">+407.12.123.123</p>
-        </div>
-        <div class="contact-adress">
-            <img src="./assets/location.png">
-            <p class="text-body-copy">Iasi, Romania</p>
-        </div>
-    </div>
-</div>
+				// template care va fi folosit pentru imagini
+				// templateutrile sunt ca niste schite dinamice pentru elemente
+				// nu apar initial in html, doar cand le folosim cu JS
+				const imageTemplate = document.getElementById(
+					"carousel-image-template"
+				);
+				const indicatorTemplate = document.getElementById(
+					"carousel-indicator-template"
+				);
 
-</body>
+				let currentSlide = 0;
+
+				function changeSlides(direction) {
+					const length = images.length;
+
+					// ascuzni slideul current
+					const currentImage = document.getElementById(`image-${currentSlide}`);
+					currentImage.classList.remove("carousel-item--active");
+
+					const currentIndicator = document.getElementById(
+						`indicator-${currentSlide}`
+					);
+					currentIndicator.classList.remove("indicator--active");
+
+					// modifici indexul dupa caz
+					if (direction === "next") {
+						if (currentSlide < length - 1) {
+							currentSlide += 1;
+						} else {
+							currentSlide = 0;
+						}
+					} else {
+						if (currentSlide > 0) {
+							currentSlide -= 1;
+						} else {
+							currentSlide = length - 1;
+						}
+					}
+
+					// afisezi slideul nou
+					const newImage = document.getElementById(`image-${currentSlide}`);
+					newImage.classList.add("carousel-item--active");
+
+					const newIndicator = document.getElementById(
+						`indicator-${currentSlide}`
+					);
+					newIndicator.classList.add("indicator--active");
+				}
+
+				arrowPrev.addEventListener("click", () => changeSlides("prev"));
+				arrowNext.addEventListener("click", () => changeSlides("next"));
+
+				function createImageSlides() {
+					// iteram prin imagini
+					images.forEach((image, index) => {
+						// creeaza imagini
+						const carouselImage =
+							imageTemplate.content.cloneNode(true).firstElementChild;
+
+						const img = carouselImage.querySelector("img");
+
+						img.src = image.src;
+						img.alt = image.alt;
+
+						if (index === 0)
+							carouselImage.classList.add("carousel-item--active");
+
+						carouselImage.id = `image-${index}`;
+
+						imagesContainer.appendChild(carouselImage);
+
+						// creeaza indicatori
+						const indicator =
+							indicatorTemplate.content.cloneNode(true).firstElementChild;
+
+						if (index === 0) indicator.classList.add("indicator--active");
+
+						indicator.id = `indicator-${index}`;
+
+						indicatorsContainer.appendChild(indicator);
+
+						// continut text descriere
+						project_title.innerText = titlu;
+						subtitle.innerText = subtitlu;
+						descriere.innerText = continut;
+					});
+				}
+
+				createImageSlides();
+			});
+		</script>
+	</body>
 </html>
-<script>
-document.addEventListener("DOMContentLoaded", () =>{
-    // continut care va veni din backend
-
-    const titlu= `Two-Story House Renovation`;
-    const subtitlu = `Interior Design`;
-    const continut = `
-        A comprehensive interior renovation of a two-story residential house located in
-        Iasi,Romania.The goal is to
-        modernize the interior spaces, enhance functionality, and improve the overall aesthetic of the property,
-        aligning
-        with the homeowner’s vision.The renovation will focus on updating finishes, creating an open-concept
-        layout,
-        and enhancing the home's overall comfort and usability.
-    `;
-    const images = [
-        { src: './assets/bedroom1.png', alt: 'Image 1 description' },
-        { src: './assets/kitchen1.svg', alt: 'Image 2 description' },
-        { src: './assets/livingroom1.png', alt: 'Image 3 description' },
-    ];
-
-    // elemente care trebuie populate cu continut
-    const project_title = document.getElementById('project-title');
-    const subtitle = document.getElementById('subtitle');
-    const imagesContainer = document.getElementById('carousel-images-container');
-    const indicatorsContainer = document.getElementById('carousel-indicators-container');
-    const descriere = document.getElementById('descriere');
-
-    // sageti
-    const arrowPrev = document.getElementById('carousel-prev');
-    const arrowNext = document.getElementById('carousel-next');
-
-    // template care va fi folosit pentru imagini
-    // templateutrile sunt ca niste schite dinamice pentru elemente
-    // nu apar initial in html, doar cand le folosim cu JS
-    const imageTemplate = document.getElementById('carousel-image-template');
-    const indicatorTemplate = document.getElementById('carousel-indicator-template');
-
-    let currentSlide = 0;
-
-    function changeSlides(direction) {
-        const length = images.length;
-
-        // ascuzni slideul current
-        const currentImage = document.getElementById(`image-${currentSlide}`);
-        currentImage.classList.remove('carousel-item--active');
-
-        const currentIndicator = document.getElementById(`indicator-${currentSlide}`);
-        currentIndicator.classList.remove('indicator--active');
-
-        // modifici indexul dupa caz
-        if(direction === 'next') {
-            if(currentSlide < length - 1) {
-                currentSlide += 1;
-            } else {
-                currentSlide = 0;
-            }
-        } else {
-            if(currentSlide > 0) {
-                currentSlide -= 1;
-            } else {
-                currentSlide = length - 1;
-            }
-        }
-
-        // afisezi slideul nou
-        const newImage = document.getElementById(`image-${currentSlide}`);
-        newImage.classList.add('carousel-item--active');
-
-        const newIndicator = document.getElementById(`indicator-${currentSlide}`);
-        newIndicator.classList.add('indicator--active');
-    };
-
-    arrowPrev.addEventListener('click', () => changeSlides('prev'));
-    arrowNext.addEventListener('click', () => changeSlides('next'));
-
-    function createImageSlides() {
-
-        // iteram prin imagini
-        images.forEach((image, index) => {
-            // creeaza imagini
-            const carouselImage = imageTemplate.content.cloneNode(true).firstElementChild;
-
-            const img = carouselImage.querySelector('img');
-            
-            img.src = image.src;
-            img.alt = image.alt;
-
-            if(index === 0)
-                carouselImage.classList.add('carousel-item--active');
-
-            carouselImage.id = `image-${index}`;
-
-            imagesContainer.appendChild(carouselImage);
-
-            // creeaza indicatori
-            const indicator = indicatorTemplate.content.cloneNode(true).firstElementChild;
-
-            if(index === 0)
-                indicator.classList.add('indicator--active');
-
-            indicator.id = `indicator-${index}`;
-
-            indicatorsContainer.appendChild(indicator);
-
-            // continut text descriere
-            project_title.innerText = titlu;
-            subtitle.innerText = subtitlu;
-            descriere.innerText = continut;
-        });
-    };
-
-    createImageSlides();
-});
-</script>
