@@ -184,12 +184,12 @@
 					reviews_link.href += `?id=${companyId}`;
 					portfolio_link.href += `?id=${companyId}`;
 					review_button.href += `?id=${companyId}`;
-				}
+				};
 
 				function createProject() {
 					// continut text descriere
 					modifyLinks();
-
+					
 					if (projects_portfolio.length === 0) {
 						const noprojectsTemplate = document
 							.getElementById("no-projects-template")

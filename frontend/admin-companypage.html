@@ -19,6 +19,7 @@
 		<link rel="stylesheet" href="./styles/pages/availableprojects.css" />
 
 		<link rel="stylesheet" href="./styles/pages/myreviews-company.css" />
+		<script src="./scripts/utilites.js"></script>
 	</head>
 	<body>
 		<nav class="navbar">
@@ -35,7 +36,7 @@
 				<div class="nav-menu" id="navbar-menu">
 					<!-- continut navigatie -->
 
-					<a href="index.html" class="signup-btn">Log out</a>
+					<button class="signup-btn" id="logout-button">Log out</button>
 				</div>
 			</div>
 		</nav>
@@ -44,38 +45,43 @@
 		</div>
 
 		<div class="myreviews" id="reviews-container">
-			<template id="review-template">
-				<div class="review-delete">
-					<div class="details-account1">
-						<div class="review-for">
-							<h4 class="text-h4" data-selector="review-name"></h4>
-
-							<div class="stars" data-selector="review-stars"></div>
-						</div>
-						<div class="review-text">
-							<p class="text-body-copy" data-selector="review-text"></p>
-						</div>
-
-						<div class="review-from">
-							<p class="text-body-copy" data-selector="review-job"></p>
-						</div>
-					</div>
-					<img src="./assets/Trash.png" alt="delete" />
-				</div>
-			</template>
-			<template id="full-star">
-				<img src="./assets/full_star.png" alt="Star" />
-			</template>
-			<template id="empty-star">
-				<img src="./assets/empty_star.png" alt="Star" />
-			</template>
 		</div>
+		<template id="review-template">
+			<div class="review-delete">
+				<div class="details-account1">
+					<div class="review-for">
+						<h4 class="text-h4" data-selector="review-name"></h4>
+
+						<div class="stars" data-selector="review-stars"></div>
+					</div>
+					<div class="review-text">
+						<p class="text-body-copy" data-selector="review-text"></p>
+					</div>
+
+					<div class="review-from">
+						<p class="text-body-copy" data-selector="review-job"></p>
+					</div>
+				</div>
+				<img src="./assets/Trash.png" alt="delete" data-selector="review-delete" />
+			</div>
+		</template>
+		<template id="full-star">
+			<img src="./assets/full_star.png" alt="Star" />
+		</template>
+		<template id="empty-star">
+			<img src="./assets/empty_star.png" alt="Star" />
+		</template>
 
 		<script>
 			document.addEventListener("DOMContentLoaded", () => {
 				let reviews = [];
+				let company_name = null;
+
+				const companyId = window.location.href.split("=")[1];
+				const token = localStorage.getItem("authToken");
 
 				const reviewsContainer = document.getElementById("reviews-container");
+				const logutButton = document.getElementById('logout-button');
 
 				function ratings(rating, container) {
 					for (let i = 0; i < rating; i += 1) {
@@ -94,12 +100,10 @@
 
 				async function fetchReviews() {
 					reviews = [];
-					const companyId = window.location.href.split("=")[1];
-					const token = localStorage.getItem("authToken");
 
 					try {
 						const data = await apiRequest(
-							"http://localhost:8000/api/admin/company-reviews/${companyId}",
+							`http://localhost:8000/api/admin/company-reviews/${companyId}`,
 							"GET",
 							null,
 							{
@@ -108,7 +112,8 @@
 							}
 						);
 
-						reviews = data.reviews;
+						reviews = data.data;
+						company_name =data.company_name;
 					} catch (err) {
 						console.log(err);
 						alert("Error occurred, please try later");
@@ -123,7 +128,7 @@
 					}
 
 					const companyTitle = document.getElementById("company-name");
-					companyTitle.innerText = reviews[0].company_name;
+					companyTitle.innerText = company_name;
 
 					reviewsContainer.innerHTML = "";
 
@@ -144,10 +149,17 @@
 						const review_stars = reviewTemplate.querySelector(
 							'[data-selector="review-stars"]'
 						);
+						const review_delete = reviewTemplate.querySelector(
+							'[data-selector="review-delete"]'
+						);
 
 						review_name.innerText = review.user_reviewer_name;
 						review_text.innerText = review.review_content;
 						review_job.innerText = review.user_reviewer_occupation;
+
+
+						review_delete.id = `review-delete-${review.id}`;
+						review_delete.addEventListener('click', () => deleteReview(review_delete));
 
 						ratings(review.rating, review_stars);
 
@@ -155,7 +167,35 @@
 					});
 				}
 
+				async function deleteReview(el) {
+					const review_id = el.id.split('-')[2];
+					const text = "Are you sure you want to delete this review?";
+
+					if(confirm(text) === true) {
+						try {
+							const data = await apiRequest(
+								`http://localhost:8000/api/admin/delete-review/${review_id}`,
+								"DELETE",
+								null,
+								{
+									authorization: token,
+									"user-type": "admin",
+								}
+							);
+
+							window.location.reload();
+						} catch (err) {
+							console.log(err);
+							alert("Error occurred, please try later");
+						}
+					} else {
+						return;
+					}
+				};
+
 				createReviews();
+
+				handleLogout();
 			});
 		</script>
 	</body>

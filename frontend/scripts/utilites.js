@@ -26,6 +26,20 @@ async function apiRequest(url, method = "GET", payload = null, headers = {}) {
   }
 }
 
+function handleLogout() {
+  const logout_button = document.getElementById("logout-button");
+
+  logout_button.addEventListener("click", () => {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("userData");
+    localStorage.removeItem("userId");
+
+    setTimeout(() => {
+    window.location.href = "http://127.0.0.1:5500/index.html";
+    }, 400);
+  });
+};
+
 function formatReadableDate(dateString) {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const date = new Date(dateString);

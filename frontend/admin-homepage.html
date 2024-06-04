@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="./styles/pages/afterlogin.css" />
 		<link rel="stylesheet" href="./styles/pages/account.css" />
 		<link rel="stylesheet" href="./styles/pages/availableprojects.css" />
+		<script src="./scripts/utilites.js"></script>
 	</head>
 	<body>
 		<nav class="navbar">
@@ -33,7 +34,7 @@
 				<div class="nav-menu" id="navbar-menu">
 					<!-- continut navigatie -->
 
-					<a href="index.html" class="signup-btn">Log out</a>
+					<button class="signup-btn" id="logout-button">Log out</button>
 				</div>
 			</div>
 		</nav>
@@ -83,54 +84,43 @@
 		<script>
 			document.addEventListener("DOMContentLoaded", () => {
 				// continut care va veni din backend
-				const companies = [
-					{
-						id: 2,
-						user_id: 47,
-						company_name: "Sobolanii2 SRL",
-						members_number: 60,
-						description:
-							"Tech Innovators Inc. is a leading company specializing in innovative technology solutions for businesses worldwide. Our mission is to leverage cutting-edge technologies to drive business success and create value for our clients.",
-						location: "cluj",
-						address: "123 Innovation Drive, San Francisco, CA 94107",
-						professional_area: "roofing",
-						owner_name: "Alexa",
-						open_to_travel: 1,
-					},
-					{
-						id: 3,
-						user_id: 47,
-						company_name: "Sobolanii2 SRL",
-						members_number: 60,
-						description:
-							"Tech Innovators Inc. is a leading company specializing in innovative technology solutions for businesses worldwide. Our mission is to leverage cutting-edge technologies to drive business success and create value for our clients.",
-						location: "cluj",
-						address: "123 Innovation Drive, San Francisco, CA 94107",
-						professional_area: "roofing",
-						owner_name: "Alexa",
-						open_to_travel: 1,
-					},
-					{
-						id: 4,
-						user_id: 47,
-						company_name: "Sobolanii2 SRL",
-						members_number: 60,
-						description:
-							"Tech Innovators Inc. is a leading company specializing in innovative technology solutions for businesses worldwide. Our mission is to leverage cutting-edge technologies to drive business success and create value for our clients.",
-						location: "cluj",
-						address: "123 Innovation Drive, San Francisco, CA 94107",
-						professional_area: "roofing",
-						owner_name: "Alexa",
-						open_to_travel: 1,
-					},
-				];
+				let companies = [];
 
 				// elemente care trebuie populate cu continut
 				const companiesContainer = document.getElementById(
 					"companies-container"
 				);
 
-				function createProject() {
+				const logutButton = document.getElementById('logout-button');
+
+				async function fetchCompanies() {
+					companies = [];
+
+					const token = localStorage.getItem("authToken");
+					try {
+
+						const data = await apiRequest(
+							`http://localhost:8000/api/admin/companies`,
+							"GET",
+							null,
+							{
+								authorization: token,
+								"user-type": "admin",
+							}
+						);
+
+						console.log(data);
+
+						companies = data.data;
+					} catch (err) {
+						console.log(err);
+						alert("Error occured, please try later");
+					}
+				}
+
+				async function createCompanies() {
+					await fetchCompanies();
+
 					companies.forEach((company, index) => {
 						const companyTemplate = document
 							.getElementById("company-template")
@@ -162,7 +152,9 @@
 						companiesContainer.appendChild(companyTemplate);
 					});
 				}
-				createProject();
+				createCompanies();
+
+				handleLogout();
 			});
 		</script>
 	</body>

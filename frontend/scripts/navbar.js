@@ -121,20 +121,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  function handleLogout() {
-    const logout_button = document.getElementById("logout-button");
-
-    logout_button.addEventListener("click", () => {
-      localStorage.removeItem("authToken");
-      localStorage.removeItem("userData");
-      localStorage.removeItem("userId");
-
-      setTimeout(() => {
-        window.location.href = "http://127.0.0.1:5500/index.html";
-      }, 400);
-    });
-  }
-
   function setNavbar() {
     // setam navbar in functie de user
     const navbar_container = document.getElementById("navbar-container");

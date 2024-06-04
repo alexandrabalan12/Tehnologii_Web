@@ -1,91 +1,78 @@
 .form-aftersignup {
-	width: 800px;
-	background-color: #ffffff;
-	border: 2px solid #b1770b;
-	border-radius: 20px;
-	margin: auto;
-	margin-top: 40px;
-	z-index: 10;
-	position: relative;
+  width: 800px;
+  background-color: #ffffff;
+  border: 2px solid #b1770b;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 40px;
+  z-index: 10;
+  position: relative;
 }
 .details-aftersignup {
-	margin-top: 10px;
-	text-align: center;
-	margin-bottom: 15px;
-	margin-left: 40px;
-	display: flex;
-	align-items: center;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
 }
 .details-aftersignup .text-body-copy {
-	font-weight: bold;
-	display: inline-block;
-	vertical-align: middle;
-	text-align: center;
-	margin-right: 10px;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  margin-right: 10px;
 }
 
 .details-aftersignup .input-group__area {
-	display: inline-block;
-	flex: 1;
-	margin-right: 10px;
+  display: inline-block;
+  flex: 1;
+  margin-right: 10px;
 }
 .details-aftersignup .select-standard {
-	flex: 1;
-	appearance: none;
-	padding: 10px;
-	border: 1px solid rgb(191, 184, 184);
-	background-color: white;
-	color: black;
-	border-radius: 20px;
-	cursor: pointer;
-	outline: none;
-	display: inline-block;
-}
-.info-field .select-standard {
-	flex: 1;
-	font-size: 20px;
-	appearance: none;
-	padding: 10px;
-	border: 1px solid rgb(66, 66, 66);
-	background-color: white;
-	color: black;
-	border-radius: 20px;
-	cursor: pointer;
-	outline: none;
-	display: inline-block;
+  flex: 1;
+  appearance: none;
+  padding: 10px;
+  border: 1px solid rgb(191, 184, 184);
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
 }
 
 .radio-label {
-	margin-right: 10px;
-	margin-left: 10px;
-	font-size: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 20px;
 }
 .button-primary1 {
-	display: block;
-	background-color: #ffa500;
-	color: #000000;
-	border-radius: 25px;
-	border: 1px solid #000000;
-	padding: 3px 12px;
-	text-decoration: none;
-	font-size: 29px;
-	margin-top: 5px;
-	width: 195px;
-	height: 40px;
-	text-align: center;
-	z-index: 10;
-	position: relative;
-	margin: 20px auto;
+  display: block;
+  background-color: #ffa500;
+  color: #000000;
+  border-radius: 25px;
+  border: 1px solid #000000;
+  padding: 3px 12px;
+  text-decoration: none;
+  font-size: 29px;
+  margin-top: 5px;
+  width: 195px;
+  height: 40px;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+  margin: 20px auto;
 }
 
 @media (max-width: 480px) {
-	.form-aftersignup {
-		width: auto;
-	}
+  .form-aftersignup {
+    width: auto;
+  }
 }
 
 @media (max-width: 830px) {
-	.form-aftersignup {
-		width: auto;
-	}
+  .form-aftersignup {
+    width: auto;
+  }
 }
