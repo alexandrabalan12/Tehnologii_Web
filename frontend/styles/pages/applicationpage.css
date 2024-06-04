@@ -31,6 +31,19 @@
 .message1 .details-aftersignup {
   margin-left: 0;
 }
+.message1 .details-aftersignup .select-standard {
+  flex: 1;
+  appearance: none;
+  padding: 10px;
+  border: 1px solid rgb(93, 88, 88);
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  font-size: 20px;
+}
 .title-itemslong {
   margin-bottom: 20px;
 }
