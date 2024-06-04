@@ -1,100 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/index.css" />
-    <link rel="stylesheet" href="./styles/pages/aftersignup.css" />
-    <script src="./scripts/utilites.js"></script>
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="navbar-container">
-        <a href="index.html" class="logo1">PlaCo</a>
-      </div>
-    </nav>
-    <div class="container">
-      <div class="background-banner">
-        <img src="./assets/background-login.png" />
-      </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PlaCo - After Signup</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/index.css" />
+		<link rel="stylesheet" href="./styles/pages/aftersignup.css" />
+		<script src="./scripts/utilites.js"></script>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="navbar-container">
+				<a href="index.html" class="logo1">PlaCo</a>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="background-banner">
+				<img src="./assets/background-login.png" alt="Background Login" />
+			</div>
 
-      <div class="aftersignup__banner">
-        <div class="text-h2">
-          <p>We can assure you we will</p>
-          <p>fullfil your needs!</p>
-        </div>
+			<div class="aftersignup__banner">
+				<div class="text-h2">
+					<p>We can assure you we will</p>
+					<p>fulfill your needs!</p>
+				</div>
 
-        <div class="form-what-are-you">
-          <button
-            href="company-signup-details.html"
-            class="form-what-are-you1"
-            id="company-button"
-          >
-            <div class="interior-form-what-are-you">
-              <img src="./assets/aftersignup1.png" />
-              <div class="why-us-category">
-                <div class="text-h4">Are you a company?</div>
-                <div class="text-body-copy1">
-                  Are you looking for projects to work on?
-                </div>
-              </div>
-            </div>
-          </button>
-          <button
-            href="client-homepage.html"
-            class="form-what-are-you2"
-            id="client-button"
-          >
-            <div class="interior-form-what-are-you">
-              <div class="why-us-category">
-                <div class="text-h4">Are you a boss?</div>
-                <div class="text-body-copy1">
-                  Are you looking for a team to work on your project?
-                </div>
-              </div>
-              <img src="./assets/aftersignup2.png" />
-            </div>
-          </button>
-        </div>
-      </div>
-    </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const companyButton = document.getElementById("company-button");
-        const clientButton = document.getElementById("client-button");
+				<div class="form-what-are-you">
+					<div class="form-what-are-you1" id="company-button">
+						<div class="interior-form-what-are-you">
+							<img src="./assets/aftersignup1.png" alt="After Signup 1" />
+							<div class="why-us-category">
+								<div class="text-h4">Are you a company?</div>
+								<div class="text-body-copy1">
+									Are you looking for projects to work on?
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-what-are-you2" id="client-button">
+						<div class="interior-form-what-are-you">
+							<div class="why-us-category">
+								<div class="text-h4">Are you a boss?</div>
+								<div class="text-body-copy1">
+									Are you looking for a team to work on your project?
+								</div>
+							</div>
+							<img src="./assets/aftersignup2.png" alt="After Signup 2" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const companyButton = document.getElementById("company-button");
+				const clientButton = document.getElementById("client-button");
 
-        const userId = localStorage.getItem('userId');
+				const userId = localStorage.getItem("userId");
 
-        async function setRole(role) {
-          try {
-            const payload = {
-              userId: userId,
-              role: role,
-            };
+				async function setRole(role) {
+					try {
+						const payload = {
+							userId: userId,
+							role: role,
+						};
 
-            const data = await apiRequest(
-              "http://localhost:8000/api/user-role",
-              "POST",
-              payload
-            );
+						const data = await apiRequest(
+							"http://localhost:8000/api/user-role",
+							"POST",
+							payload
+						);
 
-            window.location.href = "http://127.0.0.1:5500/login.html";
-          } catch (err) {
-            alert("There is a server error, or role is already set");
-          }
-        }
+						window.location.href = "http://127.0.0.1:5500/login.html";
+					} catch (err) {
+						alert("There is a server error, or role is already set");
+					}
+				}
 
-        companyButton.addEventListener("click", () => setRole("company"));
-        clientButton.addEventListener("click", () => setRole("client"));
-      });
-    </script>
-  </body>
+				companyButton.addEventListener("click", () => setRole("company"));
+				clientButton.addEventListener("click", () => setRole("client"));
+			});
+		</script>
+	</body>
 </html>
