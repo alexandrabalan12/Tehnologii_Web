@@ -60,3 +60,12 @@ CREATE TABLE job_applications (
     FOREIGN KEY (company_id) REFERENCES companies(id),
     UNIQUE (project_id, company_id)
 );
+
+CREATE TABLE portfolio_projects (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    company_id INT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    professional_area ENUM('structural_engineering', 'interior_design', 'roofing', 'masonry', 'plumbing') NOT NULL,
+    description TEXT NOT NULL,
+    FOREIGN KEY (company_id) REFERENCES companies(id)
+);

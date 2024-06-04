@@ -1,6 +1,7 @@
 USE placo_db;
 
 -- Populating users table
+-- not for logging in, but for having data
 INSERT INTO users (email, password, role)
 VALUES 
 ('user1@example.com', SHA2('password1', 256), 'user'),
@@ -127,3 +128,15 @@ VALUES
 (6, 2, 'Our team is ready.', '2024-12-01', '6600'),
 (7, 3, 'We can meet your requirements.', '2024-06-15', '7700'),
 (8, 4, 'We have prior experience.', '2024-07-15', '8800');
+
+-- Populating portfolio_projects table
+INSERT INTO portfolio_projects (company_id, name, professional_area, description)
+VALUES 
+(1, 'Renovation Project 1', 'interior_design', 'A renovation project in downtown.'),
+(1, 'Renovation Project 2', 'structural_engineering', 'Structural renovation of an old building.'),
+(2, 'Design Project 1', 'interior_design', 'Interior design for a modern office.'),
+(2, 'Design Project 2', 'interior_design', 'Redesign of a luxury apartment.'),
+(3, 'Roofing Project 1', 'roofing', 'Roof installation for a residential building.'),
+(3, 'Roofing Project 2', 'roofing', 'Roof repair for a commercial building.'),
+(4, 'Masonry Project 1', 'masonry', 'Brick masonry for a new house.'),
+(4, 'Masonry Project 2', 'masonry', 'Stone masonry for a garden wall.');

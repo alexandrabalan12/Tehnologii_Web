@@ -3,10 +3,12 @@ import companyCompaniesRoutes from '../controllers/company/companiesController.j
 import companyProjectRoutes from '../controllers/company/projectsController.js';
 import companyApplicationRoutes from '../controllers/company/applicationsController.js';
 import companySearchRoutes from '../controllers/company/searchController.js';
+import companyPortfolioRoutes from '../controllers/company/portfolioController.js';
 import clientCompaniesRoutes from '../controllers/client/companiesController.js';
 import clientProjectRoutes from '../controllers/client/projectsController.js';
 import clientJobApplicationRoutes from '../controllers/client/applicationsController.js';
 import clientSearchRoutes from '../controllers/client/searchController.js';
+import clientPortfolioRoutes from '../controllers/client/portfolioController.js';
 import adminRoutes from '../controllers/admin/adminController.js';
 
 // for testing
@@ -67,12 +69,16 @@ const handleAPI = (req, res) => {
                     companyApplicationRoutes(req, res);
                 } else if(req.url.startsWith('/api/company/search')) {
                     companySearchRoutes(req, res);
+                } else if(req.url.startsWith('/api/company/portfolio')) {
+                    companyPortfolioRoutes(req, res);
                 } else if(req.url.startsWith('/api/client/company')) {
                     clientCompaniesRoutes(req, res);
                 } else if(req.url.startsWith('/api/client/project')) {
                     clientProjectRoutes(req, res);
                 } else if(req.url.startsWith('/api/client/application')) {
                     clientJobApplicationRoutes(req, res);
+                } else if(req.url.startsWith('/api/client/portfolio')) {
+                    clientPortfolioRoutes(req, res);
                 } else if(req.url.startsWith('/api/client/search')) {
                     clientSearchRoutes(req, res);
                 } else if(req.url.startsWith('/api/admin')) {
