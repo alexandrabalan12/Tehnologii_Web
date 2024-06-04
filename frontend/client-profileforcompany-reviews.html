@@ -31,7 +31,10 @@
 				<div class="title">
 					<h2 class="text-h2" id="company-name"></h2>
 				</div>
-				<a href="./client-leave-review.html" class="button-primary"
+				<a
+					href="./client-leave-review.html"
+					class="button-primary"
+					id="review-button"
 					>Leave a review</a
 				>
 			</div>
@@ -154,18 +157,21 @@
 					}
 				}
 
-				function attachLinkId() {
+				function modifyLinks() {
 					const details_link = document.getElementById("details-link");
 					const reviews_link = document.getElementById("reviews-link");
 					const portfolio_link = document.getElementById("portfolio-link");
+					const review_button = document.getElementById("review-button");
 
 					details_link.href += `?id=${companyId}`;
 					reviews_link.href += `?id=${companyId}`;
 					portfolio_link.href += `?id=${companyId}`;
+					review_button.href += `?id=${companyId}`;
 				}
 
 				// de aici in jos
 				async function createReviews() {
+					modifyLinks();
 					await fetchCompanyReviews();
 
 					const companyTitle = document.getElementById("company-name");

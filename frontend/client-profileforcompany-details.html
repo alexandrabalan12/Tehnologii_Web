@@ -148,7 +148,20 @@
 					}
 				}
 
+				function modifyLinks() {
+					const details_link = document.getElementById("details-link");
+					const reviews_link = document.getElementById("reviews-link");
+					const portfolio_link = document.getElementById("portfolio-link");
+					const review_button = document.getElementById("review-button");
+
+					details_link.href += `?id=${companyId}`;
+					reviews_link.href += `?id=${companyId}`;
+					portfolio_link.href += `?id=${companyId}`;
+					review_button.href += `?id=${companyId}`;
+				}
+
 				async function createProject() {
+					modifyLinks();
 					await fetchCompanyDetails();
 
 					const company_title = document.getElementById("company-name");
@@ -165,16 +178,6 @@
 					const company_contractor =
 						document.getElementById("company-contractor");
 					const company_travel = document.getElementById("company-travel");
-
-					const details_link = document.getElementById("details-link");
-					const reviews_link = document.getElementById("reviews-link");
-					const portfolio_link = document.getElementById("portfolio-link");
-					const review_button = document.getElementById("review-button");
-
-					details_link.href += `?id=${companyId}`;
-					reviews_link.href += `?id=${companyId}`;
-					portfolio_link.href += `?id=${companyId}`;
-					review_button.href += `?id=${companyId}`;
 
 					company_title.innerText = company_details.company_name;
 					company_name.innerText = company_details.company_name;
