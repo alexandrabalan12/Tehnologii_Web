@@ -58,7 +58,7 @@
   height: 40px;
   z-index: 10;
   position: relative;
-  text-align: centers;
+  text-align: center;
   margin-left: 550px;
   font-weight: bold;
 }
