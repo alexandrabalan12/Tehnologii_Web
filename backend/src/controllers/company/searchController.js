@@ -22,10 +22,12 @@ const searchController = async (req, res) => {
     const searchQuery = `%${queryParam}%`;
 
     try {
-        // Search for projects
+        // Search for open projects
         const searchProjectsQuery = `
             SELECT * FROM projects
-            WHERE name LIKE ? OR description LIKE ? OR location LIKE ? OR professional_area LIKE ? OR price LIKE ?`;
+            WHERE status = 'open' AND (
+                name LIKE ? OR description LIKE ? OR location LIKE ? OR professional_area LIKE ? OR price LIKE ?
+            )`;
         const [projectRows] = await database.query(searchProjectsQuery, [searchQuery, searchQuery, searchQuery, searchQuery, searchQuery]);
 
         const response = {
@@ -42,7 +44,6 @@ const searchController = async (req, res) => {
         res.end();
     }
 };
-
 
 const companySearchRoutes = (req, res) => {
     if(req.url.startsWith('/api/company/search') && req.method === 'GET') {
