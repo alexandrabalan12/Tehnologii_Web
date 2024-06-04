@@ -43,6 +43,20 @@
           </div>
         </div>
       </div>
+      <div class="message1">
+        <h2 class="text-h3">Professional Area in need</h2>
+        <div class="details-aftersignup">
+          <select class="select-standard" name="add-project-category" id="add-project-category">
+            <option value="interior_design">Interior design</option>
+            <option value="masonry">Masonry</option>
+            <option value="plumbing">Plumbing</option>
+            <option value="roofing">Roofing</option>
+            <option value="structural_engineering">
+              Structural engineering
+            </option>
+          </select>
+        </div>
+      </div>
       <div class="message">
         <h2 class="text-h3">Description</h2>
         <label for="add-project-description" class="text-body-copy">
@@ -54,11 +68,6 @@
             name="add-project-description"
             placeholder="Your message..."
           ></textarea>
-        </div>
-      </div>
-      <div class="uploadimages">
-        <div class="title-itemslong">
-          <a href="#" class="button-primary">Upload before&after images</a>
         </div>
       </div>
       <div class="save-button">
@@ -93,35 +102,47 @@
         const add_project_description_input = document.getElementById(
           "add-project-description"
         );
+        const add_project_category = document.getElementById(
+          "add-project-category"
+        );
         const button = document.getElementById("save-project");
 
-        function addproject() {
+        function createPayload() {
+          const userData = JSON.parse(localStorage.getItem('userData'));
+
           const payload = {
-            id: "1",
-            user_id: "41",
+            company_id: userData.company_id,
             name: add_project_name_input.value,
             description: add_project_description_input.value,
-            status: "open",
-            location: "iasi",
-            professional_area: "interior_design",
-            price: "150000",
-            requirements: [
-              {
-                name: "Solar Panel Installation",
-                description:
-                  "Install solar panels on rooftops of urban buildings.",
-              },
-              {
-                name: "Wind Turbine Setup",
-                description: "Set up small wind turbines in open urban areas.",
-              },
-            ],
+            professional_area: add_project_category.value
           };
 
-          console.log(payload);
+          return payload;
         }
 
-        button.addEventListener("click", () => addproject());
+        async function addProject() {
+          const payload = createPayload();
+					const token = localStorage.getItem("authToken");
+
+					try {
+						const data = await apiRequest(
+							`http://localhost:8000/api/company/portfolio-new`,
+							"POST",
+							payload,
+							{
+								authorization: token,
+								"user-type": "company",
+							}
+						);
+
+						window.location.href = `http://127.0.0.1:5500/company-account-portfolio.html`;
+					} catch (err) {
+						console.log(err);
+						alert("Error occured, please try later");
+					}
+        };
+
+        button.addEventListener("click", () => addProject());
       });
     </script>
   </body>

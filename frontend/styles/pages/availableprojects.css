@@ -65,3 +65,20 @@
   text-decoration: none;
   color: black;
 }
+
+
+.delete-button {
+  width: 40px;
+  height: 40px;
+  display: block;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  margin-left: auto;
+}
+
+.delete-button > img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}

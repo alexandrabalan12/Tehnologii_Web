@@ -25,39 +25,19 @@
 	</head>
 	<body>
 		<div id="navbar-container"></div>
-		<div class="title">
-			<h2 class="text-h2" id="project-title"></h2>
-		</div>
-		<div class="title-company">
-			<h4 class="text-h4" id="subtitle"></h4>
-		</div>
 		<div class="container">
+			<div class="title">
+				<h2 class="text-h2" id="project-title"></h2>
+			</div>
+			<div class="title-company">
+				<h4 class="text-h4" id="company_name"></h4>
+			</div>
+			<div class="title-company">
+				<h4 class="text-h4" id="category"></h4>
+			</div>
 			<h2 class="text-h2">Description</h2>
 			<div class="description">
 				<div class="text-body-copy" id="descriere"></div>
-			</div>
-		</div>
-		<div class="container">
-			<h2 class="text-h2">Gallery</h2>
-			<div class="description">
-				<div class="carousel">
-					<div class="carousel-inner" id="carousel-images-container">
-						<template id="carousel-image-template">
-							<div class="carousel-item">
-								<img src="" alt="Image" />
-							</div>
-						</template>
-					</div>
-					<div class="carousel-controls">
-						<button class="control prev" id="carousel-prev">&#10094;</button>
-						<button class="control next" id="carousel-next">&#10095;</button>
-					</div>
-					<div class="carousel-indicators" id="carousel-indicators-container">
-						<template id="carousel-indicator-template">
-							<div class="indicator"></div>
-						</template>
-					</div>
-				</div>
 			</div>
 		</div>
 		<div class="container">
@@ -81,127 +61,46 @@
 			document.addEventListener("DOMContentLoaded", () => {
 				// continut care va veni din backend
 
-				const titlu = `Two-Story House Renovation`;
-				const subtitlu = `Interior Design`;
-				const continut = `
-            A comprehensive interior renovation of a two-story residential house located in
-            Iasi,Romania.The goal is to
-            modernize the interior spaces, enhance functionality, and improve the overall aesthetic of the property,
-            aligning
-            with the homeowner’s vision.The renovation will focus on updating finishes, creating an open-concept
-            layout,
-            and enhancing the home's overall comfort and usability.
-        `;
-				const images = [
-					{ src: "./assets/bedroom1.png", alt: "Image 1 description" },
-					{ src: "./assets/kitchen1.svg", alt: "Image 2 description" },
-					{ src: "./assets/livingroom1.png", alt: "Image 3 description" },
-				];
+				let project = {};
 
 				// elemente care trebuie populate cu continut
 				const project_title = document.getElementById("project-title");
-				const subtitle = document.getElementById("subtitle");
-				const imagesContainer = document.getElementById(
-					"carousel-images-container"
-				);
-				const indicatorsContainer = document.getElementById(
-					"carousel-indicators-container"
-				);
+				const company_name = document.getElementById("company_name");
+				const category = document.getElementById("category");
 				const descriere = document.getElementById("descriere");
-
-				// sageti
-				const arrowPrev = document.getElementById("carousel-prev");
-				const arrowNext = document.getElementById("carousel-next");
-
-				// template care va fi folosit pentru imagini
-				// templateutrile sunt ca niste schite dinamice pentru elemente
-				// nu apar initial in html, doar cand le folosim cu JS
-				const imageTemplate = document.getElementById(
-					"carousel-image-template"
-				);
-				const indicatorTemplate = document.getElementById(
-					"carousel-indicator-template"
-				);
-
-				let currentSlide = 0;
-
-				function changeSlides(direction) {
-					const length = images.length;
-
-					// ascuzni slideul current
-					const currentImage = document.getElementById(`image-${currentSlide}`);
-					currentImage.classList.remove("carousel-item--active");
-
-					const currentIndicator = document.getElementById(
-						`indicator-${currentSlide}`
-					);
-					currentIndicator.classList.remove("indicator--active");
-
-					// modifici indexul dupa caz
-					if (direction === "next") {
-						if (currentSlide < length - 1) {
-							currentSlide += 1;
-						} else {
-							currentSlide = 0;
+				
+				
+				async function fetchProject() {
+					const token = localStorage.getItem("authToken");
+					const projectId = window.location.href.split("=")[1];
+					try {
+						const data = await apiRequest(
+						`http://localhost:8000/api/client/portfolio/${projectId}`,
+						"GET",
+						null,
+						{
+							authorization: token,
+							"user-type": "client",
 						}
-					} else {
-						if (currentSlide > 0) {
-							currentSlide -= 1;
-						} else {
-							currentSlide = length - 1;
-						}
+						);
+						
+						project = data.portfolio_project;
+					} catch (err) {
+						console.log(err);
+						alert("Error occurred, please try later");
 					}
-
-					// afisezi slideul nou
-					const newImage = document.getElementById(`image-${currentSlide}`);
-					newImage.classList.add("carousel-item--active");
-
-					const newIndicator = document.getElementById(
-						`indicator-${currentSlide}`
-					);
-					newIndicator.classList.add("indicator--active");
 				}
 
-				arrowPrev.addEventListener("click", () => changeSlides("prev"));
-				arrowNext.addEventListener("click", () => changeSlides("next"));
+				async function populateProject() {
+					await fetchProject();
 
-				function createImageSlides() {
-					// iteram prin imagini
-					images.forEach((image, index) => {
-						// creeaza imagini
-						const carouselImage =
-							imageTemplate.content.cloneNode(true).firstElementChild;
+					project_title.innerText = project.name;
+					company_name.innerText = project.company_name;
+					category.innerText = formatCategory(project.professional_area);
+					descriere.innerText = project.description;
+				};
 
-						const img = carouselImage.querySelector("img");
-
-						img.src = image.src;
-						img.alt = image.alt;
-
-						if (index === 0)
-							carouselImage.classList.add("carousel-item--active");
-
-						carouselImage.id = `image-${index}`;
-
-						imagesContainer.appendChild(carouselImage);
-
-						// creeaza indicatori
-						const indicator =
-							indicatorTemplate.content.cloneNode(true).firstElementChild;
-
-						if (index === 0) indicator.classList.add("indicator--active");
-
-						indicator.id = `indicator-${index}`;
-
-						indicatorsContainer.appendChild(indicator);
-
-						// continut text descriere
-						project_title.innerText = titlu;
-						subtitle.innerText = subtitlu;
-						descriere.innerText = continut;
-					});
-				}
-
-				createImageSlides();
+				populateProject();
 			});
 		</script>
 	</body>

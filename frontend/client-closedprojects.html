@@ -180,7 +180,7 @@
 							);
 
 							closedproject_title.innerText = closedproject.name;
-							closedproject_team.innerText = closedproject.professional_area;
+							closedproject_team.innerText = formatCategory(closedproject.professional_area);
 							closedproject_description.innerText = closedproject.description;
 							closedproject_location.innerText = closedproject.location;
 							closedproject_link.href += `?id=${closedproject.id}`;

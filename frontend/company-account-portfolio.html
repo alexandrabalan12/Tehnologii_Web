@@ -123,28 +123,7 @@
       document.addEventListener("DOMContentLoaded", () => {
         // continut care va veni din backend
 
-        const projects_portfolio = [
-          {
-            id: 1,
-            user_id: 41,
-            company_name: "Sobolanii2 SRL",
-            project_name: "Green Energy Initiative",
-            description:
-              "A project focused on developing sustainable green energy solutions for urban areas.",
-            location: "iasi",
-            professional_area: "interior_design",
-          },
-          {
-            id: 2,
-            user_id: 41,
-            company_name: "Sobolanii2 SRL",
-            project_name: "Green Energy Initiative",
-            description:
-              "A project focused on developing sustainable green energy solutions for urban areas.",
-            location: "iasi",
-            professional_area: "interior_design",
-          },
-        ];
+        let projects_portfolio = [];
 
         const noproject_text = `You have no project in the portfolio!`;
         const portfolio_container = document.getElementById(
@@ -154,7 +133,33 @@
           "no-projects-container"
         );
 
-        function createProject() {
+        async function fetchPortfolio() {
+          const userData = JSON.parse(localStorage.getItem('userData'));
+          const company_id = userData.company_id;
+
+					const token = localStorage.getItem("authToken");
+
+					try {
+						const data = await apiRequest(
+							`http://localhost:8000/api/company/portfolio-projects/${company_id}`,
+							"GET",
+							null,
+							{
+								authorization: token,
+								"user-type": "company",
+							}
+						);
+
+
+            projects_portfolio = data.portfolio_projects;
+					} catch (err) {
+						console.log(err);
+						alert("Error occured, please try later");
+					}
+				}
+
+        async function createProject() {
+          await fetchPortfolio();
           // continut text descriere
           if (projects_portfolio.length === 0) {
             const noprojectsTemplate = document
@@ -184,8 +189,8 @@
                 '[data-selector="project-link"]'
               );
 
-              project_title.innerText = project.project_name;
-              project_team.innerText = project.professional_area;
+              project_title.innerText = project.name;
+              project_team.innerText = formatCategory(project.professional_area);
               project_description.innerText = project.description;
               project_link.href += `?id=${project.id}`;
 
@@ -193,6 +198,7 @@
             });
           }
         }
+        
         createProject();
       });
     </script>

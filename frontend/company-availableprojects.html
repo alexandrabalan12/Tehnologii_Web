@@ -175,7 +175,7 @@
 
 						project_title.innerText = project.name;
 						project_description.innerText = project.description;
-						project_team.innerText = project.professional_area;
+						project_team.innerText = formatCategory(project.professional_area);
 						project_location.innerText = project.location;
 						project_link.href += `?id=${project.id}`;
 

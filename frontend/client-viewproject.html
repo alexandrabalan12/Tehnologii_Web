@@ -120,7 +120,7 @@
 					const budget = document.getElementById("budget");
 
 					project_name.innerText = company_project.name;
-					team_needed.innerText = company_project.professional_area;
+					team_needed.innerText = formatCategory(company_project.professional_area);
 					location.innerText = company_project.location;
 					general_description.innerText = company_project.description;
 					budget.innerText = company_project.price;

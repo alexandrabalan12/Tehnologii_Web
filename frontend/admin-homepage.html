@@ -145,7 +145,7 @@
 
 						company_name.innerText = company.company_name;
 						company_city.innerText = company.location;
-						company_proffesionalarea.innerText = company.professional_area;
+						company_proffesionalarea.innerText = formatCategory(company.professional_area);
 						company_description.innerText = company.description;
 						admin_link.href += `?id=${company.id}`;
 

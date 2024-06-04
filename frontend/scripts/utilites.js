@@ -45,3 +45,10 @@ function formatReadableDate(dateString) {
   const date = new Date(dateString);
   return date.toLocaleDateString('en-US', options);
 }
+
+function formatCategory(str) {
+  let formattedStr = str.replace(/_/g, " ");
+  formattedStr =
+    formattedStr.charAt(0).toUpperCase() + formattedStr.slice(1);
+  return formattedStr;
+}

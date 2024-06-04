@@ -139,28 +139,8 @@
 			document.addEventListener("DOMContentLoaded", () => {
 				// continut care va veni din backend
 
-				const projects_portfolio = [
-					{
-						id: 1,
-						user_id: 41,
-						company_name: "Sobolanii2 SRL",
-						project_name: "Green Energy Initiative",
-						description:
-							"A project focused on developing sustainable green energy solutions for urban areas.",
-						location: "iasi",
-						professional_area: "interior_design",
-					},
-					{
-						id: 2,
-						user_id: 41,
-						company_name: "Sobolanii2 SRL",
-						project_name: "Green Energy Initiative",
-						description:
-							"A project focused on developing sustainable green energy solutions for urban areas.",
-						location: "iasi",
-						professional_area: "interior_design",
-					},
-				];
+				let projects_portfolio = [];
+				let company_name = null;
 
 				const companyId = window.location.href.split("=")[1];
 
@@ -172,7 +152,8 @@
 					"no-projects-container"
 				);
 				const company_title = document.getElementById("company-name");
-				company_title.innerText = projects_portfolio[0].company_name;
+
+				// company_title.innerText = company_name;
 
 				function modifyLinks() {
 					const details_link = document.getElementById("details-link");
@@ -186,8 +167,34 @@
 					review_button.href += `?id=${companyId}`;
 				};
 
-				function createProject() {
+				async function fetchPortfolio() {
+					const token = localStorage.getItem("authToken");
+
+					try {
+						const data = await apiRequest(
+							`http://localhost:8000/api/client/portfolio-projects/${companyId}`,
+							"GET",
+							null,
+							{
+								authorization: token,
+								"user-type": "client",
+							}
+						);
+
+						projects_portfolio = data.portfolio_projects;
+						company_name = data.company_name;
+					} catch (err) {
+						console.log(err);
+						alert("Error occured, please try later");
+					}
+				}
+
+				async function createProject() {
 					// continut text descriere
+					await fetchPortfolio();
+
+					company_title.innerText = company_name;
+
 					modifyLinks();
 					
 					if (projects_portfolio.length === 0) {
@@ -218,8 +225,8 @@
 								'[data-selector="portfolio-link"]'
 							);
 
-							project_title.innerText = project.project_name;
-							project_team.innerText = project.professional_area;
+							project_title.innerText = project.name;
+							project_team.innerText = formatCategory(project.professional_area);
 							project_description.innerText = project.description;
 							portfolio_link.href += `?id=${project.id}`;
 

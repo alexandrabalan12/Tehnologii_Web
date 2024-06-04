@@ -25,11 +25,13 @@
   </head>
   <body>
     <div id="navbar-container"></div>
-    <div class="title">
-      <h2 class="text-h2" id="project-title"></h2>
-    </div>
-    <div class="title-company">
-      <h4 class="text-h4" id="subtitle"></h4>
+    <div class="container">
+      <div class="title">
+        <h2 class="text-h2" id="project-title"></h2>
+      </div>
+      <div class="title-company">
+        <h4 class="text-h4" id="subtitle"></h4>
+      </div>
     </div>
 
     <div class="container">
@@ -37,6 +39,9 @@
       <div class="description">
         <div class="text-body-copy" id="descriere"></div>
       </div>
+      <button class="delete-button" id="project-delete">
+        <img src="./assets/Trash.png" alt="delete" />
+      </button>
     </div>
 
     <div class="container">
@@ -62,13 +67,49 @@
         const project_title = document.getElementById("project-title");
         const subtitle = document.getElementById("subtitle");
         const descriere = document.getElementById("descriere");
+        const delete_button = document.getElementById("project-delete");
 
-        const projectId = window.location.href.split("=")[1];
+        const token = localStorage.getItem("authToken");
+
+        async function populateProject() {
+          await fetchProject();
+
+          project_title.innerText = project_portfolio.name;
+          subtitle.innerText = formatCategory(project_portfolio.professional_area);
+          descriere.innerText = project_portfolio.description;
+        };
+
+        async function deleteReview() {
+					const project_id = window.location.href.split('=')[1];
+					const text = "Are you sure you want to delete this project?";
+
+					if(confirm(text) === true) {
+						try {
+							const data = await apiRequest(
+								`http://localhost:8000/api/company/portfolio-delete/${project_id}`,
+								"DELETE",
+								null,
+								{
+									authorization: token,
+									"user-type": "company",
+								}
+							);
+
+							window.location.href = 'http://127.0.0.1:5500/company-account-portfolio.html';
+						} catch (err) {
+							console.log(err);
+							alert("Error occurred, please try later");
+						}
+					} else {
+						return;
+					}
+				};
+
         async function fetchProject() {
-          const token = localStorage.getItem("authToken");
+          const projectId = window.location.href.split("=")[1];
           try {
             const data = await apiRequest(
-              `http://localhost:8000/api/company/project-details/${projectId}`,
+              `http://localhost:8000/api/company/portfolio/${projectId}`,
               "GET",
               null,
               {
@@ -76,24 +117,17 @@
                 "user-type": "company",
               }
             );
-
-            console.log(data);
-            project_portfolio = data.project;
+            
+            project_portfolio = data.portfolio_project;
           } catch (err) {
             console.log(err);
             alert("Error occurred, please try later");
           }
         }
-        function formatCategory(str) {
-          let formattedStr = str.replace(/_/g, " ");
-          formattedStr =
-            formattedStr.charAt(0).toUpperCase() + formattedStr.slice(1);
-          return formattedStr;
-        }
 
-        project_title.innerText = titlu;
-        subtitle.innerText = subtitlu;
-        descriere.innerHTML = continut;
+        populateProject();
+
+        delete_button.addEventListener('click', () => deleteReview());
       });
     </script>
   </body>

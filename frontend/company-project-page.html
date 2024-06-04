@@ -117,13 +117,6 @@
 					}
 				}
 
-				function formatCategory(str) {
-					let formattedStr = str.replace(/_/g, " ");
-					formattedStr =
-						formattedStr.charAt(0).toUpperCase() + formattedStr.slice(1);
-					return formattedStr;
-				}
-
 				async function createRequirement() {
 					const project_name = document.getElementById("project-name");
 					const team_needed = document.getElementById("team-needed");
